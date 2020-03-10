@@ -2,7 +2,7 @@
 
 ## RoadMap
 
-####Main Page:
+#### Main Page:
 
 * Dividir juegos en secciones dependindo del contenido.
 * Mostrar los mas populares en la main page.
@@ -11,15 +11,15 @@
 
 
 
-####Mejorar la experiencia del usuario:
+#### Mejorar la experiencia del usuario:
 
-######Objetivos a cumplir con los juegos creados
+###### Objetivos a cumplir con los juegos creados
 * Conseguir que el usuario pase más tiempo en la página.
 * Conseguir que el usuario comparta en las redes sociales los juegos o las puntuaciones obtenidas.
 * Fidelizar a los usuarios
 * Mayor interaccion en los juegos
 
-######Mejoras a implementar
+###### Mejoras a implementar
 
 1. Conectar usuarios con la api propia de la vanguardia para obtener la informacion del usuario.
 
@@ -34,7 +34,7 @@
 
 
 
-####Juegos:
+#### Juegos:
 
 Mejoras en los juegos:
 
@@ -63,7 +63,7 @@ mejorar el diseño.
 
 * Crear un temporizador
 
-##Más juegos:
+## Más juegos:
 
 - Juego sección de sociedad: aparece el nombre de un personaje y varias imagenes debes seleccionar la que corresponda con la persona nombrada.
 - Juego vivo/muerto soltero/casado.. buscar en el contenido como hacer la comprobación. aparece un personaje y debes seleccionar la opción correcta, dependiendo de la sección personalizariamos el juego según la temática. creariamos una funcion que comparara con la informacion del contenido de la Vanguardia, sobre personajes publicos y devuelve si la opción seleccionada es correcta o no, se realizaría con un condicional.
