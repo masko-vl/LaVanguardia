@@ -135,7 +135,7 @@ render(){
     </div>}
 
     {/*GAMEOVER PART */}
-    {this.state.gameStatus=='gameOver'&&<div className='playingGame'>
+    {this.state.gameStatus==='gameOver'&&<div className='playingGame'>
         <p className='gameover'>GAME OVER</p>
         <p className='score'>Score: {this.state.points}</p>
         <div className='shered-link'>

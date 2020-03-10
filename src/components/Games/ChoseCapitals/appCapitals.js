@@ -1,4 +1,4 @@
-import React, { Component, Fragment} from 'react';
+import React, { Component,} from 'react';
 import GameCapitals from './gameCapitals'
 
 import axios from 'axios';

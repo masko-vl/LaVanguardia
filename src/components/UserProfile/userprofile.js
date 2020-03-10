@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './userprofile.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import ButtonUserLogged from '../ButtonUserLogged/ButtonUserLogged'
-
 
 
 function UserProfile(props) {
@@ -24,7 +22,7 @@ function UserProfile(props) {
             </Modal.Header>
             <Modal.Body>
               <div className="centerDiv">
-                <img className='avatar mt-3' src={props.userprof.img} />
+                <img className='avatar mt-3' src={props.userprof.img} alt='' />
                 <h3 className='textuser mt-3'>Nombre: {props.userprof.name}</h3>
                 <p className='textuser'>Nombre de Usuario: {props.userprof.username}</p>
                 <p className='textuser'>Puntuación: {props.userprof.points}</p>

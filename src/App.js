@@ -7,7 +7,7 @@ import ButtonUserLogged from './components/ButtonUserLogged/ButtonUserLogged'
 import UserProfile from './components/UserProfile/userprofile'
 import DropdownCategories from './components/DropdownCategories/dropdown'
 import GeoChallenge from './components/Games/GeoChallenge';
-import { Switch, Route, Link} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 import ButtonGames from './components/ButtonGames/buttonGames';
 import ClickKill from './components/Games/ClickKill/click'
 
