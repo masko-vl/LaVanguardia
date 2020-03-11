@@ -64,7 +64,7 @@ class GeoChallenge extends Component {
     });
 
     this.setState({
-      options 
+      options
     }, this.defineMapBounds);
   }
 
@@ -92,7 +92,7 @@ class GeoChallenge extends Component {
   // The coordinates have this format: [lat, long]
   // where lat is y-axis (from -90 to 90) and long is x-axis (from -180 to 180)
   defineMapBounds() {
-    
+
     const coordinates = this.state.options.map(i => i.coordinates);
 
     let maxX = 0,
@@ -104,7 +104,7 @@ class GeoChallenge extends Component {
       if (coord[0] > maxY) {
         maxY = coord[0];
       }
-      
+
       if (coord[0] < minY) {
         minY = coord[0];
       }
@@ -112,7 +112,7 @@ class GeoChallenge extends Component {
       if (coord[1] > maxX) {
         maxX = coord[1];
       }
-      
+
       if (coord[1] < minX) {
         minX = coord[1];
       }
@@ -139,7 +139,7 @@ class GeoChallenge extends Component {
       this.setState({
         correctAnswers: this.state.correctAnswers + 1
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
-    
+
     } else {
       setTimeout(() => this.getFourRandomCountries(), 1500)
     }
@@ -151,7 +151,7 @@ class GeoChallenge extends Component {
   }
 
   render() {
-    
+
     const bounds = Leaflet.latLngBounds(this.state.bounds);
 
     return (
@@ -173,22 +173,22 @@ class GeoChallenge extends Component {
           bounds={bounds}
           center={this.state.center}
           attributionControl={false}
-          zoomControl={false}
+          zoomControl={true}
           doubleClickZoom={false}
-          scrollWheelZoom={false}
+          scrollWheelZoom={true}
           dragging={false}
           animate={true}
           easeLinearity={0.35}
         >
           <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
-          
+
           { this.state.options.map(country => (
               <Marker key={country.alpha2} onClick={() => this.onPinClicked(country.name)} position={country.coordinates}>
                 <Popup>
                   <p>
-                    <span className="flag">{country.emoji}</span>
+                    <span rol="img" className="flag">{country.emoji}</span>
                     This is {country.name}
-                  </p> 
+                  </p>
                 </Popup>
               </Marker>
             ))
