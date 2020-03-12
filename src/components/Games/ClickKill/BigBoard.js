@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import SmallSquare from './SmallSquare';
+import GameContainer from './GameContainer';
 import './BigBoard.css';
 import SelectTeam from './SelectTeam';
 import Alaves from './images/Alaves.png';
@@ -31,13 +31,13 @@ const BigContainer = styled.div`
 
 export default class BigBoard extends React.Component {
   state = {
-    squareIndex: null,
+    squareIndex: 2,            //  !!!!!!!! null by default. the "2" value was written for testing. making possible to get the index of the image clicked
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
-    smallSquaresArray: [{top: 0, left: 0}, {top: 0, left: 200}, {top: 0, left: 400},
-       {top: 200, left: 0}, {top: 200, left: 200}, {top: 200, left: 400}, {top: 400, left: 0},
-        {top: 400, left: 200}, {top: 400, left: 400}, {top: 100, left:500}],
+    // smallSquaresArray: [{top: 0, left: 0}, {top: 0, left: 200}, {top: 0, left: 400},
+    //    {top: 200, left: 0}, {top: 200, left: 200}, {top: 200, left: 400}, {top: 400, left: 0},
+    //     {top: 400, left: 200}, {top: 400, left: 400}, {top: 100, left:500}],
     logoSelected: '',
     imageList: [
       Alaves,
@@ -88,9 +88,9 @@ export default class BigBoard extends React.Component {
 
   itemClicked = () => {
     console.log('clicked!');
-    
     this.setState({
       clickedIndex: true
+      // update the squareIndex
     })
   }
 
@@ -129,18 +129,13 @@ export default class BigBoard extends React.Component {
           {this.state.teamChosen === false 
           ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
           : <div>
-                <BigContainer id="squarecontainer">
-                  { 
-                    this.state.smallSquaresArray.map((x, index) => 
-                    //turns show to true if index of the smallsquare == the squareIndex rendered by the chooseSmallSquare function
-                        <SmallSquare top={x.top} left={x.left} logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked}/>
-                    )}
-                </BigContainer>
-                <p>{this.state.counter}</p>
-                <button onClick={this.onClickStart}>START</button>
-                <button onClick={this.restartCounter}>RESET THE RESULT</button>
-          </div>
-        }
+          
+            <GameContainer logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
+            <p>{this.state.counter}</p>
+            <button onClick={this.onClickStart}>START</button>
+            <button onClick={this.restartCounter}>RESET THE RESULT</button>
+            </div>
+          }
         </div>
         </Fragment>
       )
