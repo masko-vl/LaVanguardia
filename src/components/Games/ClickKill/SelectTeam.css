@@ -38,7 +38,11 @@
 
 .img-container {
     display: flex;
-    align-items: start;   
+    align-items: start;
+    max-width: 565px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
  }
 
 .img-team img {
