@@ -37,13 +37,13 @@ class AppCapitals extends Component {
   fiterContinent=(e)=>{
   if(e.target.value ==='all'){
     axios.get(`https://restcountries.eu/rest/v2/all`)
-    .then(data => 
+    .then(({data}) => 
     this.setState({
       data: Shuffle(data)
      }))
 
   }else{
-    axios.get(`https://restcountries.eu/rest/v2/region/${e.target.value}`).then(data=>
+    axios.get(`https://restcountries.eu/rest/v2/region/${e.target.value}`).then(({data})=>
      this.setState({
       data: Shuffle(data)
      }))
@@ -65,7 +65,7 @@ class AppCapitals extends Component {
   render(){
   return (
  
-      <GameCapitals  countries={this.state.data.data} fiterContinent={this.fiterContinent} back={this.back}/>
+      <GameCapitals  countries={this.state.data} fiterContinent={this.fiterContinent} back={this.back}/>
 
   );
 }}
