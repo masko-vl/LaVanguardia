@@ -3,9 +3,12 @@
     height: 63vh;
 }
 
+
+
 .flag {
-    display: block;
-    font-size: 80px;
+  height: 70%;
+  width: 80%;
+  margin-left: 35px;
 }
 
 .counterText {
@@ -30,14 +33,18 @@
     width: 20%;
     border-radius: 30%;
     margin-left: 40%;
-    margin-bottom: 2%;
-    padding-top: 2%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    padding: 2% 2%;
     font-size: 25px;
+
 }
 
 .flagDisplay p {
     margin-bottom: 0;
 }
+
+
 
 .exitButton {
     position: absolute;
@@ -75,7 +82,7 @@
         padding-top: 2%;
         font-size: 15px;
         height: 36%;
-    }  
+    }
 
     .exitButton {
         width: 63px;
@@ -88,7 +95,8 @@
     }
 
     .flag {
-        font-size: 30px;
+      width: 50%;
+      height: 50%;
     }
 
     .flagDisplay {
@@ -101,6 +109,8 @@
         font-size: 10px;
         margin-top: 15px;
         margin-right: 5px;
+        display: inline-block;
+
     }
 
     .counterText {

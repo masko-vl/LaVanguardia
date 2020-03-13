@@ -4,6 +4,7 @@ import coordinates from './coordinates'; // array of coordintaes by country
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import './geoChallenge.css'
 import {Link} from 'react-router-dom';
+import Flag from 'lyef-flags';
 const Leaflet = window.L;
 
 
@@ -130,7 +131,6 @@ class GeoChallenge extends Component {
   // Checks if the answer is correct and fire a new round of 4 random
   // countries after 1,5s
   onPinClicked = (name) => {
-
     this.setState({
       totalAnswers: this.state.totalAnswers + 1
     })
@@ -162,7 +162,7 @@ class GeoChallenge extends Component {
             ? (
               <div className="flagDisplay">
                 <p>Guess this flag:</p>
-                <span className="flag">{this.state.options[0].emoji}</span>
+                <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
               </div>
             )
             : null
@@ -175,7 +175,7 @@ class GeoChallenge extends Component {
           attributionControl={false}
           zoomControl={true}
           doubleClickZoom={false}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
           dragging={false}
           animate={true}
           easeLinearity={0.35}
@@ -185,10 +185,12 @@ class GeoChallenge extends Component {
           { this.state.options.map(country => (
               <Marker key={country.alpha2} onClick={() => this.onPinClicked(country.name)} position={country.coordinates}>
                 <Popup>
+
+                  <Flag className="pinFlag" country={country.alpha2.toLowerCase()} size="small" />
                   <p>
-                    <span rol="img" className="flag">{country.emoji}</span>
                     This is {country.name}
                   </p>
+
                 </Popup>
               </Marker>
             ))
