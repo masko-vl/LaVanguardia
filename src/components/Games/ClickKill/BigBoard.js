@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import GameContainer from './GameContainer';
+import SmallSquare from './SmallSquare';
 import './BigBoard.css';
 import SelectTeam from './SelectTeam';
 import Alaves from './images/Alaves.png';
@@ -165,9 +165,9 @@ export default class BigBoard extends React.Component {
          {this.state.teamChosen === false 
          ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
          : <div>
-            {/*COMMENT : need to use the Zindex :  <GameContainer logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
-            {/* COMMENT : WRAPPING <GameContainer> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
-            <GameContainer logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
+            {/*COMMENT : need to use the Zindex :  <SmallSquare logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
+            {/* COMMENT : WRAPPING <SmallSquare> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
+            <SmallSquare logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
                 
 
            <p>{this.state.counter}</p>
