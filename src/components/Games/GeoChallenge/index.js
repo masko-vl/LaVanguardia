@@ -13,7 +13,7 @@ const Leaflet = window.L;
 // It also removes the countries without a flag
 const sanitizeCountries = () => {
   return countriesDB.countries.all.filter(country =>
-    coordinates.filter(item => item.country === country.alpha2).length > 0 && country.emoji !== undefined);
+    coordinates.filter(item => item.country === country.alpha2).length > 0);
 }
 const countries = sanitizeCountries();
 
@@ -173,11 +173,11 @@ class GeoChallenge extends Component {
           bounds={bounds}
           center={this.state.center}
           attributionControl={false}
-          zoomControl={true}
+          zoomControl={false}
           doubleClickZoom={false}
           scrollWheelZoom={false}
           dragging={false}
-          animate={true}
+          animate={false}
           easeLinearity={0.35}
         >
           <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
