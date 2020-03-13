@@ -13,6 +13,12 @@ const Shuffle=(a)=>{
   }
   return a;
 }
+const filterData=(data)=>{
+  let dataFiltered=data.filter((country)=>{
+    return country.capital !== ''
+  })
+  return dataFiltered
+}
 
 class AppCapitals extends Component {
   state={
@@ -21,25 +27,45 @@ class AppCapitals extends Component {
   async componentDidMount(){
     const {data} = await axios(`https://restcountries.eu/rest/v2/all`)
     //change the order of the array of cuntries before saveing in the state
-    let dataFiltered=data.filter((country)=>{
-      return country.capital !== ''
-    })
+  
         this.setState({
-          data: Shuffle(dataFiltered)
+          data: Shuffle(data)
          })
 
   }
+
+  fiterContinent=(e)=>{
+  if(e.target.value ==='all'){
+    axios.get(`https://restcountries.eu/rest/v2/all`)
+    .then(data => 
+    this.setState({
+      data: Shuffle(data)
+     }))
+
+  }else{
+    axios.get(`https://restcountries.eu/rest/v2/region/${e.target.value}`).then(data=>
+     this.setState({
+      data: Shuffle(data)
+     }))
+    
+    
+  //AQUI ES DONDE EN VEZ DE SOBREESCRIBIR DATA, CREA DENTRO DE PROPS OTRO SUB NIVEL. Y SI ABAJO EN EL RENDERLO QUE MANDO CAMBIO A  countries={this.state.data.data} funciona cuando seleccionas la region pero si no seleccionas nada, la llamada del componentDidMount no funciona porque esta en el nuvel superior el array */
+
+}
+}
+
   back=()=>{
     //function to click the buttons to go tu menu or the starting game page
     window.location.reload()
   }
+  
 
 
 
   render(){
   return (
  
-      <GameCapitals  countries={this.state.data} back={this.back}/>
+      <GameCapitals  countries={this.state.data.data} fiterContinent={this.fiterContinent} back={this.back}/>
 
   );
 }}

@@ -11,6 +11,8 @@ const Leaflet = window.L;
 // found on the coordinates array so the map doesn't crash trying to render them.
 // It also removes the countries without a flag
 const sanitizeCountries = () => {
+  console.log(countriesDB);
+  
   return countriesDB.countries.all.filter(country =>
     coordinates.filter(item => item.country === country.alpha2).length > 0 && country.emoji !== undefined);
 }
