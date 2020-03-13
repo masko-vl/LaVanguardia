@@ -28,37 +28,39 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+// COMMENT : TEST FOR THE GRID
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   paper: {
+//     padding: theme.spacing(2),
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary,
+//   },
+// }));
 
-const GameTable = props => {
-  const classes = useStyles();
-  const zIndex = 0;
-  return (
-  <div>
-      <div className="img-container">
-          <div className={classes.root}>
-          {20 *
-              <Grid container spacing={3}>                        
-                  <Grid item xs={3} zIndex={zIndex +1}>x</Grid>
-              </Grid>
-                }
-          </div>
-      </div>   
-  </div>
-  )
-}
+// export default function GameTable() {
+//   const classes = useStyles();
+//   const zIndex = 0;
 
+//   return (
+//     <div>
+//         <div className="img-container">
+//             <div className={classes.root}>
+//             {20 *
+//                 <Grid container spacing={3}>                        
+//                     <Grid item xs={3} zIndex={zIndex +1}>x</Grid>
+//                 </Grid>
+//                   }
+//             </div>
+//         </div>   
+//     </div>
+//   )
+// }
 
+// HERE STARTS THE CODE
 
 const BigContainer = styled.div`
     position: relative;
@@ -68,11 +70,11 @@ const BigContainer = styled.div`
 export default class BigBoard extends React.Component {
   
   state = {
-    squareIndex: 10,            //  !!!!!!!! null by default. the "2" value was written for testing. making possible to get the index of the image clicked
+    squareIndex: 10,            //  *COMMENT : null by default. the "10" value is here for testing. making possible to get the index of the image clicked
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
-    gameTable: ["","","","","","","","","","","","","","","","","","","",""],
+                              // COMMENT : array with all fixed position deleted
     logoSelected: '',
     imageList: [
       Alaves,
@@ -158,46 +160,23 @@ export default class BigBoard extends React.Component {
 
   render() {    
     return ( 
-      <Fragment>
-      <div className='pantalla'>
-        {this.state.teamChosen === false 
-        ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
-        : <div>
-         {/* CREER UN GRID DE 20 CASE. POUR CHAQUE CASE INSERER UN Z-INDEX QU'ON PASSE EN PROPS A SMALLSQUARE. */}
-
-           
-                {/* need to use the index :  <GameContainer logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
-
-                  <GameContainer logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
+       <Fragment>
+       <div className='pantalla'>
+         {this.state.teamChosen === false 
+         ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
+         : <div>
+            {/*COMMENT : need to use the Zindex :  <GameContainer logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
+            {/* COMMENT : WRAPPING <GameContainer> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
+            <GameContainer logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
                 
 
-          <p>{this.state.counter}</p>
-          <button onClick={this.onClickStart}>START</button>
-          <button onClick={this.restartCounter}>RESET THE RESULT</button>
-          </div>
-        }
-      </div>
-      </Fragment>
+           <p>{this.state.counter}</p>
+           <button onClick={this.onClickStart}>START</button>
+           <button onClick={this.restartCounter}>RESET THE RESULT</button>
+           </div>
+         }
+       </div>
+       </Fragment>
     )
   }
-
-    // render() {
-    //   return ( 
-    //     <Fragment>
-    //     <div className='pantalla'>
-    //       {this.state.teamChosen === false 
-    //       ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
-    //       : <div>
-    //        {/* CREER UN GRID DE 20 CASE. POUR CHAQUE CASE INSERER UN Z-INDEX QU'ON PASSE EN PROPS A SMALLSQUARE. */}
-
-    //         <GameContainer logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} />
-    //         <p>{this.state.counter}</p>
-    //         <button onClick={this.onClickStart}>START</button>
-    //         <button onClick={this.restartCounter}>RESET THE RESULT</button>
-    //         </div>
-    //       }
-    //     </div>
-    //     </Fragment>
-    //   )
-    // }
 }
