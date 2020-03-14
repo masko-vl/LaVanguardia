@@ -24,7 +24,8 @@ class GeoChallenge extends Component {
     bounds: [[90, -180], [-90, 180]],
     center: [0, 0],
     correctAnswers: 0,
-    totalAnswers: 0
+    totalAnswers: 0,
+    finishGame: false,
   }
  // method to randomly shuffle
   shuffle(a) {
@@ -130,10 +131,17 @@ class GeoChallenge extends Component {
 
   // Checks if the answer is correct and fire a new round of 4 random
   // countries after 1,5s
-  onPinClicked = (name) => {
-    this.setState({
-      totalAnswers: this.state.totalAnswers + 1
-    })
+  onPinClicked = (name, totalAnswers) => {
+    if (this.state.totalAnswers < 10) {
+      this.setState({
+        totalAnswers: this.state.totalAnswers + 1
+      })
+    } else {
+      this.setState({
+        finishGame: true
+      })
+
+    }
 
     if (name === this.state.options[0].name) {
       this.setState({
@@ -155,6 +163,10 @@ class GeoChallenge extends Component {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
 
     return (
+      <div>
+      {
+        this.state.finishGame === false
+        ?
       <div className="mapContent">
         <button className="exitButton"><Link to="/">&lt;   Salir del juego</Link></button>
         {
@@ -198,6 +210,12 @@ class GeoChallenge extends Component {
         </LeafletMap>
         </div>
       </div>
+      :
+      <div>
+        <h1>Hola</h1>
+      </div>
+    }
+    </div>
     )
   }
 }
