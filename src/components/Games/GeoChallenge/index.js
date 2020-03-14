@@ -156,25 +156,25 @@ class GeoChallenge extends Component {
 
     return (
       <div className="mapContent">
-        <button className="exitButton"><Link to="/">&lt;&lt; Exit Game</Link></button>
+        <button className="exitButton"><Link to="/">&lt;   Salir del juego</Link></button>
         {
           this.state.options.length > 0
             ? (
               <div className="flagDisplay">
-                <p>Guess this flag:</p>
+                <p>Adivina el pais</p>
                 <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
               </div>
             )
             : null
         }
-        <p className="counterText">Correct answers: {this.state.correctAnswers} out of {this.state.totalAnswers}</p>
+        <p className="counterText">Aciertos: {this.state.correctAnswers} out of {this.state.totalAnswers}</p>
         <div className="leaflet-container">
           <LeafletMap
           bounds={bounds}
           center={this.state.center}
           attributionControl={false}
           zoomControl={false}
-          doubleClickZoom={false}
+          doubleClickZoom={true}
           scrollWheelZoom={false}
           dragging={false}
           animate={false}
