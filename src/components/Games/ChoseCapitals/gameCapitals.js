@@ -70,8 +70,20 @@ chooseCapital=(e)=>{
    //recover the buton clicked for the capital by the id where we save the name of the capital
  if(this.state.countries[0].capital===e.target.id){
      let cutCountries=[...this.state.countries]
+     
      //also we cut the first 4 to avoid repeating the names becouse we catch the first 4 and update the array
-     cutCountries.splice(0, 4)
+     //cutCountries.splice(0, 4)
+
+     //cut to another array the selected countriy in the game to put it at the end of the array
+     let countrySelected=cutCountries.slice(0, 1)
+     
+     //cut out from the original array
+     cutCountries.splice(0, 1)
+     //disorder the array to don have the next capitals that are in the quertion for the nextcountries
+     Shuffle(cutCountries)
+     //put at the end of the array
+     cutCountries=[...cutCountries, ...countrySelected]
+
      let fourCapitals= [cutCountries[0].capital, cutCountries[1].capital, cutCountries[2].capital, cutCountries[3].capital]
      Shuffle(fourCapitals)
 
@@ -85,6 +97,7 @@ chooseCapital=(e)=>{
          points:this.state.points+10
 
      })
+    
     
  }else{
      this.setState({
