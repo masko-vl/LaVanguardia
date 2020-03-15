@@ -26,6 +26,7 @@ class GeoChallenge extends Component {
     correctAnswers: 0,
     totalAnswers: 0,
     finishGame: false,
+    sum_points: 50
   }
  // method to randomly shuffle
   shuffle(a) {
@@ -131,7 +132,27 @@ class GeoChallenge extends Component {
 
   // Checks if the answer is correct and fire a new round of 4 random
   // countries after 1,5s
+  // Finish game
+
+
   onPinClicked = (name, totalAnswers) => {
+    if (name === this.state.options[0].name && this.state.correctAnswers == 0 ) {
+      this.setState({
+        correctAnswers: this.state.correctAnswers + this.state.sum_points
+      }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
+
+    } else if (name === this.state.options[0].name && this.state.correctAnswers != 0) {
+      this.setState({
+        sum_points: this.state.sum_points + 50,
+        correctAnswers: this.state.correctAnswers + this.state.sum_points
+      }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
+    } else {
+      this.setState({
+        sum_points: 50,
+        correctAnswers: this.state.correctAnswers - 25 
+      }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
+    }
+
     if (this.state.totalAnswers < 10) {
       this.setState({
         totalAnswers: this.state.totalAnswers + 1
@@ -141,15 +162,6 @@ class GeoChallenge extends Component {
         finishGame: true
       })
 
-    }
-
-    if (name === this.state.options[0].name) {
-      this.setState({
-        correctAnswers: this.state.correctAnswers + 1
-      }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
-
-    } else {
-      setTimeout(() => this.getFourRandomCountries(), 1500)
     }
   }
 
@@ -168,18 +180,21 @@ class GeoChallenge extends Component {
         this.state.finishGame === false
         ?
       <div className="mapContent">
-        <button className="exitButton"><Link to="/">&lt;   Salir del juego</Link></button>
-        {
-          this.state.options.length > 0
-            ? (
-              <div className="flagDisplay">
-                <p>Adivina el pais</p>
-                <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
-              </div>
-            )
-            : null
-        }
-        <p className="counterText">Aciertos: {this.state.correctAnswers} out of {this.state.totalAnswers}</p>
+        <div className="containerInstruction">
+            <button className="exitButton"><Link to="/">&lt;   Salir del juego</Link></button>
+            {
+              this.state.options.length > 0
+                ? (
+                  <div className="flagDisplay">
+                    <p>Adivina el pais</p>
+                    <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                  </div>
+                )
+                : null
+            }
+          <p className="counterText">Aciertos: {this.state.correctAnswers} out of {this.state.totalAnswers}</p>
+        </div>
+
         <div className="leaflet-container">
           <LeafletMap
           bounds={bounds}
