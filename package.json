@@ -18,11 +18,8 @@
     "react-leaflet": "^2.6.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-<<<<<<< HEAD
-    "styled-components": "^5.0.1"
-=======
+    "styled-components": "^5.0.1",
     "svg-country-flags": "^1.2.7"
->>>>>>> mireia
   },
   "scripts": {
     "start": "react-scripts start",
