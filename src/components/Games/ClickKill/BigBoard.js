@@ -30,35 +30,29 @@ import Grid from '@material-ui/core/Grid';
 
 // COMMENT : TEST FOR THE GRID
 
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   paper: {
-//     padding: theme.spacing(2),
-//     textAlign: 'center',
-//     color: theme.palette.text.secondary,
-//   },
-// }));
 
-// export default function GameTable() {
-//   const classes = useStyles();
-//   const zIndex = 0;
 
-//   return (
-//     <div>
-//         <div className="img-container">
-//             <div className={classes.root}>
-//             {20 *
-//                 <Grid container spacing={3}>                        
-//                     <Grid item xs={3} zIndex={zIndex +1}>x</Grid>
-//                 </Grid>
-//                   }
-//             </div>
-//         </div>   
-//     </div>
-//   )
-// }
+  //  const GameTable = () => {
+  //    const classes = useStyles();
+  //    const zIndex = 0;
+
+  //    return (
+  //       <div>
+  //          <div className="img-container">
+  //              <div className={classes.root}>
+  //              {20 *
+  //                  <Grid container spacing={3}>
+  //                     {zIndex += 1 }                       
+  //                      <Grid item xs={3} >
+  //                        <SmallSquare logo={this.state.logoSelected} show={zIndex === this.state.squareIndex} itemClicked={this.itemClicked} />
+  //                       </Grid>
+  //                  </Grid>
+  //                    }
+  //              </div>
+  //          </div>   
+  //      </div>
+  //     )
+  //  }
 
 // HERE STARTS THE CODE
 
@@ -70,7 +64,7 @@ const BigContainer = styled.div`
 export default class BigBoard extends React.Component {
   
   state = {
-    squareIndex: 10,            //  *COMMENT : null by default. the "10" value is here for testing. making possible to get the index of the image clicked
+    squareIndex: 10,            //  *COMMENT : need to set it to null by default. the "10" value is here for testing. making possible to get the index of the image clicked
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
@@ -158,7 +152,9 @@ export default class BigBoard extends React.Component {
 
   
 
-  render() {    
+  render() {
+    //let zIndex = 0;
+    // const table = GameTable()    
     return ( 
        <Fragment>
        <div className='pantalla'>
@@ -167,9 +163,20 @@ export default class BigBoard extends React.Component {
          : <div>
             {/*COMMENT : need to use the Zindex :  <SmallSquare logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
             {/* COMMENT : WRAPPING <SmallSquare> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
-            <SmallSquare logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
-                
-
+            <div>
+            <div className="img-container">
+                <div>
+                  
+                  <Grid container spacing={3}>
+                    {/* {zIndex += 1 }                        */}
+                    <Grid item xs={3} > 
+                      <SmallSquare logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
+                    </Grid>
+                  </Grid>
+                      
+                </div>
+              </div>   
+            </div>
            <p>{this.state.counter}</p>
            <button onClick={this.onClickStart}>START</button>
            <button onClick={this.restartCounter}>RESET THE RESULT</button>
