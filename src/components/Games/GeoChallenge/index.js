@@ -133,15 +133,15 @@ class GeoChallenge extends Component {
   // Checks if the answer is correct and fire a new round of 4 random
   // countries after 1,5s
   // Finish game
-
+  // Logic of the points counter, as more continued correct options add more puntuation, incorrect option finish this, lose 25 points and start again
 
   onPinClicked = (name, totalAnswers) => {
-    if (name === this.state.options[0].name && this.state.correctAnswers == 0 ) {
+    if (name === this.state.options[0].name && this.state.correctAnswers === 0 ) {
       this.setState({
         correctAnswers: this.state.correctAnswers + this.state.sum_points
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
 
-    } else if (name === this.state.options[0].name && this.state.correctAnswers != 0) {
+    } else if (name === this.state.options[0].name && this.state.correctAnswers !== 0) {
       this.setState({
         sum_points: this.state.sum_points + 50,
         correctAnswers: this.state.correctAnswers + this.state.sum_points
@@ -149,11 +149,11 @@ class GeoChallenge extends Component {
     } else {
       this.setState({
         sum_points: 50,
-        correctAnswers: this.state.correctAnswers - 25 
+        correctAnswers: this.state.correctAnswers - 25
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
     }
 
-    if (this.state.totalAnswers < 10) {
+    if (this.state.totalAnswers < 30) {
       this.setState({
         totalAnswers: this.state.totalAnswers + 1
       })
