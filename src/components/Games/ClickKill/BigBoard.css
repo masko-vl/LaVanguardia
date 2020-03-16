@@ -4,6 +4,8 @@
 }
 */
 
+
+
 .team-logo{
     width: 85px;
     height: 85px;
@@ -16,7 +18,10 @@
   }
   
   .pantalla{
+    padding: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
   }
   
   #Image {

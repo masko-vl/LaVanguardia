@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import SmallSquare from './SmallSquare';
 import './BigBoard.css';
 import SelectTeam from './SelectTeam';
+import './Button.css';
+
 import Alaves from './images/Alaves.png';
 import Athletic from './images/Athletic.png';
 import Atletico from './images/Atletico.png';
@@ -64,11 +66,12 @@ const BigContainer = styled.div`
 export default class BigBoard extends React.Component {
   
   state = {
-    squareIndex: 10,            //  *COMMENT : need to set it to null by default. the "10" value is here for testing. making possible to get the index of the image clicked
+    gameStarted: false,
+    squareIndex: null,            //  *COMMENT : need to set it to null by default. the "10" value is here for testing. making possible to get the index of the image clicked
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
-    smallSquaresArray: ["","","","","","","","","",],                     // COMMENT : array with all fixed position deleted
+    smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","",],                     // COMMENT : array with all fixed position deleted
     logoSelected: '',
     imageList: [
       Alaves,
@@ -132,11 +135,15 @@ export default class BigBoard extends React.Component {
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter    
     setTimeout(this.onEndTimer,
       this.delay)
+    this.setState({
+      gameStarted: true
+    })
   }
 
 
   restartCounter = () => {
     this.setState ({
+      gameStarted: false,
       counter: 0,
       teamChosen: false
     })
@@ -162,13 +169,13 @@ export default class BigBoard extends React.Component {
          : <div>
             {/*COMMENT : need to use the Zindex :  <SmallSquare logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
             {/* COMMENT : WRAPPING <SmallSquare> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
-            <div>
-            <div className="img-container" felGrow={1} style={{height: 150}}>
+            
+            <div className="img-container" flexGrow={1}>
             <Grid container spacing={3} >                            
 
                 {this.state.smallSquaresArray.map((x, index) =>            
-                    <Grid item xs={3} style={{height: 90}} > 
-                      <SmallSquare  zIndex={index} notImportant={x} logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} />
+                    <Grid item xs={3} style={{height: 90, border: '1px solid black'}} > 
+                      <SmallSquare zIndex={index} notImportant={x} logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} />
                       {console.log(index)}
                       {console.log(this.state.squareIndex)}
 
@@ -176,11 +183,13 @@ export default class BigBoard extends React.Component {
                   
                 )}
                 </Grid>
-              </div>   
-            </div>
+                 
+            </div><br/>
            <p>{this.state.counter}</p>
-           <button onClick={this.onClickStart}>START</button>
-           <button onClick={this.restartCounter}>RESET THE RESULT</button>
+           { this.state.gameStarted 
+           ? <button className="resetResultButton" onClick={this.restartCounter}>RESET THE RESULT</button>
+           : <button className="startGameButton" onClick={this.onClickStart}>START</button>
+          }
            </div>
          }
        </div>
