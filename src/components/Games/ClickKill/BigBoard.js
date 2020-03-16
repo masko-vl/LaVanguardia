@@ -68,7 +68,7 @@ export default class BigBoard extends React.Component {
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
-                              // COMMENT : array with all fixed position deleted
+    smallSquaresArray: ["","","","","","","","","",],                     // COMMENT : array with all fixed position deleted
     logoSelected: '',
     imageList: [
       Alaves,
@@ -97,7 +97,7 @@ export default class BigBoard extends React.Component {
   delay = 2000;
 
   chooseSmallSquare = () => {
-    let randomIndex = Math.floor(Math.random() * 20);
+    let randomIndex = Math.floor(Math.random() * this.state.smallSquaresArray.length);
     this.setState ({
       squareIndex: randomIndex
     })
@@ -153,7 +153,6 @@ export default class BigBoard extends React.Component {
   
 
   render() {
-    //let zIndex = 0;
     // const table = GameTable()    
     return ( 
        <Fragment>
@@ -164,17 +163,19 @@ export default class BigBoard extends React.Component {
             {/*COMMENT : need to use the Zindex :  <SmallSquare logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
             {/* COMMENT : WRAPPING <SmallSquare> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
             <div>
-            <div className="img-container">
-                <div>
-                  
-                  <Grid container spacing={3}>
-                    {/* {zIndex += 1 }                        */}
-                    <Grid item xs={3} > 
-                      <SmallSquare logo={this.state.logoSelected} show={this.state.squareIndex} itemClicked={this.itemClicked} />
+            <div className="img-container" felGrow={1} style={{height: 150}}>
+            <Grid container spacing={3} >                            
+
+                {this.state.smallSquaresArray.map((x, index) =>            
+                    <Grid item xs={3} style={{height: 90}} > 
+                      <SmallSquare  zIndex={index} notImportant={x} logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} />
+                      {console.log(index)}
+                      {console.log(this.state.squareIndex)}
+
                     </Grid>
-                  </Grid>
-                      
-                </div>
+                  
+                )}
+                </Grid>
               </div>   
             </div>
            <p>{this.state.counter}</p>
