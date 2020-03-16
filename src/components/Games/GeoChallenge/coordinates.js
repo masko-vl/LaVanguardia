@@ -20,11 +20,6 @@ const coordinates = [
 		"longitude": -61.8
 	},
 	{
-		"country": "AI",
-		"latitude": 18.25,
-		"longitude": -63.1667
-	},
-	{
 		"country": "AL",
 		"latitude": 41,
 		"longitude": 20
@@ -39,20 +34,11 @@ const coordinates = [
 		"latitude": -12.5,
 		"longitude": 18.5
 	},
-	{
-		"country": "AQ",
-		"latitude": -90,
-		"longitude": 0
-	},
+
 	{
 		"country": "AR",
 		"latitude": -34,
 		"longitude": -64
-	},
-	{
-		"country": "AS",
-		"latitude": -14.3333,
-		"longitude": -170
 	},
 	{
 		"country": "AT",
@@ -63,16 +49,6 @@ const coordinates = [
 		"country": "AU",
 		"latitude": -27,
 		"longitude": 133
-	},
-	{
-		"country": "AW",
-		"latitude": 12.5,
-		"longitude": -69.9667
-	},
-	{
-		"country": "AX",
-		"latitude": 60.15,
-		"longitude": 20
 	},
 	{
 		"country": "AZ",
@@ -124,16 +100,7 @@ const coordinates = [
 		"latitude": 9.5,
 		"longitude": 2.25
 	},
-	{
-		"country": "BL",
-		"latitude": 17.9,
-		"longitude": -62.8333
-	},
-	{
-		"country": "BM",
-		"latitude": 32.3333,
-		"longitude": -64.75
-	},
+
 	{
 		"country": "BN",
 		"latitude": 4.5,
@@ -143,11 +110,6 @@ const coordinates = [
 		"country": "BO",
 		"latitude": -17,
 		"longitude": -65
-	},
-	{
-		"country": "BQ",
-		"latitude": 17.48268,
-		"longitude": -62.98324
 	},
 	{
 		"country": "BR",
@@ -163,11 +125,6 @@ const coordinates = [
 		"country": "BT",
 		"latitude": 27.5,
 		"longitude": 90.5
-	},
-	{
-		"country": "BV",
-		"latitude": -54.4333,
-		"longitude": 3.4
 	},
 	{
 		"country": "BW",
@@ -188,11 +145,6 @@ const coordinates = [
 		"country": "CA",
 		"latitude": 60,
 		"longitude": -95
-	},
-	{
-		"country": "CC",
-		"latitude": -12.5,
-		"longitude": 96.8333
 	},
 	{
 		"country": "CD",
@@ -259,16 +211,7 @@ const coordinates = [
 		"latitude": 16,
 		"longitude": -24
 	},
-	{
-		"country": "CW",
-		"latitude": 12.1833,
-		"longitude": -68.9333
-	},
-	{
-		"country": "CX",
-		"latitude": -10.5,
-		"longitude": 105.6667
-	},
+
 	{
 		"country": "CY",
 		"latitude": 35,
@@ -355,19 +298,9 @@ const coordinates = [
 		"longitude": 175
 	},
 	{
-		"country": "FK",
-		"latitude": -51.75,
-		"longitude": -59
-	},
-	{
 		"country": "FM",
 		"latitude": 6.9167,
 		"longitude": 158.25
-	},
-	{
-		"country": "FO",
-		"latitude": 62,
-		"longitude": -7
 	},
 	{
 		"country": "FR",
@@ -395,29 +328,9 @@ const coordinates = [
 		"longitude": 43.5
 	},
 	{
-		"country": "GF",
-		"latitude": 4,
-		"longitude": -53
-	},
-	{
-		"country": "GG",
-		"latitude": 49.45,
-		"longitude": -2.58
-	},
-	{
 		"country": "GH",
 		"latitude": 8,
 		"longitude": -2
-	},
-	{
-		"country": "GI",
-		"latitude": 36.1833,
-		"longitude": -5.3667
-	},
-	{
-		"country": "GL",
-		"latitude": 72,
-		"longitude": -40
 	},
 	{
 		"country": "GM",
@@ -430,11 +343,6 @@ const coordinates = [
 		"longitude": -10
 	},
 	{
-		"country": "GP",
-		"latitude": 16.25,
-		"longitude": -61.5833
-	},
-	{
 		"country": "GQ",
 		"latitude": 2,
 		"longitude": 10
@@ -445,19 +353,9 @@ const coordinates = [
 		"longitude": 22
 	},
 	{
-		"country": "GS",
-		"latitude": -54.5,
-		"longitude": -37
-	},
-	{
 		"country": "GT",
 		"latitude": 15.5,
 		"longitude": -90.25
-	},
-	{
-		"country": "GU",
-		"latitude": 13.4667,
-		"longitude": 144.7833
 	},
 	{
 		"country": "GW",
@@ -468,16 +366,6 @@ const coordinates = [
 		"country": "GY",
 		"latitude": 5,
 		"longitude": -59
-	},
-	{
-		"country": "HK",
-		"latitude": 22.25,
-		"longitude": 114.1667
-	},
-	{
-		"country": "HM",
-		"latitude": -53.1,
-		"longitude": 72.5167
 	},
 	{
 		"country": "HN",
@@ -515,11 +403,6 @@ const coordinates = [
 		"longitude": 34.75
 	},
 	{
-		"country": "IM",
-		"latitude": 54.23,
-		"longitude": -4.57
-	},
-	{
 		"country": "IN",
 		"latitude": 20,
 		"longitude": 77
@@ -548,11 +431,6 @@ const coordinates = [
 		"country": "IT",
 		"latitude": 42.8333,
 		"longitude": 12.8333
-	},
-	{
-		"country": "JE",
-		"latitude": 49.2167,
-		"longitude": -2.1167
 	},
 	{
 		"country": "JM",
@@ -613,11 +491,6 @@ const coordinates = [
 		"country": "KW",
 		"latitude": 29.3375,
 		"longitude": 47.6581
-	},
-	{
-		"country": "KY",
-		"latitude": 19.5,
-		"longitude": -80.5
 	},
 	{
 		"country": "KZ",
@@ -700,11 +573,6 @@ const coordinates = [
 		"longitude": 19
 	},
 	{
-		"country": "MF",
-		"latitude": 18.05,
-		"longitude": -63.08
-	},
-	{
 		"country": "MG",
 		"latitude": -20,
 		"longitude": 47
@@ -735,29 +603,9 @@ const coordinates = [
 		"longitude": 105
 	},
 	{
-		"country": "MO",
-		"latitude": 22.1667,
-		"longitude": 113.55
-	},
-	{
-		"country": "MP",
-		"latitude": 15.2,
-		"longitude": 145.75
-	},
-	{
-		"country": "MQ",
-		"latitude": 14.6667,
-		"longitude": -61
-	},
-	{
 		"country": "MR",
 		"latitude": 20,
 		"longitude": -12
-	},
-	{
-		"country": "MS",
-		"latitude": 16.75,
-		"longitude": -62.2
 	},
 	{
 		"country": "MT",
@@ -800,19 +648,9 @@ const coordinates = [
 		"longitude": 17
 	},
 	{
-		"country": "NC",
-		"latitude": -21.5,
-		"longitude": 165.5
-	},
-	{
 		"country": "NE",
 		"latitude": 16,
 		"longitude": 8
-	},
-	{
-		"country": "NF",
-		"latitude": -29.0333,
-		"longitude": 167.95
 	},
 	{
 		"country": "NG",
@@ -870,11 +708,6 @@ const coordinates = [
 		"longitude": -76
 	},
 	{
-		"country": "PF",
-		"latitude": -15,
-		"longitude": -140
-	},
-	{
 		"country": "PG",
 		"latitude": -6,
 		"longitude": 147
@@ -894,21 +727,7 @@ const coordinates = [
 		"latitude": 52,
 		"longitude": 20
 	},
-	{
-		"country": "PM",
-		"latitude": 46.8333,
-		"longitude": -56.3333
-	},
-	{
-		"country": "PN",
-		"latitude": -24.36146,
-		"longitude": -128.3163761
-	},
-	{
-		"country": "PR",
-		"latitude": 18.25,
-		"longitude": -66.5
-	},
+
 	{
 		"country": "PS",
 		"latitude": 32,
@@ -933,11 +752,6 @@ const coordinates = [
 		"country": "QA",
 		"latitude": 25.5,
 		"longitude": 51.25
-	},
-	{
-		"country": "RE",
-		"latitude": -21.1,
-		"longitude": 55.6
 	},
 	{
 		"country": "RO",
@@ -990,19 +804,9 @@ const coordinates = [
 		"longitude": 103.8
 	},
 	{
-		"country": "SH",
-		"latitude": -15.9333,
-		"longitude": -5.7
-	},
-	{
 		"country": "SI",
 		"latitude": 46,
 		"longitude": 15
-	},
-	{
-		"country": "SJ",
-		"latitude": 78,
-		"longitude": 20
 	},
 	{
 		"country": "SK",
@@ -1050,11 +854,6 @@ const coordinates = [
 		"longitude": -88.9167
 	},
 	{
-		"country": "SX",
-		"latitude": 18.05,
-		"longitude": -63.08
-	},
-	{
 		"country": "SY",
 		"latitude": 35,
 		"longitude": 38
@@ -1065,19 +864,9 @@ const coordinates = [
 		"longitude": 31.5
 	},
 	{
-		"country": "TC",
-		"latitude": 21.75,
-		"longitude": -71.5833
-	},
-	{
 		"country": "TD",
 		"latitude": 15,
 		"longitude": 19
-	},
-	{
-		"country": "TF",
-		"latitude": -43,
-		"longitude": 67
 	},
 	{
 		"country": "TG",
@@ -1093,11 +882,6 @@ const coordinates = [
 		"country": "TJ",
 		"latitude": 39,
 		"longitude": 71
-	},
-	{
-		"country": "TK",
-		"latitude": -9,
-		"longitude": -172
 	},
 	{
 		"country": "TL",
@@ -1155,11 +939,6 @@ const coordinates = [
 		"longitude": 32
 	},
 	{
-		"country": "UM",
-		"latitude": 19.2833,
-		"longitude": 166.6
-	},
-	{
 		"country": "US",
 		"latitude": 38,
 		"longitude": -97
@@ -1190,16 +969,6 @@ const coordinates = [
 		"longitude": -66
 	},
 	{
-		"country": "VG",
-		"latitude": 18.5,
-		"longitude": -64.5
-	},
-	{
-		"country": "VI",
-		"latitude": 18.3333,
-		"longitude": -64.8333
-	},
-	{
 		"country": "VN",
 		"latitude": 16,
 		"longitude": 106
@@ -1210,11 +979,6 @@ const coordinates = [
 		"longitude": 167
 	},
 	{
-		"country": "WF",
-		"latitude": -13.3,
-		"longitude": -176.2
-	},
-	{
 		"country": "WS",
 		"latitude": -13.5833,
 		"longitude": -172.3333
@@ -1223,11 +987,6 @@ const coordinates = [
 		"country": "YE",
 		"latitude": 15,
 		"longitude": 48
-	},
-	{
-		"country": "YT",
-		"latitude": -12.8333,
-		"longitude": 45.1667
 	},
 	{
 		"country": "ZA",
