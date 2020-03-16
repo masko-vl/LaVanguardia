@@ -5,7 +5,10 @@ import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import './geoChallenge.css'
 import {Link} from 'react-router-dom';
 import Flag from 'lyef-flags';
+import title from './geoChallengeTitle.png';
+
 const Leaflet = window.L;
+
 
 
 // This fn removes the countries on countriesDB.countries.all that are not
@@ -13,7 +16,7 @@ const Leaflet = window.L;
 // It also removes the countries without a flag
 const sanitizeCountries = () => {
   console.log(countriesDB);
-  
+
   return countriesDB.countries.all.filter(country =>
     coordinates.filter(item => item.country === country.alpha2).length > 0);
 }
@@ -177,13 +180,19 @@ class GeoChallenge extends Component {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
 
     return (
+    <div>
+      <div>
+        <img className="geoChallengeTitle"src={title}></img>
+        <button className="exitButton"><Link to="/"> X</Link></button>
+
+      </div>
       <div>
       {
         this.state.finishGame === false
         ?
       <div className="mapContent">
         <div className="containerInstruction">
-            <button className="exitButton"><Link to="/">&lt;   Salir del juego</Link></button>
+
             {
               this.state.options.length > 0
                 ? (
@@ -194,7 +203,13 @@ class GeoChallenge extends Component {
                 )
                 : null
             }
-          <p className="counterText">Aciertos: {this.state.correctAnswers} out of {this.state.totalAnswers}</p>
+            <div className="counterText">
+              <p>Puntuación: {this.state.correctAnswers}</p>
+            </div>
+            <p className="totalAnswers">Intentos: {this.state.totalAnswers}/ 30</p>
+
+
+
         </div>
 
         <div className="leaflet-container">
@@ -232,6 +247,7 @@ class GeoChallenge extends Component {
         <h1>Hola</h1>
       </div>
     }
+    </div>
     </div>
     )
   }

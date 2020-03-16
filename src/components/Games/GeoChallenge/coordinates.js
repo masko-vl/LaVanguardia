@@ -407,11 +407,7 @@ const coordinates = [
 		"latitude": 20,
 		"longitude": 77
 	},
-	{
-		"country": "IO",
-		"latitude": -6,
-		"longitude": 71.5
-	},
+
 	{
 		"country": "IQ",
 		"latitude": 33,
