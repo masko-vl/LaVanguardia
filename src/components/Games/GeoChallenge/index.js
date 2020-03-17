@@ -4,7 +4,11 @@ import coordinates from './coordinates'; // array of coordintaes by country
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import './geoChallenge.css'
 import {Link} from 'react-router-dom';
+import Flag from 'lyef-flags';
+import title from './geoChallengeTitle.png';
+
 const Leaflet = window.L;
+
 
 
 // This fn removes the countries on countriesDB.countries.all that are not
@@ -12,9 +16,9 @@ const Leaflet = window.L;
 // It also removes the countries without a flag
 const sanitizeCountries = () => {
   console.log(countriesDB);
-  
+
   return countriesDB.countries.all.filter(country =>
-    coordinates.filter(item => item.country === country.alpha2).length > 0 && country.emoji !== undefined);
+    coordinates.filter(item => item.country === country.alpha2).length > 0);
 }
 const countries = sanitizeCountries();
 
@@ -25,7 +29,9 @@ class GeoChallenge extends Component {
     bounds: [[90, -180], [-90, 180]],
     center: [0, 0],
     correctAnswers: 0,
-    totalAnswers: 0
+    totalAnswers: 0,
+    finishGame: false,
+    sum_points: 50
   }
  // method to randomly shuffle
   shuffle(a) {
@@ -131,19 +137,36 @@ class GeoChallenge extends Component {
 
   // Checks if the answer is correct and fire a new round of 4 random
   // countries after 1,5s
-  onPinClicked = (name) => {
+  // Finish game
+  // Logic of the points counter, as more continued correct options add more puntuation, incorrect option finish this, lose 25 points and start again
 
-    this.setState({
-      totalAnswers: this.state.totalAnswers + 1
-    })
-
-    if (name === this.state.options[0].name) {
+  onPinClicked = (name, totalAnswers) => {
+    if (name === this.state.options[0].name && this.state.correctAnswers === 0 ) {
       this.setState({
-        correctAnswers: this.state.correctAnswers + 1
+        correctAnswers: this.state.correctAnswers + this.state.sum_points
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
 
+    } else if (name === this.state.options[0].name && this.state.correctAnswers !== 0) {
+      this.setState({
+        sum_points: this.state.sum_points + 50,
+        correctAnswers: this.state.correctAnswers + this.state.sum_points
+      }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
     } else {
-      setTimeout(() => this.getFourRandomCountries(), 1500)
+      this.setState({
+        sum_points: 50,
+        correctAnswers: this.state.correctAnswers - 25
+      }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
+    }
+
+    if (this.state.totalAnswers < 30) {
+      this.setState({
+        totalAnswers: this.state.totalAnswers + 1
+      })
+    } else {
+      this.setState({
+        finishGame: true
+      })
+
     }
   }
 
@@ -157,29 +180,47 @@ class GeoChallenge extends Component {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
 
     return (
+    <div>
+      <div>
+        <img className="geoChallengeTitle"src={title}></img>
+        <button className="exitButton"><Link to="/"> X</Link></button>
+
+      </div>
+      <div>
+      {this.state.finishGame === false
+        ?
       <div className="mapContent">
-        <button className="exitButton"><Link to="/">&lt;&lt; Exit Game</Link></button>
-        {
-          this.state.options.length > 0
-            ? (
-              <div className="flagDisplay">
-                <p>Guess this flag:</p>
-                <span className="flag">{this.state.options[0].emoji}</span>
-              </div>
-            )
-            : null
-        }
-        <p className="counterText">Correct answers: {this.state.correctAnswers} out of {this.state.totalAnswers}</p>
+        <div className="containerInstruction">
+
+            {
+              this.state.options.length > 0
+                ? (
+                  <div className="flagDisplay">
+                    <p>Adivina el pais</p>
+                    <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                  </div>
+                )
+                : null
+            }
+            <div className="counterText">
+              <p>Puntuación: {this.state.correctAnswers}</p>
+            </div>
+            <p className="totalAnswers">Intentos: {this.state.totalAnswers}/ 30</p>
+
+
+
+        </div>
+
         <div className="leaflet-container">
           <LeafletMap
           bounds={bounds}
           center={this.state.center}
           attributionControl={false}
-          zoomControl={true}
-          doubleClickZoom={false}
-          scrollWheelZoom={true}
+          zoomControl={false}
+          doubleClickZoom={true}
+          scrollWheelZoom={false}
           dragging={false}
-          animate={true}
+          animate={false}
           easeLinearity={0.35}
         >
           <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
@@ -187,10 +228,12 @@ class GeoChallenge extends Component {
           { this.state.options.map(country => (
               <Marker key={country.alpha2} onClick={() => this.onPinClicked(country.name)} position={country.coordinates}>
                 <Popup>
+
+                  <Flag className="pinFlag" country={country.alpha2.toLowerCase()} size="small" />
                   <p>
-                    <span rol="img" className="flag">{country.emoji}</span>
                     This is {country.name}
                   </p>
+
                 </Popup>
               </Marker>
             ))
@@ -198,6 +241,15 @@ class GeoChallenge extends Component {
         </LeafletMap>
         </div>
       </div>
+      :
+      <div>
+        <div className="counterTextFinal">
+          <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
+        </div>
+      </div>
+    }
+    </div>
+    </div>
     )
   }
 }
