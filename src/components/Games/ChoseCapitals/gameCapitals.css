@@ -174,5 +174,9 @@ opacity: 1;
         margin-left: -15%;
       }
   }
+
+  .containerInstruction {
+      width: 100vw;
+  }
  
  
