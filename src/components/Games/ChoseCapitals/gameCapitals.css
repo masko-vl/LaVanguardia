@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 50%;
+    height: 5%;
 }
 .instrucciones{
     color:white;
@@ -28,6 +28,11 @@
     opacity: 0.8;
     margin-top: 60%;
 
+}
+.region-select{
+    width: 100px;
+    height: 30px;
+    border-radius: 20%;
 }
 .startGame-button{
     width: 109px;
@@ -138,29 +143,36 @@ opacity: 1;
     display: flex;
     justify-content: space-around;
 }
+.back-menu a {
+    color: white;
+    text-decoration: none;
+   
+}
 
 @media (max-width: 700px) {
+    .startGame-page{
+        margin-left: 15%;
+    }
     .startGame-button{
-        margin-top: 55%;
-        margin-bottom: 45%;
-        margin-left: 30%;
+        margin-left: 28%;
+    }
+    .region-select{
+        margin-left: -15%;
     }
     .flex-butons-capitals{
         grid-template-columns: auto auto;
     }
     .logo{
-        margin-left: 12%;
         width: 400px;
         height: 150px;
     }
     .instrucciones{
         width:300px;
-        margin-left: 5%;
         margin-top: 50%;
     }
-    
+    .startGame-page .back-menu{
+        margin-left: -15%;
+      }
   }
-  .back-menu a {
-      color: white;
-      text-decoration: none;
-  }
+ 
+ 

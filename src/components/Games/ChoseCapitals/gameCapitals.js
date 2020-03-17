@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import media1 from './img/social media-01.png'
 import media2 from './img/social media-02.png'
 import media3 from './img/social media-03.png'
-import './chose.css';
+import './gameCapitals.css';
 import {Link} from 'react-router-dom'
 //to put in a random order the array
 const Shuffle=(a)=>{
@@ -29,6 +29,7 @@ state={
 
 getCountry=()=>{
     let arrayCountries=[]
+    console.log(this.props.countries)
     this.props.countries.map((country)=>{
         //save api in array
         return arrayCountries.push(country)
@@ -68,22 +69,36 @@ getCountry=()=>{
 chooseCapital=(e)=>{
    //recover the buton clicked for the capital by the id where we save the name of the capital
  if(this.state.countries[0].capital===e.target.id){
-     let cutCountries=[...this.state.countries]
+     let countriesArray=[...this.state.countries]
+     
      //also we cut the first 4 to avoid repeating the names becouse we catch the first 4 and update the array
-     cutCountries.splice(0, 4)
-     let fourCapitals= [cutCountries[0].capital, cutCountries[1].capital, cutCountries[2].capital, cutCountries[3].capital]
+     //countriesArray.splice(0, 4)
+
+     //cut to another array the selected countriy in the game to put it at the end of the array
+     let countrySelected=countriesArray.slice(0, 1)
+     
+     //cut out from the original array
+     countriesArray.splice(0, 1)
+     //disorder the array to don have the next capitals that are in the quertion for the nextcountries
+     Shuffle(countriesArray)
+     //put at the end of the array
+     countriesArray=[...countriesArray, ...countrySelected]
+
+     let fourCapitals= [countriesArray[0].capital, countriesArray[1].capital, countriesArray[2].capital, countriesArray[3].capital]
      Shuffle(fourCapitals)
+     console.log(fourCapitals)
 
      
      this.setState({
          //When the answer is right: update countries and capitals, sum seconds and points and hide incorrect message
-         countries:cutCountries, 
+         countries:countriesArray, 
          fourCapitals,
          incorrecto:'',
          seconds:this.state.seconds+4,
          points:this.state.points+10
 
      })
+    
     
  }else{
      this.setState({
@@ -107,35 +122,35 @@ tryAgain=()=>{
 
 
 render(){
-    return(
-<Fragment >
-{/*START PART */}
-    <div className='container-game'>
-        {this.state.gameStatus==='startGame'&& <div className='startGame-page'>
+    /*OBJECT WITH THE 3 STATES OF THE GAME THAT WE ARE CHANGING DURING THE FUNCTIONS */
+   const gameStatus={ 
+        startGame: ()=>(<div className='startGame-page'>
         <div className='logo'>
             <p className='instrucciones'>Instrucciones: Seleciona la capital correcta! Si aciertas ganas 10 puntos y 4 segundos y si fallas te resta 3s</p>
+            <select className={'region-select'} onChange={this.props.fiterContinent}>
+                <option value='all'>All</option>
+                <option value='Europe'>Europa</option>
+                <option value='Asia'>Asia</option>
+                <option value='Africa'>África</option>
+                <option value='Americas'>América</option>
+                <option value='Oceania'>Oceanía</option>
+            </select>
             <button className='startGame-button' onClick={this.getCountry}></button>
             
             <button className='back-menu'><Link to="/">Exit Game</Link></button></div>
-    
-    </div> }
-
-    {/*GAMING PART */}
-    {this.state.gameStatus==='playingGame'&&
-    <div className='playingGame'>
-    <div className='counterGame-button'>{this.state.seconds}</div>   
-    <p className='incorrecto'>{this.state.incorrecto}</p>  
-        <div className='country'>{this.state.countries.length>0&&this.state.countries[0].name}</div>
-        <div className='flex-butons-capitals'>
-        {this.state.fourCapitals.map((capital, index)=>{
-            return <button className='choose-capital' onClick={this.chooseCapital} key={index} id={capital}>{capital}</button>
-        })}</div>
-        <div className='score'>SCORE: {this.state.points}</div>
-        <button className='back-menu'><Link to="/">X</Link></button>
-    </div>}
-
-    {/*GAMEOVER PART */}
-    {this.state.gameStatus==='gameOver'&&<div className='playingGame'>
+        </div> ),
+        playingGame: ()=> (<div className='playingGame'>
+        <div className='counterGame-button'>{this.state.seconds}</div>   
+        <p className='incorrecto'>{this.state.incorrecto}</p>  
+            <div className='country'>{this.state.countries.length>0&&this.state.countries[0].name}</div>
+            <div className='flex-butons-capitals'>
+            {this.state.fourCapitals.map((capital, index)=>{
+                return <button className='choose-capital' onClick={this.chooseCapital} key={index} id={capital}>{capital}</button>
+            })}</div>
+            <div className='score'>SCORE: {this.state.points}</div>
+            <button className='back-menu'><Link to="/">X</Link></button>
+        </div>),
+        gameOver: ()=> (<div className='playingGame'>
         <p className='gameover'>GAME OVER</p>
         <p className='score'>Score: {this.state.points}</p>
         <div className='shered-link'>
@@ -146,7 +161,14 @@ render(){
         <button className='play-again' onClick={this.tryAgain}>Play Again</button>
         <button  className='back-menu'><Link to="/">Exit Game</Link></button>
         {/*MOSTRAR EL COMPONENT DE PUNTOS GANADOS */}
-    </div>}
+    </div>)
+
+
+    } 
+    return(
+<Fragment >
+    <div className='container-game'>
+        {gameStatus[this.state.gameStatus]()}
     </div>
 </Fragment>
 
