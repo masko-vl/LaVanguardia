@@ -187,8 +187,7 @@ class GeoChallenge extends Component {
 
       </div>
       <div>
-      {
-        this.state.finishGame === false
+      {!this.state.finishGame === false
         ?
       <div className="mapContent">
         <div className="containerInstruction">
@@ -244,7 +243,9 @@ class GeoChallenge extends Component {
       </div>
       :
       <div>
-        <h1>Hola</h1>
+        <div className="counterTextFinal">
+          <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
+        </div>
       </div>
     }
     </div>
