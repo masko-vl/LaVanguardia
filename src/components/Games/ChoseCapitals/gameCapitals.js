@@ -86,6 +86,7 @@ chooseCapital=(e)=>{
 
      let fourCapitals= [countriesArray[0].capital, countriesArray[1].capital, countriesArray[2].capital, countriesArray[3].capital]
      Shuffle(fourCapitals)
+     console.log(fourCapitals)
 
      
      this.setState({
@@ -167,7 +168,6 @@ render(){
     return(
 <Fragment >
     <div className='container-game'>
-    //
         {gameStatus[this.state.gameStatus]()}
     </div>
 </Fragment>

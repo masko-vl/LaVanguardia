@@ -15,8 +15,10 @@ const Shuffle=(a)=>{
 }
 const filterData=(data)=>{
   let dataFiltered=data.filter((country)=>{
-    return country.capital !== ''
+    
+    return country.capital !== "";
   })
+  console.log(dataFiltered)
   return dataFiltered
 }
 
@@ -27,9 +29,10 @@ class AppCapitals extends Component {
   async componentDidMount(){
     const {data} = await axios(`https://restcountries.eu/rest/v2/all`)
     //change the order of the array of cuntries before saveing in the state
-  
+    filterData(data)
+    Shuffle(data)
         this.setState({
-          data: Shuffle(data)
+          data
          })
 
   }
@@ -37,16 +40,19 @@ class AppCapitals extends Component {
   fiterContinent=(e)=>{
   if(e.target.value ==='all'){
     axios.get(`https://restcountries.eu/rest/v2/all`)
-    .then(({data}) => 
-    this.setState({
-      data: Shuffle(data)
-     }))
+    .then(({data}) =>
+      this.setState({
+        data:filterData(Shuffle(data))
+      })
+    )
 
   }else{
     axios.get(`https://restcountries.eu/rest/v2/region/${e.target.value}`).then(({data})=>
-     this.setState({
-      data: Shuffle(data)
-     }))
+    
+      this.setState({
+        data:filterData(Shuffle(data)) 
+      })
+    )
     
     
   //AQUI ES DONDE EN VEZ DE SOBREESCRIBIR DATA, CREA DENTRO DE PROPS OTRO SUB NIVEL. Y SI ABAJO EN EL RENDERLO QUE MANDO CAMBIO A  countries={this.state.data.data} funciona cuando seleccionas la region pero si no seleccionas nada, la llamada del componentDidMount no funciona porque esta en el nuvel superior el array */
