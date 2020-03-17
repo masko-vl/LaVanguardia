@@ -30,33 +30,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-// COMMENT : TEST FOR THE GRID
 
-
-
-  //  const GameTable = () => {
-  //    const classes = useStyles();
-  //    const zIndex = 0;
-
-  //    return (
-  //       <div>
-  //          <div className="img-container">
-  //              <div className={classes.root}>
-  //              {20 *
-  //                  <Grid container spacing={3}>
-  //                     {zIndex += 1 }                       
-  //                      <Grid item xs={3} >
-  //                        <SmallSquare logo={this.state.logoSelected} show={zIndex === this.state.squareIndex} itemClicked={this.itemClicked} />
-  //                       </Grid>
-  //                  </Grid>
-  //                    }
-  //              </div>
-  //          </div>   
-  //      </div>
-  //     )
-  //  }
-
-// HERE STARTS THE CODE
 
 const BigContainer = styled.div`
     position: relative;
@@ -67,7 +41,8 @@ export default class BigBoard extends React.Component {
   
   state = {
     gameStarted: false,
-    squareIndex: null,            //  *COMMENT : need to set it to null by default. the "10" value is here for testing. making possible to get the index of the image clicked
+    squareIndex: null,
+    logoClassName: "logoDisplayed",            
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
@@ -110,20 +85,19 @@ export default class BigBoard extends React.Component {
     if(this.state.clickedIndex === true){
       this.setState({
         clickedIndex: false, 
+        logoClassName: "logoDisplayed",
         counter: this.state.counter + 1
       })
       this.delay = this.delay - 100;
-      console.log("success")
       this.onClickStart()
     } else {
-      console.log("finished")
     }
   }
 
   itemClicked = () => {
-    console.log('clicked!');
     this.setState({
-      clickedIndex: true
+      clickedIndex: true,
+      logoClassName: "logoHidden"
       // update the squareIndex
     })
   }
@@ -156,8 +130,7 @@ export default class BigBoard extends React.Component {
           teamChosen: true
       })
   }
-
-  
+ 
 
   render() {
     // const table = GameTable()    
@@ -172,13 +145,9 @@ export default class BigBoard extends React.Component {
             
             <div className="img-container" flexGrow={1}>
             <Grid container spacing={3} >                            
-
                 {this.state.smallSquaresArray.map((x, index) =>            
                     <Grid item xs={3} style={{height: 90, border: '1px solid black'}} > 
-                      <SmallSquare zIndex={index} notImportant={x} logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} />
-                      {console.log(index)}
-                      {console.log(this.state.squareIndex)}
-
+                      <SmallSquare zIndex={index} logo={this.state.logoSelected} show={index === this.state.squareIndex} logoClassName={this.state.logoClassName} itemClicked={this.itemClicked} />
                     </Grid>
                   
                 )}

@@ -1,4 +1,7 @@
-.TeamImage {
-    border-radius: 15px;
-    border: 2px solid grey;
+.logoDisplayed {
+    opacity: 1
+}
+
+.logoHidden {
+    opacity: 0.5
 }
