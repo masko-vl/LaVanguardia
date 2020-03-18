@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import SmallSquare from './SmallSquare';
-import './BigBoard.css';
 import SelectTeam from './SelectTeam';
+import Grid from '@material-ui/core/Grid';
+
+import './BigBoard.css';
 import './Button.css';
 
 import Alaves from './images/Alaves.png';
@@ -24,18 +26,8 @@ import Valencia from './images/Valencia.png';
 import Valladolid from './images/Valladolid.png';
 import Villareal from './images/Villareal.png';
 import Leganes from './images/Leganes.png';
-import styled from 'styled-components';
-import { positions } from '@material-ui/system';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
 
-
-const BigContainer = styled.div`
-    position: relative;
-   
-`;
 
 export default class BigBoard extends React.Component {
   
@@ -75,6 +67,7 @@ export default class BigBoard extends React.Component {
   
   delay = 2000;
 
+  // CHOOSING A RANDOM SQUARE TO DISPLAY THE LOGO IN THE GAME
   chooseSmallSquare = () => {
     let randomIndex = Math.floor(Math.random() * this.state.smallSquaresArray.length);
     this.setState ({
@@ -82,7 +75,9 @@ export default class BigBoard extends React.Component {
     })
   }
 
+  // TIMER GOES FASTER AND FASTER ALONG THE GAME
   onEndTimer = () => {
+    // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
     if(this.state.clickedIndex === true){
       this.setState({
         logoClicked: false,
@@ -90,24 +85,21 @@ export default class BigBoard extends React.Component {
         logoClassName: "logoDisplayed",
         counter: this.state.counter + 1
       })
+      // HERE THE DELAY BECOMES SHORTER
       this.delay = this.delay - 100;
       this.onClickStart()
-    } else {
-    }
+    } else {}
   }
 
   itemClicked = () => {
     this.setState({
       logoClicked: true,
       clickedIndex: true
-      // update the squareIndex
     })
   }
 
   onClickStart = () => {
-    // Set 1st random index
     this.chooseSmallSquare()
-    // Update random index each 2s
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter    
     setTimeout(this.onEndTimer,
       this.delay)
@@ -116,7 +108,7 @@ export default class BigBoard extends React.Component {
     })
   }
 
-
+// STATE IS UPDATED WHEN RESTARTING THE GAME
   restartCounter = () => {
     this.setState ({
       gameStarted: false,
@@ -134,17 +126,22 @@ export default class BigBoard extends React.Component {
   }
  
 
+
+  // WE USE MATERIAL-UI FOR LONG-TERM SUSTAINABILITY :
+  // - A LONG TERM RESPONSIVE GAME THAT WILL BE EASILY ADAPTABLE TO POSSIBLE FUTURE DESIGN CHANGES (easy to change the number and disposition of lines and columns)
+  // - TO USE THE AUTOMATIC Z-INDEX TO GIVE AUTOMATICALLY AS MANY THE POSSIBLE LOGO POSITIONS AS SQUARES, EVEN IN CASE OF BOARDS EVOLUTION 
+  //    (we can increase and decrease as much as we want the number of squares without any impact on the game functionalities)
+  
   render() {
-    // const table = GameTable()    
     return ( 
        <Fragment>
        <div className='pantalla'>
+       {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
          ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
-         : <div>
-            {/*COMMENT : need to use the Zindex :  <SmallSquare logo={this.state.logoSelected} show={Zindex === this.state.squareIndex} itemClicked={this.itemClicked} /> */}
-            {/* COMMENT : WRAPPING <SmallSquare> into a ui-grid. so we can pass to every GameContainer a Zindex and construct the grid directly from here */}
-            
+
+         /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
+         : <div>            
             <div className="img-container" flexGrow={1}>
             <Grid container spacing={3} >                            
                 {this.state.smallSquaresArray.map((x, index) =>            
@@ -152,17 +149,18 @@ export default class BigBoard extends React.Component {
                       <SmallSquare 
                       zIndex={index} 
                       logo={this.state.logoSelected} 
-                      show={index === this.state.squareIndex} 
+                      randomSquare={index === this.state.squareIndex} 
                       itemClicked={this.itemClicked}
                       logoClicked={this.state.logoClicked}
                       />
-                    </Grid>
-                  
+                    </Grid>                  
                 )}
                 </Grid>
                  
             </div><br/>
            <p>{this.state.counter}</p>
+
+           {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, ONCE STARTED, the button "reset" IS DISPLAYED */}
            { this.state.gameStarted 
            ? <button className="resetResultButton" onClick={this.restartCounter}>RESET THE RESULT</button>
            : <button className="startGameButton" onClick={this.onClickStart}>START</button>

@@ -1,9 +1,7 @@
 import React, {Fragment} from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import "./SelectTeam.css";
-import { positions } from '@material-ui/system';
 
 
 const useStyles = makeStyles(theme => ({
@@ -17,6 +15,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
+// WE USE MATERIAL-UI FOR LONG TERM SUSTAINABILITY, WHATEVER THE NUMBER OF TEAMS
 const SelectTeam = props => {
     const classes = useStyles();
     return (
@@ -42,22 +41,3 @@ const SelectTeam = props => {
 
 
 export default SelectTeam;
-
-
-// const SquareContainer = styled.div`
-//     position: absolute;
-//     top: ${props => props.top}px;
-//     left: ${props => props.left}px;
-// `;
-
-
-
-// const SmallSquare = props =>(
-//     // SmallSquare.state.display = false ? return counter : return counter + 1 and it changes back to false
-//     props.show
-//         ? <SquareContainer top={props.top} left={props.left} className="TeamImage">
-//             <img onClick={props.itemClicked} className="team-logo" src={props.logo} alt=''/>
-//         </SquareContainer>
-//         : null
-// )
-//  export default SmallSquare;
