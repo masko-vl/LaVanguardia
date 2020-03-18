@@ -1,9 +1,20 @@
-.team-logo{
+.teamLogo{
   height: 100%;
+  max-width: 100%;
   }
+
+
 
 .logoSquare {
   border: 1px solid balck;
   border-radius: 8px;
+}
+
+.flagSquare :hover {
+  background-color: lightgrey;
+}
+
+.footballGameContainer > h1 {
+  margin-bottom: 2%;
 }
 

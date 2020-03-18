@@ -2,6 +2,7 @@ import React, {Fragment} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import "./SelectTeam.css";
+import "./BigBoard.css"
 
 
 const useStyles = makeStyles(theme => ({
@@ -9,7 +10,6 @@ const useStyles = makeStyles(theme => ({
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
@@ -19,25 +19,27 @@ const useStyles = makeStyles(theme => ({
 const SelectTeam = props => {
     const classes = useStyles();
     return (
-    <Fragment>
-        <h1>Qué Equipo quieres eliminar?</h1>
+    <div className="footballGameContainer">
+        <h1>A qué equipo la Paliza?</h1>
         <div className="img-container">
             <div className={classes.root}>
-                <Grid container spacing={3}>
-                    {props.imageList.map((equipo)=>{                         
-                        return (
-                            <Grid item xs={3}>
-                                <img className="img-team" id={equipo.toString()} onClick={props.printName} src={equipo} alt='' height="80px"/> 
-                            </Grid>   
-                        )
-                    })}
+                <Grid container 
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    spacing={3} 
+                    className="flagSquare">
+                    {props.imageList.map((equipo)=>                        
+                        <Grid  item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px', padding: 2}}>
+                            <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/> 
+                        </Grid>    
+                    )}
                 </Grid>
             </div>
         </div>   
-    </Fragment>
+    </div>
     )
 }
-
 
 
 export default SelectTeam;

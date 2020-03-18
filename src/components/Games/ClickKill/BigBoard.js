@@ -141,21 +141,28 @@ export default class BigBoard extends React.Component {
          ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
-         : <div>            
+         : <div className="footballGameContainer">
+            <h1>Dalos una paliza!</h1>           
             <div className="img-container" flexGrow={1}>
-            <Grid container >                            
+              <Grid 
+                container 
+                direction="row"
+                justify="center"
+                alignItems="center"
+                className="flagSquare" 
+              >                            
                 {this.state.smallSquaresArray.map((x, index) =>            
-                    <Grid item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
-                      <SmallSquare 
-                      zIndex={index} 
-                      logo={this.state.logoSelected} 
-                      randomSquare={index === this.state.squareIndex} 
-                      itemClicked={this.itemClicked}
-                      logoClicked={this.state.logoClicked}
-                      />
-                    </Grid>                  
+                  <Grid item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
+                    <SmallSquare 
+                    zIndex={index} 
+                    logo={this.state.logoSelected} 
+                    randomSquare={index === this.state.squareIndex} 
+                    itemClicked={this.itemClicked}
+                    logoClicked={this.state.logoClicked}
+                    />
+                  </Grid>                  
                 )}
-                </Grid>
+              </Grid>
                  
             </div><br/>
            <p>{this.state.counter}</p>

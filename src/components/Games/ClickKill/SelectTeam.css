@@ -9,6 +9,11 @@
     margin: 0 auto 0 auto;
  }
 
-.img-team img {
-    height: 86px;
+.flagSquare {
+    cursor: pointer;
+}
+
+
+#selectTeamContainer {
+    margin : 2% 0 5% 0;
 }

@@ -13,9 +13,9 @@ const SmallSquare = props =>(
         <img 
         className="logoDisplayed"   
         onClick={props.itemClicked} 
-        className="team-logo" 
+        className="teamLogo" 
         src={props.logo} 
-        alt=''
+        alt='team flag'
         />
         
         : props.randomSquare && props.logoClicked
@@ -23,9 +23,9 @@ const SmallSquare = props =>(
         <img 
         className="logoHidden" 
         onClick={props.itemClicked} 
-        className="team-logo" 
+        className="teamLogo" 
         src={props.logo} 
-        alt=''
+        alt='team flag'
         style={{opacity: '0'}}
         />
        

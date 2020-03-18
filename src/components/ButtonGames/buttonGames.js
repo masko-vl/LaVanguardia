@@ -102,7 +102,7 @@ const ButtonGames = (props)=>{
     <Card.Body>
       <Card.Title>Tacle Click</Card.Title>
       <Card.Text>
-      Tacle tacle click
+        Da una paliza a tu adversario!
       </Card.Text>
       <button className='myButton'>
         <Link to='tacleclick' className='jugartext'> Jugar
