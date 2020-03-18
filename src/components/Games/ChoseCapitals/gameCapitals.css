@@ -1,4 +1,3 @@
-
 .container-game{
     height: 95vh;
     background: #254159 url('./img/fondo_capitales.png')  no-repeat bottom ;
@@ -174,9 +173,4 @@ opacity: 1;
         margin-left: -15%;
       }
   }
-
-  .containerInstruction {
-      width: 100vw;
-  }
- 
  
