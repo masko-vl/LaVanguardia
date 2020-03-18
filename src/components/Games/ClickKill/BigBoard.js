@@ -175,7 +175,12 @@ export default class BigBoard extends React.Component {
 
                 {this.state.smallSquaresArray.map((x, index) =>            
                     <Grid item xs={3} style={{height: 90, border: '1px solid black'}} > 
-                      <SmallSquare zIndex={index} notImportant={x} logo={this.state.logoSelected} show={index === this.state.squareIndex} itemClicked={this.itemClicked} />
+                      <SmallSquare 
+                      zIndex={index} 
+                      logo={this.state.logoSelected} 
+                      show={index === this.state.squareIndex} 
+                      itemClicked={this.itemClicked}  
+                      />
                       {console.log(index)}
                       {console.log(this.state.squareIndex)}
 
