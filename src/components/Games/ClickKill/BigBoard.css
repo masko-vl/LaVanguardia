@@ -1,3 +1,9 @@
 .team-logo{
   height: 100%;
   }
+
+.logoSquare {
+  border: 1px solid balck;
+  border-radius: 8px;
+}
+

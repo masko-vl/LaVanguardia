@@ -39,7 +39,7 @@ export default class BigBoard extends React.Component {
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
-    smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","",],                     // COMMENT : array with all fixed position deleted
+    smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","","",""],                     // COMMENT : array with all fixed position deleted
     logoSelected: '',
     imageList: [
       Alaves,
@@ -143,9 +143,9 @@ export default class BigBoard extends React.Component {
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div>            
             <div className="img-container" flexGrow={1}>
-            <Grid container spacing={3} >                            
+            <Grid container >                            
                 {this.state.smallSquaresArray.map((x, index) =>            
-                    <Grid item xs={3} style={{height: 90, border: '1px solid black'}} > 
+                    <Grid item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
                       <SmallSquare 
                       zIndex={index} 
                       logo={this.state.logoSelected} 

@@ -4,12 +4,9 @@
 }
 
 .img-container {
-    display: flex;
-    align-items: start;
     max-width: 565px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 0 auto;
  }
 
 .img-team img {
