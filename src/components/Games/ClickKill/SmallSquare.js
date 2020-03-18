@@ -7,16 +7,31 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 // COMMENT: SmallSquare positions have been deleted as we will use Zindex instead of props fixed positions
 
+
+
 const SmallSquare = props =>(
-    // SmallSquare.state.display = false ? return counter : return counter + 1 and it changes back to false
-    props.show
-    // COMMENT writing the z-index into the id of the div below
-        ? <CardMedia
-            className={props.logoClassName}
-            image={props.logo}
-            title="team logo"
-            onClick={props.itemClicked}
-      />
+    props.show && !props.logoClicked 
+    
+    ?    // COMMENT writing the z-index into the id of the div below           
+        <img 
+        className="logoDisplayed" 
+        onClick={props.itemClicked} 
+        className="team-logo" 
+        src={props.logo} 
+        alt=''
+        />
+        
+        : props.show && props.logoClicked
+        ? 
+        <img 
+        className="logoHidden" 
+        onClick={props.itemClicked} 
+        className="team-logo" 
+        src={props.logo} 
+        alt=''
+        style={{opacity: '0'}}
+        />
+       
         : null
 )
 

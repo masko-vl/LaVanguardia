@@ -40,6 +40,7 @@ const BigContainer = styled.div`
 export default class BigBoard extends React.Component {
   
   state = {
+    logoClicked: false,
     gameStarted: false,
     squareIndex: null,
     logoClassName: "logoDisplayed",            
@@ -84,6 +85,7 @@ export default class BigBoard extends React.Component {
   onEndTimer = () => {
     if(this.state.clickedIndex === true){
       this.setState({
+        logoClicked: false,
         clickedIndex: false, 
         logoClassName: "logoDisplayed",
         counter: this.state.counter + 1
@@ -96,8 +98,8 @@ export default class BigBoard extends React.Component {
 
   itemClicked = () => {
     this.setState({
-      clickedIndex: true,
-      logoClassName: "logoHidden"
+      logoClicked: true,
+      clickedIndex: true
       // update the squareIndex
     })
   }
@@ -147,7 +149,13 @@ export default class BigBoard extends React.Component {
             <Grid container spacing={3} >                            
                 {this.state.smallSquaresArray.map((x, index) =>            
                     <Grid item xs={3} style={{height: 90, border: '1px solid black'}} > 
-                      <SmallSquare zIndex={index} logo={this.state.logoSelected} show={index === this.state.squareIndex} logoClassName={this.state.logoClassName} itemClicked={this.itemClicked} />
+                      <SmallSquare 
+                      zIndex={index} 
+                      logo={this.state.logoSelected} 
+                      show={index === this.state.squareIndex} 
+                      itemClicked={this.itemClicked}
+                      logoClicked={this.state.logoClicked}
+                      />
                     </Grid>
                   
                 )}
