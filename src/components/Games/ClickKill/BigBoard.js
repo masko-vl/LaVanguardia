@@ -66,6 +66,7 @@ const BigContainer = styled.div`
 export default class BigBoard extends React.Component {
   
   state = {
+    logoClicked: false,
     gameStarted: false,
     squareIndex: null,            //  *COMMENT : need to set it to null by default. the "10" value is here for testing. making possible to get the index of the image clicked
     clickedIndex: false,
@@ -109,6 +110,7 @@ export default class BigBoard extends React.Component {
   onEndTimer = () => {
     if(this.state.clickedIndex === true){
       this.setState({
+        logoClicked: false,
         clickedIndex: false, 
         counter: this.state.counter + 1
       })
@@ -123,6 +125,7 @@ export default class BigBoard extends React.Component {
   itemClicked = () => {
     console.log('clicked!');
     this.setState({
+      logoClicked: true,
       clickedIndex: true
       // update the squareIndex
     })
@@ -179,7 +182,8 @@ export default class BigBoard extends React.Component {
                       zIndex={index} 
                       logo={this.state.logoSelected} 
                       show={index === this.state.squareIndex} 
-                      itemClicked={this.itemClicked}  
+                      itemClicked={this.itemClicked}
+                      logoClicked={this.state.logoClicked}
                       />
                       {console.log(index)}
                       {console.log(this.state.squareIndex)}
