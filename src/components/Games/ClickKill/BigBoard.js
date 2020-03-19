@@ -142,7 +142,8 @@ export default class BigBoard extends React.Component {
   render() {
     return ( 
        <Fragment>
-       <div className='pantalla'>
+       <div id='generalContainer'>
+       <button id="closeButton"><a href="/"><b>x</b></a></button>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
          ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>

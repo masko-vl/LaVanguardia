@@ -1,3 +1,17 @@
+#closeButton {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border-radius: 8px;
+    background-color: lightgrey;
+    color: white;
+    padding: 2px;
+}
+
+#closeButton>a {
+    text-decoration: none;
+}
+
 #footballCounterButton {
     background-color: darkblue;
     color: white;
