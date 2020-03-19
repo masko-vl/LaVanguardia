@@ -117,8 +117,8 @@ export default class BigBoard extends React.Component {
 // STATE IS UPDATED WHEN RESTARTING THE GAME
   restartCounter = () => {
     this.setState ({
-      gameEnded: false,
       gameStarted: false,
+      gameEnded: false,
       counter: 0,
       teamChosen: false
     })
@@ -149,7 +149,8 @@ export default class BigBoard extends React.Component {
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div className="footballGameContainer">
-            <h1>Dalos una paliza!</h1>           
+            <h1>Dalos una paliza!</h1>
+            <div id="footballCounterButton">{this.state.counter}</div>
             <div className="img-container" flexGrow={1}>
               <Grid 
                 container 
@@ -172,21 +173,17 @@ export default class BigBoard extends React.Component {
               </Grid>
                  
             </div><br/>
-           <p>{this.state.counter}</p>
-
-           {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, ONCE STARTED, the button "reset" IS DISPLAYED */}
-           {this.state.gameStarted &&  this.state.gameEnded
-            ? <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br /><b>GIVE MORE!!</b></button>
-            : null
-           }
-           { this.state.gameStarted && !this.state.gameEnded
-           ? <button className="resetResultButton" onClick={this.restartCounter}>RESET THE RESULT</button>
-           : null
-          }
-          { !this.state.gameStarted && !this.state.gameEnded
+            <div id="buttonContainer">
+           {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, WHEN FINISHED, the button "playagain" IS DISPLAYED with the result. No button is displayed when playing */}
+            { !this.state.gameStarted && !this.state.gameEnded
             ? <button className="startGameButton" onClick={this.onClickStart}>START</button>
             : null
-          }
+            }
+            {this.state.gameStarted && this.state.gameEnded
+            ? <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+            : null
+            }
+            </div>
            </div>
          }
        </div>
