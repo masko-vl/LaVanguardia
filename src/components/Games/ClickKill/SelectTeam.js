@@ -20,23 +20,23 @@ const SelectTeam = props => {
     const classes = useStyles();
     return (
     <div className="footballGameContainer">
-        <h1>A qué equipo la Paliza?</h1>
+        <h1>A qué equipo quieres dar una Paliza?</h1>
         <div className="img-container">
             <div className={classes.root}>
-                <Grid container 
+                <Grid container
                     direction="row"
                     justify="center"
                     alignItems="center"
-                    spacing={3} 
+                    spacing={3}
                     className="flagSquare">
-                    {props.imageList.map((equipo)=>                        
+                    {props.imageList.map((equipo)=>
                         <Grid  item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px', padding: 2}}>
-                            <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/> 
-                        </Grid>    
+                            <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
+                        </Grid>
                     )}
                 </Grid>
             </div>
-        </div>   
+        </div>
     </div>
     )
 }
