@@ -77,19 +77,14 @@
 }
 
 
-
-
-
-
 .flagDisplay {
     display: flex;
-    flex-direction: column;
+    text-align: center;
     width: 190px;
     border-radius: 4px;
     font-size: 25px;
     border: 10px solid #001c4c;
-    margin-bottom: 5px;
-    margin-top: 30px;
+    margin: 0 auto 5px auto;
 }
 
 .totalAnswers {

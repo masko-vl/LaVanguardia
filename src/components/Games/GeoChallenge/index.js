@@ -195,9 +195,11 @@ class GeoChallenge extends Component {
             {
               this.state.options.length > 0
                 ? (
-                  <div className="flagDisplay">
+                  <div>
                     <p>Adivina el pais</p>
-                    <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                    <div className="flagDisplay">
+                      <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                    </div>
                   </div>
                 )
                 : null
