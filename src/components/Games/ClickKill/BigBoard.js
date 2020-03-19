@@ -34,6 +34,7 @@ export default class BigBoard extends React.Component {
   state = {
     logoClicked: false,
     gameStarted: false,
+    gameEnded: false,
     squareIndex: null,
     logoClassName: "logoDisplayed",            
     clickedIndex: false,
@@ -88,7 +89,11 @@ export default class BigBoard extends React.Component {
       // HERE THE DELAY BECOMES SHORTER
       this.delay = this.delay - 100;
       this.onClickStart()
-    } else {}
+    } else {
+      this.setState({
+        gameEnded: true
+      })
+    }
   }
 
   itemClicked = () => {
@@ -104,13 +109,15 @@ export default class BigBoard extends React.Component {
     setTimeout(this.onEndTimer,
       this.delay)
     this.setState({
-      gameStarted: true
+      gameStarted: true,
+      gameEnded: false
     })
   }
 
 // STATE IS UPDATED WHEN RESTARTING THE GAME
   restartCounter = () => {
     this.setState ({
+      gameEnded: false,
       gameStarted: false,
       counter: 0,
       teamChosen: false
@@ -168,9 +175,17 @@ export default class BigBoard extends React.Component {
            <p>{this.state.counter}</p>
 
            {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, ONCE STARTED, the button "reset" IS DISPLAYED */}
-           { this.state.gameStarted 
+           {this.state.gameStarted &&  this.state.gameEnded
+            ? <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br /><b>GIVE MORE!!</b></button>
+            : null
+           }
+           { this.state.gameStarted && !this.state.gameEnded
            ? <button className="resetResultButton" onClick={this.restartCounter}>RESET THE RESULT</button>
-           : <button className="startGameButton" onClick={this.onClickStart}>START</button>
+           : null
+          }
+          { !this.state.gameStarted && !this.state.gameEnded
+            ? <button className="startGameButton" onClick={this.onClickStart}>START</button>
+            : null
           }
            </div>
          }

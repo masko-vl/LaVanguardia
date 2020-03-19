@@ -1,18 +1,55 @@
 .startGameButton {
     background-color: #4CAF50; /* Green */
-    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 8px;
     color: white;
-    padding: 20px;
+    padding: 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 45%;
 
 }
 
+.startGameButton:hover {
+    background-color: darkgreen
+}
+
+.startGameButton:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.playAgainButton {
+    display: flex;
+    flex-direction: column;
+    background-color: darkorange; /* Green */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
+
+.playAgainButton:hover {
+    background-color: orangered
+}
+
+.playAgainButton:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
 
 .resetResultButton {
     background-color: rgb(32, 90, 129); /* Green */

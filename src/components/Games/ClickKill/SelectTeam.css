@@ -4,6 +4,7 @@
 }
 
 .img-container {
+    position: relative;
     max-width: 565px;
     display: block;
     margin: 0 auto 0 auto;
