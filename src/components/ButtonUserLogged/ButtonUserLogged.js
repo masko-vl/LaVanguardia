@@ -3,7 +3,7 @@ const ButtonUserLogged =(props)=>{
     return(
         <div className="userButtons">
             {props.user.length <= 0
-            ? 
+            ?
             <button
                 onClick={props.userHere}
                 className="buttonLog">
@@ -22,4 +22,3 @@ const ButtonUserLogged =(props)=>{
 }
 
 export default ButtonUserLogged;
-

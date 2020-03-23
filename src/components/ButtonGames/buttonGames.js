@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react';
+
+        import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import '../ButtonGames/buttonGames.css';
@@ -109,6 +110,53 @@ const ButtonGames = (props)=>{
       </Card.Text>
       <button className='myButton'>
         <Link to='tacleclick' className='jugartext'> Jugar
+        </Link></button>
+    </Card.Body>
+  </Card>
+
+</CardDeck>
+</Fragment>
+<Fragment>
+<CardDeck>
+  <Card>
+    <Card.Img variant="top" src="https://eurocold.co.uk/wp-content/uploads/2015/08/dark-blue-box.png"
+/>
+    <Card.Body>
+      <Card.Title>Juego</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content.
+      </Card.Text>
+      <button className='myButton'>
+        <Link to='/' className='jugartext'> Jugar
+        </Link></button>
+    </Card.Body>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://eurocold.co.uk/wp-content/uploads/2015/08/dark-blue-box.png"
+ />
+    <Card.Body>
+      <Card.Title>Juego</Card.Title>
+      <Card.Text>
+        This card has supporting text below as a natural lead-in to additional
+        content.
+      </Card.Text>
+      <button className='myButton'>
+        <Link to='/' className='jugartext'> Jugar
+        </Link></button>
+    </Card.Body>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src="https://eurocold.co.uk/wp-content/uploads/2015/08/dark-blue-box.png"
+ />
+    <Card.Body>
+      <Card.Title>Juego</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content.
+      </Card.Text>
+      <button className='myButton'>
+        <Link to='/' className='jugartext'> Jugar
         </Link></button>
     </Card.Body>
   </Card>
