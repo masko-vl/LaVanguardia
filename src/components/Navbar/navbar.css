@@ -27,11 +27,12 @@
     margin: 0;
 }
 
-.row {
+.navbarRow {
     display: flex;
     flex-wrap: wrap;
     margin-right: -8px;
     margin-left: -8px;
+    width: 100%;
 }
 
 .header-logo-wrapper .icon-home-link {

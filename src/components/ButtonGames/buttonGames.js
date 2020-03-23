@@ -5,7 +5,10 @@ import '../ButtonGames/buttonGames.css';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
 import cityban from '../imgmainPage/city@2x.png';
-import tackle from '../imgmainPage/tackle@2x.png'
+import tackle from '../imgmainPage/tackle@2x.png';
+import titleGeo from '../imgmainPage/titleGeo.png';
+import './buttonGames.css'
+
 
 
 // const ButtonGames =(props)=>{
@@ -41,13 +44,13 @@ const ButtonGames = (props)=>{
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsUqRYnCvLDweQUDT96a2AkKgTccxvS12zPLupryRPMhiZ1S1N"
+      src={titleGeo}
       alt="Third slide"
     />
 
     <Carousel.Caption>
       <h3>Geo Challange</h3>
-      <p>Cuánto sabes de banderas!</p>
+      <p className="geoCarouselText">Cuánto sabes de banderas!</p>
       <button className='myButton'>
         <Link to='geochallange' className='jugartext'> Jugar
         </Link></button>
@@ -73,7 +76,7 @@ const ButtonGames = (props)=>{
   <Card>
     <Card.Img variant="top" src={cityban}
 />
-    <Card.Body> 
+    <Card.Body>
       <Card.Title>City Play</Card.Title>
       <Card.Text>
       Descubre las capitales del mundo!
@@ -84,7 +87,7 @@ const ButtonGames = (props)=>{
     </Card.Body>
   </Card>
   <Card>
-    <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsUqRYnCvLDweQUDT96a2AkKgTccxvS12zPLupryRPMhiZ1S1N"
+    <Card.Img variant="top" src={titleGeo}
  />
     <Card.Body>
       <Card.Title>Geo Challange</Card.Title>
@@ -109,54 +112,7 @@ const ButtonGames = (props)=>{
         </Link></button>
     </Card.Body>
   </Card>
-  
-</CardDeck>
-</Fragment>
-<Fragment>
-<CardDeck>
-  <Card>
-    <Card.Img variant="top" src="https://eurocold.co.uk/wp-content/uploads/2015/08/dark-blue-box.png"
-/>
-    <Card.Body>
-      <Card.Title>Juego</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content.
-      </Card.Text>
-      <button className='myButton'>
-        <Link to='/' className='jugartext'> Jugar
-        </Link></button>
-    </Card.Body>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src="https://eurocold.co.uk/wp-content/uploads/2015/08/dark-blue-box.png"
- />
-    <Card.Body>
-      <Card.Title>Juego</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.
-      </Card.Text>
-      <button className='myButton'>
-        <Link to='/' className='jugartext'> Jugar
-        </Link></button>
-    </Card.Body>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src="https://eurocold.co.uk/wp-content/uploads/2015/08/dark-blue-box.png"
- />
-    <Card.Body>
-      <Card.Title>Juego</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content.
-      </Card.Text>
-      <button className='myButton'>
-        <Link to='/' className='jugartext'> Jugar
-        </Link></button>
-    </Card.Body>
-  </Card>
-  
+
 </CardDeck>
 </Fragment>
 </div>
