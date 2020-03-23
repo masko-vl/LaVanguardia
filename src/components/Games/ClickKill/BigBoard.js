@@ -1,33 +1,11 @@
 import React, { Fragment } from 'react';
+import footballFlags from "./images/footballFlags"
 import SmallSquare from './SmallSquare';
 import SelectTeam from './SelectTeam';
 import Grid from '@material-ui/core/Grid';
 
 import './BigBoard.css';
 import './Button.css';
-
-import Alaves from './images/Alaves.png';
-import Athletic from './images/Athletic.png';
-import Atletico from './images/Atletico.png';
-import Barcelona from './images/Barcelona.png';
-import Betis from './images/Betis.png';
-import Celta from './images/Celta.png';
-import Eibar from './images/Eibar.png';
-import Espanyol from './images/Espanyol.png';
-import Getafe from './images/Getafe.png';
-import Granada from './images/Granada.png';
-import Levante from './images/Levante.png';
-import Madrid from './images/Madrid.png';
-import Mallorca from './images/Mallorca.png';
-import Osasuna from './images/Osasuna.png';
-import Rsociedad from './images/Rsociedad.png';
-import Sevilla from './images/Sevilla.png';
-import Valencia from './images/Valencia.png';
-import Valladolid from './images/Valladolid.png';
-import Villareal from './images/Villareal.png';
-import Leganes from './images/Leganes.png';
-
-
 
 export default class BigBoard extends React.Component {
   
@@ -42,28 +20,6 @@ export default class BigBoard extends React.Component {
     counter: 0,
     smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","","",""],                     // COMMENT : array with all fixed position deleted
     logoSelected: '',
-    imageList: [
-      Alaves,
-      Athletic,
-      Atletico,
-      Barcelona,
-      Betis,
-      Celta,
-      Eibar,
-      Espanyol,
-      Getafe,
-      Granada,
-      Levante,
-      Madrid,
-      Mallorca,
-      Osasuna,
-      Rsociedad,
-      Sevilla,
-      Valladolid,
-      Valencia,
-      Villareal,
-      Leganes
-    ]
   }
   
   delay = 2000;
@@ -146,7 +102,7 @@ export default class BigBoard extends React.Component {
        <button id="closeButton"><a href="/"><b>x</b></a></button>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
-         ? <SelectTeam printName={this.printName} imageList={this.state.imageList}/>
+         ? <SelectTeam printName={this.printName} footballFlags={footballFlags}/>
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div className="footballGameContainer">

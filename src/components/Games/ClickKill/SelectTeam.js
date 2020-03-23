@@ -29,7 +29,7 @@ const SelectTeam = props => {
                     alignItems="center"
                     spacing={3}
                     className="flagSquare">
-                    {props.imageList.map((equipo)=>
+                    {props.footballFlags.map((equipo)=>
                         <Grid  item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px', padding: 2}}>
                             <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
                         </Grid>
