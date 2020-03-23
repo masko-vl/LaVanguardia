@@ -9,21 +9,6 @@ import tackle from '../imgmainPage/tackle@2x.png';
 import titleGeo from '../imgmainPage/titleGeo.png';
 import './buttonGames.css'
 
-
-
-// const ButtonGames =(props)=>{
-//     return (
-//         <div>
-//         <button>
-// <Link to='cityplay'> Jugar
-// </Link></button>
-//       <button>
-// <Link to='tacleclick'> Jugar
-// </Link></button>
-// </div>
-//     )
-// }
-
 const ButtonGames = (props)=>{
     return(
         <div>
