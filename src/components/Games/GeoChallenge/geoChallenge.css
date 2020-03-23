@@ -7,6 +7,10 @@
 
 }
 
+.titleImageContainer {
+  background-color: white;
+}
+
 
 .leaflet-container {
     width: 80%;
