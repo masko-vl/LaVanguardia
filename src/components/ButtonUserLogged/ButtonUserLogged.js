@@ -2,25 +2,24 @@ import React from 'react';
 const ButtonUserLogged =(props)=>{
     return(
         <div className="userButtons">
-
+            {props.user.length <= 0
+            ? 
             <button
-            onClick={props.userHere}
-            className="buttonLog">
-
+                onClick={props.userHere}
+                className="buttonLog">
                 Log In
             </button>
 
-            <button
-            onClick={props.quitUser}
-            className="buttonLog">
+            : <button
+                onClick={props.quitUser}
+                className="buttonLog">
                 Log Out
             </button>
-
-
-
+            }
         </div>
     )
 
 }
 
 export default ButtonUserLogged;
+
