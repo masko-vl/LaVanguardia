@@ -32,8 +32,8 @@
 .img-team {
     display: inline-block;
     display: flex;
-  align-items: center;
-  justify-content: center;
+    margin:auto;
+    justify-content: center;
 }
 
 .img-container {
@@ -43,6 +43,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    cursor: url("./images/foot.png"), auto;
  }
 
 .img-team img {
