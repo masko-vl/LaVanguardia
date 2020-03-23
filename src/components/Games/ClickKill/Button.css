@@ -1,15 +1,7 @@
 #closeButton {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    border-radius: 8px;
-    background-color: lightgrey;
-    color: white;
+    width: 5%;
+    height: 30px;
     padding: 2px;
-}
-
-#closeButton>a {
-    text-decoration: none;
 }
 
 #footballCounterButton {

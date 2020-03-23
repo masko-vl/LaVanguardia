@@ -14,9 +14,10 @@
 
 .footballGameContainer > h1 {
   margin-bottom: 2%;
+  width: 95vw;
 }
 
 #generalContainer {
-  position: relative;
+  display: flex;
 }
 
