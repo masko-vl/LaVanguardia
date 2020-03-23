@@ -4,6 +4,10 @@
     padding: 2px;
 }
 
+#closeButton:active {
+    background-color: grey;
+}
+
 #footballCounterButton {
     background-color: darkblue;
     color: white;
