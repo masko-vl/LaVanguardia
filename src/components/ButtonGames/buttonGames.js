@@ -1,5 +1,5 @@
 
-        import React, {Fragment} from 'react';
+import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import '../ButtonGames/buttonGames.css';

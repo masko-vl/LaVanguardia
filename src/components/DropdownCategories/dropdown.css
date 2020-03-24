@@ -6,11 +6,17 @@
   display: inline-block;
   float: left;
   color: #000 !important;
+  text-decoration: none !important;
 }
 
+/* Trying to quit the underlain an blue color for the link */
+
+.toggle:hover {
+  text-decoration: none !important;
+  color: black !important;
+}
 .no-pad {
   padding: 0px !important;
-  margin-left: 30px;
 }
 
 
