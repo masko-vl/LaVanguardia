@@ -9,7 +9,7 @@ import tackle from '../imgmainPage/tackle@2x.png';
 import titleGeo from '../imgmainPage/titleGeo.png';
 import './buttonGames.css'
 
-// attempt
+// attempt1
 
 // const ButtonGames =(props)=>{
 //     return (
