@@ -1,53 +1,14 @@
 #team-container {
     width: 80%;
     height: 80%;
-<<<<<<< HEAD
-    background: #043A40 0% 0% no-repeat padding-box;
-    opacity: 1;
-}
-
-#team-title {
-    top: 52px;
-    left: 34px;
-    width: 308px;
-    height: 98px;
-    background: transparent 0% 0% no-repeat padding-box;
-    opacity: 1;
-}
-
-#team-subtitle {
-    top: 181px;
-    left: 49px;
-    width: 280px;
-    height: 20px;
-    text-align: left;
-    font: Regular 20px/24px Segoe UI;
-    letter-spacing: 0;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 0px #00000029;
-    opacity: 1;
-}
-
-.img-team {
-    display: inline-block;
-    display: flex;
-    margin:auto;
-    justify-content: center;
-=======
->>>>>>> 03f571fca0424100fb937332afc6b2b1de6cf75d
 }
 
 .img-container {
     position: relative;
     max-width: 565px;
     display: block;
-<<<<<<< HEAD
-    margin-left: auto;
     margin-right: auto;
     cursor: url("./images/foot.png"), auto;
-=======
-    margin: 0 auto 0 auto;
->>>>>>> 03f571fca0424100fb937332afc6b2b1de6cf75d
  }
 
 .flagSquare {

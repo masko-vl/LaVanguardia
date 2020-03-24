@@ -85,9 +85,6 @@ const ButtonGames = (props)=>{
             <div class="card_image">
               <img src={titleGeo} />
               </div>
-            <div class="card_title title-white">
-              <p>Geo Challenge</p>
-            </div>
         </div>
       </Link>
 
