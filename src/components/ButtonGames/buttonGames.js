@@ -7,7 +7,26 @@ import tackle from '../imgmainPage/tackle@2x.png'
 
 
 //CARROUSEL
-/*  <Fragment>
+/*  */
+
+
+// const ButtonGames =(props)=>{
+//     return (
+//         <div>
+//         <button>
+// <Link to='cityplay'> Jugar
+// </Link></button>
+//       <button>
+// <Link to='tacleclick'> Jugar
+// </Link></button>
+// </div>
+//     )
+// }
+
+const ButtonGames = (props)=>{
+    return(
+<div>
+<Fragment>
             <Carousel>
       <Carousel.Item>
         <img
@@ -50,44 +69,20 @@ import tackle from '../imgmainPage/tackle@2x.png'
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    </Fragment>*/
-
-
-// const ButtonGames =(props)=>{
-//     return (
-//         <div>
-//         <button>
-// <Link to='cityplay'> Jugar
-// </Link></button>
-//       <button>
-// <Link to='tacleclick'> Jugar
-// </Link></button>
-// </div>
-//     )
-// }
-
-const ButtonGames = (props)=>{
-    return(
-<div>
-    <div id="grad-header">
-      <h1 id="grad-title">Juega ahora !</h1>
-    </div>
+    </Fragment>
     
 <div class="cards-list">
 
     <Link to='cityplay' className='jugartext'>
       <div class="carda 1">
-          <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
-            <div class="card_title title-white">
-              <p>City Play</p>
-            </div>
+          <div class="card_image"> <img src={cityban} /> </div>
       </div>  
     </Link>
 
     <Link to='geochallange' className='jugartext'>
         <div class="carda 2">
             <div class="card_image">
-              <img src="https://cdn.blackmilkclothing.com/media/wysiwyg/Wallpapers/PhoneWallpapers_FloralCoral.jpg" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsUqRYnCvLDweQUDT96a2AkKgTccxvS12zPLupryRPMhiZ1S1N" />
               </div>
             <div class="card_title title-white">
               <p>Geo Challenge</p>
@@ -98,10 +93,7 @@ const ButtonGames = (props)=>{
       <Link to='tacleclick' className='jugartext'>
         <div class="carda 3">     
             <div class="card_image">
-              <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
-            </div>
-            <div class="card_title">
-              <p>Tacle Click</p>
+              <img src={tackle} />
             </div>
         </div>
       </Link>

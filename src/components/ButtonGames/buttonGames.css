@@ -1,19 +1,12 @@
 
 
 .jugartext{
-    color:#ffffff ;
+    color:#130e0e ;
 }
 
-#grad-header {
-	background-image: linear-gradient(black, gray, rgb(255, 255, 255));
-	width: 100%;
-	height: 200px;
-}
-
-#grad-title {
-color:white;
-font-family:'Times New Roman', Times, serif;
-font-size: 60px;
+.w-100 {
+    width: 100%!important;
+    height: 501px;
 }
 
 /*css de botones */
@@ -27,7 +20,7 @@ font-size: 60px;
   
 .carda {
 	margin: 30px auto;
-	width: 275px;
+	width: 443px;
 	height: 275px;
 	border-radius: 40px;
     box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
@@ -45,7 +38,7 @@ font-size: 60px;
 	width: inherit;
 	height: inherit;
 	border-radius: 40px;
-	object-fit: cover;
+	
 }
   
 .carda .card_title {
