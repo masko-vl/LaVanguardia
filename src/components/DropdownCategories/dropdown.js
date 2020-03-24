@@ -16,7 +16,7 @@ class DropdownCategories extends Component {
           <div className="row">
             <div className="col no-pad">
               <Dropdown>
-               <Dropdown.Toggle className="toggle" id="dropdown-custom-components"><Link to="/">Juegos</Link>
+               <Dropdown.Toggle className="toggle" id="dropdown-custom-components"><Link className="toggle" to="/">Juegos</Link>
                </Dropdown.Toggle>
 
                <Dropdown.Menu className="dropdownContent">

@@ -2,7 +2,7 @@ import React from 'react';
 const ButtonUserLogged =(props)=>{
     return(
         <div className="userButtons">
-            {props.user.length <= 0
+            {Object.entries(props.user).length === 0
             ?
             <button
                 onClick={props.userHere}

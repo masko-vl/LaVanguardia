@@ -182,9 +182,9 @@ class GeoChallenge extends Component {
     return (
     <div>
       <div className="titleImageContainer">
-        <img className="geoChallengeTitle"src={title}></img>
-        <button className="exitButton"><Link to="/"> X</Link></button>
+      <button className="exitButton"><Link to="/"> X</Link></button>
 
+        <img className="geoChallengeTitle"src={title}></img>
       </div>
       <div>
       {this.state.finishGame === false
