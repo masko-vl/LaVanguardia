@@ -1,24 +1,81 @@
 
-.myButton {
-    /* box-shadow: 0px 1px 0px 0px #f0f7fa; */
-    /* change the shadow in the raport with photo  */
-	background-color:#000b4c;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-    text-shadow:0px -1px 0px #5b6178;
-    
-    
-}
+
 .jugartext{
     color:#ffffff ;
 }
-.cardcarousel {
-    margin-top: 5vh;
-};
 
+#grad-header {
+	background-image: linear-gradient(black, gray, rgb(255, 255, 255));
+	width: 100%;
+	height: 200px;
+}
+
+#grad-title {
+color:white;
+font-family:'Times New Roman', Times, serif;
+font-size: 60px;
+}
+
+/*css de botones */
+
+.cards-list {
+	z-index: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;	
+}
+  
+.carda {
+	margin: 30px auto;
+	width: 275px;
+	height: 275px;
+	border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+	cursor: pointer;
+	transition: 0.4s;
+}
+  
+.carda .card_image {
+	width: inherit;
+	height: inherit;
+	border-radius: 40px;
+}
+  
+.carda .card_image img {
+	width: inherit;
+	height: inherit;
+	border-radius: 40px;
+	object-fit: cover;
+}
+  
+.carda .card_title {
+	text-align: center;
+	border-radius: 0px 0px 40px 40px;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: -80px;
+	height: 40px;
+}
+  
+.carda:hover {
+	transform: scale(0.9, 0.9);
+	box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+	  -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+  
+.title-white {
+	color: white;
+}
+  
+.title-black {
+	color: black;
+}
+  
+  @media all and (max-width: 500px) {
+	.card-list {
+	  /* On small screens, we are no longer using row direction but column */
+	  flex-direction: column;
+	}
+  }
+  
