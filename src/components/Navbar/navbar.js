@@ -11,7 +11,7 @@ class Navbar extends Component {
     return (
       <div className="header-profile">
         <div className="header-profile__wrapper">
-          <div className="row">
+          <div className="navbarRow">
           <span className="icon-home-link linkable" data-href-id="header-logo-url" data-href="https://www.lavanguardia.com">
             <a className="header-profile__logo" href="https://www.lavanguardia.com"><img className="imageHome" src="https://arenacloud.cdn.arkadiumhosted.com/arenaxstorage-blob/arena-headers/assets/img/lavanguardia/house.png" alt=''></img></a>
             </span>

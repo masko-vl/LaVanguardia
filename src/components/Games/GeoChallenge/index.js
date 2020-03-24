@@ -181,10 +181,10 @@ class GeoChallenge extends Component {
 
     return (
     <div>
-      <div>
-        <img className="geoChallengeTitle"src={title}></img>
-        <button className="exitButton"><Link to="/"> X</Link></button>
+      <div className="titleImageContainer">
+      <button className="exitButton"><Link to="/"> X</Link></button>
 
+        <img className="geoChallengeTitle"src={title}></img>
       </div>
       <div>
       {this.state.finishGame === false
@@ -195,9 +195,11 @@ class GeoChallenge extends Component {
             {
               this.state.options.length > 0
                 ? (
-                  <div className="flagDisplay">
+                  <div>
                     <p>Adivina el pais</p>
-                    <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                    <div className="flagDisplay">
+                      <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                    </div>
                   </div>
                 )
                 : null

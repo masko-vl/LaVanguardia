@@ -54,8 +54,7 @@
  .footer-list {
     list-style:none;
     align-items: center;
-    margin-top: 25px;
-    margin-right: 23px;
+    margin: 25px 23px 0 0;
 } 
 
 .footer-item {

@@ -6,11 +6,15 @@
   display: inline-block;
   float: left;
   color: #000 !important;
+  text-decoration: none;
 }
 
+
+.toggle:hover {
+  color: black;
+}
 .no-pad {
   padding: 0px !important;
-  margin-left: 30px;
 }
 
 

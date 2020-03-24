@@ -17,9 +17,6 @@ const UserExample = {
   username: "Pepito",
   age: '28',
   points: 20
-
-
-
 };
 
 class App extends Component{
@@ -50,7 +47,7 @@ class App extends Component{
       <div className="firstRow">
         <DropdownCategories />
         <UserProfile userprof={this.state.user}/>
-        <ButtonUserLogged userHere={this.simulateUserLogged} quitUser={this.userOff} />
+        <ButtonUserLogged user={this.state.user} userHere={this.simulateUserLogged} quitUser={this.userOff} />
 
       </div>
 

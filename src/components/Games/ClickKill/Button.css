@@ -1,29 +1,73 @@
-.startGameButton {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    border-radius: 8px;
+#closeButton {
+    width: 5%;
+    height: 30px;
+    padding: 2px;
+}
+
+#closeButton:active {
+    background-color: grey;
+}
+
+#footballCounterButton {
+    background-color: darkblue;
     color: white;
-    padding: 20px;
+    font-weight: bold;
+    padding: 5px;
+    width: 90px;
+    margin: 0 auto 10px auto;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    border-radius: 8px;
+}
+
+#buttonContainer {
+    position: absolute;
+    justify-content: space-around;
+    width: 100%;
+    top: 50%;
 
 }
 
-
-.resetResultButton {
-    background-color: rgb(32, 90, 129); /* Green */
-    border: none;
+.startGameButton {
+    background-color: #4CAF50; /* Green */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 8px;
     color: white;
-    padding: 20px;
+    padding: 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 0 auto 10px auto;
     cursor: pointer;
+}
+
+.startGameButton:hover {
+    background-color: darkgreen
+}
+
+.startGameButton:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.playAgainButton {
+    background-color: darkorange; /* Green */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto 10px auto;
+    cursor: pointer;
+}
+
+.playAgainButton:hover {
+    background-color: orangered
+}
+
+.playAgainButton:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }

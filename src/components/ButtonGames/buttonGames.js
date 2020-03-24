@@ -1,10 +1,11 @@
+
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import '../ButtonGames/buttonGames.css';
 import cityban from '../imgmainPage/city@2x.png';
 import tackle from '../imgmainPage/tackle@2x.png'
-
+import titleGeo from '../imgmainPage/titleGeo.png';
 
 //CARROUSEL
 /*  */
@@ -43,7 +44,7 @@ const ButtonGames = (props)=>{
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsUqRYnCvLDweQUDT96a2AkKgTccxvS12zPLupryRPMhiZ1S1N"
+          src={titleGeo}
           alt="Third slide"
         />
 
@@ -82,7 +83,7 @@ const ButtonGames = (props)=>{
     <Link to='geochallange' className='jugartext'>
         <div class="carda 2">
             <div class="card_image">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsUqRYnCvLDweQUDT96a2AkKgTccxvS12zPLupryRPMhiZ1S1N" />
+              <img src={titleGeo} />
               </div>
             <div class="card_title title-white">
               <p>Geo Challenge</p>

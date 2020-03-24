@@ -1,3 +1,7 @@
 .logoDisplayed {
     margin-bottom: 10px;
 }
+
+.logoDisplayed:active {
+    background-color: green !important;
+}

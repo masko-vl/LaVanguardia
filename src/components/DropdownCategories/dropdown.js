@@ -1,7 +1,9 @@
 
 import React , { Component } from 'react';
 import './dropdown.css';
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from 'react-bootstrap/Dropdown';
+import {Link} from 'react-router-dom';
+
 
 
 class DropdownCategories extends Component {
@@ -14,8 +16,7 @@ class DropdownCategories extends Component {
           <div className="row">
             <div className="col no-pad">
               <Dropdown>
-               <Dropdown.Toggle className="toggle" id="dropdown-custom-components">
-                 Juegos
+               <Dropdown.Toggle className="toggle" id="dropdown-custom-components"><Link className="toggle" to="/">Juegos</Link>
                </Dropdown.Toggle>
 
                <Dropdown.Menu className="dropdownContent">

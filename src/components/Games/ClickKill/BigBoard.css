@@ -1,37 +1,23 @@
-/*
-#Board{
-  cursor: url(./components/images/cursor.png)
-}
-*/
-
-
-
-.team-logo{
+.teamLogo{
   height: 100%;
-  width: 90px;
-  }
-  
-  .globalContainer {
-    background: #043A40 0% 0% no-repeat padding-box;
-    color: white;
-  }
-  
-  .pantalla{
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #Image {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 86px;
-    grid-auto-rows: 20%;
-    align-items: start;
-    position: relative;
-  }
-  
-  #squarecontainer {
-    width: 100%;
-  }
+  max-width: 100%;
+}
+
+.logoSquare {
+  border: 1px solid balck;
+  border-radius: 8px;
+}
+
+.flagSquare :hover {
+  background-color: lightgrey;
+}
+
+.footballGameContainer > h1 {
+  margin-bottom: 2%;
+  width: 95vw;
+}
+
+#generalContainer {
+  display: flex;
+}
+
