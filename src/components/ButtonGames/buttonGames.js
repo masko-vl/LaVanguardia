@@ -86,25 +86,25 @@ const ButtonGames = (props)=>{
     </Carousel>
     </Fragment>
     
-<div class="cards-list">
+<div className="cards-list">
 
     <Link to='cityplay' className='jugartext'>
-      <div class="carda 1">
-          <div class="card_image"> <img src={cityban} /> </div>
+      <div className="carda">
+          <div className="card_image"> <img src={cityban} /> </div>
       </div>  
     </Link>
 
     <Link to='geochallange' className='jugartext'>
-        <div class="carda 2">
-            <div class="card_image">
+        <div className="carda">
+            <div className="card_image">
               <img src={titleGeo} />
               </div>
         </div>
       </Link>
 
       <Link to='tacleclick' className='jugartext'>
-        <div class="carda 3">     
-            <div class="card_image">
+        <div className="carda">     
+            <div className="card_image">
               <img src={tackle} />
             </div>
         </div>
