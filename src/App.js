@@ -9,7 +9,8 @@ import DropdownCategories from './components/DropdownCategories/dropdown'
 import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route} from 'react-router-dom';
 import ButtonGames from './components/ButtonGames/buttonGames';
-import BigBoard from './components/Games/ClickKill/BigBoard'
+import BigBoard from './components/Games/ClickKill/BigBoard';
+import NonogramApp from './components/Games/Nonogram/NonogramApp'
 
 const UserExample = {
   name :"Pepito ScrumMaster",
@@ -63,6 +64,9 @@ class App extends Component{
       </Route>
       <Route path='/tacleclick'>
       <BigBoard/>
+      </Route>
+      <Route path='/nonogram'>
+      <NonogramApp/>
       </Route>
       </Switch>
       <Footer />
