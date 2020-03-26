@@ -1,4 +1,3 @@
-
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
@@ -10,8 +9,6 @@ import nonogram from '../imgmainPage/provisional_nonogram.png';
 
 //CARROUSEL
 /*  */
-
-
 // const ButtonGames =(props)=>{
 //     return (
 //         <div>
@@ -24,15 +21,14 @@ import nonogram from '../imgmainPage/provisional_nonogram.png';
 // </div>
 //     )
 // }
-
 const ButtonGames = (props)=>{
     return(
 <div>
-<Fragment>
+  <Fragment>
             <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 imagecarousel"
           src={cityban}
           alt="First slide"
         />
@@ -44,11 +40,10 @@ const ButtonGames = (props)=>{
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 imagecarousel"
           src={titleGeo}
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Geo Challange</h3>
           <p>Cuánto sabes de banderas!</p>
@@ -59,11 +54,10 @@ const ButtonGames = (props)=>{
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 imagecarousel"
           src={tackle}
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <button className='myButton'>
             <Link to='tacleclick' className='jugartext'> Jugar
@@ -85,15 +79,14 @@ const ButtonGames = (props)=>{
       </Carousel.Item>
     </Carousel>
     </Fragment>
-    
-<div className="cards-list">
 
+
+<div className="cards-list">
     <Link to='cityplay' className='jugartext'>
       <div className="carda">
           <div className="card_image"> <img src={cityban} /> </div>
-      </div>  
+      </div>
     </Link>
-
     <Link to='geochallange' className='jugartext'>
         <div className="carda">
             <div className="card_image">
@@ -101,22 +94,22 @@ const ButtonGames = (props)=>{
               </div>
         </div>
       </Link>
-
       <Link to='tacleclick' className='jugartext'>
-        <div className="carda">     
+        <div className="carda">
             <div className="card_image">
               <img src={tackle} />
             </div>
         </div>
       </Link>
+
      {/*  <Link to='nonogram' className='jugartext'>
-        <div class="carda 3">     
+        <div class="carda 3">
             <div class="card_image">
               <img src={nonogram} />
             </div>
         </div>
       </Link> */}
-    
+
 
   </div>
 </div>
