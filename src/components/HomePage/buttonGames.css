@@ -77,13 +77,20 @@
 
 
 @media (max-width: 700px) {
-    .cards-list {
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
-    }
-
-    .carda {
-    width: 264px;
-    height: 220px;
-    }
+  .cards-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
   }
+
+  .carda {
+  width: 264px;
+  height: 220px;
+  }
+}
+
+@media (max-width: 450px) {
+  .w-100 {
+    height: 300px;
+  }
+
+}
