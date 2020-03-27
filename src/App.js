@@ -13,6 +13,7 @@ import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp';
 import Test from './components/test/test';
 import CarouselHome from './components/HomePage/Carousel/carousel';
+import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
 
 
 const UserExample = {
@@ -67,6 +68,9 @@ class App extends Component{
       </Route>
       <Route path='/tacleclick'>
       <BigBoard/>
+      </Route>
+      <Route path='/lavanguardia-page'>
+      <LavanguardiaPage/>
       </Route>
       <Route path='/nonogram'>
       <NonogramApp/>
