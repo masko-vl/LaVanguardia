@@ -8,9 +8,13 @@ import UserProfile from './components/UserProfile/userprofile'
 import DropdownCategories from './components/DropdownCategories/dropdown'
 import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route} from 'react-router-dom';
-import ButtonGames from './components/ButtonGames/buttonGames';
-import BigBoard from './components/Games/ClickKill/BigBoard'
+import ButtonGames from './components/HomePage/buttonGames';
+import BigBoard from './components/Games/ClickKill/BigBoard';
+import NonogramApp from './components/Games/Nonogram/NonogramApp';
+import Test from './components/test/test';
+import CarouselHome from './components/HomePage/Carousel/carousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
+
 
 const UserExample = {
   name :"Pepito ScrumMaster",
@@ -67,6 +71,15 @@ class App extends Component{
       </Route>
       <Route path='/lavanguardia-page'>
       <LavanguardiaPage/>
+      </Route>
+      <Route path='/nonogram'>
+      <NonogramApp/>
+      </Route>
+      <Route path='/test'>
+      <Test/>
+      </Route>
+      <Route path='/carousel'>
+      <CarouselHome/>
       </Route>
       </Switch>
       <Footer />
