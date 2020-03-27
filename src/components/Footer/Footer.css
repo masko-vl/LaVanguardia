@@ -75,3 +75,10 @@
 .img-responsive1 {
     margin-top: 18%;
 }
+
+
+@media (max-width: 330px) {
+  .footer-wrapper {
+     display: none;
+ }
+}
