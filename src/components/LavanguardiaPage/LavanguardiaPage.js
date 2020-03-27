@@ -35,7 +35,7 @@ function LavanguardiaPage() {
             </nav>
             <div>
                 <div className="main">
-                    
+
                 </div>
             </div>
         </div>

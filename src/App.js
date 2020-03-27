@@ -12,8 +12,7 @@ import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp';
 import Test from './components/test/test';
-import CarouselHome from './components/HomePage/Carousel/carousel';
-import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
+import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
 
 
 const UserExample = {
@@ -48,12 +47,12 @@ class App extends Component{
   return (
     <div className='App'>
 
+
       <Navbar />
       <div className="firstRow">
         <DropdownCategories />
         <UserProfile userprof={this.state.user}/>
         <ButtonUserLogged user={this.state.user} userHere={this.simulateUserLogged} quitUser={this.userOff} />
-
       </div>
 
       <Switch>
@@ -69,9 +68,6 @@ class App extends Component{
       <Route path='/tacleclick'>
       <BigBoard/>
       </Route>
-      <Route path='/lavanguardia-page'>
-      <LavanguardiaPage/>
-      </Route>
       <Route path='/nonogram'>
       <NonogramApp/>
       </Route>
@@ -79,7 +75,7 @@ class App extends Component{
       <Test/>
       </Route>
       <Route path='/carousel'>
-      <CarouselHome/>
+      <IframeCarousel/>
       </Route>
       </Switch>
       <Footer />
