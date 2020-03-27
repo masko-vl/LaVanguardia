@@ -8,7 +8,7 @@ import titleGeo from '../imgmainPage/titleGeo.png';
 import nonogram from '../imgmainPage/provisional_nonogram.png';
 
 //CARROUSEL
-/*  */
+
 // const ButtonGames =(props)=>{
 //     return (
 //         <div>
