@@ -10,6 +10,7 @@ import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route} from 'react-router-dom';
 import ButtonGames from './components/ButtonGames/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard'
+import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
 
 const UserExample = {
   name :"Pepito ScrumMaster",
@@ -63,6 +64,9 @@ class App extends Component{
       </Route>
       <Route path='/tacleclick'>
       <BigBoard/>
+      </Route>
+      <Route path='/lavanguardia-page'>
+      <LavanguardiaPage/>
       </Route>
       </Switch>
       <Footer />
