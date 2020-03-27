@@ -9,12 +9,12 @@
 .footer-container {
     max-height: none;
     text-align: center;
-} 
+}
 
 .footer-logo-img {
     margin: 0 auto;
     margin-top: 35px;
-    width: 150px;  
+    width: 150px;
     }
 
 .footer-item-link {
@@ -25,21 +25,21 @@
         line-height: 25px;
         line-height: 1.563rem;
         text-decoration: none;
-}                  
+}
 
 .footer-logo-url {
         width: 25px;
         height: 45px;
         left: 35px;
         background-color: transparent;
-        padding-top: 15px;     
+        padding-top: 15px;
     }
 
 
 /* .footer-container {
         min-height: 160px;
     } */
-            
+
 
 .footer-copyright {
     margin-top: 5px;
@@ -55,7 +55,7 @@
     list-style:none;
     align-items: center;
     margin: 25px 23px 0 0;
-} 
+}
 
 .footer-item {
     display: inline;
@@ -69,7 +69,7 @@
 
 .bar {
     color: grey;
-    
+
 }
 
 .img-responsive1 {

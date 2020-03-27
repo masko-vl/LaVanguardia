@@ -7,19 +7,15 @@ const Test = () => {
   return(
   <div>
     <iframe src="//localhost:3000/carousel"
-        width="450px"
-        height="450px"
+        width="330px"
+        height="330px"
         id="test"
         className="myClassname"
         display="initial"
         position="relative"/>
-
   </div>
 
-)
-
-
-
+  )
 
 }
 
