@@ -4,7 +4,7 @@ import '../HomePage/buttonGames.css'
 
 
 const Test = () => {
-  return(
+  return (
   <div>
     <iframe src="//localhost:3000/carousel"
         width="330px"
@@ -14,9 +14,7 @@ const Test = () => {
         display="initial"
         position="relative"/>
   </div>
-
   )
-
 }
 
 export default Test
