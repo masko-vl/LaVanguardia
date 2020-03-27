@@ -8,11 +8,12 @@ const Test = () => {
   <div>
     <iframe src="//localhost:3000/carousel"
         width="330px"
-        height="330px"
+        height="260px"
         id="test"
         className="myClassname"
         display="initial"
-        position="relative"/>
+        position="relative"
+        />
   </div>
   )
 }
