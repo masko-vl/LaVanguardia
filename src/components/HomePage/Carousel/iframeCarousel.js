@@ -34,7 +34,7 @@ const IframeCarousel = (props) => {
 <div id="testiframe">
 
   <Carousel showDots autoPlay dotListClass infinite
-    autoPlaySpeed={50000}
+    autoPlaySpeed={10000}
     responsive={responsive}>
     <div>
       <Link to='cityplay' className='jugartext'>
