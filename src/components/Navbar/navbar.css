@@ -75,6 +75,7 @@
 @media (max-width: 330px) {
   .header-profile {
       display: none;
+
   }
   .firstRow {
     display: none;

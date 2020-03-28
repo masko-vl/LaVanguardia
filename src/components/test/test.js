@@ -1,7 +1,7 @@
 
 import React from 'react';
 import '../HomePage/buttonGames.css'
-
+import './test.css';
 
 const Test = () => {
   return (
