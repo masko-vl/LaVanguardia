@@ -199,7 +199,7 @@ export default function NonogramApp(){
                 {/*The first one goes empty*/}
                 <td></td>
                 {verticalClues.map((clue, clueIndex) => {
-                  return <td key={clueIndex} className='clue v_clue'><div className="v-text">{clue}</div></td>
+                  return <td key={clueIndex} className='clue v_clue'><div><p className="v_clue_p v-text">{clue}</p></div></td>
                 })}
               </tr>
               {
@@ -212,7 +212,7 @@ export default function NonogramApp(){
               }
             </tbody>
           </table>
-          <Button color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+          <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
         </div>
       }
     </div>
