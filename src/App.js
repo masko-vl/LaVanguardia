@@ -14,6 +14,7 @@ import NonogramApp from './components/Games/Nonogram/NonogramApp';
 import Test from './components/test/test';
 import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
+import IndexSnake from './components/Games/Snake/indexSnake';
 
 
 const UserExample = {
@@ -74,6 +75,9 @@ class App extends Component{
       </Route>
       <Route path='/lavanguardia-page'>
       <LavanguardiaPage/>
+      </Route>
+      <Route path='/snake'>
+      <IndexSnake/>
       </Route>
       </Switch>
       <Footer />
