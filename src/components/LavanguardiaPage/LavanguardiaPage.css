@@ -21,7 +21,6 @@
 .nav-list {
     list-style-type: none;
     display: flex;
-    margin-left: 163px;
 }
 
 .nav-list-item:first-child {
@@ -36,7 +35,7 @@
 }
 
 /* main page */
-.container {
+.main-container {
     width: 100%;
     padding-right: 35px;
     padding-left: 35px;
@@ -44,8 +43,7 @@
     margin-left: auto;
 }
 
-img {
+.main-img {
     width: 100%;
     margin-top: 15px;
 }
- 
