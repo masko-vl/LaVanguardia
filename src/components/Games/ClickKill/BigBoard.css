@@ -17,6 +17,15 @@
   width: 95vw;
 }
 
+.MuiGrid-spacing-xs-3 {
+    width: 100% !important;
+}
+
+
+#generalContainer {
+  display: flex;
+}
+
 @media screen and (max-width: 350px) {
   .footballGameContainer {
     min-height: 100vh;
@@ -36,13 +45,4 @@
   .SmallSquareGridIframe {
     display: none
   }
-}
-
-.MuiGrid-spacing-xs-3 {
-    width: 100% !important;
-}
-
-
-#generalContainer {
-  display: flex;
 }
