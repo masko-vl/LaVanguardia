@@ -38,35 +38,35 @@ function LavanguardiaPage() {
                 <Container className="main">
                 <Row>
                     <Col md="6">
-                        <img src={firstrow}/>
+                        <img className="main-img" src={firstrow}/>
                     </Col>
                     <Col md="3">
-                         <img src={firstrowseccol}/>
+                         <img className="main-img"src={firstrowseccol}/>
                     </Col>
                     <Col md="3">
-                        <img src={firstrowtercol}/>
+                        <img className="main-img"src={firstrowtercol}/>
                     </Col>
                 </Row>
                 <Row>
                     <Col md="4">
-                        <img src={secrowfircol}/>
-                        <img src={secrowfircolsec}/>
+                        <img className="main-img"src={secrowfircol}/>
+                        <img className="main-img"src={secrowfircolsec}/>
                     </Col>
                     <Col md="4">
-                        <img src={secrowtercol}/>
-                        <img src={secrowseccolsec}/>
+                        <img className="main-img"src={secrowtercol}/>
+                        <img className="main-img"src={secrowseccolsec}/>
                     </Col>
                     <Col md="4">Aca va el iframe</Col>
                 </Row>
                 <Row>
                      <Col md="4">
-                        <img src={terrowfircol}/>
+                        <img className="main-img"src={terrowfircol}/>
                     </Col>
                     <Col md="4">
-                        <img src={terrowseccol}/>
+                        <img className="main-img"src={terrowseccol}/>
                     </Col>
                     <Col md="4">
-                        <img src={terrowtercol}/>
+                        <img className="main-img"src={terrowtercol}/>
                     </Col>
                 </Row>
                 </Container>
