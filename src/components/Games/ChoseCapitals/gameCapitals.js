@@ -92,7 +92,7 @@ export default class GameCapitals extends Component{
         this.setState({
             incorrecto:'',
             seconds:30,
-            gameStatus: 'playingGame',
+            gameStatus: 'startGame',
             points:0
         })
     }

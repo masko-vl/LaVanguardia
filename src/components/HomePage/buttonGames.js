@@ -49,14 +49,14 @@ const ButtonGames = (props)=>{
                   </div>
               </div>
             </Link>
-
-           {/*  <Link to='nonogram' className='jugartext'>
-              <div class="carda 3">
-                  <div class="card_image">
-                    <img src={nonogram} />
-                  </div>
-              </div>
-            </Link> */}
+            <Link to='nonogram' className='jugartext'>
+        <div class="carda 3">     
+            <div class="card_image">
+              <img src={nonogram} />
+            </div>
+        </div>
+      </Link>
+          
 
 
         </div>
