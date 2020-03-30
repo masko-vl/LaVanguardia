@@ -8,10 +8,13 @@ import UserProfile from './components/UserProfile/userprofile'
 import DropdownCategories from './components/DropdownCategories/dropdown'
 import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route} from 'react-router-dom';
-import ButtonGames from './components/ButtonGames/buttonGames';
+import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
-import NonogramApp from './components/Games/Nonogram/NonogramApp'
 import SeccionVanguaridia from './components/IframePrueba/iframePrueba';
+import NonogramApp from './components/Games/Nonogram/NonogramApp';
+import Test from './components/test/test';
+import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
+
 
 const UserExample = {
   name :"Pepito ScrumMaster",
@@ -45,12 +48,12 @@ class App extends Component{
   return (
     <div className='App'>
 
+
       <Navbar />
       <div className="firstRow">
         <DropdownCategories />
         <UserProfile userprof={this.state.user}/>
         <ButtonUserLogged user={this.state.user} userHere={this.simulateUserLogged} quitUser={this.userOff} />
-
       </div>
 
       <Switch>
@@ -71,6 +74,12 @@ class App extends Component{
       </Route>
       <Route path='/iframe'>
       <SeccionVanguaridia/>
+      </Route>
+      <Route path='/test'>
+      <Test/>
+      </Route>
+      <Route path='/carousel'>
+      <IframeCarousel/>
       </Route>
       </Switch>
       <Footer />

@@ -17,7 +17,11 @@
   width: 95vw;
 }
 
+.MuiGrid-spacing-xs-3 {
+    width: 100% !important;
+}
+
+
 #generalContainer {
   display: flex;
 }
-

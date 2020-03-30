@@ -1,0 +1,136 @@
+.myButton {
+    /* box-shadow: 0px 1px 0px 0px #F0F7FA; */
+    /* change the shadow in the raport with photo  */
+    background-color:#000b4c;
+    border-radius:6px;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #5B6178;
+    color: white;
+}
+.jugartext{
+    color:white ;
+}
+.w-100 {
+    width: 100%!important;
+    height: 501px;
+}
+/*css de botones */
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.carda {
+    margin: 30px auto;
+    width: 400px;
+    height: 275px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.carda .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.carda .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+
+}
+
+.carda .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+}
+
+.carda:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+.react-multi-carousel-item{
+  background-color: white !important;
+}
+
+.textCarouseliFrame {
+  background-color: white;
+  height: 35px;
+  margin-top: 3px;
+  text-align: left;
+  margin-left: 10px;
+  font-family: 'Neuton', serif;
+
+}
+
+.react-multi-carousel-dot button {
+  border-width: 0px !important;
+  border-color: none !important;
+  background:#e6e6e6 !important;
+  margin-right: 12px !important;
+  height: 10px !important;
+  width: 10px !important;
+
+}
+
+.react-multi-carousel-dot--active button {
+  border-color: black !important;
+  background-color: black !important;
+
+
+}
+
+
+
+.react-multi-carousel-dot-list {
+  background-color: white;
+}
+
+
+
+
+@media (max-width: 700px) {
+  .cards-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+
+  .carda {
+  width: 264px;
+  height: 220px;
+  }
+}
+
+@media (max-width: 330px) {
+  .w-100 {
+    height: 200px;
+    width: 300px;
+  }
+
+}
