@@ -56,7 +56,18 @@ function LavanguardiaPage() {
                         <img className="main-img"src={secrowtercol}/>
                         <img className="main-img"src={secrowseccolsec}/>
                     </Col>
-                    <Col md="4">Aca va el iframe</Col>
+                    <Col md="4">
+                      <iframe src="//localhost:3000/carousel"
+                          title="carousel"
+                          width="330px"
+                          height="260px"
+                          id="test"
+                          className="myClassname"
+                          display="initial"
+                          position="relative"
+                          />
+
+                    </Col>
                 </Row>
                 <Row>
                      <Col md="4">
