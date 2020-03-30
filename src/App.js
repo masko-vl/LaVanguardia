@@ -11,6 +11,7 @@ import { Switch, Route} from 'react-router-dom';
 import ButtonGames from './components/ButtonGames/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp'
+import SeccionVanguaridia from './components/IframePrueba/iframePrueba';
 
 const UserExample = {
   name :"Pepito ScrumMaster",
@@ -67,6 +68,9 @@ class App extends Component{
       </Route>
       <Route path='/nonogram'>
       <NonogramApp/>
+      </Route>
+      <Route path='/iframe'>
+      <SeccionVanguaridia/>
       </Route>
       </Switch>
       <Footer />
