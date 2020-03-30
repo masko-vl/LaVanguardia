@@ -10,7 +10,6 @@ import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route} from 'react-router-dom';
 import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
-import SeccionVanguaridia from './components/IframePrueba/iframePrueba';
 import NonogramApp from './components/Games/Nonogram/NonogramApp.js';
 import Test from './components/test/test';
 import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
@@ -66,9 +65,6 @@ class App extends Component{
       </Route>
       <Route path='/nonogram'>
       <NonogramApp/>
-      </Route>
-      <Route path='/iframe'>
-      <SeccionVanguaridia/>
       </Route>
       <Route path='/test'>
       <Test/>
