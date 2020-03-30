@@ -49,13 +49,7 @@ class App extends Component{
     <div className='App'>
 
       <Navbar />
-      <div className="firstRow">
-        <DropdownCategories />
-        <UserProfile userprof={this.state.user}/>
-        <ButtonUserLogged user={this.state.user} userHere={this.simulateUserLogged} quitUser={this.userOff} />
-
-      </div>
-
+     
       <Switch>
       <Route exact path ='/'>
       <ButtonGames />
@@ -91,3 +85,12 @@ class App extends Component{
 }
 }
 export default App;
+
+
+/*<div className="firstRow">
+        <DropdownCategories />
+        <UserProfile userprof={this.state.user}/>
+        <ButtonUserLogged user={this.state.user} userHere={this.simulateUserLogged} quitUser={this.userOff} />
+
+      </div>
+*/
