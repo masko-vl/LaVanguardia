@@ -12,7 +12,7 @@ import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp';
 import Test from './components/test/test';
-import CarouselHome from './components/HomePage/Carousel/carousel';
+import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
 
 
@@ -48,8 +48,8 @@ class App extends Component{
   return (
     <div className='App'>
 
+
       <Navbar />
-     
       <Switch>
       <Route exact path ='/'>
       <ButtonGames />
@@ -63,9 +63,6 @@ class App extends Component{
       <Route path='/tacleclick'>
       <BigBoard/>
       </Route>
-      <Route path='/lavanguardia-page'>
-      <LavanguardiaPage/>
-      </Route>
       <Route path='/nonogram'>
       <NonogramApp/>
       </Route>
@@ -73,7 +70,10 @@ class App extends Component{
       <Test/>
       </Route>
       <Route path='/carousel'>
-      <CarouselHome/>
+      <IframeCarousel/>
+      </Route>
+      <Route path='/lavanguardia-page'>
+      <LavanguardiaPage/>
       </Route>
       </Switch>
       <Footer />

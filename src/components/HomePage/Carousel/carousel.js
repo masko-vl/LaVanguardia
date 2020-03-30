@@ -69,4 +69,7 @@ const CarouselHome = (props) => {
 
   }
 
+
+
+
 export default CarouselHome

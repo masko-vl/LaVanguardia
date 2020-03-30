@@ -71,3 +71,13 @@
 nav.header-menu.marginfix {
     margin-top: 75px !important;
 }
+@media (max-width: 330px) {
+  .header-profile {
+      display: none;
+
+  }
+  .firstRow {
+    display: none;
+  }
+
+}

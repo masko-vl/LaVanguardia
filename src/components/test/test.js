@@ -1,26 +1,21 @@
 
 import React from 'react';
 import '../HomePage/buttonGames.css'
-
+import './test.css';
 
 const Test = () => {
-  return(
+  return (
   <div>
     <iframe src="//localhost:3000/carousel"
-        width="450px"
-        height="450px"
+        width="330px"
+        height="260px"
         id="test"
         className="myClassname"
         display="initial"
-        position="relative"/>
-
+        position="relative"
+        />
   </div>
-
-)
-
-
-
-
+  )
 }
 
 export default Test
