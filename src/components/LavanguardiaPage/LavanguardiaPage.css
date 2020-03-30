@@ -1,61 +1,4 @@
-/* navbar css */
-.header-profile {
-    margin: 0;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 2888888;
-}
 
-
-.header-profile__wrapper {
-    width: 100%;
-    background-color: #001c4c;
-    height: 94px;
-    display: block;
-    margin: auto;
-    padding: 0 10px;
-}
-
-
-.navbarRow {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -8px;
-    margin-left: -8px;
-    width: 100%;
-}
-
-.header-profile__logo {
-    width: 338px;
-    line-height: 50px;
-    margin-left: 146px;
-    margin-top: 9px;
-}
-
-
-.header-logo-wrapper .header-fixed-tools {
-    display: block;
-    position: absolute;
-    top: 2px;
-    right: -8px;
-}
-
-.header-fixed-tools .icon-tool {
-    margin-right: 0;
-    height: 45px;
-    font-size: 16px;
-    font-size: 1rem;
-}
-
-
-.imageHome {
-  align-content: center;
-  margin: 13px;
-  height: 45%;
-
-}
 
 /* lista menu */
 .header-menu {
@@ -78,7 +21,7 @@
 .nav-list {
     list-style-type: none;
     display: flex;
-    margin-left: 80px;
+    margin-left: 163px;
 }
 
 .nav-list-item:first-child {
@@ -93,11 +36,16 @@
 }
 
 /* main page */
- .main {
-     margin-left: 130px;
-     margin-right: 130px;
- }
+.container {
+    width: 100%;
+    padding-right: 35px;
+    padding-left: 35px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
-
-
+img {
+    width: 100%;
+    margin-top: 15px;
+}
  
