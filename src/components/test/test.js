@@ -13,8 +13,7 @@ const displayRandomItem = () => {
 const Test = () => {
   return (
   <div>
-  <iframe src="//localhost:3000/tacleclick"
-    /* <iframe src={"//localhost:3000/" + displayRandomItem()  */
+    <iframe src={"//localhost:3000/" + displayRandomItem()}
         width="330px"
         height="260px"
         id="test"
