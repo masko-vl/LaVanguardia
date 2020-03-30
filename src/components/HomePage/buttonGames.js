@@ -42,7 +42,6 @@ const ButtonGames = (props)=>{
                     </div>
               </div>
             </Link>
-            
 
               <Link to='tacleclick' className='jugartext'>
                 <div className="carda">
@@ -52,7 +51,7 @@ const ButtonGames = (props)=>{
                 </div>
               </Link>
               <Link to='nonogram' className='jugartext'>
-                <div class="carda 3">
+                <div class="carda">
                     <div class="card_image">
                       <img src={nonogram} />
                     </div>
