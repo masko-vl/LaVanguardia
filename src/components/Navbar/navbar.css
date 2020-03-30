@@ -81,3 +81,15 @@ nav.header-menu.marginfix {
   }
 
 }
+
+@media (max-width: 700px) {
+  #header-profile__wrapper {
+      height: 46px;
+  }
+  
+  .header-profile__logo {
+    line-height: 26px;
+    margin-left: 0;
+    width: 182px;
+  }
+  }
