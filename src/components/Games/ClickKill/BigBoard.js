@@ -14,11 +14,13 @@ export default class BigBoard extends React.Component {
     gameStarted: false,
     gameEnded: false,
     squareIndex: null,
+    squareIndexIframe: null,
     logoClassName: "logoDisplayed",            
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
     smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","","",""],                     // COMMENT : array with all fixed position deleted
+    smallSquaresArrayIframe: ["","","","","","","","","",""],
     logoSelected: '',
   }
   
@@ -27,8 +29,10 @@ export default class BigBoard extends React.Component {
   // CHOOSING A RANDOM SQUARE TO DISPLAY THE LOGO IN THE GAME
   chooseSmallSquare = () => {
     let randomIndex = Math.floor(Math.random() * this.state.smallSquaresArray.length);
+    let randomIndexIframe = Math.floor(Math.random() * this.state.smallSquaresArrayIframe.length);
     this.setState ({
-      squareIndex: randomIndex
+      squareIndex: randomIndex,
+      squareIndexIframe: randomIndexIframe,
     })
   }
 
@@ -117,11 +121,23 @@ export default class BigBoard extends React.Component {
                 className="flagSquare" 
               >                            
                 {this.state.smallSquaresArray.map((x, index) =>            
-                  <Grid item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
+                  <Grid item xs={2} className="SmallSquareGrid" style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
                     <SmallSquare 
                     zIndex={index} 
                     logo={this.state.logoSelected} 
                     randomSquare={index === this.state.squareIndex} 
+                    itemClicked={this.itemClicked}
+                    logoClicked={this.state.logoClicked}
+                    />
+                  </Grid>                  
+                )}
+                
+                {this.state.smallSquaresArrayIframe.map((x, index) =>            
+                  <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 70, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
+                    <SmallSquare 
+                    zIndex={index} 
+                    logo={this.state.logoSelected} 
+                    randomSquare={index === this.state.squareIndexIframe} 
                     itemClicked={this.itemClicked}
                     logoClicked={this.state.logoClicked}
                     />
