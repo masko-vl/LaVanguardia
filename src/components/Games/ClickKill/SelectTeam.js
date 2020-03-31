@@ -44,9 +44,6 @@ const SelectTeam = props => {
         {props.footballFlags.map((equipo)=>
                         <Carousel.Item>
                             <img id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
-                            <Carousel.Caption>
-                                <button></button>
-                            </Carousel.Caption>
                         </Carousel.Item>
                     )}
         </Carousel>

@@ -57,24 +57,21 @@
 
 
 @media (max-width: 330px){
-#team-container{
-    height: 100%;
-}
-.title-teams{
-    font-size: 2em;
-}
- #teams.img-container{
-    display:none
-}
-#carrusel-teams{
-    display:block;
-} 
-#carrusel-teams img{
+    #team-container{
+        height: 100%;
+    }
+    .title-teams{
+        font-size: 2em;
+    }
+    #teams.img-container{
+        display:none
+    }
+    #carrusel-teams{
+        display:block;
+    } 
+    #carrusel-teams img{
 
-    width: 150px;
-    height: 178px;
-}
-
-
-
+        width: 150px;
+        height: 178px;
+    }
 }

@@ -145,7 +145,7 @@ export default class BigBoard extends React.Component {
                 )}
               </Grid>
                  
-            </div><br/>
+            </div>
             <div id="buttonContainer">
            {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, WHEN FINISHED, the button "playagain" IS DISPLAYED with the result. No button is displayed when playing */}
             { !this.state.gameStarted && !this.state.gameEnded
