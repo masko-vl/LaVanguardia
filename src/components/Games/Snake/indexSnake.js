@@ -22,14 +22,12 @@ const initialState = {
   ]
 }
 
-const isFinish = {
-  isFinish: false,
-}
+
 
 class IndexSnake extends Component {
 
   state = initialState;
-          isFinish;
+
 
   componentDidMount() {
     setInterval(this.moveSnake, this.state.speed);
@@ -132,10 +130,10 @@ class IndexSnake extends Component {
   }
 
   onGameOver() {
-    debugger;
+    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
     this.setState({
       initialState,
-      isFinish: true
+
     })
   }
 
@@ -144,10 +142,6 @@ class IndexSnake extends Component {
       <div className="game-area">
         <Snake snakeDots={this.state.snakeDots}/>
         <Food dot={this.state.food}/>
-        {this.state.isFinish
-        ? <button>Hola</button>
-        : <button>adeu</button>
-        }
       </div>
     );
   }
