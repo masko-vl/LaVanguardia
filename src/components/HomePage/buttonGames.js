@@ -35,7 +35,7 @@ const ButtonGames = (props)=>{
                 <div className="card_image"> <img src={cityban} /> </div>
             </div>
           </Link>
-          <Link to='geochallange' className='jugartext'>
+          <Link to='geochallenge' className='jugartext'>
               <div className="carda">
                   <div className="card_image">
                     <img src={titleGeo} />

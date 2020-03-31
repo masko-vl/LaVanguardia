@@ -40,7 +40,7 @@ const SelectTeam = props => {
             </div>
             
         </div>
-        <Carousel id='carrusel-teams'>
+        <Carousel id='carouselTeams'>
         {props.footballFlags.map((equipo)=>
                         <Carousel.Item>
                             <img id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
