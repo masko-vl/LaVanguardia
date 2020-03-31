@@ -90,6 +90,7 @@
     font-size: 25px;
     border: 10px solid #001c4c;
     margin: 0 auto 5px auto;
+
 }
 
 .totalAnswers {
@@ -132,6 +133,8 @@
   float: right;
   padding: 8px;
   width: 20%;
+  font-family: 'Neuton', serif;
+
 }
 
 .exitButton a {
@@ -170,7 +173,7 @@
         font-size: 15px;
         height: 100%;
     }
-    
+
 
     .exitButton {
         height: 20px;
