@@ -10,7 +10,7 @@ import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route} from 'react-router-dom';
 import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
-import NonogramApp from './components/Games/Nonogram/NonogramApp';
+import NonogramApp from './components/Games/Nonogram/NonogramApp.js';
 import Test from './components/test/test';
 import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';

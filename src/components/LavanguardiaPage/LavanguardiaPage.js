@@ -13,6 +13,13 @@ import terrowfircol from './images/terrowfircol.png';
 import terrowseccol from './images/terrowtercol.png';
 import terrowtercol from './images/terrowtercol.png';
 
+const items = ["tacleclick", "cityplay", "nonogram"]
+
+const displayRandomItem = () => {
+  const randomItem = items[Math.floor(Math.random()*items.length)]
+  return randomItem
+}
+
 function LavanguardiaPage() {
     return(
         <div>
@@ -61,6 +68,15 @@ function LavanguardiaPage() {
                           title="carousel"
                           width="330px"
                           height="260px"
+                          id="test"
+                          className="myClassname"
+                          display="initial"
+                          position="relative"
+                          />
+                      <iframe src={"//localhost:3000/" + displayRandomItem()}
+                          title="carousel"
+                          width="330px"
+                          height="240px"
                           id="test"
                           className="myClassname"
                           display="initial"

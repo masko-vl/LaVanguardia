@@ -71,11 +71,10 @@
 nav.header-menu.marginfix {
     margin-top: 75px !important;
 }
+@media (max-width: 331px){
 
-@media (max-width: 330px) {
-  .header-profile {
-      display: none;
-
+  #header-profile {
+    display: none;
   }
 
   #header-profile__wrapper {
@@ -86,5 +85,7 @@ nav.header-menu.marginfix {
   .firstRow {
     display: none;
   }
-
+  #header-profile__wrapper {
+    display: none;
+}
 }
