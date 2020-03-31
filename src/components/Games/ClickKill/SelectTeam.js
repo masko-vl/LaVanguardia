@@ -26,13 +26,13 @@ const SelectTeam = props => {
         <div id='teams' className="img-container">
             <div className={classes.root}>
                 <Grid container
+                    max-width="90"
                     direction="row"
                     justify="center"
                     alignItems="center"
-                    spacing={3}
                     className="flagSquare">
                     {props.footballFlags.map((equipo)=>
-                        <Grid  item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px', padding: 2}}>
+                        <Grid item xs={2} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2}}>
                             <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
                         </Grid>
                     )}
