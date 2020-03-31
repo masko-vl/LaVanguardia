@@ -106,7 +106,7 @@ export default class BigBoard extends React.Component {
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div className="footballGameContainer">
-            <h1>Dalos una paliza!</h1>
+            <h1>Dale una paliza!</h1>
             <div id="footballCounterButton">{this.state.counter}</div>
             <div className="img-container" flexGrow={1}>
               <Grid 

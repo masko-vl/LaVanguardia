@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Carousel from 'react-bootstrap/Carousel';
 import "./SelectTeam.css";
 import "./BigBoard.css"
 
@@ -21,8 +22,8 @@ const SelectTeam = props => {
     const classes = useStyles();
     return (
     <div className="footballGameContainer">
-        <h1>A qué equipo quieres dar una Paliza?</h1>
-        <div className="img-container">
+        <h1 className='title-teams'>A qué equipo quieres dar una Paliza?</h1>
+        <div id='teams' className="img-container">
             <div className={classes.root}>
                 <Grid container
                     direction="row"
@@ -37,7 +38,18 @@ const SelectTeam = props => {
                     )}
                 </Grid>
             </div>
+            
         </div>
+        <Carousel id='carrusel-teams'>
+        {props.footballFlags.map((equipo)=>
+                        <Carousel.Item>
+                            <img id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
+                            <Carousel.Caption>
+                                <button></button>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    )}
+        </Carousel>
     </div>
     )
 }
