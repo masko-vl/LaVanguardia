@@ -12,6 +12,8 @@ import secrowseccolsec from './images/secrowseccolsec.png';
 import terrowfircol from './images/terrowfircol.png';
 import terrowseccol from './images/terrowtercol.png';
 import terrowtercol from './images/terrowtercol.png';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 const items = ["tacleclick", "cityplay"]
 
@@ -23,24 +25,25 @@ const displayRandomItem = () => {
 function LavanguardiaPage() {
     return(
         <div>
-            <nav className="header-menu">
-                <div className="nav-container">
-                    <ul className="nav-list">
-                        <li className="nav-list-item">Al minuto</li>
-                        <li className="nav-list-item">Internacional</li>
-                        <li className="nav-list-item">Política</li>
-                        <li className="nav-list-item">Opinión</li>
-                        <li className="nav-list-item">Vida</li>
-                        <li className="nav-list-item">Deportes</li>
-                        <li className="nav-list-item">Economía</li>
-                        <li className="nav-list-item">Local</li>
-                        <li className="nav-list-item">Gente</li>
-                        <li className="nav-list-item">Cultura</li>
-                        <li className="nav-list-item">Sucesos</li>
-                        <li className="nav-list-item">Temas</li>
-                    </ul>
-                </div>
-            </nav>
+          <div>
+          <Navbar className="header-menu" expand="lg">
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav.Link className="nav-list-item" href="http://localhost:3000/games-section">Juegos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="">Internacional</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#home">Política</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#link">Juegos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#home">Deportes</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#link">Economía</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#home">Local</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#link">Gente</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#home">Cultura</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#link">Sucesos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#link">Temas</Nav.Link>
+                </Navbar.Collapse>
+              </Navbar>
+            </div>
+
             <div>
                 <Container className="main">
                 <Row>

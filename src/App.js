@@ -52,7 +52,7 @@ class App extends Component{
       <Navbar />
       <Switch>
       <Route exact path ='/'>
-      <ButtonGames />
+      <LavanguardiaPage />
       </Route>
       <Route path='/cityplay'>
       <AppCapitals/>
@@ -72,8 +72,8 @@ class App extends Component{
       <Route path='/carousel'>
       <IframeCarousel/>
       </Route>
-      <Route path='/lavanguardia-page'>
-      <LavanguardiaPage/>
+      <Route path='/games-section'>
+      <ButtonGames/>
       </Route>
       </Switch>
       <Footer />
