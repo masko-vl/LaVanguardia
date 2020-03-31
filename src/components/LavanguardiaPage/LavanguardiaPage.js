@@ -13,7 +13,7 @@ import terrowfircol from './images/terrowfircol.png';
 import terrowseccol from './images/terrowtercol.png';
 import terrowtercol from './images/terrowtercol.png';
 
-const items = ["tacleclick", "cityplay", "nonogram"]
+const items = ["tacleclick", "cityplay"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]
