@@ -46,3 +46,4 @@ class AppCapitals extends Component {
 }
 
 export default AppCapitals;
+

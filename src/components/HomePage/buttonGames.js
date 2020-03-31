@@ -58,9 +58,6 @@ const ButtonGames = (props)=>{
                   </div>
               </div>
             </Link>
-
-
-
         </div>
       </div>
     </div>

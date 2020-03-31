@@ -67,6 +67,13 @@ const CarouselHome = (props) => {
   </div>
 )
 
+<<<<<<< HEAD
 }
+=======
+  }
+
+
+
+>>>>>>> e137ef529555124a90efbe53db8e63d6ae3ab937
 
 export default CarouselHome
