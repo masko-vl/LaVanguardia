@@ -67,24 +67,6 @@ const CarouselHome = (props) => {
   </div>
 )
 
-<<<<<<< HEAD:src/components/HomePage/Carousel/carousel.js
-  }
-=======
-      <Link to='tacleclick' className='jugartext'>
-        <div className="carda">     
-            <div className="card_image">
-              <img src={tackle} />
-            </div>
-        </div>
-      </Link>
-      <Link to='nonogram' className='jugartext'>
-        <div class="carda 3">     
-            <div class="card_image">
-              <img src={nonogram} />
-            </div>
-        </div>
-      </Link>
-    
->>>>>>> Javier:src/components/ButtonGames/buttonGames.js
+}
 
 export default CarouselHome

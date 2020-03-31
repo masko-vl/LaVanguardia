@@ -50,13 +50,15 @@ const ButtonGames = (props)=>{
               </div>
             </Link>
 
-           {/*  <Link to='nonogram' className='jugartext'>
-              <div class="carda 3">
+     
+            <Link to='nonogram' className='jugartext'>
+              <div class="carda 3">     
                   <div class="card_image">
                     <img src={nonogram} />
                   </div>
               </div>
-            </Link> */}
+            </Link>
+
 
 
         </div>
