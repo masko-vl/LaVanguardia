@@ -3,7 +3,7 @@ import React from 'react';
 import '../HomePage/buttonGames.css'
 import './test.css';
 
-const items = ["carousel", "tacleclick", "geochallenge", "cityplay"]
+const items = ["carousel", "tacleclick","nonogram", "geochallenge", "cityplay"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]

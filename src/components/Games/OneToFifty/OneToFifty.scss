@@ -1,0 +1,48 @@
+.OneToFifty {
+    & p {
+        margin: 0;
+    }
+
+    & .justifyCenter {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .alignCenter {
+        display: flex;
+        align-items: center;
+    }
+
+    & .timeAndActualNumber {
+        margin: 10px 20px;
+        background-color: gray;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    & .numbersGrid{
+        width: 40%;
+        margin: auto;
+        @media screen and (max-width: 600px){
+             width:80%;
+        }
+        & .cellNumber {
+        background-color: #283f67;
+        color: white;
+        border-radius: 10px;
+        margin: 10px 0;
+        height: 50px;
+        width: 50px;
+    }
+    }
+    & #button{
+        background-color: #001C4C !important;
+        border-color: #283f67 !important;
+        margin-top: 15px;
+    }
+    
+}
+
+

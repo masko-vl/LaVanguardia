@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/navbar';
 import Footer from './components/Footer/Footer'
@@ -7,39 +7,39 @@ import ButtonUserLogged from './components/ButtonUserLogged/ButtonUserLogged'
 import UserProfile from './components/UserProfile/userprofile'
 import DropdownCategories from './components/DropdownCategories/dropdown'
 import GeoChallenge from './components/Games/GeoChallenge';
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp.js';
 import Test from './components/test/test';
 import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
-
+import OneToFifty from './components/Games/OneToFifty/OneToFifty'
 
 const UserExample = {
-  name :"Pepito ScrumMaster",
+  name: "Pepito ScrumMaster",
   img: "https://avatars3.githubusercontent.com/u/59797566?s=460&v=4",
   username: "Pepito",
   age: '28',
   points: 20
 };
 
-class App extends Component{
-  state={
-    user:{},
+class App extends Component {
+  state = {
+    user: {},
     timesCliked: false,
 
   }
-  simulateUserLogged =()=>{
+  simulateUserLogged = () => {
     this.setState({
-      user:UserExample,
+      user: UserExample,
       timesCliked: true,
 
     })
   }
-  userOff =()=>{
+  userOff = () => {
     this.setState({
-      user:{},
+      user: {},
       timesCliked: false,
 
     })
@@ -86,11 +86,3 @@ class App extends Component{
 }
 export default App;
 
-
-/*<div className="firstRow">
-        <DropdownCategories />
-        <UserProfile userprof={this.state.user}/>
-        <ButtonUserLogged user={this.state.user} userHere={this.simulateUserLogged} quitUser={this.userOff} />
-
-      </div>
-*/
