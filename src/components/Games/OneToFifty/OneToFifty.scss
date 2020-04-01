@@ -23,8 +23,11 @@
     }
 
     & .numbersGrid{
-        width: 60%;
+        width: 40%;
         margin: auto;
+        @media screen and (max-width: 600px){
+             width:80%;
+        }
         & .cellNumber {
         background-color: #283f67;
         color: white;
@@ -35,7 +38,9 @@
     }
     }
     & #button{
-        background-color: #001C4C;
+        background-color: #001C4C !important;
+        border-color: #283f67 !important;
+        margin-top: 15px;
     }
     
 }
