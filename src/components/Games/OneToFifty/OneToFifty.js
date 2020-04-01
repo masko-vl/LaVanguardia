@@ -41,7 +41,7 @@ export default function OneToFifty() {
             {/* INSTRUCTIONS */}
             <div className="row">
                 <span style={{ color: "#283f67", fontSize: "2em", marginLeft: "90%" }} onClick={toggle}>{instructions}</span>
-                <Modal isOpen={modal} toggle={toggle} style={{ marginTop:"27%"}}>
+                <Modal isOpen={modal} toggle={toggle} style={{ marginTop:"10%"}}>
                     <ModalBody>
                         <p>Cuenta del 1 al 50 lo más rápido posible...</p>
                         <p>¡Consigue tu tiempo récord!</p>
