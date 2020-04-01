@@ -1,0 +1,27 @@
+.closeButtonIframe {
+    position: fixed;
+    top: 2px;
+    left: 2px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgray;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    color: darkgray;
+}
+
+.closeButtonIframe:hover {
+    color: white;
+    background-color: black;
+}
+
+@media screen and (min-width: 350px) {
+    .closeButtonIframe {
+        display: none;
+    }
+}

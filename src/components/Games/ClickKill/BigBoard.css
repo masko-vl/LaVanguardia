@@ -32,6 +32,7 @@
     background-size: cover;
   }
   .footballGameContainer > h1 {
+    padding-left: 30px;
     font-size: 20px;
     color: lightgrey
   }

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import {Link} from 'react-router-dom';
 import footballFlags from "./images/footballFlags"
 import SmallSquare from './SmallSquare';
 import SelectTeam from './SelectTeam';
 import Grid from '@material-ui/core/Grid';
-
+import "./../../SharedButtons/IframeButtons.css";
 import './BigBoard.css';
 import './Button.css';
 
@@ -103,6 +104,10 @@ export default class BigBoard extends React.Component {
     return ( 
        <Fragment>
        <div id='generalContainer'>
+       <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}
+            >X</Link>
        <button id="closeButton"><a href="/"><b>x</b></a></button>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 

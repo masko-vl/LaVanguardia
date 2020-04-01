@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Carousel from 'react-bootstrap/Carousel';
 import "./SelectTeam.css";
-import "./BigBoard.css"
+import "./BigBoard.css";
 
 
 const useStyles = makeStyles(theme => ({
