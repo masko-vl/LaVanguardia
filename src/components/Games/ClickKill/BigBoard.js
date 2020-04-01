@@ -14,11 +14,13 @@ export default class BigBoard extends React.Component {
     gameStarted: false,
     gameEnded: false,
     squareIndex: null,
+    squareIndexIframe: null,
     logoClassName: "logoDisplayed",            
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
     smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","","",""],                     // COMMENT : array with all fixed position deleted
+    smallSquaresArrayIframe: ["","","","","","","","","",""],
     logoSelected: '',
   }
   
@@ -27,8 +29,10 @@ export default class BigBoard extends React.Component {
   // CHOOSING A RANDOM SQUARE TO DISPLAY THE LOGO IN THE GAME
   chooseSmallSquare = () => {
     let randomIndex = Math.floor(Math.random() * this.state.smallSquaresArray.length);
+    let randomIndexIframe = Math.floor(Math.random() * this.state.smallSquaresArrayIframe.length);
     this.setState ({
-      squareIndex: randomIndex
+      squareIndex: randomIndex,
+      squareIndexIframe: randomIndexIframe,
     })
   }
 
@@ -106,7 +110,7 @@ export default class BigBoard extends React.Component {
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div className="footballGameContainer">
-            <h1>Dalos una paliza!</h1>
+            <h1>Dale una paliza!</h1>
             <div id="footballCounterButton">{this.state.counter}</div>
             <div className="img-container" flexGrow={1}>
               <Grid 
@@ -117,7 +121,7 @@ export default class BigBoard extends React.Component {
                 className="flagSquare" 
               >                            
                 {this.state.smallSquaresArray.map((x, index) =>            
-                  <Grid item xs={2} style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
+                  <Grid item xs={2} className="SmallSquareGrid" style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
                     <SmallSquare 
                     zIndex={index} 
                     logo={this.state.logoSelected} 
@@ -127,9 +131,21 @@ export default class BigBoard extends React.Component {
                     />
                   </Grid>                  
                 )}
+                
+                {this.state.smallSquaresArrayIframe.map((x, index) =>            
+                  <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 70, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} > 
+                    <SmallSquare 
+                    zIndex={index} 
+                    logo={this.state.logoSelected} 
+                    randomSquare={index === this.state.squareIndexIframe} 
+                    itemClicked={this.itemClicked}
+                    logoClicked={this.state.logoClicked}
+                    />
+                  </Grid>                  
+                )}
               </Grid>
                  
-            </div><br/>
+            </div>
             <div id="buttonContainer">
            {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, WHEN FINISHED, the button "playagain" IS DISPLAYED with the result. No button is displayed when playing */}
             { !this.state.gameStarted && !this.state.gameEnded
