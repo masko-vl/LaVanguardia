@@ -206,20 +206,7 @@ export default function NonogramApp() {
         :
         <div>
           <table className="center">
-            <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-              <DropdownToggle caret>
-                Selecciona nivel
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            
             <tbody>
               <tr>
                 {/*The first one goes empty*/}
@@ -238,7 +225,23 @@ export default function NonogramApp() {
               }
             </tbody>
           </table>
+          <div className="buttons">
           <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+              <DropdownToggle caret className="selector_button" >
+                Selecciona nivel
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
         </div>
       }
     </div>
