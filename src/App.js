@@ -75,7 +75,7 @@ class App extends Component {
       <Route path='/games-section'>
       <ButtonGames/>
       </Route>
-      <Route path='/one-to-fifty'>
+      <Route path='/OneToFifty'>
       <OneToFifty/>
       </Route>
       </Switch>
