@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Carousel from 'react-bootstrap/Carousel';
 import "./SelectTeam.css";
-import "./BigBoard.css"
+import "./BigBoard.css";
 
 
 const useStyles = makeStyles(theme => ({
@@ -40,7 +40,7 @@ const SelectTeam = props => {
             </div>
             
         </div>
-        <Carousel id='carrusel-teams'>
+        <Carousel id='carouselTeams'>
         {props.footballFlags.map((equipo)=>
                         <Carousel.Item>
                             <img id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>

@@ -71,9 +71,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
+
 @media screen and (max-width: 350px) {
     #buttonContainer {
-        top: 30%;
+        top: 25%;
+        margin-bottom: 0; 
+
     }
     #closeButton {
         display: none

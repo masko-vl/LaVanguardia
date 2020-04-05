@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import './NonogramApp.scss';
 import {
   Button,
@@ -12,6 +13,8 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import "./../../SharedButtons/IframeButtons.css";
+
 
 export default function NonogramApp() {
   // ---STATES---
@@ -191,6 +194,9 @@ export default function NonogramApp() {
 
   return (
     <div className="Nonogram container-fluid">
+      <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}>X</Link>
       {modal ?
         <div>
           <Modal isOpen={modal} toggle={toggle}>

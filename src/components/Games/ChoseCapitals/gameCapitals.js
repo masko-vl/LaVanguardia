@@ -7,6 +7,8 @@ import SelectRegion from './Select/select';
 import Info from './InfoGame/infoGame';
 import Exit from './Exit/exit'
 import {Link} from 'react-router-dom';
+import "./../../SharedButtons/IframeButtons.css";
+
 
 export default class GameCapitals extends Component{
     state={
@@ -98,9 +100,15 @@ export default class GameCapitals extends Component{
     }
 
     render(){
+
         /*OBJECT WITH THE 3 STATES OF THE GAME THAT WE ARE CHANGING DURING THE FUNCTIONS */
         const gameStatus={ 
+            
             startGame: ()=>(<div className='startGame-page'>
+                <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}
+            >X</Link>
                 <div className='logo'>
                     <Info style='instrucciones' text='Instrucciones: Seleciona la capital correcta! Si aciertas ganas 10 puntos y 4 segundos y si fallas te resta 3s'/>
                     <SelectRegion style={'region-select'} action={this.props.fiterContinent}/>
@@ -109,6 +117,10 @@ export default class GameCapitals extends Component{
                 </div></div> ),
 
             playingGame: ()=> (<div className='playingGame'>
+                <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}
+            >X</Link>
                 <Info style='counterGame-button' text={this.state.seconds}/>  
                 <Info style='incorrecto' text={this.state.incorrecto}/>  
                 <Info style='country' text={this.state.countries.length>0&&this.state.countries[0].name}/>
@@ -122,6 +134,10 @@ export default class GameCapitals extends Component{
             </div>),
 
             gameOver: ()=> (<div className='playingGame'>
+                <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}
+            >X</Link>
                 <Info style='gameover' text='GAME OVER'/>
                 <Info style='score' text={'Score : '+this.state.points}/>
                 <Links style='shered-link'/>
