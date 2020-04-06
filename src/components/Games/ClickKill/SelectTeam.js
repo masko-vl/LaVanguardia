@@ -32,9 +32,14 @@ const SelectTeam = props => {
                     alignItems="center"
                     className="flagSquare">
                     {props.footballFlags.map((equipo)=>
-                        <Grid item xs={2} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2, backgroundColor: 'white' }}>
+                    <Fragment>
+                        <Grid className="squareBackground" item xs={2} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2 }}>
                             <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
                         </Grid>
+                        <Grid className="squareBackgroundSmall" item xs={3} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2 }}>
+                            <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
+                        </Grid>
+                        </Fragment>
                     )}
                 </Grid>
             </div>
