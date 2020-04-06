@@ -29,9 +29,7 @@
 
 }
 
-.userProfileLogo {
-  float: right;
-}
+
 
 .imageUserLogin{
   height: 60%;
@@ -51,14 +49,29 @@
 
   .navCategories {
     flex-wrap: wrap;
-    height: 20%;
+    height: 0%;
+    width: 80%;
   }
 
   .buttonCategories {
     margin-bottom: 5px;
     margin-top: 5px;
+    padding: 0px 20px 0px 20px;
   }
 
+  .userProfileLogo {
+    margin-right:  0;
+    position: absolute;
+    float: right;
+    margin-left: 235px;
+    height: 160px;
+    background-color: #F0F0F0;
+
+  }
+
+  .userProfileLogo p{
+    display: none;
+  }
 
 
 
