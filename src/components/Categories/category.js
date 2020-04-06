@@ -1,17 +1,24 @@
 import React from 'react';
-import './category.css'
+import './category.css';
+import logoProfile from './user_info.svg';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 
 const Category = (props) => {
   return (
     <div>
       <div className="navCategories">
         <button className="buttonCategories">Palabras</button>
-        <button className="buttonCategories">Rompecabezas</button>
         <button className="buttonCategories">Arcade</button>
         <button className="buttonCategories">Cartas</button>
         <button className="buttonCategories">Casino</button>
         <button className="buttonCategories">Todos</button>
-        <input type="text" placeholder="Search.."/>
+        <input className="buttonCategories" type="text" placeholder="Search.."/>
+        <div className="userProfileLogo">
+          <img src={logoProfile} className="imageUserLogin"/>
+          <p>Iniciar Sesión</p>
+        </div>
       </div>
 
     </div>
