@@ -55,7 +55,7 @@ class App extends Component {
           <Route path='/cityplay'>
             <AppCapitals />
           </Route>
-          <Route path='/geochallange'>
+          <Route path='/geoChallenge'>
             <GeoChallenge />
           </Route>
           <Route path='/tacleclick'>

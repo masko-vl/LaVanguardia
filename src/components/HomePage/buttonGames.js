@@ -25,9 +25,6 @@ import CarouselHome from './Carousel/carousel'
 const ButtonGames = (props)=>{
     return(
     <div>
-      <div>
-        <CarouselHome />
-      </div>
       <div id="test">
         <div className="cards-list">
           <Link to='cityplay' className='jugartext'>
@@ -50,9 +47,9 @@ const ButtonGames = (props)=>{
               </div>
             </Link>
 
-     
+
             <Link to='nonogram' className='jugartext'>
-              <div class="carda 3">     
+              <div class="carda 3">
                   <div class="card_image">
                     <img src={nonogram} />
                   </div>
