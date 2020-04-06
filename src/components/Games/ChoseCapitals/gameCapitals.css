@@ -1,8 +1,7 @@
-
 .container-game{
     height: 95vh;
     background: #254159 url('./img/fondo_capitales.png')  no-repeat bottom ;
-    background-size:contain;   
+    background-size:contain;
     font-family: 'Neuton', serif;
 }
 .logo{
@@ -67,7 +66,7 @@
     font-size: 5em;
     font-weight: bold;
 
-    border:3px solid white; 
+    border:3px solid white;
     background-color: white;
 
 
@@ -149,7 +148,7 @@ opacity: 1;
 .back-menu a {
     color: white;
     text-decoration: none;
-   
+
 }
 
 @media (max-width: 700px) {
@@ -181,5 +180,65 @@ opacity: 1;
   .containerInstruction {
       width: 100vw;
   }
- 
- 
+
+  @media (max-width: 330px){
+    .container-game{
+        font-size: 0.8em;
+        height: 100vh;
+    }
+    .logo{
+        top: 0px;
+        left: 0px;
+        width: 0;
+        height: 0;
+        margin-top: 0px;
+        background: transparent;
+    }
+    .startGame-page {
+        display: block;
+        width: 100%;
+        margin:auto;
+        align-items: left;
+
+
+    }
+    .instrucciones{
+        margin-top: 0px;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+        width: 250px;
+
+    }
+    .region-select{
+        margin-left: 110px;
+        margin-bottom: 10px;
+    }
+    .startGame-button{
+        margin-left: 105px;
+    }
+    .incorrecto{
+        font-size: 1em;
+    }
+
+    .counterGame-button{
+        width: 50px;
+        height: 50px;
+        font-size: 2em;
+    }
+    .country{
+        font-size: 1.3em;
+    }
+    .score{
+        padding: 10px;
+        height: 70px;
+        font-size: 1.5em;
+    }
+    .flex-butons-capitals{
+        font-size: 1.2em;
+        grid-template-columns: auto auto;
+    }
+    .back-menu{
+        display: none;
+    }
+  }

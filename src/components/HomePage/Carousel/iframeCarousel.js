@@ -45,17 +45,17 @@ const IframeCarousel = (props) => {
         />
       </Link>
 
-      <p className="textCarouseliFrame">Test texto card</p>
+      <p className="textCarouseliFrame">Juega a citiplay y pon a prueba tus conocimientos sobre capitales de todo el mundo</p>
     </div>
     <div>
-      <Link to='geochallange' className='jugartext'>
+      <Link to='geochallenge' className='jugartext'>
         <img
           className="d-block w-100 imagecarousel"
           src={titleGeo}
           alt="Third slide"
         />
       </Link>
-      <p className="textCarouseliFrame">Test texto card</p>
+      <p className="textCarouseliFrame">Adivina de que país es la bandera en GeoChallenge</p>
     </div>
     <div>
       <Link to='tacleclick' className='jugartext'>
@@ -65,7 +65,7 @@ const IframeCarousel = (props) => {
           alt="Third slide"
         />
       </Link>
-    <p className="textCarouseliFrame">Test texto card</p>
+    <p className="textCarouseliFrame">Dale una paliza a tu rival!</p>
     </div>
     <div>
       <Link to='nonogram' className='jugartext'>
@@ -75,7 +75,7 @@ const IframeCarousel = (props) => {
           alt="NONOGRAM"
         />
       </Link>
-      <p className="textCarouseliFrame">Test texto card</p>
+      <p className="textCarouseliFrame">Nonogram text</p>
     </div>
   </Carousel>
 

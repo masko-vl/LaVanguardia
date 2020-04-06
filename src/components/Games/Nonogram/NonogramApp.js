@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import './NonogramApp.scss';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  //Para dropdown:
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
+import "./../../SharedButtons/IframeButtons.css";
 
-export default function NonogramApp(){
-    // ---STATES---
-  const [newGame, changeNewGame] = useState({
-    // We create a new grid of 5x5
-    grid: [
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0]
-    ]
-  });
+
+export default function NonogramApp() {
+  // ---STATES---
   const [solutionGame, changeSolutionGame] = useState({
     // Here will be the solution (0 and 1) generate randomly
     grid: [
@@ -34,17 +38,29 @@ export default function NonogramApp(){
       [0, 0, 0, 0, 0]
     ]
   });
-  const [winGame, changeWinGame] = useState(false);
   // ---END OF STATES---
 
   //--MODAL fin del juego
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
   //--FIN MODAL
+  // --DROPDOWN
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleDropdown = () => setDropdownOpen(prevState => !prevState);
+  // --FIN DROPDOWN
+
+  //Change level dropdown
+  function changeLevel(item) {
+    changeSolutionUser({ grid: Array(item).fill(0).map(x => Array(item).fill(0)) });
+    changeSolutionGame({ grid: Array(item).fill(0).map(x => Array(item).fill(0).map(e=>Math.round(Math.random())))});
+  }
 
   //We change the value of SolutionGame, making random values 0 / 1
-  useEffect(() => { changeSolutionGame({ grid: solutionGame.grid.map(row => row.map(item => item = (Math.round(Math.random())))) }) }, []);
-  console.log(solutionGame)
+  function randomValueSolution(){
+    changeSolutionGame({ grid: solutionGame.grid.map(row => row.map(item => item = (Math.round(Math.random())))) });
+  }
+  useEffect(() => { randomValueSolution() }, []);
+  console.log(solutionGame.grid)
 
   // Change the value of the cell 1/2/3 when click on it and change the state
   let changeCellValue = (x, y) => {
@@ -61,7 +77,6 @@ export default function NonogramApp(){
     if (JSON.stringify(solutionGame.grid) === JSON.stringify(solutionUserWithout2)) {
       // changeWinGame(true);
       setModal(!modal)
-      // alert("Has ganado");
     }
   }
 
@@ -102,7 +117,7 @@ export default function NonogramApp(){
           tempClues.push(times[i][j]);
         }
       }
-      if(tempClues.length !== 0) {
+      if (tempClues.length !== 0) {
         horizontalClues.push(tempClues);
         tempClues = [];
       } else {
@@ -163,7 +178,7 @@ export default function NonogramApp(){
           tempClues.push(times[i][j]);
         }
       }
-      if(tempClues.length !== 0) {
+      if (tempClues.length !== 0) {
         verticalClues.push(tempClues);
         tempClues = [];
       } else {
@@ -179,6 +194,9 @@ export default function NonogramApp(){
 
   return (
     <div className="Nonogram container-fluid">
+      <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}>X</Link>
       {modal ?
         <div>
           <Modal isOpen={modal} toggle={toggle}>
@@ -187,13 +205,14 @@ export default function NonogramApp(){
               Has ganado el juego! ¿Quieres intentar otra partida?
         </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={()=>window.location.reload()}>Vamos allá</Button>{' '}
+              <Button color="primary" onClick={() => window.location.reload()}>Vamos allá</Button>{' '}
             </ModalFooter>
           </Modal>
         </div>
         :
         <div>
           <table className="center">
+            
             <tbody>
               <tr>
                 {/*The first one goes empty*/}
@@ -212,7 +231,23 @@ export default function NonogramApp(){
               }
             </tbody>
           </table>
+          <div className="buttons">
           <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+              <DropdownToggle caret className="selector_button" >
+                Selecciona nivel
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
         </div>
       }
     </div>

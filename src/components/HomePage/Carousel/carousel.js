@@ -33,7 +33,7 @@ const CarouselHome = (props) => {
         />
         <Carousel.Caption>
           <button className='myButton'>
-            <Link to='geochallange' className='jugartext'> Jugar
+            <Link to='challenge' className='jugartext'> Jugar
             </Link></button>
         </Carousel.Caption>
       </Carousel.Item>
@@ -67,9 +67,6 @@ const CarouselHome = (props) => {
   </div>
 )
 
-  }
-
-
-
+}
 
 export default CarouselHome

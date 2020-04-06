@@ -51,3 +51,27 @@
 #selectTeamContainer {
     margin : 2% 0 5% 0;
 }
+#carouselTeams{
+    display: none;
+}
+
+
+@media (max-width: 330px){
+    #team-container{
+        height: 100%;
+    }
+    .title-teams{
+        font-size: 2em;
+    }
+    #teams.img-container{
+        display:none
+    }
+    #carouselTeams{
+        display:block;
+    } 
+    #carouselTeams img{
+        width: 150px;
+        height: 178px;
+        cursor: pointer
+    }
+}
