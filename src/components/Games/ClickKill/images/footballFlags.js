@@ -41,5 +41,4 @@ const footballFlags = [
     Villareal,
     Leganes
   ];
-
-export default footballFlags;
+ export default footballFlags;

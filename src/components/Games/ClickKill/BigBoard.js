@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom';
-import footballFlags from "./images/footballFlags"
+import footballFlags from "./images/footballFlags";
 import SmallSquare from './SmallSquare';
 import SelectTeam from './SelectTeam';
 import Grid from '@material-ui/core/Grid';
 import "./../../SharedButtons/IframeButtons.css";
 import './BigBoard.css';
 import './Button.css';
+import backgroundFootball from './images/FOOTBAL-03@2x.png'
 
 export default class BigBoard extends React.Component {
   
@@ -111,7 +112,8 @@ export default class BigBoard extends React.Component {
        <button id="closeButton"><a href="/games-section"><b>x</b></a></button>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
-         ? <SelectTeam printName={this.printName} footballFlags={footballFlags}/>
+         ? <Fragment><SelectTeam printName={this.printName} footballFlags={footballFlags}/>
+         </Fragment>
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div className="footballGameContainer">
@@ -164,7 +166,9 @@ export default class BigBoard extends React.Component {
             </div>
            </div>
          }
+         
        </div>
+       <img src={backgroundFootball} alt='footballGameFooter'></img>
        </Fragment>
     )
   }
