@@ -108,7 +108,7 @@ export default class BigBoard extends React.Component {
             className='closeButtonIframe' 
             style={{ textDecoration: 'none'}}
             >X</Link>
-       <button id="closeButton"><a href="/"><b>x</b></a></button>
+       <button id="closeButton"><a href="/games-section"><b>x</b></a></button>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
          ? <SelectTeam printName={this.printName} footballFlags={footballFlags}/>
