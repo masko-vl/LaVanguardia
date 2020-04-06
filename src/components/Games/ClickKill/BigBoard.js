@@ -111,7 +111,7 @@ export default class BigBoard extends React.Component {
             style={{ textDecoration: 'none'}}
             >X</Link>
       
-       <button id="closeButton"><a href="/games-section"></a></button>
+      <Link to="/games-section"><button id="closeButton"></button></Link>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
          ? <Fragment><SelectTeam printName={this.printName} footballFlags={footballFlags}/>
