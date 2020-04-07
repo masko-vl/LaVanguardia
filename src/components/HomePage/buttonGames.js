@@ -36,7 +36,7 @@ const ButtonGames = (props)=>{
           <div>
             <div className="headerText">
               <h2>Juegos en línea de La Vanguardia</h2>
-              <hr></hr>
+              <hr/>
               <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty.</p>
             </div>
             <div>
