@@ -77,13 +77,27 @@
 }
 
 @media screen and (max-width: 350px) {
+  #superFootballBackground{
+   padding-top: 0;
+   padding-bottom: 0;
+  }
+  .footballFooterBackground{
+    display: none;
+
+  }
+  .gameTitle{
+    width: 120px;
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    /*transform: rotate(20deg);*/
+  }
   .footballGameContainer {
     height: 100vh;
     width: 100%;
     background-image: url("./images/grass_background.png");
     background-size: cover;
-
-
   }
   .footballGameContainer > h1 {
     padding-left: 30px;
