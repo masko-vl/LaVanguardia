@@ -17,21 +17,19 @@
   padding: 0 27px 0 27px;
   margin-top: 25px;
   margin-bottom: 25px;
-  margin-right: 2.5%;
+  margin-right: 2%;
   border-radius: 4px;
   font-family: 'Neuton', serif;
   -webkit-box-shadow: 9px 9px 8px -11.5px rgba(0,0,0,0.75);
   -moz-box-shadow: 9px 9px 8px -11.5px rgba(0,0,0,0.75);
   box-shadow: 9px 9px 8px -11.5px rgba(0,0,0,0.75);
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.2px;
 
 
 }
 
-.userProfileLogo {
-  float: right;
-}
+
 
 .imageUserLogin{
   height: 60%;
@@ -51,14 +49,29 @@
 
   .navCategories {
     flex-wrap: wrap;
-    height: 20%;
+    height: 0%;
+    width: 80%;
   }
 
   .buttonCategories {
     margin-bottom: 5px;
     margin-top: 5px;
+    padding: 0px 20px 0px 20px;
   }
 
+  .userProfileLogo {
+    margin-right:  0;
+    position: absolute;
+    float: right;
+    margin-left: 235px;
+    height: 148px;
+    background-color: #F0F0F0;
+
+  }
+
+  .userProfileLogo p{
+    display: none;
+  }
 
 
 

@@ -34,8 +34,10 @@ const ButtonGames = (props)=>{
         <div>
           <div>
             <div className="headerText">
-              <h2>Juegos gratuitos en línea de La Vanguardia</h2>
-              <p>Bienvenidos a La Vanguardia Juegos blaasdkfaisodfjkasñdfjkladsñfjklasdñfjkasdñlfjkasdklfjañsdlkfjasdljkfasdñkfljasñdlfkjasdñklfjasñdlkfjañsdlkfjasñkldfjañslkdfjañlsdkfjalñsdkfjañlsdkfjañlsdkfjañlskdfjañlksdfjasñlkdfjañsdfjasdñfjkasdfjklañslkdfjañsdlkfjasñdklfjasdñfjklasdkñfjladfjañdfjaksdjlfasdkfasdjkf</p>
+              <h2>Juegos en línea de La Vanguardia</h2>
+              <hr></hr>
+              <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty. Encuentra juegos gratis con el buscador de la web o busca en nuestras categorías. Nuestros juegos online no entienden de edades. Tenemos juegos para niños, adultos, juegos populares... Tenemos juegos de estrategia o de matemáticas. Accede desde tu móvil, tablet u ordenador. ¡Descubre ya los juegos online de La Vanguardia !</p>
+
             </div>
             <div>
               <div>
@@ -51,17 +53,18 @@ const ButtonGames = (props)=>{
 
           </div>
           <div>
-            <h4 className="titleFeatured">Destacados de la Semana</h4>
+            <h3 className="titleFeatured">Destacados de la Semana</h3>
+            <hr></hr>
             <div className="featuredGames">
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='tacleclick' className=''>
                   <img
                     className="imgFeatured"
                     src={tackle}
                     alt="First slide"
                   />
                 </Link>
-                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina solo los más rápidos ganarán!</p>
+                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina, solo los más rápidos ganarán!</p>
 
                 <button className="buttonFeatured"> JUGAR AHORA </button>
               </div>
@@ -73,31 +76,31 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina solo los más rápidos ganarán!</p>
+                <p>Con CityPlay adivina las capítales tendrás el increíble desafío de responder un quiz sobre los países y sus capitales ¡No podrás parar de jugar!</p>
 
                 <button className="buttonFeatured"> JUGAR AHORA </button>
               </div>
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='geoChallenge' className=''>
                   <img
                     className="imgFeatured"
                     src={titleGeo}
                     alt="First slide"
                   />
                 </Link>
-                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina solo los más rápidos ganarán!</p>
+                <p>Descubre distintos lugares con Geo Challenge, un juego desafiante que te llevará a recorrer el mundo y te mantendrá ocupado por horas!</p>
 
                 <button className="buttonFeatured"> JUGAR AHORA </button>
               </div>
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='nonogram' className=''>
                   <img
                     className="imgFeatured"
-                    src={tackle}
+                    src={nonogram}
                     alt="First slide"
                   />
                 </Link>
-                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina solo los más rápidos ganarán!</p>
+                <p>Con este juego adictivo pasarás horas coloreando filas y columnas, este novedoso juego pondrá a prueba tu lógica</p>
 
                 <button className="buttonFeatured"> JUGAR AHORA </button>
               </div>
