@@ -9,6 +9,7 @@ import Exit from './Exit/exit'
 import {Link} from 'react-router-dom';
 import "./../../SharedButtons/IframeButtons.css";
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton'
 
 
 export default class GameCapitals extends Component{
@@ -148,6 +149,7 @@ export default class GameCapitals extends Component{
         } 
 
         return ( <div className='container-game'>
+            < CloseButton/>
             <InstructionGames style={{color: "white !important"}} instructionText = "Aqui van las instrucciones del juego"/>
             {gameStatus[this.state.gameStatus]()}</div> )
     }

@@ -4,6 +4,7 @@ import {
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import '../InstructionGames/InstructionGames.scss'
 
 export class InstructionGames extends React.Component {
     constructor(props) {
@@ -26,10 +27,9 @@ export class InstructionGames extends React.Component {
        />
 
       return (
-        < div className = "instructionGames container-fluid" >
+        < div className = "instructionGames" >
             {/* INSTRUCTIONS */}
-            <div className="row">
-                <span style={{ color: "#00ECFD", fontSize: "2em", marginLeft: "90%" }} onClick={this.toggle}>{instructions}</span>
+                <span className="instructionGames" style={{ color: "#00ECFD", fontSize: "2em"}} onClick={this.toggle}>{instructions}</span>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} style={{ marginTop:"10%"}}>
                     <ModalBody>
                         <div>{this.props.instructionText}</div>
@@ -38,7 +38,6 @@ export class InstructionGames extends React.Component {
                         <Button color="primary" onClick={this.toggle}>Cerrar</Button>
                     </ModalFooter>
                 </Modal>
-            </div>
         </div>
     )}
 }
