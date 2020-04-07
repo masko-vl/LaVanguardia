@@ -194,9 +194,6 @@ export default function NonogramApp() {
 
   return (
     <div className="Nonogram container-fluid">
-      <Link to='carousel' 
-            className='closeButtonIframe' 
-            style={{ textDecoration: 'none'}}>X</Link>
       {modal ?
         <div>
           <Modal isOpen={modal} toggle={toggle}>
@@ -208,24 +205,66 @@ export default function NonogramApp() {
               <Button color="primary" onClick={() => window.location.reload()}>Vamos allá</Button>{' '}
             </ModalFooter>
           </Modal>
-        </div>
-        :
-        <div>
+
           <table className="center">
-            
             <tbody>
               <tr>
                 {/*The first one goes empty*/}
                 <td></td>
                 {verticalClues.map((clue, clueIndex) => {
-                  return <td key={clueIndex} className='clue v_clue'><div><p className="v_clue_p v-text">{clue}</p></div></td>
+                  return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
                 })}
               </tr>
               {
                 solutionUser.grid.map((row, rowIndex) => (
                   <tr key={rowIndex}>
-                    <td className='clue h_clue'>{horizontalClues[rowIndex]}</td>
-                    {row.map((cell, cellIndex) => <td className={`cell_${cell}`} key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ></td>)}
+                    <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
+                    {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+
+          <div className="buttons">
+          <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+              <DropdownToggle caret className="selector_button" >
+                Selecciona nivel
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+        </div>
+
+        :
+        
+        <div>
+          {/* <div className='rocket_start'>
+            <img src="./play_card_black.png"  className="img_rocket" alt='rocket'/>
+          </div> */}
+          <table className="center">
+            <tbody>
+              <tr>
+                {/*The first one goes empty*/}
+                <td></td>
+                {verticalClues.map((clue, clueIndex) => {
+                  return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
+                })}
+              </tr>
+              {
+                solutionUser.grid.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
+                    {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
                   </tr>
                 ))
               }
