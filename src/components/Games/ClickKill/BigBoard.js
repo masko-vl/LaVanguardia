@@ -105,9 +105,10 @@ export default class BigBoard extends React.Component {
   
   render() {
     return ( 
+      <Fragment>
+      <InstructionGames instructionText = "Aqui van las instrucciones del juego" / >
+      <CloseButton/>
        <div id="superFootballBackground" >
-      < InstructionGames instructionText = "Aqui van las instrucciones del juego" / >
-       <CloseButton/>
        <img className='gameTitle' src={gameTitle} alt='title'></img>
        <div id='generalContainer'>
        <Link to='carousel' 
@@ -174,6 +175,7 @@ export default class BigBoard extends React.Component {
        </div>
         <img className="footballFooterBackground" src={backgroundFootball} alt='footballGameFooter'></img>
        </div>
+      </Fragment>
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import countriesDB from 'country-data'; // This library is cool but doesn't have coordinates
 import coordinates from './coordinates'; // array of coordintaes by country
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -8,7 +8,7 @@ import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
 import "./../../SharedButtons/IframeButtons.css";
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
-
+import CloseButton from '../../SharedButtons/CloseButton'
 
 const Leaflet = window.L;
 
@@ -183,14 +183,13 @@ class GeoChallenge extends Component {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
 
     return (
-    <div>
-      
-<InstructionGames style={{color: "white !important"}} instructionText = "Aqui van las instrucciones del juego"/>
+    <Fragment>
+<InstructionGames  instructionText = "Aqui van las instrucciones del juego"/>
+ < CloseButton />
       <Link to='carousel' 
             className='closeButtonIframe' 
             style={{ textDecoration: 'none'}}>X</Link>     
       <div className="titleImageContainer">
-      <button className="exitButton"><Link to="/"> X</Link></button>
 
         <img className="geoChallengeTitle"src={title}></img>
       </div>
@@ -259,7 +258,7 @@ class GeoChallenge extends Component {
       </div>
     }
     </div>
-    </div>
+    </Fragment>
     )
   }
 }

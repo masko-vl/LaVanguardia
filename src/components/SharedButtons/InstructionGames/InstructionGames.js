@@ -29,7 +29,7 @@ export class InstructionGames extends React.Component {
       return (
         < div className = "instructionGames" >
             {/* INSTRUCTIONS */}
-                <span className="instructionGames" style={{ color: "#00ECFD", fontSize: "2em"}} onClick={this.toggle}>{instructions}</span>
+                <span style={{ color: "#00ECFD", fontSize: "2em"}} onClick={this.toggle}>{instructions}</span>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} style={{ marginTop:"10%"}}>
                     <ModalBody>
                         <div>{this.props.instructionText}</div>

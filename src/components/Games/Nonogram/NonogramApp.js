@@ -15,6 +15,7 @@ import {
 } from 'reactstrap';
 import "./../../SharedButtons/IframeButtons.css";
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton';
 
 
 export default function NonogramApp() {
@@ -196,6 +197,7 @@ export default function NonogramApp() {
   return (
     <div style={{ backgroundColor:"#0C1348"}}>
       <InstructionGames style={{ color: "white !important" }} instructionText="Aqui van las instrucciones del juego" />
+      <CloseButton/>
       <div className="Nonogram container-fluid">
         {modal ?
           <div>
