@@ -13,9 +13,11 @@
     text-shadow:0px -1px 0px #5B6178;
     color: white;
 }
+
 .jugartext{
     color:white ;
 }
+
 .w-100 {
     width: 100%!important;
     height: 501px;
@@ -83,8 +85,9 @@
   text-align: left;
   letter-spacing: 0.5px;
   line-height: 1.4;
-
+  color: black;
 }
+
 .imgFeatured{
   width: 416px;
   height: 248px;
