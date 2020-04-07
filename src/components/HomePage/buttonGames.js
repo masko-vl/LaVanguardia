@@ -37,6 +37,7 @@ const ButtonGames = (props)=>{
               <h2>Juegos en línea de La Vanguardia</h2>
               <hr></hr>
               <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty. Encuentra juegos gratis con el buscador de la web o busca en nuestras categorías. Nuestros juegos online no entienden de edades. Tenemos juegos para niños, adultos, juegos populares... Tenemos juegos de estrategia o de matemáticas. Accede desde tu móvil, tablet u ordenador. ¡Descubre ya los juegos online de La Vanguardia !</p>
+
             </div>
             <div>
               <div>
@@ -56,7 +57,7 @@ const ButtonGames = (props)=>{
             <hr></hr>
             <div className="featuredGames">
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='tacleclick' className=''>
                   <img
                     className="imgFeatured"
                     src={tackle}
@@ -80,7 +81,7 @@ const ButtonGames = (props)=>{
                 <button className="buttonFeatured"> JUGAR AHORA </button>
               </div>
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='geoChallenge' className=''>
                   <img
                     className="imgFeatured"
                     src={titleGeo}
@@ -92,7 +93,7 @@ const ButtonGames = (props)=>{
                 <button className="buttonFeatured"> JUGAR AHORA </button>
               </div>
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='nonogram' className=''>
                   <img
                     className="imgFeatured"
                     src={nonogram}
