@@ -6,6 +6,8 @@ import './geoChallenge.css'
 import {Link} from 'react-router-dom';
 import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
+import "./../../SharedButtons/IframeButtons.css";
+
 
 const Leaflet = window.L;
 
@@ -181,6 +183,9 @@ class GeoChallenge extends Component {
 
     return (
     <div>
+      <Link to='carousel' 
+            className='closeButtonIframe' 
+            style={{ textDecoration: 'none'}}>X</Link>     
       <div className="titleImageContainer">
       <button className="exitButton"><Link to="/"> X</Link></button>
 

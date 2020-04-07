@@ -1,3 +1,14 @@
+.squareBackgroundSmall {
+    display: none;
+}
+.squareBackground {
+    background-color: white;
+    opacity: 0.9;
+}
+.squareBackground:hover {
+    background-color: lightgray;
+    opacity: 1;
+}
 #team-container {
     width: 80%;
     height: 80%;
@@ -48,11 +59,21 @@
 }
 
 
+
 #selectTeamContainer {
     margin : 2% 0 5% 0;
 }
-#carrusel-teams{
+#carouselTeams{
     display: none;
+}
+
+@media (max-width: 700) {
+    .squareBackground {
+        display: none;
+    }
+    .squareBackgroundSmall {
+        display: block;
+    }
 }
 
 
@@ -66,12 +87,12 @@
     #teams.img-container{
         display:none
     }
-    #carrusel-teams{
+    #carouselTeams{
         display:block;
     } 
-    #carrusel-teams img{
-
+    #carouselTeams img{
         width: 150px;
         height: 178px;
+        cursor: pointer
     }
 }

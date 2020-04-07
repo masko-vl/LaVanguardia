@@ -48,7 +48,7 @@ const IframeCarousel = (props) => {
       <p className="textCarouseliFrame">Juega a citiplay y pon a prueba tus conocimientos sobre capitales de todo el mundo</p>
     </div>
     <div>
-      <Link to='geochallange' className='jugartext'>
+      <Link to='geochallenge' className='jugartext'>
         <img
           className="d-block w-100 imagecarousel"
           src={titleGeo}

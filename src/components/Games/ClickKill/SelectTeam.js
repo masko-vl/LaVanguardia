@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Carousel from 'react-bootstrap/Carousel';
 import "./SelectTeam.css";
-import "./BigBoard.css"
+import "./BigBoard.css";
 
 
 const useStyles = makeStyles(theme => ({
@@ -32,15 +32,20 @@ const SelectTeam = props => {
                     alignItems="center"
                     className="flagSquare">
                     {props.footballFlags.map((equipo)=>
-                        <Grid item xs={2} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2}}>
+                    <Fragment>
+                        <Grid className="squareBackground" item xs={2} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2 }}>
                             <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
                         </Grid>
+                        <Grid className="squareBackgroundSmall" item xs={3} style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px', padding: 2 }}>
+                            <img className="teamLogo" id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
+                        </Grid>
+                        </Fragment>
                     )}
                 </Grid>
             </div>
             
         </div>
-        <Carousel id='carrusel-teams'>
+        <Carousel id='carouselTeams'>
         {props.footballFlags.map((equipo)=>
                         <Carousel.Item>
                             <img id={equipo.toString()} onClick={props.printName} src={equipo} alt=''/>
