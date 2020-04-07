@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom';
-import footballFlags from "./images/footballFlags"
+import footballFlags from "./images/footballFlags";
 import SmallSquare from './SmallSquare';
 import SelectTeam from './SelectTeam';
 import Grid from '@material-ui/core/Grid';
 import "./../../SharedButtons/IframeButtons.css";
 import './BigBoard.css';
 import './Button.css';
-
+import backgroundFootball from './images/FOOTBAL-03@2x.png'
+import gameTitle from './images/gameTitle.png'
 export default class BigBoard extends React.Component {
   
   state = {
@@ -102,16 +103,19 @@ export default class BigBoard extends React.Component {
   
   render() {
     return ( 
-       <Fragment>
+       <div id="superFootballBackground" >
+       <img className='gameTitle' src={gameTitle} alt='title'></img>
        <div id='generalContainer'>
        <Link to='carousel' 
             className='closeButtonIframe' 
             style={{ textDecoration: 'none'}}
             >X</Link>
-       <button id="closeButton"><a href="/"><b>x</b></a></button>
+      
+      <Link to="/games-section"><button id="closeButton"></button></Link>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
-         ? <SelectTeam printName={this.printName} footballFlags={footballFlags}/>
+         ? <Fragment><SelectTeam printName={this.printName} footballFlags={footballFlags}/>
+         </Fragment>
 
          /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
          : <div className="footballGameContainer">
@@ -164,8 +168,10 @@ export default class BigBoard extends React.Component {
             </div>
            </div>
          }
+         
        </div>
-       </Fragment>
+        <img className="footballFooterBackground" src={backgroundFootball} alt='footballGameFooter'></img>
+       </div>
     )
   }
 }
