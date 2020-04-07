@@ -184,6 +184,10 @@ class GeoChallenge extends Component {
       <Fragment>
         <InstructionGames instructionText="Aqui van las instrucciones del juego" />
         <CloseButton />
+        <Link to='carousel'
+          className='closeButtonIframe'
+          style={{ textDecoration: 'none' }}
+        >X</Link>
         <div className="titleImageContainer">
           <img className="geoChallengeTitle" src={title} alt="map"/>
         </div>
@@ -192,7 +196,6 @@ class GeoChallenge extends Component {
             ?
             <div className="mapContent">
               <div className="containerInstruction">
-
                 {
                   this.state.options.length > 0
                     ? (

@@ -9,7 +9,7 @@ import Exit from './Exit/exit'
 import { Link } from 'react-router-dom';
 import "./../../SharedButtons/IframeButtons.css";
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
-import CloseButton from '../../SharedButtons/CloseButton'
+import CloseButton from '../../SharedButtons/CloseButton';
 
 
 export default class GameCapitals extends Component {
@@ -107,6 +107,10 @@ export default class GameCapitals extends Component {
         const gameStatus = {
 
             startGame: () => (<div className='startGame-page'>
+                <Link to='carousel'
+                    className='closeButtonIframe'
+                    style={{ textDecoration: 'none' }}
+                >X</Link>
                 <div className='logo'>
                     <Info style='instrucciones' text='Instrucciones: Seleciona la capital correcta! Si aciertas ganas 10 puntos y 4 segundos y si fallas te resta 3s' />
                     <SelectRegion style={'region-select'} action={this.props.fiterContinent} />
@@ -132,7 +136,10 @@ export default class GameCapitals extends Component {
             </div>),
 
             gameOver: () => (<div className='playingGame'>
-               
+                <Link to='carousel'
+                    className='closeButtonIframe'
+                    style={{ textDecoration: 'none' }}
+                >X</Link>
                 <Info style='gameover' text='GAME OVER' />
                 <Info style='score' text={'Score : ' + this.state.points} />
                 <Links style='shered-link' />

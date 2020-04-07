@@ -108,13 +108,13 @@ export default class BigBoard extends React.Component {
       <Fragment>
       <InstructionGames instructionText = "Aqui van las instrucciones del juego" / >
       <CloseButton/>
-       <Link to='carousel'
-                    className='closeButtonIframe'
-                    style={{ textDecoration: 'none' }}
-                >X</Link>
        <div id="superFootballBackground" >
        <img className='gameTitle' src={gameTitle} alt='title'></img>
        <div id='generalContainer'>
+         <Link to='carousel'
+          className='closeButtonIframe'
+          style={{ textDecoration: 'none' }}
+      >X</Link>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
          ? <Fragment><SelectTeam printName={this.printName} footballFlags={footballFlags}/>
