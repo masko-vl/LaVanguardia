@@ -9,6 +9,7 @@ import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/provisional_nonogram.png';
 import CarouselHome from './Carousel/carousel'
 import Category from '../Categories/category'
+import NavBurger from '../Navbar/NavBurger/NavBurger'
 
 //CARROUSEL
 
