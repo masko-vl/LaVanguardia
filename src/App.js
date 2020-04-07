@@ -44,45 +44,42 @@ class App extends Component {
 
     })
   }
-  render(){
-  return (
-    <div className='App'>
-
-
-      <Navbar />
-      <Switch>
-      <Route exact path ='/'>
-      <LavanguardiaPage />
-      </Route>
-      <Route path='/cityplay'>
-      <AppCapitals/>
-      </Route>
-      <Route path='/geochallenge'>
-      <GeoChallenge />
-      </Route>
-      <Route path='/tacleclick'>
-      <BigBoard/>
-      </Route>
-      <Route path='/nonogram'>
-      <NonogramApp/>
-      </Route>
-      <Route path='/test'>
-      <Test/>
-      </Route>
-      <Route path='/carousel'>
-      <IframeCarousel/>
-      </Route>
-      <Route path='/games-section'>
-      <ButtonGames/>
-      </Route>
-      </Switch>
-      <Footer />
-
-
-
-    </div>
-  );
-}
+  render() {
+    return (
+      <div className='App'>
+        <Navbar />
+        <Switch>
+          <Route exact path='/'>
+            <LavanguardiaPage />
+          </Route>
+          <Route path='/cityplay'>
+            <AppCapitals />
+          </Route>
+          <Route path='/geoChallenge'>
+            <GeoChallenge />
+          </Route>
+          <Route path='/tacleclick'>
+            <BigBoard />
+          </Route>
+          <Route path='/nonogram'>
+            <NonogramApp />
+          </Route>
+          <Route path='/test'>
+            <Test />
+          </Route>
+          <Route path='/carousel'>
+            <IframeCarousel />
+          </Route>
+          <Route path='/games-section'>
+            <ButtonGames />
+          </Route>
+          <Route path='/OneToFifty'>
+            <OneToFifty />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    );
+  }
 }
 export default App;
-

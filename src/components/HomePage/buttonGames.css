@@ -20,53 +20,91 @@
     width: 100%!important;
     height: 501px;
 }
-/*css de botones */
-.cards-list {
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
+
+.headerText h2{
+  width: 100%;
+  text-align: left;
+  font-family: 'Neuton', serif;
+  letter-spacing: 0.2px;
 }
 
-.carda {
-    margin: 30px auto;
-    width: 500px;
-    height: 275px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-    cursor: pointer;
-    transition: 0.4s;
+.headerText p{
+  width: 100%;
+  margin-top: 2%;
+  text-align: left;
+  word-wrap: break-word;
+  letter-spacing: 0.5px;
 }
 
-.carda .card_image {
-    width: inherit;
-    height: inherit;
-    border-radius: 40px;
-}
-
-.carda .card_image img {
-    width: inherit;
-    height: inherit;
-    border-radius: 40px;
+.gameSectionContainer{
+  margin: 3% 10% 10% 10%;
 
 }
 
-.carda .card_title {
-    text-align: center;
-    border-radius: 0px 0px 40px 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: -80px;
-    height: 40px;
+.mainCardGame {
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  -webkit-box-shadow: 10px 10px 21px -5px rgba(102,96,102,1);
+  -moz-box-shadow: 10px 10px 21px -5px rgba(102,96,102,1);
+  box-shadow: 10px 10px 21px -5px rgba(102,96,102,1);
+
 }
 
-.carda:hover {
-    transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
-      -5px -5px 30px 15px rgba(0,0,0,0.22);
+.titleFeatured{
+  width: 100%;
+  text-align: left;
+  font-family: 'Neuton', serif;
+  letter-spacing: 0.4px;
+  margin-top: 4%;
+
+}
+
+
+.featuredGames{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2%;
+
+}
+
+.cardFeatured{
+  width: 416px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+.cardFeatured p{
+  text-align: left;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+
+}
+.imgFeatured{
+  width: 416px;
+  height: 248px;
+  margin-bottom: 2%;
+  -webkit-box-shadow: 10px 10px 34px -17px rgba(102,96,102,1);
+  -moz-box-shadow: 10px 10px 34px -17px rgba(102,96,102,1);
+  box-shadow: 10px 10px 34px -17px rgba(102,96,102,1);
+
+}
+
+.buttonFeatured{
+  background-color: #002A5E;
+  border-radius: 4px;
+  padding: 3px 5px 3px 5px;
+  color: white;
+  width: 180px;
+  font-weight: bold;
+  font-size: 14px;
+  float: left;
+
 }
 
 .title-white {
@@ -118,21 +156,28 @@
 
 
 @media (max-width: 700px) {
-  .cards-list {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
+  .imgFeatured{
+    width: 280px;
+    height: 167px;
+    margin-bottom: 2%;
+    -webkit-box-shadow: 10px 10px 34px -17px rgba(102,96,102,1);
+    -moz-box-shadow: 10px 10px 34px -17px rgba(102,96,102,1);
+    box-shadow: 10px 10px 34px -17px rgba(102,96,102,1);
+
+  }
+  .cardFeatured{
+    width: 280px;
   }
 
-  .carda {
-  width: 264px;
-  height: 220px;
-  }
-}
-
-@media (max-width: 330px) {
-  .w-100 {
-    height: 200px;
-    width: 300px;
+  .headerText p{
+    display: none;
   }
 
+  .titleFeatured {
+    display: none;
+  }
+
+  .mainCardGame{
+    display: none;
+  }
 }
