@@ -5,3 +5,13 @@
     display: block;
     z-index: 2;
 }
+@media screen and (max-width: 425px) {
+    .instructionGames {
+        top: 20px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .instructionGames {
+        display: none;
+    }
+}
