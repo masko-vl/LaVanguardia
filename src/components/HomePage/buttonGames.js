@@ -56,16 +56,17 @@ const ButtonGames = (props)=>{
             <hr></hr>
             <div className="featuredGames">
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='tacleclick' className=''>
                   <img
                     className="imgFeatured"
                     src={tackle}
                     alt="First slide"
                   />
                 </Link>
-                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina, solo los más rápidos ganarán!</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                  <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina, solo los más rápidos ganarán!</p>
+                <Link to='tacleclick' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
               <div className="cardFeatured">
                 <Link to='cityplay' className=''>
@@ -75,33 +76,36 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                <p>Con CityPlay adivina las capítales tendrás el increíble desafío de responder un quiz sobre los países y sus capitales ¡No podrás parar de jugar!</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                  <p>Con CityPlay adivina las capítales tendrás el increíble desafío de responder un quiz sobre los países y sus capitales ¡No podrás parar de jugar!</p>
+                <Link to='cityplay' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='geoChallenge' className=''>
                   <img
                     className="imgFeatured"
                     src={titleGeo}
                     alt="First slide"
                   />
                 </Link>
-                <p>Descubre distintos lugares con Geo Challenge, un juego desafiante que te llevará a recorrer el mundo y te mantendrá ocupado por horas!</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                  <p>Descubre distintos lugares con Geo Challenge, un juego desafiante que te llevará a recorrer el mundo y te mantendrá ocupado por horas!</p>
+                <Link to='geoChallenge' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
               <div className="cardFeatured">
-                <Link to='cityplay' className=''>
+                <Link to='nonogram' className=''>
                   <img
                     className="imgFeatured"
                     src={nonogram}
                     alt="First slide"
                   />
                 </Link>
-                <p>Con este juego adictivo pasarás horas coloreando filas y columnas, este novedoso juego pondrá a prueba tu lógica</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                   <p>Con este juego adictivo pasarás horas coloreando filas y columnas, este novedoso juego pondrá a prueba tu lógica</p>
+                <Link to='nonogram' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
             </div>
 
