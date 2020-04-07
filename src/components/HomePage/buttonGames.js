@@ -7,9 +7,9 @@ import citybanmini from './imgmainPage/cityplaymini-100.png'
 import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/provisional_nonogram.png';
-import CarouselHome from './Carousel/carousel'
-import Category from '../Categories/category'
-import NavBurger from '../Navbar/NavBurger/NavBurger'
+import CarouselHome from './Carousel/carousel';
+import Category from '../Categories/category';
+import homeNav from './imgmainPage/home_nav.png';
 
 //CARROUSEL
 
@@ -28,6 +28,7 @@ import NavBurger from '../Navbar/NavBurger/NavBurger'
 const ButtonGames = (props)=>{
     return(
     <div>
+      <img className='home-nav' src={homeNav} alt=''></img>
       <div>
         <Category />
       </div>
