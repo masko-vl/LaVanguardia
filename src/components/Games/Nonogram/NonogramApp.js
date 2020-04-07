@@ -195,7 +195,8 @@ export default function NonogramApp() {
 
   return (
     <div style={{ backgroundColor:"#0C1348"}}>
-      <InstructionGames style={{ color: "white !important" }} instructionText="Aqui van las instrucciones del juego" />
+      <InstructionGames style={{ color: "white !important" }} instructionText="El nonograma es un juego de ingenio que consiste en rellenar determinadas casillas de un tablero en función de los números que contiene.
+      Cada juego tiene una serie de casillas con números en su parte superior y en su parte izquierda. Estos números indican grupos de cuadrados consecutivos que aparecen en la respectiva fila/columna. Cada grupo debe ir separado por una o más casillas libres" />
       <div className="Nonogram container-fluid">
         {modal ?
           <div>
@@ -240,9 +241,27 @@ export default function NonogramApp() {
                   <DropdownItem divider />
                   <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                  <DropdownItem className="drop8" onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+                  <DropdownItem className="drop10" onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+
+            <div className="buttons">
+              <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                <DropdownToggle caret className="selector_button" >
+                  Selecciona nivel
+              </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem className="drop8" onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem className="drop10" onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -285,11 +304,16 @@ export default function NonogramApp() {
                   <DropdownItem divider />
                   <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                  <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+                  <DropdownItem onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
+            </div>
+
+            <div className="buttons">
+              <Link to="/nonogram"> <Button className="iframe_button" color="primary" onClick={() => window.location.reload()}>+ Levels</Button></Link>
+              
             </div>
           </div>
         }
