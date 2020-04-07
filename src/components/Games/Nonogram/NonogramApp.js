@@ -251,24 +251,6 @@ export default function NonogramApp() {
                 </DropdownMenu>
               </Dropdown>
             </div>
-
-            <div className="buttons">
-              <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
-              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-                <DropdownToggle caret className="selector_button" >
-                  Selecciona nivel
-              </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem className="drop8" onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem className="drop10" onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </div>
           </div>
 
           :
