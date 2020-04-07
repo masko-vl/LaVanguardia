@@ -3,6 +3,7 @@ import GameCapitals from './gameCapitals'
 import {Shuffle, filterData} from '../../../sheredFunctions/SheredFunctions'
 import axios from 'axios';
 
+
 class AppCapitals extends Component {
   state={
     data:[]
@@ -40,7 +41,9 @@ class AppCapitals extends Component {
 
   render(){
     return (
-        <GameCapitals  countries={this.state.data} fiterContinent={this.fiterContinent} back={this.back}/>
+      <div>
+        <GameCapitals countries={this.state.data} fiterContinent={this.fiterContinent} back={this.back}/>
+      </div>
     );
   }
 }

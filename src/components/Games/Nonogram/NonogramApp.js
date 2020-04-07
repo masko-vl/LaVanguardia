@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import './NonogramApp.scss';
 import {
   Button,
@@ -14,6 +14,7 @@ import {
   DropdownItem
 } from 'reactstrap';
 import "./../../SharedButtons/IframeButtons.css";
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 
 
 export default function NonogramApp() {
@@ -52,11 +53,11 @@ export default function NonogramApp() {
   //Change level dropdown
   function changeLevel(item) {
     changeSolutionUser({ grid: Array(item).fill(0).map(x => Array(item).fill(0)) });
-    changeSolutionGame({ grid: Array(item).fill(0).map(x => Array(item).fill(0).map(e=>Math.round(Math.random())))});
+    changeSolutionGame({ grid: Array(item).fill(0).map(x => Array(item).fill(0).map(e => Math.round(Math.random()))) });
   }
 
   //We change the value of SolutionGame, making random values 0 / 1
-  function randomValueSolution(){
+  function randomValueSolution() {
     changeSolutionGame({ grid: solutionGame.grid.map(row => row.map(item => item = (Math.round(Math.random())))) });
   }
   useEffect(() => { randomValueSolution() }, []);
@@ -193,102 +194,107 @@ export default function NonogramApp() {
   verticalCounter(solutionGame.grid);
 
   return (
-    <div className="Nonogram container-fluid">
-      {modal ?
-        <div>
-          <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Enhorabuena!!</ModalHeader>
-            <ModalBody>
-              Has ganado el juego! ¿Quieres intentar otra partida?
+    <div style={{ backgroundColor:"#0C1348"}}>
+      <InstructionGames style={{ color: "white !important" }} instructionText="Aqui van las instrucciones del juego" />
+      <div className="Nonogram container-fluid">
+        {modal ?
+          <div>
+            <Modal isOpen={modal} toggle={toggle}>
+              <ModalHeader toggle={toggle}>Enhorabuena!!</ModalHeader>
+              <ModalBody>
+                Has ganado el juego! ¿Quieres intentar otra partida?
         </ModalBody>
-            <ModalFooter>
-              <Button color="primary" onClick={() => window.location.reload()}>Vamos allá</Button>{' '}
-            </ModalFooter>
-          </Modal>
+              <ModalFooter>
+                <Button color="primary" onClick={() => window.location.reload()}>Vamos allá</Button>{' '}
+              </ModalFooter>
+            </Modal>
 
-          <table className="center">
-            <tbody>
-              <tr>
-                {/*The first one goes empty*/}
-                <td></td>
-                {verticalClues.map((clue, clueIndex) => {
-                  return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
-                })}
-              </tr>
-              {
-                solutionUser.grid.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
-                    {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
+            <table className="center">
+              <tbody>
+                <tr>
+                  {/*The first one goes empty*/}
+                  <td></td>
+                  {verticalClues.map((clue, clueIndex) => {
+                    return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
+                  })}
+                </tr>
+                {
+                  solutionUser.grid.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
+                      {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
 
-          <div className="buttons">
-          <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
-          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-              <DropdownToggle caret className="selector_button" >
-                Selecciona nivel
+            <div className="buttons">
+              <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                <DropdownToggle caret className="selector_button" >
+                  Selecciona nivel
               </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+                <DropdownMenu>
+                  <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
           </div>
-        </div>
 
-        :
-        
-        <div>
-          {/* <div className='rocket_start'>
+          :
+
+          <div>
+
+            {/* <div className='rocket_start'>
             <img src="./play_card_black.png"  className="img_rocket" alt='rocket'/>
           </div> */}
-          <table className="center">
-            <tbody>
-              <tr>
-                {/*The first one goes empty*/}
-                <td></td>
-                {verticalClues.map((clue, clueIndex) => {
-                  return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
-                })}
-              </tr>
-              {
-                solutionUser.grid.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
-                    {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-          <div className="buttons">
-          <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
-          <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-              <DropdownToggle caret className="selector_button" >
-                Selecciona nivel
+            <table className="center">
+              <tbody>
+                <tr>
+                  {/*The first one goes empty*/}
+                  <td></td>
+                  {verticalClues.map((clue, clueIndex) => {
+                    return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
+                  })}
+                </tr>
+                {
+                  solutionUser.grid.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
+                      {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+            <div className="buttons">
+              <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                <DropdownToggle caret className="selector_button" >
+                  Selecciona nivel
               </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+                <DropdownMenu>
+                  <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(8)}>Medio 8x8</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(10)}>Difícil 10x10</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </div>
+
   )
 }
