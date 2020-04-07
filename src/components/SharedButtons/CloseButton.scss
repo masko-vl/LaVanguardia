@@ -1,17 +1,17 @@
-.instructionGames {
+.CloseButton {
     position: absolute;
     top: 100px;
-    right: 50px;
+    right: 10px;
     display: block;
     z-index: 2;
 }
 @media screen and (max-width: 425px) {
-    .instructionGames {
+    .CloseButton {
         top: 20px;
     }
 }
 @media screen and (max-width: 350px) {
-    .instructionGames {
+    .CloseButton {
         display: none;
     }
 }
