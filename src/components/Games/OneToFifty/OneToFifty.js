@@ -7,7 +7,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
-import InstructionGames from '../../InstructionGames/InstructionGames.js';
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 
 export default function OneToFifty() {
 
@@ -33,9 +33,9 @@ export default function OneToFifty() {
     return (
         <div className="OneToFifty container-fluid">
             {/* INSTRUCTIONS */}
-            <div className="row">
+            {/* <div className="row"> */}
                 <InstructionGames instructionText="Aqui van las instrucciones del juego"/>
-            </div>
+            {/* </div> */}
             {/* MENU */}
             <div className="row timeAndActualNumber alignCenter">
                 <div className="col-12 col-md-6">

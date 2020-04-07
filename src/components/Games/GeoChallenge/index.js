@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
 import "./../../SharedButtons/IframeButtons.css";
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 
 
 const Leaflet = window.L;
@@ -183,6 +184,8 @@ class GeoChallenge extends Component {
 
     return (
     <div>
+      
+<InstructionGames style={{color: "white !important"}} instructionText = "Aqui van las instrucciones del juego"/>
       <Link to='carousel' 
             className='closeButtonIframe' 
             style={{ textDecoration: 'none'}}>X</Link>     

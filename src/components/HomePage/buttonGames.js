@@ -37,8 +37,7 @@ const ButtonGames = (props)=>{
             <div className="headerText">
               <h2>Juegos en línea de La Vanguardia</h2>
               <hr></hr>
-              <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty. Encuentra juegos gratis con el buscador de la web o busca en nuestras categorías. Nuestros juegos online no entienden de edades. Tenemos juegos para niños, adultos, juegos populares... Tenemos juegos de estrategia o de matemáticas. Accede desde tu móvil, tablet u ordenador. ¡Descubre ya los juegos online de La Vanguardia !</p>
-
+              <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty.</p>
             </div>
             <div>
               <div>
@@ -65,9 +64,10 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina, solo los más rápidos ganarán!</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                  <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina, solo los más rápidos ganarán!</p>
+                <Link to='tacleclick' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
               <div className="cardFeatured">
                 <Link to='cityplay' className=''>
@@ -77,9 +77,10 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                <p>Con CityPlay adivina las capítales tendrás el increíble desafío de responder un quiz sobre los países y sus capitales ¡No podrás parar de jugar!</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                  <p>Con CityPlay adivina las capítales tendrás el increíble desafío de responder un quiz sobre los países y sus capitales ¡No podrás parar de jugar!</p>
+                <Link to='cityplay' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
               <div className="cardFeatured">
                 <Link to='geoChallenge' className=''>
@@ -89,9 +90,10 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                <p>Descubre distintos lugares con Geo Challenge, un juego desafiante que te llevará a recorrer el mundo y te mantendrá ocupado por horas!</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                  <p>Descubre distintos lugares con Geo Challenge, un juego desafiante que te llevará a recorrer el mundo y te mantendrá ocupado por horas!</p>
+                <Link to='geoChallenge' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
               <div className="cardFeatured">
                 <Link to='nonogram' className=''>
@@ -101,9 +103,10 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                <p>Con este juego adictivo pasarás horas coloreando filas y columnas, este novedoso juego pondrá a prueba tu lógica</p>
-
-                <button className="buttonFeatured"> JUGAR AHORA </button>
+                   <p>Con este juego adictivo pasarás horas coloreando filas y columnas, este novedoso juego pondrá a prueba tu lógica</p>
+                <Link to='nonogram' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
               </div>
             </div>
 

@@ -29,7 +29,7 @@ export class InstructionGames extends React.Component {
         < div className = "instructionGames container-fluid" >
             {/* INSTRUCTIONS */}
             <div className="row">
-                <span style={{ color: "#283f67", fontSize: "2em", marginLeft: "90%" }} onClick={this.toggle}>{instructions}</span>
+                <span style={{ color: "#00ECFD", fontSize: "2em", marginLeft: "90%" }} onClick={this.toggle}>{instructions}</span>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} style={{ marginTop:"10%"}}>
                     <ModalBody>
                         <div>{this.props.instructionText}</div>

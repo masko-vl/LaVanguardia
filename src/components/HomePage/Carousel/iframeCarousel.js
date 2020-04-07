@@ -4,8 +4,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import '../buttonGames.css';
 import cityban from '../imgmainPage/city@2x.png';
-import tackle from '../imgmainPage/tackle@2x.png'
-import titleGeo from '../imgmainPage/titleGeo.png';
+import tackle from '../imgmainPage/imagen_home_tt@2x.png'
+import titleGeo from '../imgmainPage/imagen_home_gc@2x.png';
 import nonogram from '../imgmainPage/provisional_nonogram.png';
 
 const IframeCarousel = (props) => {
@@ -39,7 +39,7 @@ const IframeCarousel = (props) => {
     <div>
       <Link to='cityplay' className='jugartext'>
         <img
-          className="d-block w-100 imagecarousel"
+          className="imagecarousel"
           src={cityban}
           alt="First slide"
         />
@@ -50,7 +50,7 @@ const IframeCarousel = (props) => {
     <div>
       <Link to='geochallenge' className='jugartext'>
         <img
-          className="d-block w-100 imagecarousel"
+          className="imagecarousel"
           src={titleGeo}
           alt="Third slide"
         />
@@ -60,7 +60,7 @@ const IframeCarousel = (props) => {
     <div>
       <Link to='tacleclick' className='jugartext'>
         <img
-          className="d-block w-100 imagecarousel"
+          className="imagecarousel"
           src={tackle}
           alt="Third slide"
         />
@@ -70,7 +70,7 @@ const IframeCarousel = (props) => {
     <div>
       <Link to='nonogram' className='jugartext'>
         <img
-          className="d-block w-100"
+          className="imagecarousel"
           src={nonogram}
           alt="NONOGRAM"
         />
