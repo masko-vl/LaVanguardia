@@ -8,7 +8,7 @@ import "./../../SharedButtons/IframeButtons.css";
 import './BigBoard.css';
 import './Button.css';
 import backgroundFootball from './images/FOOTBAL-03@2x.png'
-
+import gameTitle from './images/gameTitle.png'
 export default class BigBoard extends React.Component {
   
   state = {
@@ -103,13 +103,15 @@ export default class BigBoard extends React.Component {
   
   render() {
     return ( 
-       <Fragment>
+       <div id="superFootballBackground" >
+       <img className='gameTitle' src={gameTitle} alt='title'></img>
        <div id='generalContainer'>
        <Link to='carousel' 
             className='closeButtonIframe' 
             style={{ textDecoration: 'none'}}
             >X</Link>
-       <button id="closeButton"><a href="/games-section"><b>x</b></a></button>
+      
+      <Link to="/games-section"><button id="closeButton"></button></Link>
        {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
          {this.state.teamChosen === false 
          ? <Fragment><SelectTeam printName={this.printName} footballFlags={footballFlags}/>
@@ -168,8 +170,8 @@ export default class BigBoard extends React.Component {
          }
          
        </div>
-       <img src={backgroundFootball} alt='footballGameFooter'></img>
-       </Fragment>
+        <img className="footballFooterBackground" src={backgroundFootball} alt='footballGameFooter'></img>
+       </div>
     )
   }
 }
