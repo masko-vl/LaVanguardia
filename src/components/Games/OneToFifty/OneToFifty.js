@@ -5,17 +5,11 @@ import {
     Dropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem,
-    Modal, ModalBody, ModalFooter
+    DropdownItem
 } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import InstructionGames from '../../InstructionGames/InstructionGames.js';
 
 export default function OneToFifty() {
-    //Instructions Icon
-    const instructions = <FontAwesomeIcon icon={faQuestionCircle} />
-    const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
 
     // ---STATES---
     // let [numbersList, changenumbersList] = useState([]);
@@ -40,16 +34,7 @@ export default function OneToFifty() {
         <div className="OneToFifty container-fluid">
             {/* INSTRUCTIONS */}
             <div className="row">
-                <span style={{ color: "#283f67", fontSize: "2em", marginLeft: "90%" }} onClick={toggle}>{instructions}</span>
-                <Modal isOpen={modal} toggle={toggle} style={{ marginTop:"10%"}}>
-                    <ModalBody>
-                        <p>Cuenta del 1 al 50 lo más rápido posible...</p>
-                        <p>¡Consigue tu tiempo récord!</p>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={toggle}>Cerrar</Button>
-                    </ModalFooter>
-                </Modal>
+                <InstructionGames instructionText="Aqui van las instrucciones del juego"/>
             </div>
             {/* MENU */}
             <div className="row timeAndActualNumber alignCenter">
