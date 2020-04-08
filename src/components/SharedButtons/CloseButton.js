@@ -14,9 +14,10 @@ class CloseButton extends React.Component {
        />
 
       return (
-        < div className = "CloseButton" >
+        < div  >
             {/* CLOSE BUTTON */}
-            <Link to = "/games-section" ><span style={{color: "#00ECFD", fontSize: "2em"}}>{closeButton}</span></Link>
+            <Link to = "/games-section" className = "generalCloseButton" ><span style={{color: "#00ECFD", fontSize: "2em"}}>{closeButton}</span></Link>
+            <Link to = "carousel" className = "iframeCloseButton" ><span style={{color: "#00ECFD", fontSize: "2em"}}>{closeButton}</span></Link>
         </div>
     )}
 }
