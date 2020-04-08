@@ -29,7 +29,7 @@ function LavanguardiaPage() {
           <Navbar className="header-menu" expand="lg">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav.Link className="nav-list-item" href="https://zen-shaw-4b92a9.netlify.com/games-section">Juegos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="https//zen-shaw-4b92a9.netlify.com/games-section">Juegos</Nav.Link>
                     <Nav.Link className="nav-list-item" href="">Internacional</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#home">Política</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#link">Opinión</Nav.Link>
@@ -67,7 +67,7 @@ function LavanguardiaPage() {
                         <img className="main-img"src={secrowseccolsec}/>
                     </Col>
                     <Col md="4">
-                      <iframe src="//https://zen-shaw-4b92a9.netlify.com/carousel"
+                      <iframe src="//https//zen-shaw-4b92a9.netlify.com/carousel"
                           title="carousel"
                           width="330px"
                           height="260px"
@@ -76,7 +76,7 @@ function LavanguardiaPage() {
                           display="initial"
                           position="relative"
                           />
-                      <iframe src={"//https://zen-shaw-4b92a9.netlify.com/" + displayRandomItem()}
+                      <iframe src={"//https//zen-shaw-4b92a9.netlify.com/" + displayRandomItem()}
                           title="carousel"
                           width="330px"
                           height="240px"
