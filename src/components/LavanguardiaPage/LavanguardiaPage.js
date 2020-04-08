@@ -29,7 +29,7 @@ function LavanguardiaPage() {
           <Navbar className="header-menu" expand="lg">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav.Link className="nav-list-item" href="http://https://zen-shaw-4b92a9.netlify.com/games-section">Juegos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="https://zen-shaw-4b92a9.netlify.com/games-section">Juegos</Nav.Link>
                     <Nav.Link className="nav-list-item" href="">Internacional</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#home">Política</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#link">Opinión</Nav.Link>
