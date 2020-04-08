@@ -42,7 +42,7 @@ class Navbar extends Component {
     <div id="header-profile">
       <div id="header-profile__wrapper">
           <div className="navbarRow">
-                      <a className="header-profile__logo" href="https://zen-shaw-4b92a9.netlify.com/">
+                      <a className="header-profile__logo" href="http://localhost:3000/">
                   <figure className="header-profile__figure" alt="La Vanguardia">
                       <img src="https://rsc.lavanguardia.com/img/logo-image-v1000486.svg" className="img-responsive" alt="La Vanguardia" rel="logo"></img>
                   </figure>
