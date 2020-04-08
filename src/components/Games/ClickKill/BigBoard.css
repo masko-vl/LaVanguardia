@@ -1,3 +1,23 @@
+.gameTitle {
+  width: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.footballFooterBackground {
+  width: 98.6vw;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+}
+
+#superFootballBackground {
+  padding-top: 10px;
+  background-color: #043A40 ;
+  position: relative;
+  padding-bottom: 50px;
+}
+
 .teamLogo{
   height: 90%;
   max-width: 90%;
@@ -8,33 +28,80 @@
   border-radius: 8px;
 }
 
-.flagSquare :hover {
+/* .flagSquare :hover {
   background-color: lightgrey;
-}
+} */
 
 .footballGameContainer > h1 {
+  font-size: 20px;
   margin-bottom: 2%;
   width: 95vw;
+  color: lightgrey;
+  min-height: 100vh - 94px
 }
 
 .MuiGrid-spacing-xs-3 {
     width: 100% !important;
 }
 
-
 #generalContainer {
   display: flex;
+  position: relative;
+
+}
+
+.footballGameContainer {
+  z-index: 1;
+  width: 100%;
+}
+
+.SmallSquareGrid{
+  background-color: white;
+  opacity: 0.9;
+}
+
+.SmallSquareGrid:hover{
+  background-color: lightgray;
+  opacity: 1;
+}
+
+
+
+@media  screen and (max-width: 700px) {
+  .footballFooterBackground {
+    width: 100%;
+  }
+  .gameTitle {
+    width: 80%
+  }
 }
 
 @media screen and (max-width: 350px) {
+  #superFootballBackground{
+   padding-top: 0;
+   padding-bottom: 0;
+  }
+  .footballFooterBackground{
+    display: none;
+
+  }
+  .gameTitle{
+    width: 120px;
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    /*transform: rotate(20deg);*/
+  }
   .footballGameContainer {
-    height: 100%;
+    height: 100vh;
+    width: 100%;
     background-image: url("./images/grass_background.png");
     background-size: cover;
   }
   .footballGameContainer > h1 {
+    padding-left: 30px;
     font-size: 20px;
-    color: lightgrey
   }
   .SmallSquareGrid{
     display: none

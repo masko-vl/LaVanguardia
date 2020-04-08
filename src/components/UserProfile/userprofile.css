@@ -30,16 +30,11 @@
   text-decoration:none;
     text-shadow:0px -1px 0px #5b6178;
   color: white;
-
-
-
 }
 
 .userButtons {
   display: flex;
   justify-content: flex-end;
-
-
 }
 
 .buttonLog {

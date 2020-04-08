@@ -1,7 +1,19 @@
 #closeButton {
-    width: 5%;
     height: 30px;
+    width:30px;
     padding: 2px;
+    position: absolute;
+    top:-150px;
+    right:40px;
+    z-index: 2;
+    background: transparent url('../../SharedButtons/closeButton.png') 0% 0% no-repeat padding-box;
+    background-size:contain;
+    border: 3px solid lightblue;
+    margin: auto;
+    border-radius: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #closeButton:active {
@@ -9,7 +21,7 @@
 }
 
 #footballCounterButton {
-    background-color: darkblue;
+    background-color: #176B25;
     color: white;
     font-weight: bold;
     padding: 5px;
@@ -22,8 +34,8 @@
 #buttonContainer {
     position: absolute;
     justify-content: space-around;
-    width: 95%;
-    top: 60%;
+    width: 100%;
+    top: 40%;
 }
 
 .startGameButton {
@@ -70,12 +82,29 @@
 .playAgainButton:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
-
+@media screen and (max-width: 900px) {
+    #closeButton {
+       top:-120px; 
+       right: 10px;
+    }
+}
+@media screen and (max-width: 700px) {
+    #closeButton {
+       top:-105px; 
+       right: 10px;
+    }
+}
 @media screen and (max-width: 350px) {
     #buttonContainer {
-        top: 30%;
+        top: 25%;
+        margin-bottom: 0; 
+
     }
     #closeButton {
         display: none
+    }
+    .closeButtonIframe{
+        z-index: 2;
+        position: absolute;
     }
 }

@@ -15,7 +15,7 @@ import terrowtercol from './images/terrowtercol.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-const items = ["tacleclick", "cityplay"]
+const items = ["tacleclick", "cityplay", "nonogram"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]
@@ -29,10 +29,10 @@ function LavanguardiaPage() {
           <Navbar className="header-menu" expand="lg">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav.Link className="nav-list-item" href="http://localhost:3000/games-section">Juegos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="https://zen-shaw-4b92a9.netlify.com/games-section">Juegos</Nav.Link>
                     <Nav.Link className="nav-list-item" href="">Internacional</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#home">Política</Nav.Link>
-                    <Nav.Link className="nav-list-item" href="#link">Juegos</Nav.Link>
+                    <Nav.Link className="nav-list-item" href="#link">Opinión</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#home">Deportes</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#link">Economía</Nav.Link>
                     <Nav.Link className="nav-list-item" href="#home">Local</Nav.Link>
@@ -67,7 +67,7 @@ function LavanguardiaPage() {
                         <img className="main-img"src={secrowseccolsec}/>
                     </Col>
                     <Col md="4">
-                      <iframe src="//localhost:3000/carousel"
+                      <iframe src="https://zen-shaw-4b92a9.netlify.com/carousel"
                           title="carousel"
                           width="330px"
                           height="260px"
@@ -76,7 +76,7 @@ function LavanguardiaPage() {
                           display="initial"
                           position="relative"
                           />
-                      <iframe src={"//localhost:3000/" + displayRandomItem()}
+                      <iframe src={"https://zen-shaw-4b92a9.netlify.com/" + displayRandomItem()}
                           title="carousel"
                           width="330px"
                           height="240px"
