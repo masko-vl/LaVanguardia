@@ -4,7 +4,6 @@ import footballFlags from "./images/footballFlags";
 import SmallSquare from './SmallSquare';
 import SelectTeam from './SelectTeam';
 import Grid from '@material-ui/core/Grid';
-import "./../../SharedButtons/IframeButtons.css";
 import './BigBoard.css';
 import './Button.css';
 import backgroundFootball from './images/FOOTBAL-03@2x.png'
