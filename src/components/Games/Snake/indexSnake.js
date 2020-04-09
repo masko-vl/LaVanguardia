@@ -125,7 +125,7 @@ class IndexSnake extends Component {
   }
 
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+    return(`Game Over. Snake length is ${this.state.snakeDots.length}`);
     this.setState(initialState)
   }
 
