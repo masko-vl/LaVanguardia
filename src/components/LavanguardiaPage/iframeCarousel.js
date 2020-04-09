@@ -2,11 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import '../buttonGames.css';
-import cityban from '../imgmainPage/city@2x.png';
-import tackle from '../imgmainPage/imagen_home_tt@2x.png'
-import titleGeo from '../imgmainPage/imagen_home_gc@2x.png';
-import nonogram from '../imgmainPage/provisional_nonogram.png';
+import '../HomePage/buttonGames.css';
+import cityban from '../HomePage/imgmainPage/city@2x.png';
+import tackle from '../HomePage/imgmainPage/imagen_home_tt@2x.png'
+import titleGeo from '../HomePage/imgmainPage/imagen_home_gc@2x.png';
+import nonogram from '../HomePage/imgmainPage/provisional_nonogram.png';
 
 const IframeCarousel = (props) => {
   const responsive = {

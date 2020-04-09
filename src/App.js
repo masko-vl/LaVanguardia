@@ -5,14 +5,13 @@ import Footer from './components/Footer/Footer'
 import AppCapitals from './components/Games/ChoseCapitals/appCapitals';
 import ButtonUserLogged from './components/ButtonUserLogged/ButtonUserLogged'
 import UserProfile from './components/UserProfile/userprofile'
-import DropdownCategories from './components/DropdownCategories/dropdown'
 import GeoChallenge from './components/Games/GeoChallenge';
 import { Switch, Route } from 'react-router-dom';
 import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp.js';
 import Test from './components/test/test';
-import IframeCarousel from './components/HomePage/Carousel/iframeCarousel';
+import IframeCarousel from './components/LavanguardiaPage/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
 import IndexSnake from './components/Games/Snake/indexSnake';
 import OneToFifty from './components/Games/OneToFifty/OneToFifty'
@@ -45,51 +44,46 @@ class App extends Component {
 
     })
   }
-  render(){
-  return (
-    <div className='App'>
 
-
-      <Navbar />
-      <Switch>
-      <Route exact path ='/'>
-      <LavanguardiaPage />
-      </Route>
-      <Route path='/cityplay'>
-      <AppCapitals/>
-      </Route>
-      <Route path='/geochallange'>
-      <GeoChallenge />
-      </Route>
-      <Route path='/tacleclick'>
-      <BigBoard/>
-      </Route>
-      <Route path='/nonogram'>
-      <NonogramApp/>
-      </Route>
-      <Route path='/test'>
-      <Test/>
-      </Route>
-      <Route path='/carousel'>
-      <IframeCarousel/>
-      </Route>
-      <Route path='/games-section'>
-      <ButtonGames/>
-      </Route>
-      <Route path='/snake'>
-      <IndexSnake/>
-      </Route>
-      <Route path='/OneToFifty'>
-        <OneToFifty />
-      </Route>
-      </Switch>
-      <Footer />
-
-
-
-    </div>
-  );
+    render(){
+    return (
+      <div className='App'>
+        <Navbar />
+        <Switch>
+        <Route exact path ='/'>
+        <LavanguardiaPage />
+        </Route>
+        <Route path='/cityplay'>
+        <AppCapitals/>
+        </Route>
+        <Route path='/geochallange'>
+        <GeoChallenge />
+        </Route>
+        <Route path='/tacleclick'>
+        <BigBoard/>
+        </Route>
+        <Route path='/nonogram'>
+        <NonogramApp/>
+        </Route>
+        <Route path='/test'>
+        <Test/>
+        </Route>
+        <Route path='/carousel'>
+        <IframeCarousel/>
+        </Route>
+        <Route path='/games-section'>
+        <ButtonGames/>
+        </Route>
+        <Route path='/snake'>
+        <IndexSnake/>
+        </Route>
+        <Route path='/OneToFifty'>
+          <OneToFifty />
+        </Route>
+        </Switch>
+        <Footer />
+      </div>
+    );
+  }
 }
-
-
-export default App;
+export default App
