@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 
+
+//Navbar Categories in the game section page
 const Category = (props) => {
   return (
     <div>
