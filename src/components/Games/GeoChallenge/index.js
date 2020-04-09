@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component} from 'react';
 import countriesDB from 'country-data'; // This library is cool but doesn't have coordinates
 import coordinates from './coordinates'; // array of coordintaes by country
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -181,12 +181,10 @@ class GeoChallenge extends Component {
   render() {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
     return (
-      <Fragment>
-        <InstructionGames instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
+      <div className='containerGeo'>
+        <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
         <CloseButton />
-        <div className="titleImageContainer">
-          <img className="geoChallengeTitle" src={title} alt="map"/>
-        </div>
+        
         <div>
           {this.state.finishGame === false
             ?
@@ -195,19 +193,30 @@ class GeoChallenge extends Component {
                 {
                   this.state.options.length > 0
                     ? (
-                      <div>
-                        <p>Adivina el pais</p>
+                      <div className='marginFlag'>
                         <div className="flagDisplay">
                           <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                        </div>
+                        <div className='containerGeoMobile'>
+                          <img className="geoChallengeTitle" src={title} alt="map"/>
                         </div>
                       </div>
                     )
                     : null
                 }
-                <div className="counterText">
-                  <p>Puntuación: {this.state.correctAnswers}</p>
-                </div>
-                <p className="totalAnswers">Intentos: {this.state.totalAnswers}/ 30</p>
+                <div className='titleInstructions'>
+                  <div>
+                    <hr/>
+                    <h3>A QUE PAÍS LE PERTENECE ESTA BANDERA</h3>
+                    <hr/>
+                  </div>
+                  
+                  <div className="counterText">
+                    <div className='counterBorder'><p>Intentos:<br/> {this.state.totalAnswers}/ 30</p></div>
+                    <div className='counterBorder'><p>Puntuación: <br/>{this.state.correctAnswers}</p></div>
+                  </div>
+                  
+              </div>
               </div>
               <div className="leaflet-container">
                 <LeafletMap
@@ -237,7 +246,11 @@ class GeoChallenge extends Component {
                   ))
                   }
                 </LeafletMap>
-              </div>
+            <div className='containerGeoTitle'>
+              <img className="geoChallengeTitle" src={title} alt="map"/>
+            </div>
+              
+        </div>
             </div>
             :
             <div>
@@ -247,7 +260,7 @@ class GeoChallenge extends Component {
             </div>
           }
         </div>
-      </Fragment>
+      </div>
     )
   }
 }
