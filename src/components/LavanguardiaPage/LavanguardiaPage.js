@@ -67,7 +67,7 @@ function LavanguardiaPage() {
                         <img className="main-img"src={secrowseccolsec}/>
                     </Col>
                     <Col md="4">
-                      <iframe src="//localhost:3000/carousel"
+                      <iframe src="https://zen-shaw-4b92a9.netlify.com/carousel"
                           title="carousel"
                           width="330px"
                           height="260px"
@@ -76,7 +76,7 @@ function LavanguardiaPage() {
                           display="initial"
                           position="relative"
                           />
-                      <iframe src={"//localhost:3000/" + displayRandomItem()}
+                      <iframe src={"https://zen-shaw-4b92a9.netlify.com/" + displayRandomItem()}
                           title="carousel"
                           width="330px"
                           height="240px"

@@ -107,10 +107,7 @@ export default class GameCapitals extends Component {
         const gameStatus = {
 
             startGame: () => (<div className='startGame-page'>
-                <Link to='carousel'
-                    className='closeButtonIframe'
-                    style={{ textDecoration: 'none' }}
-                >X</Link>
+
                 <div className='logo'>
                     <Info style='instrucciones' text='Instrucciones: Seleciona la capital correcta! Si aciertas ganas 10 puntos y 4 segundos y si fallas te resta 3s' />
                     <SelectRegion style={'region-select'} action={this.props.fiterContinent} />
@@ -119,10 +116,6 @@ export default class GameCapitals extends Component {
                 </div></div>),
 
             playingGame: () => (<div className='playingGame'>
-                <Link to='carousel'
-                    className='closeButtonIframe'
-                    style={{ textDecoration: 'none' }}
-                >X</Link>
                 <Info style='counterGame-button' text={this.state.seconds} />
                 <Info style='incorrecto' text={this.state.incorrecto} />
                 <Info style='country' text={this.state.countries.length > 0 && this.state.countries[0].name} />
@@ -136,10 +129,6 @@ export default class GameCapitals extends Component {
             </div>),
 
             gameOver: () => (<div className='playingGame'>
-                <Link to='carousel'
-                    className='closeButtonIframe'
-                    style={{ textDecoration: 'none' }}
-                >X</Link>
                 <Info style='gameover' text='GAME OVER' />
                 <Info style='score' text={'Score : ' + this.state.points} />
                 <Links style='shered-link' />
@@ -150,7 +139,7 @@ export default class GameCapitals extends Component {
 
         return (
             <Fragment>
-                <InstructionGames instructionText="Aqui van las instrucciones del juego" />
+                <InstructionGames instructionText="City Game pone a prueba tus conocimientos de Geografia, relaciona el País con su capital, Si aciertas ganas 10 puntos y 4 segundos y si fallas restas 3s." />
                 <CloseButton />
                 <div className='container-game'>
                     {gameStatus[this.state.gameStatus]()}</div>

@@ -1,17 +1,13 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
-import Carousel from 'react-bootstrap/Carousel';
 import '../HomePage/buttonGames.css';
 import cityban from './imgmainPage/cover_cp@2x.png';
 import citybanmini from './imgmainPage/cityplaymini-100.png'
 import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/provisional_nonogram.png';
-import CarouselHome from './Carousel/carousel';
-import Category from '../Categories/category';
-import homeNav from './imgmainPage/home_nav.png';
-
-//CARROUSEL
+import Category from '../Categories/category'
+import NavBurger from '../Navbar/NavBurger/NavBurger'
 
 // const ButtonGames =(props)=>{
 //     return (
@@ -37,7 +33,7 @@ const ButtonGames = (props)=>{
           <div>
             <div className="headerText">
               <h2>Juegos en línea de La Vanguardia</h2>
-              <hr></hr>
+              <hr/>
               <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty.</p>
             </div>
             <div>
