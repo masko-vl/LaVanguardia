@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Snake from './snake';
 import Food from './food';
+import './snake.css'
+
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -125,7 +127,7 @@ class IndexSnake extends Component {
   }
 
   onGameOver() {
-    return(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
     this.setState(initialState)
   }
 
