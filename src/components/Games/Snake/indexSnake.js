@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
@@ -47,9 +47,7 @@ class IndexSnake extends Component {
         }
     
 checkButtonsDirections = (e) => {
-  e.target.value ? console.log('yeaaaah') : console.log('nooooo')
   if (e.target.value) {
-    console.log("you're in directions function")
   switch (e.target.value) {
            case 'UP':
              this.setState({direction: 'UP'});
@@ -87,23 +85,23 @@ checkButtonsDirections = (e) => {
   }
 
   moveSnake = () => {
-    
-    let dots = [...this.state.snakeDots];
-    let head = dots[dots.length - 1];
+    if (this.state.gameStarted) {
+      let dots = [...this.state.snakeDots];
+      let head = dots[dots.length - 1];
 
-    switch (this.state.direction) {
-      case 'RIGHT':
-        head = [head[0] + 2, head[1]];
-        break;
-      case 'LEFT':
-        head = [head[0] - 2, head[1]];
-        break;
-      case 'DOWN':
-        head = [head[0], head[1] + 2];
-        break;
-      case 'UP':
-        head = [head[0], head[1] - 2];
-        break;
+      switch (this.state.direction) {
+        case 'RIGHT':
+          head = [head[0] + 2, head[1]];
+          break;
+        case 'LEFT':
+          head = [head[0] - 2, head[1]];
+          break;
+        case 'DOWN':
+          head = [head[0], head[1] + 2];
+          break;
+        case 'UP':
+          head = [head[0], head[1] - 2];
+          break;
     }
 //    console.log('you just passed the moveSnake function')
     dots.push(head);
@@ -113,6 +111,7 @@ checkButtonsDirections = (e) => {
     })
     this.checkIfGameOver()
     document.onkeydown = this.onKeyDown
+  }
   }
 
   checkIfOutOfBorders() {
@@ -167,26 +166,25 @@ checkButtonsDirections = (e) => {
 
   render() {
     return (
-      <div className="snakeGameContainer">
-      <button onClick={this.onClickStart}>START</button>
-        <div className="game-area">
-          <Snake snakeDots={this.state.snakeDots}/>
-          <Food dot={this.state.food}/>
+      <Fragment>
+        <h1>LET'S SNAKE</h1>
+        <div className="snakeGameContainer">
+        <button onClick={this.onClickStart}>START</button>
+          <div className="game-area">
+            <Snake snakeDots={this.state.snakeDots}/>
+            <Food dot={this.state.food}/>
+          </div>
+
+          <div className="SnakeDirectionsMobilePad">
+            <button value='UP' onClick={this.checkButtonsDirections}>"UP</button>
+            <div id="sidesArrowsRow">
+              <button value='LEFT' onClick={this.checkButtonsDirections}>left'</button>
+              <button value='RIGHT' onClick={this.checkButtonsDirections}>'right'</button>
+            </div>
+            <button value='DOWN' onClick={this.checkButtonsDirections}>"DOWN"</button>
+          </div>
         </div>
-        <div id="snakePad">
-        <div id="downArrowRow">
-          <button value='DOWN' onClick={this.checkButtonsDirections}>"DOWN"</button>
-        </div>
-        <div id="upArrowRow">
-          <button value='UP' onClick={this.checkButtonsDirections}>"UP</button>
-        </div>
-        <div id="sidesArrowsRow">
-          <button value='LEFT' onClick={this.checkButtonsDirections}>left'</button>
-          <button value='RIGHT' onClick={this.checkButtonsDirections}>'right'</button>
-        </div>
-        
-        </div>
-      </div>
+      </Fragment>
     );
   }
 }
