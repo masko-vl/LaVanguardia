@@ -13,6 +13,8 @@ const getRandomCoordinates = () => {
 }
 
 const initialState = {
+  gameStarted: false,
+  gameEnded: true,
   food: getRandomCoordinates(),
   speed: 200,
   direction: 'RIGHT',
@@ -26,16 +28,45 @@ class IndexSnake extends Component {
 
   state = initialState;
 
-  componentDidMount() {
+
+  onClickStart = () => {
     setInterval(this.moveSnake, this.state.speed);
-    document.onkeydown = this.onKeyDown;
+    //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
+    this.checkIfGameOver()
+    this.setState({
+      gameStarted: true,
+      gameEnded: false
+    })
   }
 
-  componentDidUpdate() {
-    this.checkIfOutOfBorders();
-    this.checkIfCollapsed();
-    this.checkIfEat();
+  checkIfGameOver = () => { 
+    // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
+      this.checkIfOutOfBorders();
+      this.checkIfCollapsed();
+      this.checkIfEat();
+        }
+    
+checkButtonsDirections = (e) => {
+  e.target.value ? console.log('yeaaaah') : console.log('nooooo')
+  if (e.target.value) {
+    console.log("you're in directions function")
+  switch (e.target.value) {
+           case 'UP':
+             this.setState({direction: 'UP'});
+             break;
+           case 'DOWN':
+             this.setState({direction: 'DOWN'});
+             console.log("you're down bitch")
+             break;
+           case 'LEFT':
+             this.setState({direction: 'LEFT'});
+             break;
+           case 'RIGHT':
+             this.setState({direction: 'RIGHT'});
+             break;
   }
+  }
+}
 
   onKeyDown = (e) => {
     e = e || window.event;
@@ -56,6 +87,7 @@ class IndexSnake extends Component {
   }
 
   moveSnake = () => {
+    
     let dots = [...this.state.snakeDots];
     let head = dots[dots.length - 1];
 
@@ -73,11 +105,14 @@ class IndexSnake extends Component {
         head = [head[0], head[1] - 2];
         break;
     }
+//    console.log('you just passed the moveSnake function')
     dots.push(head);
     dots.shift();
     this.setState({
       snakeDots: dots
     })
+    this.checkIfGameOver()
+    document.onkeydown = this.onKeyDown
   }
 
   checkIfOutOfBorders() {
@@ -127,15 +162,30 @@ class IndexSnake extends Component {
   }
 
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
     this.setState(initialState)
   }
 
   render() {
     return (
-      <div className="game-area">
-        <Snake snakeDots={this.state.snakeDots}/>
-        <Food dot={this.state.food}/>
+      <div className="snakeGameContainer">
+      <button onClick={this.onClickStart}>START</button>
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots}/>
+          <Food dot={this.state.food}/>
+        </div>
+        <div id="snakePad">
+        <div id="downArrowRow">
+          <button value='DOWN' onClick={this.checkButtonsDirections}>"DOWN"</button>
+        </div>
+        <div id="upArrowRow">
+          <button value='UP' onClick={this.checkButtonsDirections}>"UP</button>
+        </div>
+        <div id="sidesArrowsRow">
+          <button value='LEFT' onClick={this.checkButtonsDirections}>left'</button>
+          <button value='RIGHT' onClick={this.checkButtonsDirections}>'right'</button>
+        </div>
+        
+        </div>
       </div>
     );
   }
