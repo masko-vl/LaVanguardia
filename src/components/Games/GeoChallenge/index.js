@@ -11,6 +11,7 @@ import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGa
 import CloseButton from '../../SharedButtons/CloseButton'
 
 const Leaflet = window.L;
+console.log(Leaflet)
 
 
 
@@ -18,8 +19,6 @@ const Leaflet = window.L;
 // found on the coordinates array so the map doesn't crash trying to render them.
 // It also removes the countries without a flag
 const sanitizeCountries = () => {
-  console.log(countriesDB);
-
   return countriesDB.countries.all.filter(country =>
     coordinates.filter(item => item.country === country.alpha2).length > 0);
 }
@@ -161,7 +160,7 @@ class GeoChallenge extends Component {
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
     }
 
-    if (this.state.totalAnswers < 30) {
+    if (this.state.totalAnswers < 1) {
       this.setState({
         totalAnswers: this.state.totalAnswers + 1
       })
@@ -178,13 +177,20 @@ class GeoChallenge extends Component {
     this.getFourRandomCountries();
   }
 
+  tryAgain = event => {
+  window.location.reload();
+}
+
+
+
+
   render() {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
     return (
       <div className='containerGeo'>
         <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
         <CloseButton />
-        
+
         <div>
           {this.state.finishGame === false
             ?
@@ -210,12 +216,12 @@ class GeoChallenge extends Component {
                     <h3>A QUE PAÍS LE PERTENECE ESTA BANDERA</h3>
                     <hr/>
                   </div>
-                  
+
                   <div className="counterText">
                     <div className='counterBorder'><p>Intentos:<br/> {this.state.totalAnswers}/ 30</p></div>
                     <div className='counterBorder'><p>Puntuación: <br/>{this.state.correctAnswers}</p></div>
                   </div>
-                  
+
               </div>
               </div>
               <div className="leaflet-container">
@@ -249,13 +255,18 @@ class GeoChallenge extends Component {
             <div className='containerGeoTitle'>
               <img className="geoChallengeTitle" src={title} alt="map"/>
             </div>
-              
+
         </div>
             </div>
             :
             <div>
               <div className="counterTextFinal">
                 <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
+                <button
+                   type="button"
+                   onClick = {this.tryAgain}>
+                   Try Again
+                </button>
               </div>
             </div>
           }
