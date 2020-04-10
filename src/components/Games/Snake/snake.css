@@ -2,55 +2,65 @@
   position: relative;
   top: 5%;
   height: 80vh  !important;
-  width: 100vw;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .game-area {
   position: relative;
-  margin: 50px auto;
-  width: 50%;
+  margin: 0 auto 10px auto;
+  width: 80%;
   height: 60%;
   border: 2px solid #000;
 }
 
 .snake-dot {
   position: absolute;
-  width: 2%;
-  height: 2%;
-  background-color: #000;
+  width: 10px;
+  height: 10px;
+  background-color: darkgreen;
   border: 1px solid #fff;
   z-index: 2;
 }
 
 .snake-food {
   position: absolute;
-  width: 2%;
-  height: 2%;
+  width: 10px;
+  height: 10px;
   background: red;
   border: 1px solid #fff;
   z-index: 1;
 }
 
-#SnakeDirectionsMobilePad {
-  height: 20vh;
+.SnakeDirectionsMobilePad {
+  display: block;
+  justify-content: center;
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background-color: blue;
 }
 
-#SnakeDirectionsMobilePad {
-  width: 50px;
+.padButton {
+  background-color: red;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
 }
+
 
 #sidesArrowsRow {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: auto;
+  width: 120px;
   justify-content: space-between;
 }
 
-@media (min-width: 400) {
+@media screen and (min-width: 400px) {
   .SnakeDirectionsMobilePad {
-    display: none
+    display: none;
   }
 }

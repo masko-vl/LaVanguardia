@@ -7,8 +7,8 @@ import './snake.css'
 const getRandomCoordinates = () => {
   let min = 1;
   let max = 98;
-  let x = Math.floor((Math.random()*(max-min+1)+min)/2)*2;
-  let y =  Math.floor((Math.random()*(max-min+1)+min)/2)*2;
+  let x = Math.floor((Math.random()*(max-min+2)+min)/4)*4;
+  let y =  Math.floor((Math.random()*(max-min+2)+min)/4)*4;
   return [x,y]
 }
 
@@ -48,21 +48,20 @@ class IndexSnake extends Component {
     
 checkButtonsDirections = (e) => {
   if (e.target.value) {
-  switch (e.target.value) {
-           case 'UP':
-             this.setState({direction: 'UP'});
-             break;
-           case 'DOWN':
-             this.setState({direction: 'DOWN'});
-             console.log("you're down bitch")
-             break;
-           case 'LEFT':
-             this.setState({direction: 'LEFT'});
-             break;
-           case 'RIGHT':
-             this.setState({direction: 'RIGHT'});
-             break;
-  }
+    switch (e.target.value) {
+            case 'UP':
+              this.setState({direction: 'UP'});
+              break;
+            case 'DOWN':
+              this.setState({direction: 'DOWN'});
+              break;
+            case 'LEFT':
+              this.setState({direction: 'LEFT'});
+              break;
+            case 'RIGHT':
+              this.setState({direction: 'RIGHT'});
+              break;
+    }
   }
 }
 
@@ -176,12 +175,12 @@ checkButtonsDirections = (e) => {
           </div>
 
           <div className="SnakeDirectionsMobilePad">
-            <button value='UP' onClick={this.checkButtonsDirections}>"UP</button>
+            <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
             <div id="sidesArrowsRow">
-              <button value='LEFT' onClick={this.checkButtonsDirections}>left'</button>
-              <button value='RIGHT' onClick={this.checkButtonsDirections}>'right'</button>
+              <button className="padButton" value='LEFT' onClick={this.checkButtonsDirections}>L</button>
+              <button className="padButton" value='RIGHT' onClick={this.checkButtonsDirections}>R</button>
             </div>
-            <button value='DOWN' onClick={this.checkButtonsDirections}>"DOWN"</button>
+            <button className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
           </div>
         </div>
       </Fragment>
