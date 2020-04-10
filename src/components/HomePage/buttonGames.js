@@ -7,7 +7,6 @@ import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/provisional_nonogram.png';
 import Category from '../Categories/category'
-import NavBurger from '../Navbar/NavBurger/NavBurger'
 
 // const ButtonGames =(props)=>{
 //     return (
@@ -24,6 +23,7 @@ import NavBurger from '../Navbar/NavBurger/NavBurger'
 const ButtonGames = (props)=>{
     return(
     <div>
+      
       <div>
         <Category />
       </div>

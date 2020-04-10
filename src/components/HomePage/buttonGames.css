@@ -156,6 +156,17 @@
   background-color: white;
 }
 
+.home-nav{
+  width: 118px;
+  position: fixed;
+  z-index:999999999;
+  top: 0px;
+  left: 0;
+}
+
+
+
+
 @media (max-width: 700px) {
   .imgFeatured{
     width: 280px;
