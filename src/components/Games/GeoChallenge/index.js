@@ -33,7 +33,9 @@ class GeoChallenge extends Component {
     correctAnswers: 0,
     totalAnswers: 0,
     finishGame: false,
-    sum_points: 50
+    sum_points: 50,
+    contentMap: "notHidden",
+    contentEnd: "hidden"
   }
   // method to randomly shuffle
   shuffle(a) {
@@ -147,7 +149,6 @@ class GeoChallenge extends Component {
       this.setState({
         correctAnswers: this.state.correctAnswers + this.state.sum_points
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
-
     } else if (name === this.state.options[0].name && this.state.correctAnswers !== 0) {
       this.setState({
         sum_points: this.state.sum_points + 50,
@@ -159,19 +160,21 @@ class GeoChallenge extends Component {
         correctAnswers: this.state.correctAnswers - 25
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
     }
+    this.finishGame()
+  }
 
+  finishGame =()=>{
     if (this.state.totalAnswers < 1) {
       this.setState({
         totalAnswers: this.state.totalAnswers + 1
       })
     } else {
       this.setState({
-        finishGame: true
+        contentMap: "hidden",
+        contentEnd: "notHidden"
       })
-
     }
   }
-
 
   componentDidMount() {
     this.getFourRandomCountries();
@@ -181,9 +184,6 @@ class GeoChallenge extends Component {
   window.location.reload();
 }
 
-
-
-
   render() {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
     return (
@@ -192,9 +192,7 @@ class GeoChallenge extends Component {
         <CloseButton />
 
         <div>
-          {this.state.finishGame === false
-            ?
-            <div className="mapContent">
+            <div className={`mapContent ${this.state.contentMap}`}>
               <div className="containerInstruction">
                 {
                   this.state.options.length > 0
@@ -252,24 +250,27 @@ class GeoChallenge extends Component {
                   ))
                   }
                 </LeafletMap>
-            <div className='containerGeoTitle'>
-              <img className="geoChallengeTitle" src={title} alt="map"/>
-            </div>
+                <div className='containerGeoTitle'>
+                  <img className="geoChallengeTitle" src={title} alt="map"/>
+                </div>
 
-        </div>
             </div>
-            :
-            <div>
-              <div className="counterTextFinal">
+            </div>
+              <div className={`${this.state.contentEnd}`}>
+                <div className="counterTextFinal">
+                <div className="resultGeoChallenge">
                 <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
                 <button
                    type="button"
+                   className="tryAgainButton"
                    onClick = {this.tryAgain}>
                    Try Again
                 </button>
+                </div>
+                </div>
               </div>
-            </div>
-          }
+
+
         </div>
       </div>
     )

@@ -1,6 +1,6 @@
 .containerGeo{
   background: #EFEFEF 0% 0% no-repeat padding-box;
-  width: 98.7vw;
+  width: 99.8vw;
 }
 .containerGeoTitle{
   width:70%;
@@ -13,7 +13,12 @@
   margin-top: 20px;
 
 }
-
+.hidden{
+  display: none;
+}
+.notHidden{
+  display: block;
+}
 
 .titleInstructions{
   width: 70%;
@@ -67,9 +72,29 @@
 }
 
 .counterTextFinal {
-  background-image: url('./game_image@2x.png')no-repeat center fixed;
+  background-position: center;
+  -webkit-backdrop-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
+  background-position: center;
+  background-image: url('./geochallengeTransparent.png');
   height: 100vh;
+  z-index: 0;
+  display: flex;
+}
+
+.resultGeoChallenge{
+  background-color: white;
+  position: relative;
+  height: 30%;
+  z-index: 5;
+  margin: auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid grey;
 }
 
 @keyframes rebote {
