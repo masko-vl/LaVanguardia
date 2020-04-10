@@ -1,0 +1,35 @@
+.snakeGameContainer {
+  height: 80vh  !important;
+  width: 100vw;
+}
+
+.game-area {
+  position: relative;
+  margin: 50px auto;
+  width: 50%;
+  height: 60%;
+  border: 2px solid #000;
+}
+
+.snake-dot {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #000;
+  border: 1px solid #fff;
+  z-index: 2;
+}
+
+.snake-food {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background: red;
+  border: 1px solid #fff;
+  z-index: 1;
+}
+
+#SnakeDirectionsMobilePad {
+  width: 30%;
+  height: 20%;
+}

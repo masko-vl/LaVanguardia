@@ -103,4 +103,8 @@
     #closeButton {
         display: none
     }
+    .closeButtonIframe{
+        z-index: 2;
+        position: absolute;
+    }
 }

@@ -77,7 +77,7 @@
 
 }
 
-.
+
 #nav-list {
     list-style-type: none;
     display: flex;
@@ -96,13 +96,15 @@
 }
 
 .nav-link:hover{
-
   color: white;
 }
+
 .navbar-collapse {
     margin-left: 10%;
 
 }
+
+
 
 @media (max-width: 700px) {
     #header-profile__wrapper {
@@ -118,11 +120,26 @@
     }
 
 }
-@media (max-width: 330px) {
+@media (max-width: 331px) {
   #header-profile {
       display: none;
   }
   .firstRow {
     display: none;
   }
+  #header-profile__wrapper {
+    display: none;
 }
+}
+
+@media (max-width: 700px) {
+  #header-profile__wrapper {
+      height: 46px;
+  }
+  
+  .header-profile__logo {
+    line-height: 26px;
+    margin-left: 0;
+    width: 182px;
+  }
+  }

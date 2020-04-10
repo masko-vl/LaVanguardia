@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import './OneToFifty.scss';
 import {
     Button,
     Dropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem,
-    Modal, ModalBody, ModalFooter
+    DropdownItem
 } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton';
 
 export default function OneToFifty() {
-    //Instructions Icon
-    const instructions = <FontAwesomeIcon icon={faQuestionCircle} />
-    const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
 
     // ---STATES---
     // let [numbersList, changenumbersList] = useState([]);
@@ -37,52 +32,44 @@ export default function OneToFifty() {
     }
 
     return (
-        <div className="OneToFifty container-fluid">
-            {/* INSTRUCTIONS */}
-            <div className="row">
-                <span style={{ color: "#283f67", fontSize: "2em", marginLeft: "90%" }} onClick={toggle}>{instructions}</span>
-                <Modal isOpen={modal} toggle={toggle} style={{ marginTop:"10%"}}>
-                    <ModalBody>
-                        <p>Cuenta del 1 al 50 lo más rápido posible...</p>
-                        <p>¡Consigue tu tiempo récord!</p>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={toggle}>Cerrar</Button>
-                    </ModalFooter>
-                </Modal>
+           
+            <div className="OneToFifty container-fluid">
+            <div style={{height:"100%"}}>
+                <InstructionGames instructionText="Aqui van las instrucciones del juego" />
+                <CloseButton />
             </div>
-            {/* MENU */}
-            <div className="row timeAndActualNumber alignCenter">
-                <div className="col-12 col-md-6">
-                    <div className="row justifyCenter">
-                        <p>Tiempo: {seconds}</p>
+                {/* MENU */}
+                <div className="row timeAndActualNumber alignCenter">
+                    <div className="col-12 col-md-6">
+                        <div className="row justifyCenter">
+                            <p>Tiempo: {seconds}</p>
+                        </div>
+                        <div className="row justifyCenter">
+                            <p>Numero actual: X</p>
+                        </div>
                     </div>
-                    <div className="row justifyCenter">
-                        <p>Numero actual: X</p>
-                    </div>
-                </div>
-                <div className="col-12 col-md-6 justifyCenter">
-                    <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-                        <DropdownToggle caret className="selector_button button" >
-                            Selecciona nivel
+                    <div className="col-12 col-md-6 justifyCenter">
+                        <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                            <DropdownToggle caret className="selector_button button" >
+                                Selecciona nivel
                         </DropdownToggle>
-                        <DropdownMenu>
-                            <DropdownItem onClick={() => changeNumberCells(4)}>Aprende</DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem onClick={() => changeNumberCells(8)}>Fácil</DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem onClick={() => changeNumberCells(12)}>Medio</DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem onClick={() => changeNumberCells(16)}>Difícil</DropdownItem>
-                        </DropdownMenu>
-                    </Dropdown>
+                            <DropdownMenu>
+                                <DropdownItem onClick={() => changeNumberCells(4)}>Aprende</DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem onClick={() => changeNumberCells(8)}>Fácil</DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem onClick={() => changeNumberCells(12)}>Medio</DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem onClick={() => changeNumberCells(16)}>Difícil</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                    </div>
                 </div>
+                {/* GAME */}
+                <div className="row numbersGrid">
+                    {cell}
+                </div>
+                <Button className="button" onClick={() => window.location.reload()}>Restart</Button>
             </div>
-            {/* GAME */}
-            <div className="row numbersGrid">
-                {cell}
-            </div>
-            <Button className="button" onClick={() => window.location.reload()}>Restart</Button>
-        </div>
     )
 }

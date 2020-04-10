@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import countriesDB from 'country-data'; // This library is cool but doesn't have coordinates
 import coordinates from './coordinates'; // array of coordintaes by country
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import './geoChallenge.css'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
-import "./../../SharedButtons/IframeButtons.css";
-
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton'
 
 const Leaflet = window.L;
 
@@ -35,14 +35,14 @@ class GeoChallenge extends Component {
     finishGame: false,
     sum_points: 50
   }
- // method to randomly shuffle
+  // method to randomly shuffle
   shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
+      j = Math.floor(Math.random() * (i + 1));
+      x = a[i];
+      a[i] = a[j];
+      a[j] = x;
     }
     return a;
   }
@@ -83,7 +83,7 @@ class GeoChallenge extends Component {
     const countryCoordinates = this.getCoordinates(country.alpha2)
 
     // Add the key 'coordinates' to the object country
-    return {...country, coordinates: countryCoordinates}
+    return { ...country, coordinates: countryCoordinates }
   }
 
   // Will return randomly a country object
@@ -93,7 +93,7 @@ class GeoChallenge extends Component {
       randomCountryCoordinates = this.getCoordinates(randomCountry.alpha2)
 
     // Add the key 'coordinates' to the object country
-    return {...randomCountry, coordinates: randomCountryCoordinates}
+    return { ...randomCountry, coordinates: randomCountryCoordinates }
   }
 
   // Will set the center and the bounds of the map so we can use
@@ -143,7 +143,7 @@ class GeoChallenge extends Component {
   // Logic of the points counter, as more continued correct options add more puntuation, incorrect option finish this, lose 25 points and start again
 
   onPinClicked = (name, totalAnswers) => {
-    if (name === this.state.options[0].name && this.state.correctAnswers === 0 ) {
+    if (name === this.state.options[0].name && this.state.correctAnswers === 0) {
       this.setState({
         correctAnswers: this.state.correctAnswers + this.state.sum_points
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
@@ -178,85 +178,75 @@ class GeoChallenge extends Component {
   }
 
   render() {
-
     const bounds = Leaflet.latLngBounds(this.state.bounds);
-
     return (
-    <div>
-      <Link to='carousel' 
-            className='closeButtonIframe' 
-            style={{ textDecoration: 'none'}}>X</Link>     
-      <div className="titleImageContainer">
-      <button className="exitButton"><Link to="/"> X</Link></button>
+      <Fragment>
+        <InstructionGames instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
+        <CloseButton />
+        <div className="titleImageContainer">
+          <img className="geoChallengeTitle" src={title} alt="map"/>
+        </div>
+        <div>
+          {this.state.finishGame === false
+            ?
+            <div className="mapContent">
+              <div className="containerInstruction">
+                {
+                  this.state.options.length > 0
+                    ? (
+                      <div>
+                        <p>Adivina el pais</p>
+                        <div className="flagDisplay">
+                          <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
+                        </div>
+                      </div>
+                    )
+                    : null
+                }
+                <div className="counterText">
+                  <p>Puntuación: {this.state.correctAnswers}</p>
+                </div>
+                <p className="totalAnswers">Intentos: {this.state.totalAnswers}/ 30</p>
+              </div>
+              <div className="leaflet-container">
+                <LeafletMap
+                  bounds={bounds}
+                  center={this.state.center}
+                  attributionControl={false}
+                  zoomControl={false}
+                  doubleClickZoom={true}
+                  scrollWheelZoom={false}
+                  dragging={false}
+                  animate={false}
+                  easeLinearity={0.35}
+                >
+                  <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
 
-        <img className="geoChallengeTitle"src={title}></img>
-      </div>
-      <div>
-      {this.state.finishGame === false
-        ?
-      <div className="mapContent">
-        <div className="containerInstruction">
+                  {this.state.options.map(country => (
+                    <Marker key={country.alpha2} onClick={() => this.onPinClicked(country.name)} position={country.coordinates}>
+                      <Popup>
 
-            {
-              this.state.options.length > 0
-                ? (
-                  <div>
-                    <p>Adivina el pais</p>
-                    <div className="flagDisplay">
-                      <Flag className="pinFlag" country={this.state.options[0].alpha2.toLowerCase()} size="small" />
-                    </div>
-                  </div>
-                )
-                : null
-            }
-            <div className="counterText">
-              <p>Puntuación: {this.state.correctAnswers}</p>
+                        <Flag className="pinFlag" country={country.alpha2.toLowerCase()} size="small" />
+                        <p>
+                          This is {country.name}
+                        </p>
+
+                      </Popup>
+                    </Marker>
+                  ))
+                  }
+                </LeafletMap>
+              </div>
             </div>
-            <p className="totalAnswers">Intentos: {this.state.totalAnswers}/ 30</p>
-
-
-
-        </div>
-
-        <div className="leaflet-container">
-          <LeafletMap
-          bounds={bounds}
-          center={this.state.center}
-          attributionControl={false}
-          zoomControl={false}
-          doubleClickZoom={true}
-          scrollWheelZoom={false}
-          dragging={false}
-          animate={false}
-          easeLinearity={0.35}
-        >
-          <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
-
-          { this.state.options.map(country => (
-              <Marker key={country.alpha2} onClick={() => this.onPinClicked(country.name)} position={country.coordinates}>
-                <Popup>
-
-                  <Flag className="pinFlag" country={country.alpha2.toLowerCase()} size="small" />
-                  <p>
-                    This is {country.name}
-                  </p>
-
-                </Popup>
-              </Marker>
-            ))
+            :
+            <div>
+              <div className="counterTextFinal">
+                <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
+              </div>
+            </div>
           }
-        </LeafletMap>
         </div>
-      </div>
-      :
-      <div>
-        <div className="counterTextFinal">
-          <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
-        </div>
-      </div>
-    }
-    </div>
-    </div>
+      </Fragment>
     )
   }
 }
