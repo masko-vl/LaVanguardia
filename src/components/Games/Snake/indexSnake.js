@@ -20,7 +20,7 @@ const initialState = {
   direction: 'RIGHT',
   snakeDots: [
     [0,0],
-    [2,0]
+    [1,0]
   ]
 }
 
@@ -165,14 +165,20 @@ checkButtonsDirections = (e) => {
 
   render() {
     return (
-      <Fragment>
-        <h1>LET'S SNAKE</h1>
+      <div id="snakePageContainer">
+        <h1 style={{color: 'lightgrey'}}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
-        <button onClick={this.onClickStart}>START</button>
-          <div className="game-area">
-            <Snake snakeDots={this.state.snakeDots}/>
-            <Food dot={this.state.food}/>
-          </div>
+        {this.state.gameStarted != true
+        ? 
+        <div id="buttonContainer">
+          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+        </div>
+        : null
+        } 
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots}/>
+          <Food dot={this.state.food}/>
+        </div>
 
           <div className="SnakeDirectionsMobilePad">
             <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
@@ -183,7 +189,7 @@ checkButtonsDirections = (e) => {
             <button className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
           </div>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }
