@@ -163,7 +163,7 @@ class GeoChallenge extends Component {
   }
 
   finishGame =()=>{
-    if (this.state.totalAnswers < 1) {
+    if (this.state.totalAnswers < 20) {
       this.setState({
         totalAnswers: this.state.totalAnswers + 1
       })
