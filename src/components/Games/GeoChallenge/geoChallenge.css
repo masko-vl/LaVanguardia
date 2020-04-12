@@ -95,6 +95,18 @@
   align-items: center;
   justify-content: center;
   border: 2px solid grey;
+  border-radius: 8px;
+
+}
+
+
+.tryAgainButton{
+  background-color: #3A8EC1;
+  color: white;
+  border-radius: 4px;
+  border: 2px solid #00000029;
+  margin-top: 10px;
+
 }
 
 @keyframes rebote {

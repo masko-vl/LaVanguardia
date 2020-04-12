@@ -259,12 +259,12 @@ class GeoChallenge extends Component {
               <div className={`${this.state.contentEnd}`}>
                 <div className="counterTextFinal">
                 <div className="resultGeoChallenge">
-                <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
+                <h5>Tu Puntuación Final es de: {this.state.correctAnswers}</h5>
                 <button
                    type="button"
                    className="tryAgainButton"
                    onClick = {this.tryAgain}>
-                   Try Again
+                   VOLVER A EMPEZAR
                 </button>
                 </div>
                 </div>
