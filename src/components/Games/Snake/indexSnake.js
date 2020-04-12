@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
@@ -7,18 +7,20 @@ import './snake.css'
 const getRandomCoordinates = () => {
   let min = 1;
   let max = 98;
-  let x = Math.floor((Math.random()*(max-min+1)+min)/2)*2;
-  let y =  Math.floor((Math.random()*(max-min+1)+min)/2)*2;
+  let x = Math.floor((Math.random()*(max-min+2)+min)/4)*4;
+  let y =  Math.floor((Math.random()*(max-min+2)+min)/4)*4;
   return [x,y]
 }
 
 const initialState = {
+  gameStarted: false,
+  gameEnded: true,
   food: getRandomCoordinates(),
   speed: 200,
   direction: 'RIGHT',
   snakeDots: [
     [0,0],
-    [2,0]
+    [1,0]
   ]
 }
 
@@ -26,16 +28,42 @@ class IndexSnake extends Component {
 
   state = initialState;
 
-  componentDidMount() {
+
+  onClickStart = () => {
     setInterval(this.moveSnake, this.state.speed);
-    document.onkeydown = this.onKeyDown;
+    //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
+    this.checkIfGameOver()
+    this.setState({
+      gameStarted: true,
+      gameEnded: false
+    })
   }
 
-  componentDidUpdate() {
-    this.checkIfOutOfBorders();
-    this.checkIfCollapsed();
-    this.checkIfEat();
+  checkIfGameOver = () => { 
+    // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
+      this.checkIfOutOfBorders();
+      this.checkIfCollapsed();
+      this.checkIfEat();
+        }
+    
+checkButtonsDirections = (e) => {
+  if (e.target.value) {
+    switch (e.target.value) {
+            case 'UP':
+              this.setState({direction: 'UP'});
+              break;
+            case 'DOWN':
+              this.setState({direction: 'DOWN'});
+              break;
+            case 'LEFT':
+              this.setState({direction: 'LEFT'});
+              break;
+            case 'RIGHT':
+              this.setState({direction: 'RIGHT'});
+              break;
+    }
   }
+}
 
   onKeyDown = (e) => {
     e = e || window.event;
@@ -56,28 +84,33 @@ class IndexSnake extends Component {
   }
 
   moveSnake = () => {
-    let dots = [...this.state.snakeDots];
-    let head = dots[dots.length - 1];
+    if (this.state.gameStarted) {
+      let dots = [...this.state.snakeDots];
+      let head = dots[dots.length - 1];
 
-    switch (this.state.direction) {
-      case 'RIGHT':
-        head = [head[0] + 2, head[1]];
-        break;
-      case 'LEFT':
-        head = [head[0] - 2, head[1]];
-        break;
-      case 'DOWN':
-        head = [head[0], head[1] + 2];
-        break;
-      case 'UP':
-        head = [head[0], head[1] - 2];
-        break;
+      switch (this.state.direction) {
+        case 'RIGHT':
+          head = [head[0] + 2, head[1]];
+          break;
+        case 'LEFT':
+          head = [head[0] - 2, head[1]];
+          break;
+        case 'DOWN':
+          head = [head[0], head[1] + 2];
+          break;
+        case 'UP':
+          head = [head[0], head[1] - 2];
+          break;
     }
+//    console.log('you just passed the moveSnake function')
     dots.push(head);
     dots.shift();
     this.setState({
       snakeDots: dots
     })
+    this.checkIfGameOver()
+    document.onkeydown = this.onKeyDown
+  }
   }
 
   checkIfOutOfBorders() {
@@ -127,15 +160,35 @@ class IndexSnake extends Component {
   }
 
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
     this.setState(initialState)
   }
 
   render() {
     return (
-      <div className="game-area">
-        <Snake snakeDots={this.state.snakeDots}/>
-        <Food dot={this.state.food}/>
+      <div id="snakePageContainer">
+        <h1 style={{color: 'lightgrey'}}>LET'S SNAKE</h1>
+        <div className="snakeGameContainer">
+        {this.state.gameStarted != true
+        ? 
+        <div id="buttonContainer">
+          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+        </div>
+        : null
+        } 
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots}/>
+          <Food dot={this.state.food}/>
+        </div>
+
+          <div className="SnakeDirectionsMobilePad">
+            <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
+            <div id="sidesArrowsRow">
+              <button className="padButton" value='LEFT' onClick={this.checkButtonsDirections}>L</button>
+              <button className="padButton" value='RIGHT' onClick={this.checkButtonsDirections}>R</button>
+            </div>
+            <button className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
+          </div>
+        </div>
       </div>
     );
   }

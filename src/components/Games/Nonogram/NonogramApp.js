@@ -13,7 +13,6 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import "./../../SharedButtons/IframeButtons.css";
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 

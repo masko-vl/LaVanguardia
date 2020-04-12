@@ -1,25 +1,113 @@
-.game-area {
+#snakePageContainer {
+  background-image: url('./images/background.jpg');
+  object-fit: cover;
+  color : lightgrey
+}
+
+#snakePageContainer > h1 {
+  color: lightgrey;
+  padding-top: 5%;
+  margin-bottom: 5%;
+}
+
+#buttonContainer {
+  position: absolute;
+  justify-content: space-around;
+  width: 100%;
+  top: 20%;
+  z-index: 3;
+
+}
+
+#startSnakeButton {
+  background-color: #4CAF50; /* Green */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto 10px auto;
+  cursor: pointer;
+}
+
+.snakeGameContainer {
   position: relative;
-  margin: 50px auto;
-  width: 600px;
-  height: 600px;
-  border: 2px solid #000;
+  top: 10%;
+  height: 80vh  !important;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.game-area {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin: 0 auto 10px auto;
+  width: 80%;
+  height: 60%;
 }
 
 .snake-dot {
   position: absolute;
-  width: 2%;
-  height: 2%;
-  background-color: #000;
+  width: 10px;
+  height: 10px;
+  background-color: darkgreen;
   border: 1px solid #fff;
   z-index: 2;
 }
 
 .snake-food {
   position: absolute;
-  width: 2%;
-  height: 2%;
+  width: 10px;
+  height: 10px;
   background: red;
   border: 1px solid #fff;
   z-index: 1;
+}
+
+.SnakeDirectionsMobilePad {
+  display: block;
+  justify-content: center;
+  width: 50%;
+  position: relative;
+  bottom: -10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.padButton {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  border: solid darkgrey;
+  border-radius: 15px;
+}
+
+.padButton:active {
+  background-color: darkgreen;
+}
+
+
+#sidesArrowsRow {
+  display: flex;
+  margin: auto;
+  width: 180px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 400px) {
+  .SnakeDirectionsMobilePad {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .gameArea {
+    width: 50%;
+  }
 }

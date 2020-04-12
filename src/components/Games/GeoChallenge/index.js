@@ -6,7 +6,6 @@ import './geoChallenge.css'
 import { Link } from 'react-router-dom';
 import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
-import "./../../SharedButtons/IframeButtons.css";
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton'
 
