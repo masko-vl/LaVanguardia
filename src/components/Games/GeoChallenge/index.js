@@ -10,6 +10,7 @@ import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGa
 import CloseButton from '../../SharedButtons/CloseButton'
 
 const Leaflet = window.L;
+console.log(Leaflet)
 
 
 
@@ -17,8 +18,6 @@ const Leaflet = window.L;
 // found on the coordinates array so the map doesn't crash trying to render them.
 // It also removes the countries without a flag
 const sanitizeCountries = () => {
-  console.log(countriesDB);
-
   return countriesDB.countries.all.filter(country =>
     coordinates.filter(item => item.country === country.alpha2).length > 0);
 }
@@ -33,7 +32,9 @@ class GeoChallenge extends Component {
     correctAnswers: 0,
     totalAnswers: 0,
     finishGame: false,
-    sum_points: 50
+    sum_points: 50,
+    contentMap: "notHidden",
+    contentEnd: "hidden"
   }
   // method to randomly shuffle
   shuffle(a) {
@@ -147,7 +148,6 @@ class GeoChallenge extends Component {
       this.setState({
         correctAnswers: this.state.correctAnswers + this.state.sum_points
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
-
     } else if (name === this.state.options[0].name && this.state.correctAnswers !== 0) {
       this.setState({
         sum_points: this.state.sum_points + 50,
@@ -159,23 +159,29 @@ class GeoChallenge extends Component {
         correctAnswers: this.state.correctAnswers - 25
       }, () => setTimeout(() => this.getFourRandomCountries(), 1500));
     }
+    this.finishGame()
+  }
 
-    if (this.state.totalAnswers < 30) {
+  finishGame =()=>{
+    if (this.state.totalAnswers < 20) {
       this.setState({
         totalAnswers: this.state.totalAnswers + 1
       })
     } else {
       this.setState({
-        finishGame: true
+        contentMap: "hidden",
+        contentEnd: "notHidden"
       })
-
     }
   }
-
 
   componentDidMount() {
     this.getFourRandomCountries();
   }
+
+  tryAgain = event => {
+  window.location.reload();
+}
 
   render() {
     const bounds = Leaflet.latLngBounds(this.state.bounds);
@@ -183,11 +189,9 @@ class GeoChallenge extends Component {
       <div className='containerGeo'>
         <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
         <CloseButton />
-        
+
         <div>
-          {this.state.finishGame === false
-            ?
-            <div className="mapContent">
+            <div className={`mapContent ${this.state.contentMap}`}>
               <div className="containerInstruction">
                 {
                   this.state.options.length > 0
@@ -209,12 +213,12 @@ class GeoChallenge extends Component {
                     <h3>A QUE PAÍS LE PERTENECE ESTA BANDERA</h3>
                     <hr/>
                   </div>
-                  
+
                   <div className="counterText">
                     <div className='counterBorder'><p>Intentos:<br/> {this.state.totalAnswers}/ 30</p></div>
                     <div className='counterBorder'><p>Puntuación: <br/>{this.state.correctAnswers}</p></div>
                   </div>
-                  
+
               </div>
               </div>
               <div className="leaflet-container">
@@ -245,19 +249,28 @@ class GeoChallenge extends Component {
                   ))
                   }
                 </LeafletMap>
-            <div className='containerGeoTitle'>
-              <img className="geoChallengeTitle" src={title} alt="map"/>
+                <div className='containerGeoTitle'>
+                  <img className="geoChallengeTitle" src={title} alt="map"/>
+                </div>
+
             </div>
-              
-        </div>
             </div>
-            :
-            <div>
-              <div className="counterTextFinal">
-                <p>Tu Puntuación Final es de: {this.state.correctAnswers}</p>
+              <div className={`${this.state.contentEnd}`}>
+                <div className="counterTextFinal">
+                <div className="resultGeoChallenge">
+                <h5>PUNTUACIÓN FINAL</h5>
+                <h3> {this.state.correctAnswers}</h3>
+                <button
+                   type="button"
+                   className="tryAgainButton"
+                   onClick = {this.tryAgain}>
+                   Volver a Jugar
+                </button>
+                </div>
+                </div>
               </div>
-            </div>
-          }
+
+
         </div>
       </div>
     )
