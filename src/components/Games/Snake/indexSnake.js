@@ -34,7 +34,7 @@ class IndexSnake extends Component {
   onClickStart = () => {
     const interval= intervalFunction(this.moveSnake, this.state.speed)
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
-    
+
     this.checkIfGameOver()
     this.setState({
       gameStarted: true,
@@ -42,7 +42,7 @@ class IndexSnake extends Component {
       speed:200,
       interval: interval
     })
-    
+
   }
 
   checkIfGameOver = () => {
@@ -96,10 +96,10 @@ checkButtonsDirections = (e) => {
 
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 2, head[1]];
+          head = [head[0] + 1, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 2, head[1]];
+          head = [head[0] - 1, head[1]];
           break;
         case 'DOWN':
           head = [head[0], head[1] + 2];
@@ -171,7 +171,7 @@ checkButtonsDirections = (e) => {
       initialState,
       clearInterval(this.state.interval)
       )
-    
+
   }
 
   render() {
