@@ -39,13 +39,13 @@ class IndexSnake extends Component {
     })
   }
 
-  checkIfGameOver = () => { 
+  checkIfGameOver = () => {
     // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
       this.checkIfOutOfBorders();
       this.checkIfCollapsed();
       this.checkIfEat();
         }
-    
+
 checkButtonsDirections = (e) => {
   if (e.target.value) {
     switch (e.target.value) {
@@ -96,10 +96,10 @@ checkButtonsDirections = (e) => {
           head = [head[0] - 1, head[1]];
           break;
         case 'DOWN':
-          head = [head[0], head[1] + 3];
+          head = [head[0], head[1] + 4];
           break;
         case 'UP':
-          head = [head[0], head[1] - 3];
+          head = [head[0], head[1] - 4];
           break;
     }
 //    console.log('you just passed the moveSnake function')
@@ -169,12 +169,12 @@ checkButtonsDirections = (e) => {
         <h1 style={{color: 'lightgrey'}}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
-        ? 
+        ?
         <div id="buttonContainer">
           <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
         </div>
         : null
-        } 
+        }
         <div className="game-area">
           <Snake snakeDots={this.state.snakeDots}/>
           <Food dot={this.state.food}/>
