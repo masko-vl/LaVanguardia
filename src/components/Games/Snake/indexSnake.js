@@ -6,7 +6,7 @@ import './snake.css'
 
 const getRandomCoordinates = () => {
   let min = 1;
-  let max = 98;
+  let max = 30;
   let x = Math.floor((Math.random()*(max-min+1)+min)/2)*2;
   let y =  Math.floor((Math.random()*(max-min+1)+min)/2)*2;
   return [x,y]
@@ -21,10 +21,13 @@ const initialState = {
   snakeDots: [
     [0,0],
     [2,0]
-  ]
+  ],
+  interval:0
 }
 const intervalFunction= (move, speed)=>{
+  console.log('hola hijo de puta', speed)
   return (setInterval(move, speed))
+
 }
 class IndexSnake extends Component {
 
@@ -32,7 +35,9 @@ class IndexSnake extends Component {
 
 
   onClickStart = () => {
-    const interval= intervalFunction(this.moveSnake, this.state.speed)
+
+    this.setState(initialState)
+    const interval= intervalFunction(this.moveSnake, 200)
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
     
     this.checkIfGameOver()
@@ -96,10 +101,10 @@ checkButtonsDirections = (e) => {
 
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 2, head[1]];
+          head = [head[0] + 1, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 2, head[1]];
+          head = [head[0] - 1, head[1]];
           break;
         case 'DOWN':
           head = [head[0], head[1] + 2];
@@ -133,6 +138,7 @@ checkButtonsDirections = (e) => {
     snake.forEach(dot => {
       if (head[0] == dot[0] && head[1] == dot[1]) {
         this.onGameOver();
+
       }
     })
   }
@@ -141,12 +147,23 @@ checkButtonsDirections = (e) => {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let food = this.state.food;
     if (head[0] == food[0] && head[1] == food[1]) {
-      this.setState({
-        food: getRandomCoordinates()
+      if (this.state.speed > 10) {
+        console.log(this.state.speed)
+        this.setState({
+          speed: this.state.speed - 50,
+          food: getRandomCoordinates(),
+          interval: intervalFunction(this.moveSnake, this.state.speed - 50)
       })
+    }
       this.enlargeSnake();
 
       //this.increaseSpeed();
+    }else{
+      this.setState({
+        speed:200,
+        interval:0
+      })
+      
     }
   }
 
@@ -167,10 +184,12 @@ checkButtonsDirections = (e) => {
   }  */
 
   onGameOver() {
+    
+    
     this.setState(
       initialState,
       clearInterval(this.state.interval)
-      )
+    )
     
   }
 
