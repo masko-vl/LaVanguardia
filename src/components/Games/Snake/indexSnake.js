@@ -23,20 +23,26 @@ const initialState = {
     [2,0]
   ]
 }
-
+const intervalFunction= (move, speed)=>{
+  return (setInterval(move, speed))
+}
 class IndexSnake extends Component {
 
   state = initialState;
 
 
   onClickStart = () => {
-    setInterval(this.moveSnake, this.state.speed);
+    const interval= intervalFunction(this.moveSnake, this.state.speed)
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
+    
     this.checkIfGameOver()
     this.setState({
       gameStarted: true,
-      gameEnded: false
+      gameEnded: false,
+      speed:200,
+      interval: interval
     })
+    
   }
 
   checkIfGameOver = () => {
@@ -139,7 +145,8 @@ checkButtonsDirections = (e) => {
         food: getRandomCoordinates()
       })
       this.enlargeSnake();
-      this.increaseSpeed();
+
+      //this.increaseSpeed();
     }
   }
 
@@ -151,16 +158,20 @@ checkButtonsDirections = (e) => {
     })
   }
 
-  increaseSpeed() {
+ /*  increaseSpeed() {
     if (this.state.speed > 10) {
       this.setState({
         speed: this.state.speed - 10
       })
     }
-  }
+  }  */
 
   onGameOver() {
-    this.setState(initialState)
+    this.setState(
+      initialState,
+      clearInterval(this.state.interval)
+      )
+    
   }
 
   render() {
