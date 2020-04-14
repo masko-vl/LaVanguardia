@@ -90,16 +90,16 @@ checkButtonsDirections = (e) => {
 
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 2, head[1]];
+          head = [head[0] + 1, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 2, head[1]];
+          head = [head[0] - 1, head[1]];
           break;
         case 'DOWN':
-          head = [head[0], head[1] + 2];
+          head = [head[0], head[1] + 3];
           break;
         case 'UP':
-          head = [head[0], head[1] - 2];
+          head = [head[0], head[1] - 3];
           break;
     }
 //    console.log('you just passed the moveSnake function')
