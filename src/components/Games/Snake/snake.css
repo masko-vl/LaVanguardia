@@ -45,7 +45,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   position: relative;
   margin: 0 auto 10px auto;
-  width: 80%;
+  width: 40%;
   height: 60%;
 }
 
@@ -58,11 +58,15 @@
   z-index: 2;
 }
 
+#snake-dot-0 {
+  background-color: red !important;
+}
+
 .snake-food {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: red;
+  background: blue;
   border: 1px solid #fff;
   z-index: 1;
 }
@@ -107,7 +111,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .gameArea {
-    width: 50%;
+  .game-area {
+    width: 80%;
   }
 }
