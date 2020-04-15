@@ -4,7 +4,7 @@ import Food from './food';
 import './snake.css'
 const getRandomCoordinates = () => {
   let min = 1;
-  let max = 30;
+  let max = 98;
   let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   return [x, y]
@@ -81,10 +81,10 @@ class IndexSnake extends Component {
       let head = dots[dots.length - 1];
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 1, head[1]];
+          head = [head[0] + 2, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 1, head[1]];
+          head = [head[0] - 2, head[1]];
           break;
         case 'DOWN':
           head = [head[0], head[1] + 2];
