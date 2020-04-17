@@ -2,16 +2,13 @@ import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
-
-
 const getRandomCoordinates = () => {
   let min = 1;
   let max = 98;
-  let x = Math.floor((Math.random()*(max-min+1)+min)/2)*2;
-  let y =  Math.floor((Math.random()*(max-min+1)+min)/2)*2;
-  return [x,y]
+  let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  return [x, y]
 }
-
 const initialState = {
   gameStarted: false,
   gameEnded: true,
@@ -19,107 +16,102 @@ const initialState = {
   speed: 200,
   direction: 'RIGHT',
   snakeDots: [
-    [0,0],
-    [2,0]
-  ]
+    [0, 0],
+    [2, 0]
+  ],
 }
-
+const intervalFunction = (move, speed) => {
+  console.log('hola hijo de puta', speed)
+  return (setInterval(move, speed))
+}
 class IndexSnake extends Component {
-
   state = initialState;
-
-
   onClickStart = () => {
-    setInterval(this.moveSnake, this.state.speed);
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
-    this.checkIfGameOver()
     this.setState({
+      ...initialState,
+      food: getRandomCoordinates(),
       gameStarted: true,
-      gameEnded: false
+      gameEnded: false,
+      interval: intervalFunction(this.moveSnake, this.state.speed),
     })
   }
-
   checkIfGameOver = () => {
     // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
-      this.checkIfOutOfBorders();
-      this.checkIfCollapsed();
-      this.checkIfEat();
-        }
-
-checkButtonsDirections = (e) => {
-  if (e.target.value) {
-    switch (e.target.value) {
-            case 'UP':
-              this.setState({direction: 'UP'});
-              break;
-            case 'DOWN':
-              this.setState({direction: 'DOWN'});
-              break;
-            case 'LEFT':
-              this.setState({direction: 'LEFT'});
-              break;
-            case 'RIGHT':
-              this.setState({direction: 'RIGHT'});
-              break;
+    this.checkIfOutOfBorders();
+    this.checkIfCollapsed();
+    this.checkIfEat();
+  }
+  checkButtonsDirections = (e) => {
+    if (e.target.value) {
+      switch (e.target.value) {
+        case 'UP':
+          this.setState({ direction: 'UP' });
+          break;
+        case 'DOWN':
+          this.setState({ direction: 'DOWN' });
+          break;
+        case 'LEFT':
+          this.setState({ direction: 'LEFT' });
+          break;
+        case 'RIGHT':
+          this.setState({ direction: 'RIGHT' });
+          break;
+      }
     }
   }
-}
-
   onKeyDown = (e) => {
     e = e || window.event;
     switch (e.keyCode) {
       case 38:
-        this.setState({direction: 'UP'});
+        this.setState({ direction: 'UP' });
         break;
       case 40:
-        this.setState({direction: 'DOWN'});
+        this.setState({ direction: 'DOWN' });
         break;
       case 37:
-        this.setState({direction: 'LEFT'});
+        this.setState({ direction: 'LEFT' });
         break;
       case 39:
-        this.setState({direction: 'RIGHT'});
+        this.setState({ direction: 'RIGHT' });
         break;
     }
   }
-
   moveSnake = () => {
     if (this.state.gameStarted) {
       let dots = [...this.state.snakeDots];
       let head = dots[dots.length - 1];
-
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 1, head[1]];
+          head = [head[0] + 2, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 1, head[1]];
+          head = [head[0] - 2, head[1]];
           break;
         case 'DOWN':
-          head = [head[0], head[1] + 4];
+
+          head = [head[0], head[1] + 2];
           break;
         case 'UP':
-          head = [head[0], head[1] - 4];
+          head = [head[0], head[1] - 2];
           break;
+      }
+      //    console.log('you just passed the moveSnake function')
+      dots.push(head);
+      dots.shift();
+      this.setState({
+        snakeDots: dots
+      })
+      this.checkIfGameOver()
+      document.onkeydown = this.onKeyDown
     }
-//    console.log('you just passed the moveSnake function')
-    dots.push(head);
-    dots.shift();
-    this.setState({
-      snakeDots: dots
-    })
-    this.checkIfGameOver()
-    document.onkeydown = this.onKeyDown
   }
-  }
-
   checkIfOutOfBorders() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
-    if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+    if (head[0] >= 98 || head[1] >= 98 || head[0] < 0 || head[1] < 0) {
       this.onGameOver();
     }
   }
-
   checkIfCollapsed() {
     let snake = [...this.state.snakeDots];
     let head = snake[snake.length - 1];
@@ -130,19 +122,23 @@ checkButtonsDirections = (e) => {
       }
     })
   }
-
-  checkIfEat() {
+  checkIfEat = () => {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let food = this.state.food;
     if (head[0] == food[0] && head[1] == food[1]) {
-      this.setState({
-        food: getRandomCoordinates()
-      })
+      if (this.state.speed > 5) {
+        console.log(this.state.speed, this.state.interval)
+        clearInterval(this.state.interval)
+        this.setState({
+          speed: this.state.speed - 10,
+          food: getRandomCoordinates(),
+          interval: intervalFunction(this.moveSnake, this.state.speed)
+        })
+      }
       this.enlargeSnake();
-      this.increaseSpeed();
+      //this.increaseSpeed();
     }
   }
-
   enlargeSnake() {
     let newSnake = [...this.state.snakeDots];
     newSnake.unshift([])
@@ -150,23 +146,21 @@ checkButtonsDirections = (e) => {
       snakeDots: newSnake
     })
   }
-
-  increaseSpeed() {
-    if (this.state.speed > 10) {
-      this.setState({
-        speed: this.state.speed - 10
-      })
-    }
-  }
-
+  /*  increaseSpeed() {
+     if (this.state.speed > 10) {
+       this.setState({
+         speed: this.state.speed - 10
+       })
+     }
+   }  */
   onGameOver() {
+    clearInterval(this.state.interval)
     this.setState(initialState)
   }
-
   render() {
     return (
       <div id="snakePageContainer">
-        <h1 style={{color: 'lightgrey'}}>LET'S SNAKE</h1>
+        <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
         ?
@@ -193,5 +187,4 @@ checkButtonsDirections = (e) => {
     );
   }
 }
-
 export default IndexSnake;

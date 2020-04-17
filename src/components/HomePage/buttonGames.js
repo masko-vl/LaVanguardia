@@ -6,6 +6,7 @@ import citybanmini from './imgmainPage/cityplaymini-100.png'
 import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/provisional_nonogram.png';
+import snake from './imgmainPage/snake.jpg';
 import Category from '../Categories/category'
 
 // const ButtonGames =(props)=>{
@@ -23,7 +24,7 @@ import Category from '../Categories/category'
 const ButtonGames = (props)=>{
     return(
     <div>
-      
+
       <div>
         <Category />
       </div>
@@ -33,7 +34,7 @@ const ButtonGames = (props)=>{
             <div className="headerText">
               <h2>Juegos en línea de La Vanguardia</h2>
               <hr/>
-              <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel. Sin necesidad de descarga, juega online y sin preocupaciones a nuestros juegos: TacleClik, Nonogram, CityPlay, GeoChallenge y OneToFifty.</p>
+              <p>¡Bienvenidos a la sección de juegos de La Vanguardia! Una amplia selección de juegos online gratis para que lleves la diversión a otro nivel.</p>
             </div>
             <div>
               <div>
@@ -101,6 +102,19 @@ const ButtonGames = (props)=>{
                 </Link>
                    <p>Con este juego adictivo pasarás horas coloreando filas y columnas, este novedoso juego pondrá a prueba tu lógica</p>
                 <Link to='nonogram' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
+              </div>
+              <div className="cardFeatured">
+                <Link to='snake' className=''>
+                  <img
+                    className="imgFeatured"
+                    src={snake}
+                    alt="First slide"
+                  />
+                </Link>
+                   <p>Rememora el clásico juego del Snake que nos encandiló a todos con el antiguo Nokia 3310</p>
+                <Link to='snake' className=''>
                   <button className="buttonFeatured"> JUGAR AHORA </button>
                 </Link>
               </div>
