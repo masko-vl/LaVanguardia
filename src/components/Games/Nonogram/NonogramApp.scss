@@ -1,10 +1,9 @@
 .Nonogram {
-    background-color: #0C1348;
+    background-color: rgb(228, 226, 215);
     display: flex;
     justify-content: center;
     align-items: center;
-    // height: 100vh;
-    // width: 100vw !important;
+
     @media screen and (max-width:335px) {
         height: 100vh;
     }  
@@ -12,54 +11,40 @@
 
 .btn {
     padding: .175rem .45rem !important;
-    background-color: rgb(26, 189, 206) !important;
-    border-color: rgb(26, 189, 206) !important;
+    background-color: #FFFFFF!important;
+    border-color: #707070 !important;
     border-radius: 1rem !important;
 } 
 
+.btn-primary {
+    color: #012B5E !important;
+}
+
 .btn-secondary {
     color: #fff;
-    background-color: rgb(144, 41, 156) !important;
-    border-color: rgb(144, 41, 156) !important;
+    background-color: #002A5E !important;
+    border-color: #002A5E !important;
 }
-// .container-fluid {
-//     width: 100vw;
-// }
 
 table.center {
     empty-cells: hide;
     display: flex;
     justify-content: center;
-    // margin-top: 40px;
+    margin-top: 5px;
     @media screen and (max-width:335px) {
-        // margin-top: -60px;
         margin-right: 70px;
     }  
 
     & .cell {
-        // padding: 10px;
-        // text-align: center;
         width: 3rem;
         height: 3rem;
-        // border-radius: 50%;
         display: inline-block;
-//   height: 100px;
-//   width: 100px;
         font-size: 1px;
         padding: 1px;
         color: white;
         margin-right: 5px;
-//   margin-left: 5px;
-//   animation: roll 3s;
-//   opacity: .7;
-//   @keyframes roll {
-//     0% {
-//       transform: rotate(0);
-//     }
-//     100% {
-//       transform: rotate(360deg);
-//     }
-//   }
+        border: 0.4px solid #707070;
+        border-radius: 10px;
 
         animation: bounceIn 3s ease-in-out ;
         @keyframes bounceIn {
@@ -79,52 +64,42 @@ table.center {
         @media screen and (max-width:335px) {
             width: 1.6rem;
             height: 1.6rem; 
+        }
+        &:hover {
+            cursor: pointer;
         }    
     }
 
 
     // Cases of the cells...No selected:0 /OK:1 / KO:2 
     & .cell_0 {
-        background-color: rgb(236, 236, 236);
-        // width: 2rem;
-        // height: 2rem;
-        // border: 1px solid black;
+        background-color: #f6f4f4;
     }
 
     & .cell_1 {
-        background-color: rgb(86, 93, 148);
-        // width: 2rem;
-        // height: 2rem;
-        // border: 1px solid black;
+        background-color: #383838;
     }
 
     & .cell_2 {
-        background-color: red;
-        // width: 2rem;
-        // height: 2rem;
-        // border: 1px solid black;
+        background-color: rgb(243, 104, 104);
     }
 }
 
 .clue {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    letter-spacing: 2px;
     text-align: right;
-    color: rgb(236, 236, 236);
+    color: #383838;
     
     @media screen and (max-width:335px) {
         font-size: 0.8rem;
     }
 }
 
-.v_clue {
-    // letter-spacing: 4px;
-}
-
 .h_clue {
-    letter-spacing: 8px;
+    letter-spacing: 12px;
     padding-right: 4px;
+    padding-bottom: 8px;
 
 }
 
@@ -153,10 +128,11 @@ table.center {
     @media screen and (max-width:335px) {
         display: block !important;
         position: absolute;
-        top: 70%;
+        top: 59%;
         left: 72%;
-        background-color: rgb(144, 41, 156) !important;
-        border-color: rgb(144, 41, 156) !important;
+        color: #fff !important;
+        background-color: #002A5E !important;
+        border-color: #002A5E !important;
     }
 }
 
@@ -166,6 +142,7 @@ table.center {
 
 .v_clue_p {
     margin: auto;
+    padding-right: 4px;
     writing-mode: vertical-lr;
     text-orientation: upright;
     padding-bottom: 4px;
@@ -179,7 +156,6 @@ table.center {
     @media screen and (max-width:330px) {
         margin: 0.3rem;
     }
-    
 }
 
 .img_rocket {
@@ -191,14 +167,6 @@ table.center {
     top: 40%;
     z-index: 9999;
     left: -690px;
-    // transform: translate(1350px,0);
-    // -webkit-transform: translate(1350px,0); /** Chrome & Safari **/
-    // -o-transform: translate(1350px,0); /** Opera **/
-    // -moz-transform: translate(1350px,0); /** Firefox **/
-    // transition: all 2s ease-in;
-    // -webkit-transition: all 2s ease-in; /** Chrome & Safari **/
-    // -moz-transition: all 2s ease-in; /** Firefox **/
-    // -o-transition: all 2s ease-in; /** Opera **/
 
     animation: start 3s ease-in ;
         @keyframes start {
@@ -208,7 +176,6 @@ table.center {
             100% {
                 transform: translate(2500px);
             }
-  
         }
 }
 
@@ -225,6 +192,34 @@ table.center {
     .modal-body {
         font-size: 11px !important;
     }
-    
+}
+
+.nonograma_image {
+    top: 90px;
+    position: absolute;
+    left: 0px;
+    height: 100px;
+
+    @media screen and (max-width:950px) {
+        height: 80px;
+        display: none;
+    }
+}
+
+.panda_image {
+    height: 40px;
+    margin-bottom: -20px;
+    margin-right: 4px;
+
+    @media screen and (max-width:768px) {
+        height: 40px;
+        margin-bottom: -10px;
+        margin-right: 10px;
+        
+    }
+
+    @media screen and (max-width:330px) {
+        height: 30px;
+    }
 }
 

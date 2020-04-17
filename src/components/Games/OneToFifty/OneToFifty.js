@@ -61,14 +61,8 @@ export default function OneToFifty() {
     }
     
     return (
-<<<<<<< HEAD
-
-            <div className="OneToFifty container-fluid">
-            <div style={{height:"100%"}}>
-=======
         <div className="OneToFifty container-fluid">
             <div style={{ height: "100%" }}>
->>>>>>> 93c2ae4b64eeb86fa0bdf396a8ada3c0b7664fa4
                 <InstructionGames instructionText="Aqui van las instrucciones del juego" />
                 <CloseButton />
             </div>
