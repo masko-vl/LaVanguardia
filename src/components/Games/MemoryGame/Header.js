@@ -4,17 +4,17 @@ import './Header.css';
 class Header extends React.Component {
     render() {
         return(
-            <header>
+            <header className="memory-header">
                 <div className="title">
-                    Memory game
+                    Juego de memoria
                 </div>
                 <div>
-                    <button className="reinit-button">
-                        reinit
+                    <button className="reinit-button" onClick={this.props.resetGame}>
+                        reiniciar
                     </button>
                 </div>
                 <div className="title">
-                    intentos:
+                    intentos: {this.props.tryes}
                 </div>
             </header>
         )

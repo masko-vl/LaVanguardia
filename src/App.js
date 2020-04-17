@@ -14,7 +14,8 @@ import Test from './components/test/test';
 import IframeCarousel from './components/LavanguardiaPage/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
 import IndexSnake from './components/Games/Snake/indexSnake';
-import OneToFifty from './components/Games/OneToFifty/OneToFifty'
+import OneToFifty from './components/Games/OneToFifty/OneToFifty';
+import MemoryGame from './components/Games/MemoryGame/MemoryGame';
 
 const UserExample = {
   name: "Pepito ScrumMaster",
@@ -79,6 +80,9 @@ class App extends Component {
         </Route>
         <Route path='/OneToFifty'>
           <OneToFifty />
+        </Route>
+        <Route path='/MemoryGame'>
+          <MemoryGame/>
         </Route>
         </Switch>
         <Footer />

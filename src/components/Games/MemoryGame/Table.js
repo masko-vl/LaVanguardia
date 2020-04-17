@@ -7,7 +7,18 @@ class Table extends React.Component {
         return(
             <div className="table">
                 {
-                    this.props.baraja.map((card)=> <span><Card icono={card.icono}/></span>)
+                    this.props.deck.map((card, index)=>{
+                    //watch if card is on selected couple then is being compared.
+                    const itsBeingCompared = this.props.selectedCouple.indexOf(card) > -1;
+                    return <Card 
+                    key={index}
+                    icon={card.icon}
+                    itsBeingCompared={itsBeingCompared}
+                    //it selects and save the card so it passes to memorygame and saves it in state.
+                    selectCard={() => this.props.selectCard(card)}
+                    wasGuessed={card.wasGuessed}
+                    />
+                    })
                 }
             </div>
         )

@@ -1,20 +1,25 @@
 import shuffle from 'lodash.shuffle';
 import FontAwesomeClasses from './fontAwesomeClasses';
 
-const NUMERO_DE_CARTAS = 20;
+//Quantity of cards that is going to have our deck
+const NUMBER_OF_CARDS = 20;
 
 export default () => {
 const fontAwesomeClasses = FontAwesomeClasses();
-let cartas = [];
+let cards = [];
 
-while (cartas.length < NUMERO_DE_CARTAS) {
+//while length of our deck is less than 20 push fontawesomeclasses 
+while (cards.length < NUMBER_OF_CARDS) {
     const index = Math.floor(Math.random() * fontAwesomeClasses.length);
-    const carta = {
-        icono : fontAwesomeClasses.splice(index, 1)[0],
-        fueAdivinada: false
+    //props of every single card
+    const card = {
+        icon : fontAwesomeClasses.splice(index, 1)[0],
+        //wasguessed is going to turn true when we find the couple of this card
+        wasGuessed: false
     }
-    cartas.push(carta);
-    cartas.push({...carta});
+    cards.push(card);
+    //we clone the card
+    cards.push({...card});
 }
-return shuffle(cartas);
+return shuffle(cards);
 }
