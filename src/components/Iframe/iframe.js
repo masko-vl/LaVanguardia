@@ -1,17 +1,17 @@
 
 import React from 'react';
 import '../HomePage/buttonGames.css'
-import './test.css';
+import './iframe.css';
 
 
-const items = ["carousel", "tacleclick","nonogram", "geochallenge", "cityplay"]
+const items = ["carousel", "tacleclick","nonogram", "cityplay"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]
   return randomItem
 }
 
-const Test = () => {
+const Iframe = () => {
   return (
   <div>
     <iframe src={"//localhost:3000/" + displayRandomItem()}
@@ -26,4 +26,4 @@ const Test = () => {
   )
 }
 
-export default Test
+export default Iframe

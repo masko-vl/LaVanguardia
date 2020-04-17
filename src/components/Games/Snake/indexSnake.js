@@ -21,6 +21,7 @@ const initialState = {
   ],
 }
 const intervalFunction = (move, speed) => {
+  console.log('hola hijo de puta', speed)
   return (setInterval(move, speed))
 }
 class IndexSnake extends Component {
@@ -29,9 +30,10 @@ class IndexSnake extends Component {
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
     this.setState({
       ...initialState,
+      food: getRandomCoordinates(),
       gameStarted: true,
       gameEnded: false,
-      interval: intervalFunction(this.moveSnake, this.state.speed)
+      interval: intervalFunction(this.moveSnake, this.state.speed),
     })
   }
   checkIfGameOver = () => {
@@ -124,6 +126,7 @@ class IndexSnake extends Component {
     let food = this.state.food;
     if (head[0] == food[0] && head[1] == food[1]) {
       if (this.state.speed > 5) {
+        console.log(this.state.speed, this.state.interval)
         clearInterval(this.state.interval)
         this.setState({
           speed: this.state.speed - 10,
@@ -135,7 +138,7 @@ class IndexSnake extends Component {
       //this.increaseSpeed();
     }
   }
-  enlargeSnake = () => {
+  enlargeSnake() {
     let newSnake = [...this.state.snakeDots];
     newSnake.unshift([])
     this.setState({
@@ -149,7 +152,7 @@ class IndexSnake extends Component {
        })
      }
    }  */
-  onGameOver = () => {
+  onGameOver() {
     clearInterval(this.state.interval)
     this.setState(initialState)
   }
