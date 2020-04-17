@@ -1,11 +1,7 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import './OneToFifty.scss';
 import {
-    Button,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    Button
 } from 'reactstrap';
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
@@ -13,63 +9,90 @@ import CloseButton from '../../SharedButtons/CloseButton';
 export default function OneToFifty() {
 
     // ---STATES---
-    // let [numbersList, changenumbersList] = useState([]);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const toggleDropdown = () => setDropdownOpen(prevState => !prevState);
-    const [numberCells, changeNumberCells] = useState(12);
-    let [seconds, changeSeconds] = useState(0);
+    let [timer, setTimer] = useState();
+    let [allNumbers, setallNumbers] = useState([]);
+    let [firstHalf, setFirstHalf] = useState([]);
+    let [secondHalf, setSecondHalf] = useState([]);
+    let [currentNumber, setCurrentNumber] = useState(1);
     // ---END OF STATES---
 
     //Counter time
-    setTimeout(() => {
-        changeSeconds(seconds + 1);
-    }, 1000);
+    let milliseconds = 0;
+    let minutes = 0;
+    let seconds = 0;
+    function startTime (){
+        milliseconds++
+        if (milliseconds > 999) {
+            milliseconds = 0
+            seconds++
+        }
+        if (seconds > 59) {
+            seconds = 0
+            minutes++
+        }
+        setTimer(`${minutes}:${seconds}:${milliseconds}`)
+    }
 
-    //Grid size for diferents levels
-    let cell = [];
-    for (let i = 0; i < numberCells; i++) {
-        cell.push(<div className="col-3" key={i}><div className="cellNumber alignCenter justifyCenter">hola</div></div>)
+    //Made an state with an array with all the numbers
+    let numbers = [];
+    for (let i = 1; i <= 50; i++) {
+        numbers.push(i);
+    }
+    //Fill all numbers
+    useEffect(() => {
+        setallNumbers(numbers);
+    }, [])
+
+    //Fill the first half array and the second half array
+    useEffect(() => {
+        setFirstHalf(allNumbers.filter(numero => numero <= 25).sort(() => Math.random() - 0.5))
+        setSecondHalf(allNumbers.slice(25, 51).sort(() => Math.random() - 0.5))
+    }, [allNumbers])
+
+    function checkNumber(number, i) {
+        if(number === 1){
+            setInterval(startTime, 1);
+        }
+        if (number === currentNumber) {
+            firstHalf[i] = secondHalf[0];
+            secondHalf.splice(0,1);
+            setCurrentNumber(currentNumber+1);
+        }
     }
     
     return (
+<<<<<<< HEAD
 
             <div className="OneToFifty container-fluid">
             <div style={{height:"100%"}}>
+=======
+        <div className="OneToFifty container-fluid">
+            <div style={{ height: "100%" }}>
+>>>>>>> 93c2ae4b64eeb86fa0bdf396a8ada3c0b7664fa4
                 <InstructionGames instructionText="Aqui van las instrucciones del juego" />
                 <CloseButton />
             </div>
-                {/* MENU */}
-                <div className="row timeAndActualNumber alignCenter">
-                    <div className="col-12 col-md-6">
-                        <div className="row justifyCenter">
-                            <p>Tiempo: {seconds}</p>
-                        </div>
-                        <div className="row justifyCenter">
-                            <p>Numero actual: X</p>
-                        </div>
+            {/* MENU */}
+            <div className="row timeAndActualNumber alignCenter">
+                <div className="col-12 col-md-6">
+                    <div className="row justifyCenter">
+                        <p>Tiempo: {timer}</p>
                     </div>
-                    <div className="col-12 col-md-6 justifyCenter">
-                        <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-                            <DropdownToggle caret className="selector_button button" >
-                                Selecciona nivel
-                        </DropdownToggle>
-                            <DropdownMenu>
-                                <DropdownItem onClick={() => changeNumberCells(4)}>Aprende</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem onClick={() => changeNumberCells(8)}>Fácil</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem onClick={() => changeNumberCells(12)}>Medio</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem onClick={() => changeNumberCells(16)}>Difícil</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
+                    <div className="row justifyCenter">
+                        <p>Tienes que buscar el numero: {currentNumber}</p>
                     </div>
                 </div>
-                {/* GAME */}
-                <div className="row numbersGrid">
-                    {cell}
-                </div>
-                <Button className="button" onClick={() => window.location.reload()}>Restart</Button>
             </div>
+            {/* GAME */}
+            <div className="row numbersGrid">
+                {
+                    firstHalf.map((number, i) =>
+                        <div className="cellNumber alignCenter justifyCenter" key={i} onClick={() => checkNumber(number, i)}>
+                            {number}
+                        </div>)
+                }
+            </div>
+            <Button className="button" onClick={() => window.location.reload()}>Restart</Button>
+        </div>
     )
 }

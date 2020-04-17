@@ -22,16 +22,16 @@
     }
 
     & .numbersGrid{
-        width: 40%;
+        width: 300px;
         margin: auto;
-        @media screen and (max-width: 600px){
-             width:80%;
-        }
+        // @media screen and (max-width: 600px){
+        //      width:85%;
+        // }
         & .cellNumber {
         background-color: #283f67;
         color: white;
         border-radius: 10px;
-        margin: 10px 0;
+        margin:4px;
         height: 50px;
         width: 50px;
     }
