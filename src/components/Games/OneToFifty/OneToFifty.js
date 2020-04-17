@@ -30,9 +30,9 @@ export default function OneToFifty() {
     for (let i = 0; i < numberCells; i++) {
         cell.push(<div className="col-3" key={i}><div className="cellNumber alignCenter justifyCenter">hola</div></div>)
     }
-
+    
     return (
-           
+
             <div className="OneToFifty container-fluid">
             <div style={{height:"100%"}}>
                 <InstructionGames instructionText="Aqui van las instrucciones del juego" />
