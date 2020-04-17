@@ -83,10 +83,10 @@ class IndexSnake extends Component {
       let head = dots[dots.length - 1];
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 1, head[1]];
+          head = [head[0] + 2, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 1, head[1]];
+          head = [head[0] - 2, head[1]];
           break;
         case 'DOWN':
           head = [head[0], head[1] + 2];
@@ -107,7 +107,7 @@ class IndexSnake extends Component {
   }
   checkIfOutOfBorders() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
-    if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+    if (head[0] >= 98 || head[1] >= 98 || head[0] < 0 || head[1] < 0) {
       this.onGameOver();
     }
   }
@@ -129,7 +129,7 @@ class IndexSnake extends Component {
         console.log(this.state.speed, this.state.interval)
         clearInterval(this.state.interval)
         this.setState({
-          speed: this.state.speed - 50,
+          speed: this.state.speed - 10,
           food: getRandomCoordinates(),
           interval: intervalFunction(this.moveSnake, this.state.speed)
         })
