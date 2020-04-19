@@ -14,7 +14,7 @@ class Card extends React.Component {
                     <div className="cover">
                     </div>
                     <div className="content">
-                        <i className={`fa ${this.props.icon} fa-5x`}></i>
+                        <img src={this.props.icon}/>
                     </div>
                 </ReactCardFlip>         
             </div>
