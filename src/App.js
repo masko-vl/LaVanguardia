@@ -47,6 +47,7 @@ class App extends Component {
   }
 
     render(){
+      console.log('comprobación rutas', process.env)
     return (
       <div className='App'>
         <Navbar />
