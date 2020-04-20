@@ -5,33 +5,17 @@ import {
 } from 'reactstrap';
 import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
+import Chrono from './Chrono';
 
 export default function OneToFifty() {
 
     // ---STATES---
-    let [timer, setTimer] = useState();
     let [allNumbers, setallNumbers] = useState([]);
     let [firstHalf, setFirstHalf] = useState([]);
     let [secondHalf, setSecondHalf] = useState([]);
     let [currentNumber, setCurrentNumber] = useState(1);
+    let [timeStart, setTimeStart] = useState(false);
     // ---END OF STATES---
-
-    //Counter time
-    let milliseconds = 0;
-    let minutes = 0;
-    let seconds = 0;
-    function startTime (){
-        milliseconds++
-        if (milliseconds > 999) {
-            milliseconds = 0
-            seconds++
-        }
-        if (seconds > 59) {
-            seconds = 0
-            minutes++
-        }
-        setTimer(`${minutes}:${seconds}:${milliseconds}`)
-    }
 
     //Made an state with an array with all the numbers
     let numbers = [];
@@ -51,7 +35,7 @@ export default function OneToFifty() {
 
     function checkNumber(number, i) {
         if(number === 1){
-            setInterval(startTime, 1);
+            setTimeStart (true);
         }
         if (number === currentNumber) {
             firstHalf[i] = secondHalf[0];
@@ -70,7 +54,7 @@ export default function OneToFifty() {
             <div className="row timeAndActualNumber alignCenter">
                 <div className="col-12 col-md-6">
                     <div className="row justifyCenter">
-                        <p>Tiempo: {timer}</p>
+                        {timeStart === false ? '00:00:00' : <Chrono/>}
                     </div>
                     <div className="row justifyCenter">
                         <p>Tienes que buscar el numero: {currentNumber}</p>
