@@ -5,7 +5,6 @@ import 'react-multi-carousel/lib/styles.css';
 import '../HomePage/buttonGames.css';
 import cityban from '../HomePage/imgmainPage/city@2x.png';
 import tackle from '../HomePage/imgmainPage/imagen_home_tt@2x.png'
-import titleGeo from '../HomePage/imgmainPage/imagen_home_gc@2x.png';
 import nonogram from '../HomePage/imgmainPage/provisional_nonogram.png';
 
 const IframeCarousel = (props) => {
@@ -46,16 +45,6 @@ const IframeCarousel = (props) => {
       </Link>
 
       <p className="textCarouseliFrame">Juega a citiplay y pon a prueba tus conocimientos sobre capitales de todo el mundo</p>
-    </div>
-    <div>
-      <Link to='geochallenge' className='jugartext'>
-        <img
-          className="imagecarousel"
-          src={titleGeo}
-          alt="Third slide"
-        />
-      </Link>
-      <p className="textCarouseliFrame">Adivina de que país es la bandera en GeoChallenge</p>
     </div>
     <div>
       <Link to='tacleclick' className='jugartext'>

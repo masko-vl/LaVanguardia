@@ -10,11 +10,12 @@ import { Switch, Route } from 'react-router-dom';
 import ButtonGames from './components/HomePage/buttonGames';
 import BigBoard from './components/Games/ClickKill/BigBoard';
 import NonogramApp from './components/Games/Nonogram/NonogramApp.js';
-import Test from './components/test/test';
+import Iframe from './components/Iframe/iframe';
 import IframeCarousel from './components/LavanguardiaPage/iframeCarousel';
 import LavanguardiaPage from './components/LavanguardiaPage/LavanguardiaPage';
 import IndexSnake from './components/Games/Snake/indexSnake';
-import OneToFifty from './components/Games/OneToFifty/OneToFifty'
+import OneToFifty from './components/Games/OneToFifty/OneToFifty';
+import MemoryGame from './components/Games/MemoryGame/MemoryGame';
 
 const UserExample = {
   name: "Pepito ScrumMaster",
@@ -65,8 +66,8 @@ class App extends Component {
         <Route path='/nonogram'>
         <NonogramApp/>
         </Route>
-        <Route path='/test'>
-        <Test/>
+        <Route path='/iframe'>
+        <Iframe/>
         </Route>
         <Route path='/carousel'>
         <IframeCarousel/>
@@ -79,6 +80,9 @@ class App extends Component {
         </Route>
         <Route path='/OneToFifty'>
           <OneToFifty />
+        </Route>
+        <Route path='/MemoryGame'>
+          <MemoryGame/>
         </Route>
         </Switch>
         <Footer />

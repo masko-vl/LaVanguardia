@@ -77,7 +77,7 @@
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
-  background-image: url('./geochallengeTransparent.png');
+  background-image: url('/geochallengeTransparent.png');
   height: 100vh;
   z-index: 0;
   display: flex;

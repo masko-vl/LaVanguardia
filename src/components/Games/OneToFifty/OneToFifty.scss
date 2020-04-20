@@ -1,4 +1,6 @@
 .OneToFifty {
+    background-image: linear-gradient(to right bottom, #2f243a, #342b41, #393247, #3e394e, #444054);
+
     & p {
         margin: 0;
     }
@@ -19,21 +21,24 @@
         border-radius: 20px;
         color: white;
         font-weight: bold;
+        
     }
 
     & .numbersGrid{
-        width: 40%;
+        width: 320px;
         margin: auto;
-        @media screen and (max-width: 600px){
-             width:80%;
-        }
+        // @media screen and (max-width: 600px){
+        //      width:85%;
+        // }
         & .cellNumber {
-        background-color: #283f67;
+        background-color: #DB8A74;
         color: white;
-        border-radius: 10px;
-        margin: 10px 0;
-        height: 50px;
-        width: 50px;
+        // border-radius: 10px;
+        margin:2px;
+        height: 60px;
+        width: 60px;
+        font-size: 28px;
+        font-weight: 600;
     }
     }
     & .button{
