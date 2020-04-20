@@ -10,16 +10,35 @@ let cards = [];
 
 //while length of our deck is less than 20 push fontawesomeclasses 
 while (cards.length < NUMBER_OF_CARDS) {
-    const index = Math.floor(Math.random() * imageTable.length);
+
+    const arrayImages = shuffle(imageTable)
+    let card = {}
+    console.log(arrayImages)
+    arrayImages.map((image, index)=>{
+        if(index < 10){
+             card = {
+                icon : image,
+                //wasguessed is going to turn true when we find the couple of this card
+                wasGuessed: false
+            }
+            cards.push(card);
+            //we clone the card
+            cards.push({...card});
+        }
+        return (cards)
+    })
+    console.log(cards)
+  /*  const index = Math.floor(Math.random() * imageTable.length);
     //props of every single card
     const card = {
-        icon : imageTable.splice(index, 1)[0],
+        icon : imageTable.slice(index,1)[0],
         //wasguessed is going to turn true when we find the couple of this card
         wasGuessed: false
     }
+    console.log(imageTable)
     cards.push(card);
     //we clone the card
     cards.push({...card});
-}
+}*/
 return shuffle(cards);
-}
+}}
