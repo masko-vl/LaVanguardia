@@ -54,7 +54,7 @@ export default function OneToFifty() {
             <div className="row timeAndActualNumber alignCenter">
                 <div className="col-12 col-md-6">
                     <div className="row justifyCenter">
-                        {timeStart === false ? '00:00:00' : <Chrono/>}
+                        <Chrono/>
                     </div>
                     <div className="row justifyCenter">
                         <p>Tienes que buscar el numero: {currentNumber}</p>

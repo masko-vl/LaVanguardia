@@ -1,53 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 
+const Chrono = () => {
+    const [startTime, setStartTime] = useState(0);
+    const [currentTimeMs, setCurrentTimeMs] = useState(0);
 
-function Chrono () {
-    // presentTime = currentTime - startTime (restamosla hora actual a la hora en la que se ha empezado a jugar)
-    let [currentTime, setCurrentTime] = useState({});
-    let [startTime, setStartTime] = useState({});
-    let[presentTime, setPresentTime] = useState({
-        minutos: 0,
-        segundos : 0,
-        milisegundos: 0
-    });
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTimeMs(new Date());
+        }, 100);
+        setStartTime(new Date());
+        return () => clearInterval(interval);
+    }, []);
 
-    let x = new Date();
-    let y = new Date();
-
-    useEffect(()=>{
-      setStartTime({
-            minutos: x.getMinutes(),
-            segundos: x.getSeconds(),
-            milisegundos: x.getMilliseconds()
-        }) 
-        setInterval(rightNow(),1000); 
-    },[])
-      
-    async function rightNow() {
-        await setCurrentTime({
-            minutos: y.getMinutes(),
-            segundos: y.getSeconds(),
-            milisegundos: y.getMilliseconds()
-        });
-        
-        setPresentTime({
-            minutos: Number(currentTime.minutos) - Number(startTime.minutos),
-            segundos: Number(currentTime.segundos) - Number(startTime.segundos) ,
-            milisegundos: Number(currentTime.milisegundos) - Number(startTime.milisegundos)
-        })
-        console.log(currentTime.minutos)
-        console.log(presentTime.minutos)
-    }
-
-    return (
+    return ( 
         <div className="col-12 col-md-6">
             <div className="row justifyCenter">
                 <p> {
-                `Tiempo : ${presentTime.minutos} : ${presentTime.segundos} : ${presentTime.milisegundos}`
+                `Tiempo : ${convertMS(currentTimeMs-startTime)}`
                 } </p>
             </div>          
         </div>
-    )
+    );
+};
+
+function convertMS(milliseconds) {
+    let m, s, ms;
+    ms = ''+milliseconds%1000;
+    s = Math.floor(milliseconds / 1000);
+    m = ''+Math.floor(s / 60);
+    s = ''+s % 60;
+    
+    return `${ m.padStart(2, '0')}:${s.padStart(2, '0')}:${ms.padStart(3, '0')}`;
 }
+
 
 export default Chrono;
