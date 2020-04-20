@@ -98,7 +98,7 @@ verifyIfWinner(deck) {
 
 //method to reset the game
 resetGame() {
-  this.setState(
+  this.setState( 
     initialState()
   );
 }
