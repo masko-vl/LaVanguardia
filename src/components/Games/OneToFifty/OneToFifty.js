@@ -54,10 +54,10 @@ export default function OneToFifty() {
             <div className="row timeAndActualNumber alignCenter">
                 <div className="col-12 col-md-6">
                     <div className="row justifyCenter">
-                        {timeStart === false? '00:00:00' : <Chrono/>} 
+                        <p className="chronoText">{timeStart === false? '00:00:00' : <Chrono/>}</p>
                     </div>
                     <div className="row justifyCenter">
-                        <p>Tienes que buscar el numero: {currentNumber}</p>
+                        <p>Siguiente numero: &nbsp;&nbsp;&nbsp; <span style={{ fontWeight: "bold", fontSize: "large" }}>{currentNumber}</span></p>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@ export default function OneToFifty() {
                         </div>)
                 }
             </div>
-            <Button className="button" onClick={() => window.location.reload()}>Restart</Button>
+            <button className="restartButton" onClick={() => window.location.reload()}>Restart</button>
         </div>
     )
 }

@@ -15,6 +15,16 @@ const Chrono = () => {
         return () => clearInterval(interval);
     }, []);
 
+    function convertMS(milliseconds) {
+        let m, s, ms;
+        ms = '' + milliseconds % 1000;
+        s = Math.floor(milliseconds / 1000);
+        m = '' + Math.floor(s / 60);
+        s = '' + s % 60;
+
+        return `${ m.padStart(2, '0')}:${s.padStart(2, '0')}:${ms.padStart(3, '0')}`;
+    }
+
     return ( 
         <div className="col-12 col-md-6">
             <div className="row justifyCenter">
@@ -25,16 +35,5 @@ const Chrono = () => {
         </div>
     );
 };
-
-function convertMS(milliseconds) {
-    let m, s, ms;
-    ms = ''+milliseconds%1000;
-    s = Math.floor(milliseconds / 1000);
-    m = ''+Math.floor(s / 60);
-    s = ''+s % 60;
-    
-    return `${ m.padStart(2, '0')}:${s.padStart(2, '0')}:${ms.padStart(3, '0')}`;
-}
-
 
 export default Chrono;
