@@ -27,7 +27,6 @@ while (cards.length < NUMBER_OF_CARDS) {
         }
         return (cards)
     })
-    console.log(cards)
   /*  const index = Math.floor(Math.random() * imageTable.length);
     //props of every single card
     const card = {
