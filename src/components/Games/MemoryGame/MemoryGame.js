@@ -27,6 +27,7 @@ class MemoryGame extends React.Component {
       <div className="memory-body">
         <Header
         tryes={this.state.tryes}
+        gameFinished={this.state.winner}
         resetGame={() => this.resetGame()}
         />
         <Table 
@@ -34,11 +35,6 @@ class MemoryGame extends React.Component {
         selectedCouple={this.state.selectedCouple}
         selectCard={(card) => this.selectCard(card)}
          /> 
-         {this.state.winner 
-         ? <div><h1>{` Resultado: ${ Math.round(10 / this.state.tryes * 100) }/ 100 puntos !`}</h1></div>
-         : null
-         }
-         
       </div>
     )
   }

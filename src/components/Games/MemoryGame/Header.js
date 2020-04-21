@@ -14,7 +14,10 @@ class Header extends React.Component {
                     </button>
                 </div>
                 <div className="title">
-                    intentos: {this.props.tryes}
+                {this.props.gameFinished 
+                    ? <div><h1>{` Resultado: ${ Math.round(10 / this.state.tryes * 100) }/ 100 puntos !`}</h1></div>
+                    : <h2>intentos: {this.props.tryes}</h2>
+                }
                 </div>
             </header>
         )
