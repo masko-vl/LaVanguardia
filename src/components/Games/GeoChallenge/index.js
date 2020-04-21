@@ -6,8 +6,13 @@ import './geoChallenge.css'
 import { Link } from 'react-router-dom';
 import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
+<<<<<<< HEAD
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton'
+=======
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton';
+>>>>>>> aa179dc30f911e8ec933d45d7219bd969bcbe4ee
 
 const Leaflet = window.L;
 console.log(Leaflet)

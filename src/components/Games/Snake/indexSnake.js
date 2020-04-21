@@ -129,7 +129,7 @@ class IndexSnake extends Component {
         console.log(this.state.speed, this.state.interval)
         clearInterval(this.state.interval)
         this.setState({
-          speed: this.state.speed - 50,
+          speed: this.state.speed - 10,
           food: getRandomCoordinates(),
           interval: intervalFunction(this.moveSnake, this.state.speed)
         })

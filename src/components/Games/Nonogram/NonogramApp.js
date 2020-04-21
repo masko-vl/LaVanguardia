@@ -16,8 +16,8 @@ import {
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 import AllGamesAccessIframeButton from '../../SharedButtons/AllGamesAccessIframeButton';
-
-
+import Nonograma_image from './Nonograma_image.png';
+import panda from './panda.png';
 
 export default function NonogramApp() {
   // ---STATES---
@@ -223,7 +223,7 @@ export default function NonogramApp() {
                   {/*The first one goes empty*/}
                   <td></td>
                   {verticalClues.map((clue, clueIndex) => {
-                    return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
+                    return <td key={clueIndex} valign="bottom"><div className='clue v_clue'><p className="v_clue_p v-text">{clue}</p></div></td>
                   })}
                 </tr>
                 {
@@ -236,7 +236,6 @@ export default function NonogramApp() {
                 }
               </tbody>
             </table>
-
             <div className="buttons">
               <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
               <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
@@ -248,9 +247,9 @@ export default function NonogramApp() {
                   <DropdownItem divider />
                   <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem className="drop8" onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
+                  <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem className="drop10" onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
+                  <DropdownItem onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -260,16 +259,16 @@ export default function NonogramApp() {
 
           <div>
 
-            {/* <div className='rocket_start'>
-            <img src="./play_card_black.png"  className="img_rocket" alt='rocket'/>
-          </div> */}
+            <div>
+              <img className="nonograma_image" src={Nonograma_image} alt="nonograma"></img>
+            </div>
             <table className="center">
               <tbody>
                 <tr>
                   {/*The first one goes empty*/}
-                  <td></td>
+                  <td><img className="panda_image" src={panda} alt="panda"></img></td>
                   {verticalClues.map((clue, clueIndex) => {
-                    return <td key={clueIndex} className='clue v_clue' valign="bottom"><div><p className="v_clue_p v-text">{clue}</p></div></td>
+                    return <td key={clueIndex} valign="bottom"><div className='clue v_clue'><p className="v_clue_p v-text">{clue}</p></div></td>
                   })}
                 </tr>
                 {

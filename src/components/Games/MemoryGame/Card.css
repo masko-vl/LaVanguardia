@@ -1,0 +1,40 @@
+.item-card {
+    width: 125px;
+    height: 125px;
+ }
+ 
+ .cover {
+     width: 125px;
+     height: 125px;
+     background-color: #ffb300;
+ }
+ 
+ .content {
+     width: 125px;
+     height: 125px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .ReactFlipCard {
+     width: 100%;
+     height: 100%;
+ }
+
+ @media (max-width: 400px) {
+    .content {
+        width: 110px;
+        height: 110px;
+    }
+    .cover {
+        width: 110px;
+        height: 110px;
+    }
+    .item-card {
+        width: 110px;
+        height: 110px;
+     }
+   
+}
+ 
