@@ -35,7 +35,7 @@ class MemoryGame extends React.Component {
         selectCard={(card) => this.selectCard(card)}
          /> 
          {this.state.winner 
-         ? <div><h1>{`Ganaste en ${this.state.tryes} intentos`}</h1></div>
+         ? <div><h1>{` Resultado: ${ Math.round(10 / this.state.tryes * 100) }/ 100 puntos !`}</h1></div>
          : null
          }
          
