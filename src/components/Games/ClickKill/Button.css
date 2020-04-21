@@ -82,6 +82,13 @@
 .playAgainButton:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
+
+.playAgainIframeButton {
+    height: 50%;
+    width: 30%;
+    background-color: blueviolet
+}
+
 @media screen and (max-width: 900px) {
     #closeButton {
        top:-120px; 
@@ -98,7 +105,6 @@
     #buttonContainer {
         top: 25%;
         margin-bottom: 0; 
-
     }
     #closeButton {
         display: none

@@ -7,7 +7,7 @@ import SelectRegion from './Select/select';
 import Info from './InfoGame/infoGame';
 import Exit from './Exit/exit'
 import { Link } from 'react-router-dom';
-import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 
 

@@ -7,7 +7,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
-import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 
 export default function OneToFifty() {
