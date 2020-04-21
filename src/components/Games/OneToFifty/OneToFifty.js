@@ -59,7 +59,7 @@ export default function OneToFifty() {
             setCurrentNumber(currentNumber+1);
         }
     }
-
+    
     return (
         <div className="OneToFifty container-fluid">
             <div style={{ height: "100%" }}>
