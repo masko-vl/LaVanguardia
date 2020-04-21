@@ -4,6 +4,11 @@ import Table from './Table';
 import Header from './Header';
 import construirBaraja from './utils/construirBaraja';
 
+
+// TESTING TO AVOID DOING ALL THE GAME UNTIL HAVING FINISHED :
+//- change state.winner to "true"
+//- delete the function set to calculte the result in Header.js
+
 const initialState = () => {
   const deck = construirBaraja();
   return {
@@ -86,7 +91,7 @@ class MemoryGame extends React.Component {
 //method to verify if there is a winner 
 verifyIfWinner(deck) {
   if (deck.filter((card) => !card.wasGuessed).length === 0) {
-    this.setState({
+   this.setState({
       winner: true
     });
     }
