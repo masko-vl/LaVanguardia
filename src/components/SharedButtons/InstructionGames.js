@@ -27,7 +27,7 @@ export class InstructionGames extends React.Component {
        />
 
       return (
-        <div className = "instructionGames" >
+        < div className = "instructionGames" >
             {/* INSTRUCTIONS */}
                 <span style={{ color: "#00ECFD", fontSize: "2em"}} onClick={this.toggle}>{instructions}</span>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} style={{ marginTop:"10%"}}>
@@ -43,4 +43,3 @@ export class InstructionGames extends React.Component {
 }
 
 export default InstructionGames;
-
