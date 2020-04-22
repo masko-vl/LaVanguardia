@@ -9,6 +9,7 @@ import nonogram from './imgmainPage/provisional_nonogram.png';
 import snake from './imgmainPage/snake.jpg';
 import Category from '../Categories/category';
 import OneToFifty from './imgmainPage/oneToFiftyProv2.jpg';
+import memory from './imgmainPage/memory.jpg';
 
 // const ButtonGames =(props)=>{
 //     return (
@@ -129,6 +130,19 @@ const ButtonGames = (props)=>{
                 </Link>
                    <p>El juego de moda que te dejará enganchado por horas!</p>
                 <Link to='OneToFifty' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
+              </div>
+              <div className="cardFeatured">
+                <Link to='MemoryGame' className=''>
+                  <img
+                    className="imgFeatured"
+                    src={memory}
+                    alt="First slide"
+                  />
+                </Link>
+                   <p>¿Serás capaz de encontrar cartas parejas de los presidentes?</p>
+                <Link to='MemoryGame' className=''>
                   <button className="buttonFeatured"> JUGAR AHORA </button>
                 </Link>
               </div>
