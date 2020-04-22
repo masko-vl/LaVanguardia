@@ -62,7 +62,7 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                  <p>Compite entre tus equipos de fútbol favoritos y déjate llevar por la adrenalina, solo los más rápidos ganarán!</p>
+                  <p>Machaca al equipo que quieras y pon a prueba tu agilidad con Tackle Click.</p>
                 <Link to='tacleclick' className=''>
                   <button className="buttonFeatured"> JUGAR AHORA </button>
                 </Link>
@@ -127,7 +127,7 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                   <p>El juego de moda que te dejará enganchado por horas!</p>
+                   <p>El juego de moda que te dejará enganchado por horas</p>
                 <Link to='OneToFifty' className=''>
                   <button className="buttonFeatured"> JUGAR AHORA </button>
                 </Link>
