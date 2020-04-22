@@ -7,7 +7,8 @@ import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/provisional_nonogram.png';
 import snake from './imgmainPage/snake.jpg';
-import Category from '../Categories/category'
+import Category from '../Categories/category';
+import OneToFifty from './imgmainPage/oneToFiftyProv2.jpg';
 
 // const ButtonGames =(props)=>{
 //     return (
@@ -115,6 +116,19 @@ const ButtonGames = (props)=>{
                 </Link>
                    <p>Rememora el clásico juego del Snake que nos encandiló a todos con el antiguo Nokia 3310</p>
                 <Link to='snake' className=''>
+                  <button className="buttonFeatured"> JUGAR AHORA </button>
+                </Link>
+              </div>
+              <div className="cardFeatured">
+                <Link to='OneToFifty' className=''>
+                  <img
+                    className="imgFeatured"
+                    src={OneToFifty}
+                    alt="First slide"
+                  />
+                </Link>
+                   <p>El juego de moda que te dejará enganchado por horas!</p>
+                <Link to='OneToFifty' className=''>
                   <button className="buttonFeatured"> JUGAR AHORA </button>
                 </Link>
               </div>

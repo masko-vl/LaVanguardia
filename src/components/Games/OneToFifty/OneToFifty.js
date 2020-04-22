@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './OneToFifty.scss';
-import {
-    Button
-} from 'reactstrap';
-import InstructionGames from '../../SharedButtons/InstructionGames';
+import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 import Chrono from './Chrono';
 
@@ -33,17 +30,21 @@ export default function OneToFifty() {
         setSecondHalf(allNumbers.slice(25, 51).sort(() => Math.random() - 0.5))
     }, [allNumbers])
 
+    //Start the counter when you click on "1". And remove and replaced the clicked number
     function checkNumber(number, i) {
-        if(number === 1){
-            setTimeStart (true);
+        if (number === 1) {
+            setTimeStart(true);
         }
         if (number === currentNumber) {
             firstHalf[i] = secondHalf[0];
-            secondHalf.splice(0,1);
-            setCurrentNumber(currentNumber+1);
+            secondHalf.splice(0, 1);
+            setCurrentNumber(currentNumber + 1);
+            if (number === 50) {
+                setCurrentNumber('DONE!')
+            }
         }
     }
-    
+
     return (
         <div className="OneToFifty container-fluid">
             <div style={{ height: "100%" }}>
@@ -52,13 +53,11 @@ export default function OneToFifty() {
             </div>
             {/* MENU */}
             <div className="row timeAndActualNumber alignCenter">
-                <div className="col-12 col-md-6">
-                    <div className="row justifyCenter">
-                        <p className="chronoText">{timeStart === false? '00:00:00' : <Chrono/>}</p>
-                    </div>
-                    <div className="row justifyCenter">
-                        <p>Siguiente numero: &nbsp;&nbsp;&nbsp; <span style={{ fontWeight: "bold", fontSize: "large" }}>{currentNumber}</span></p>
-                    </div>
+                <div className="col-12 col-md-6 justifyCenter">
+                    <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber}/>}</p>
+                </div>
+                <div className="col-12 col-md-6 justifyCenter">
+                    <p>Siguiente numero: &nbsp;&nbsp;&nbsp; <span style={{ fontWeight: "bold", fontSize: "x-large" }}>{currentNumber}</span></p>
                 </div>
             </div>
             {/* GAME */}
@@ -71,6 +70,6 @@ export default function OneToFifty() {
                 }
             </div>
             <button className="restartButton" onClick={() => window.location.reload()}>Restart</button>
-        </div>
+        </div >
     )
 }
