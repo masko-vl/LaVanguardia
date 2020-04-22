@@ -2,13 +2,8 @@ import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
-import InstructionGames from '../../SharedButtons/InstructionGames';
-import CloseButton from '../../SharedButtons/CloseButton'
-
-
-
 const getRandomCoordinates = () => {
-  let min = 2;
+  let min = 1;
   let max = 98;
   let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
@@ -26,9 +21,7 @@ const initialState = {
   ],
 }
 const intervalFunction = (move, speed) => {
-  console.log('hola hijo de puta', speed)
   return (setInterval(move, speed))
-
 }
 class IndexSnake extends Component {
   state = initialState;
@@ -36,10 +29,9 @@ class IndexSnake extends Component {
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
     this.setState({
       ...initialState,
-      food: getRandomCoordinates(),
       gameStarted: true,
       gameEnded: false,
-      interval: intervalFunction(this.moveSnake, this.state.speed),
+      interval: intervalFunction(this.moveSnake, this.state.speed)
     })
   }
   checkIfGameOver = () => {
@@ -89,13 +81,12 @@ class IndexSnake extends Component {
       let head = dots[dots.length - 1];
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 1, head[1]];
+          head = [head[0] + 2, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 1, head[1]];
+          head = [head[0] - 2, head[1]];
           break;
         case 'DOWN':
-
           head = [head[0], head[1] + 2];
           break;
         case 'UP':
@@ -125,7 +116,6 @@ class IndexSnake extends Component {
     snake.forEach(dot => {
       if (head[0] == dot[0] && head[1] == dot[1]) {
         this.onGameOver();
-
       }
     })
   }
@@ -134,7 +124,6 @@ class IndexSnake extends Component {
     let food = this.state.food;
     if (head[0] == food[0] && head[1] == food[1]) {
       if (this.state.speed > 5) {
-        console.log(this.state.speed, this.state.interval)
         clearInterval(this.state.interval)
         this.setState({
           speed: this.state.speed - 10,
@@ -144,51 +133,36 @@ class IndexSnake extends Component {
       }
       this.enlargeSnake();
       //this.increaseSpeed();
-    }else{
-      this.setState({
-        speed:200,
-        interval:0
-      })
-      
     }
   }
-  enlargeSnake() {
+  enlargeSnake = () => {
     let newSnake = [...this.state.snakeDots];
     newSnake.unshift([])
     this.setState({
       snakeDots: newSnake
     })
   }
-  /*  increaseSpeed() {
-     if (this.state.speed > 10) {
-       this.setState({
-         speed: this.state.speed - 10
-       })
-     }
-   }  */
-  onGameOver() {
+
+  onGameOver = () => {
     clearInterval(this.state.interval)
     this.setState(initialState)
   }
   render() {
     return (
       <div id="snakePageContainer">
-      <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
-      <CloseButton/>
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
-        {this.state.gameStarted != true
-        ?
-        <div id="buttonContainer">
-          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
-        </div>
-        : null
-        }
-        <div className="game-area">
-          <Snake snakeDots={this.state.snakeDots}/>
-          <Food dot={this.state.food}/>
-        </div>
-
+          {this.state.gameStarted != true
+            ?
+            <div id="buttonContainer">
+              <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+            </div>
+            : null
+          }
+          <div className="game-area">
+            <Snake snakeDots={this.state.snakeDots} />
+            <Food dot={this.state.food} />
+          </div>
           <div className="SnakeDirectionsMobilePad">
             <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
             <div id="sidesArrowsRow">
