@@ -3,6 +3,8 @@ import './MemoryGame.css';
 import Table from './Table';
 import Header from './Header';
 import construirBaraja from './utils/construirBaraja';
+import InstructionGames from '../../SharedButtons/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton'
 
 
 // TESTING TO AVOID DOING ALL THE GAME UNTIL HAVING FINISHED :
@@ -30,6 +32,8 @@ class MemoryGame extends React.Component {
   render() {
     return(
       <div className="memory-body">
+      <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
+      <CloseButton/>
         <Header
         tryes={this.state.tryes}
         gameFinished={this.state.winner}
