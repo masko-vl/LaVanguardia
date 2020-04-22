@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './OneToFifty.scss';
-import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 import Chrono from './Chrono';
 
