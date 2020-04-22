@@ -14,7 +14,7 @@ const displayRandomItem = () => {
 const Iframe = () => {
   return (
   <div>
-    <iframe src={"//localhost:3000/" + displayRandomItem()}
+    <iframe src={process.env.NODE_ENV === 'production' ? "https://zen-shaw-4b92a9.netlify.com/"+ displayRandomItem() : "//localhost:3000/"+ displayRandomItem()}
         width="330px"
         height="260px"
         id="test"
