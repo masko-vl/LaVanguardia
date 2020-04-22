@@ -142,13 +142,7 @@ class IndexSnake extends Component {
       snakeDots: newSnake
     })
   }
-  /*  increaseSpeed() {
-     if (this.state.speed > 10) {
-       this.setState({
-         speed: this.state.speed - 10
-       })
-     }
-   }  */
+
   onGameOver = () => {
     clearInterval(this.state.interval)
     this.setState(initialState)
