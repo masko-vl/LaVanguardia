@@ -134,6 +134,22 @@ const ButtonGames = (props)=>{
               </div>
             </div>
 
+            <div className="cardFeatured">
+              <Link to='MemoryGame' className=''>
+                <img
+                  className="imgFeatured"
+                  src={memory}
+                  alt="First slide"
+                />
+              </Link>
+                 <p>¿Serás capaz de encontrar cartas parejas de los presidentes?</p>
+              <Link to='MemoryGame' className=''>
+                <button className="buttonFeatured"> JUGAR AHORA </button>
+              </Link>
+            </div>
+          </div>
+
+
 
 
 
