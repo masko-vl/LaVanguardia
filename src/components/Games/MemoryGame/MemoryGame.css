@@ -1,5 +1,8 @@
 .memory-body {
-    background-color: black;
+    background-image: url('../../sharedImages/memoryBackground.jpg');
+    background-size: cover;
+    display : flex;
+    flex-direction: column;
   }
   
   div:focus {

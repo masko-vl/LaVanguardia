@@ -6,8 +6,8 @@ import './geoChallenge.css'
 import { Link } from 'react-router-dom';
 import Flag from 'lyef-flags';
 import title from './geoChallengeTitle.png';
-import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
-import CloseButton from '../../SharedButtons/CloseButton';
+import InstructionGames from '../../SharedButtons/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton'
 
 const Leaflet = window.L;
 console.log(Leaflet)
@@ -188,6 +188,7 @@ class GeoChallenge extends Component {
     return (
       <div className='containerGeo'>
         <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
+        <CloseButton />
         <CloseButton />
 
         <div>

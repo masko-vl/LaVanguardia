@@ -5,16 +5,27 @@ class Header extends React.Component {
     render() {
         return(
             <header className="memory-header">
-                <div className="title">
-                    Juego de memoria
-                </div>
+                <h1 className="title">
+                    Memory de presidentes
+                </h1>
+
                 <div>
-                    <button className="reinit-button" onClick={this.props.resetGame}>
-                        reiniciar
-                    </button>
-                </div>
-                <div className="title">
-                    intentos: {this.props.tryes}
+                {this.props.gameFinished 
+                    ? 
+                        <div>
+                        <button className="winner-reinit-button" onClick={this.props.resetGame}>
+                        <p className="memoryResult">{` Resultado: ${ Math.round(10 / this.props.tryes * 10) }/ 10 puntos !`}</p>
+                            INTÉNTALO OTRA VEZ !
+                        </button>
+                        </div>
+                        
+                    : <div>
+                        <p className="memoryResult">intentos: {this.props.tryes}</p>
+                        <button className="reinit-button" onClick={this.props.resetGame}>
+                            reiniciar
+                        </button>
+                    </div>
+                }
                 </div>
             </header>
         )

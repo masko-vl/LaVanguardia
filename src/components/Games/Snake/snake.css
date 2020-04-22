@@ -59,14 +59,14 @@
 }
 
 #snake-dot-0 {
-  background-color: red !important;
+  background: lightgreen;
 }
 
 .snake-food {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: blue;
+  background: darkgrey;
   border: 1px solid #fff;
   z-index: 1;
 }

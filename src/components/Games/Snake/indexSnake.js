@@ -3,7 +3,7 @@ import Snake from './snake';
 import Food from './food';
 import './snake.css'
 const getRandomCoordinates = () => {
-  let min = 1;
+  let min = 2;
   let max = 98;
   let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
@@ -90,6 +90,7 @@ class IndexSnake extends Component {
           head = [head[0] - 1, head[1]];
           break;
         case 'DOWN':
+
           head = [head[0], head[1] + 2];
           break;
         case 'UP':
@@ -169,17 +170,18 @@ class IndexSnake extends Component {
       <div id="snakePageContainer">
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
-          {this.state.gameStarted != true
-            ?
-            <div id="buttonContainer">
-              <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
-            </div>
-            : null
-          }
-          <div className="game-area">
-            <Snake snakeDots={this.state.snakeDots} />
-            <Food dot={this.state.food} />
-          </div>
+        {this.state.gameStarted != true
+        ?
+        <div id="buttonContainer">
+          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+        </div>
+        : null
+        }
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots}/>
+          <Food dot={this.state.food}/>
+        </div>
+
           <div className="SnakeDirectionsMobilePad">
             <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
             <div id="sidesArrowsRow">

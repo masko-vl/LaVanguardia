@@ -1,8 +1,7 @@
 .memory-header {
-    height: 50px;
-    border: 1px solid black;
     margin-bottom: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-content: center;
 }
@@ -13,7 +12,21 @@
     color: #fff;
 }
 
-.reinit-button {
-    position: absolute;
-    top: 100px;
+.memoryResult {
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+}
+
+.winner-reinit-button {
+    position: fixed;
+    width: 50%;
+    max-width: 200px;
+    height: 200px;
+    margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+    left: 0;
+    right: 0;
+    background-color: #00004C;
+    color: white;
+    z-index: 2;
 }

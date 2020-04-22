@@ -8,10 +8,12 @@ import './BigBoard.css';
 import './Button.css';
 import backgroundFootball from './images/FOOTBAL-03@2x.png'
 import gameTitle from './images/gameTitle.png'
-import InstructionGames from '../../SharedButtons/InstructionGames/InstructionGames';
+import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton'
-export default class BigBoard extends React.Component {
+import AllGamesAccessIframeButton from '../../SharedButtons/AllGamesAccessIframeButton';
+import './../../SharedButtons/iframeButtons'
 
+export default class BigBoard extends React.Component {
   state = {
     logoClicked: false,
     gameStarted: false,
@@ -107,6 +109,7 @@ export default class BigBoard extends React.Component {
       <Fragment>
       <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
       <CloseButton/>
+      <AllGamesAccessIframeButton />
        <div id="superFootballBackground" >
        <img className='gameTitle' src={gameTitle} alt='title'></img>
        <div id='generalContainer'>
@@ -159,7 +162,9 @@ export default class BigBoard extends React.Component {
             : null
             }
             {this.state.gameStarted && this.state.gameEnded
-            ? <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+            ? <div>
+              <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+            </div>
             : null
             }
             </div>

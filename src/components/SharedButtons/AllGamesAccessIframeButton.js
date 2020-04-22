@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../SharedButtons/CloseButton.scss';
 
-class CloseButton extends React.Component {
+class AllGamesAccessIframeButton extends React.Component {
    
   render(){
        //Button Icon
@@ -15,10 +15,9 @@ class CloseButton extends React.Component {
 
       return (
         <div>
-            <Link to = "/games-section" className = "generalCloseButton" ><span style={{color: "#00ECFD", fontSize: "2em"}}>{closeButton}</span></Link>
-            <Link to = "carousel" className = "iframeCloseButton" ><span style={{color: "#00ECFD", fontSize: "2em"}}>{closeButton}</span></Link>
+            <Link to = "carousel" className = "moreGamesButtonContainer" ><span style={{color: "#00ECFD", fontSize: "2em"}}>{closeButton}</span></Link>
         </div>
     )}
 }
 
-export default CloseButton;
+export default AllGamesAccessIframeButton;

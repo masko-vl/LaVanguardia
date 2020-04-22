@@ -4,6 +4,11 @@ import Table from './Table';
 import Header from './Header';
 import construirBaraja from './utils/construirBaraja';
 
+
+// TESTING TO AVOID DOING ALL THE GAME UNTIL HAVING FINISHED :
+//- change state.winner to "true"
+//- delete the function set to calculte the result in Header.js
+
 const initialState = () => {
   const deck = construirBaraja();
   return {
@@ -27,6 +32,7 @@ class MemoryGame extends React.Component {
       <div className="memory-body">
         <Header
         tryes={this.state.tryes}
+        gameFinished={this.state.winner}
         resetGame={() => this.resetGame()}
         />
         <Table 
@@ -34,11 +40,6 @@ class MemoryGame extends React.Component {
         selectedCouple={this.state.selectedCouple}
         selectCard={(card) => this.selectCard(card)}
          /> 
-         {this.state.winner 
-         ? <div><h1>{`Ganaste en ${this.state.tryes} intentos`}</h1></div>
-         : null
-         }
-         
       </div>
     )
   }
@@ -90,7 +91,7 @@ class MemoryGame extends React.Component {
 //method to verify if there is a winner 
 verifyIfWinner(deck) {
   if (deck.filter((card) => !card.wasGuessed).length === 0) {
-    this.setState({
+   this.setState({
       winner: true
     });
     }
