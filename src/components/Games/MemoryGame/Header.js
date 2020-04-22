@@ -14,7 +14,7 @@ class Header extends React.Component {
                     ? 
                         <div>
                         <button className="winner-reinit-button" onClick={this.props.resetGame}>
-                        <p className="memoryResult">{` Resultado: ${ Math.round(10 / this.props.tryes * 10) }/ 10 puntos !`}</p>
+                        <p className="memoryResult">13/ 10 puntos !</p>
                             INTÉNTALO OTRA VEZ !
                         </button>
                         </div>
