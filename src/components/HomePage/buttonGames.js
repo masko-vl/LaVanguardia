@@ -9,6 +9,8 @@ import nonogram from './imgmainPage/provisional_nonogram.png';
 import snake from './imgmainPage/snake.jpg';
 import Category from '../Categories/category';
 import OneToFifty from './imgmainPage/oneToFiftyProv2.jpg';
+import memory from './imgmainPage/memory.jpg';
+
 
 // const ButtonGames =(props)=>{
 //     return (
