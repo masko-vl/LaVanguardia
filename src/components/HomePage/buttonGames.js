@@ -127,7 +127,7 @@ const ButtonGames = (props)=>{
                     alt="First slide"
                   />
                 </Link>
-                   <p>El juego de moda que te dejará enganchado por horas</p>
+                   <p>El juego de moda que te dejará enganchado por horas!</p>
                 <Link to='OneToFifty' className=''>
                   <button className="buttonFeatured"> JUGAR AHORA </button>
                 </Link>

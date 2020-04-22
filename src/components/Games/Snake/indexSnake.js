@@ -2,6 +2,11 @@ import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
+import InstructionGames from '../../SharedButtons/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton'
+
+
+
 const getRandomCoordinates = () => {
   let min = 2;
   let max = 98;
@@ -23,6 +28,7 @@ const initialState = {
 const intervalFunction = (move, speed) => {
   console.log('hola hijo de puta', speed)
   return (setInterval(move, speed))
+
 }
 class IndexSnake extends Component {
   state = initialState;
@@ -83,10 +89,10 @@ class IndexSnake extends Component {
       let head = dots[dots.length - 1];
       switch (this.state.direction) {
         case 'RIGHT':
-          head = [head[0] + 2, head[1]];
+          head = [head[0] + 1, head[1]];
           break;
         case 'LEFT':
-          head = [head[0] - 2, head[1]];
+          head = [head[0] - 1, head[1]];
           break;
         case 'DOWN':
 
@@ -119,6 +125,7 @@ class IndexSnake extends Component {
     snake.forEach(dot => {
       if (head[0] == dot[0] && head[1] == dot[1]) {
         this.onGameOver();
+
       }
     })
   }
@@ -137,6 +144,12 @@ class IndexSnake extends Component {
       }
       this.enlargeSnake();
       //this.increaseSpeed();
+    }else{
+      this.setState({
+        speed:200,
+        interval:0
+      })
+      
     }
   }
   enlargeSnake() {
@@ -160,6 +173,8 @@ class IndexSnake extends Component {
   render() {
     return (
       <div id="snakePageContainer">
+      <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
+      <CloseButton/>
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
         {this.state.gameStarted != true

@@ -25,8 +25,8 @@ class MemoryGame extends React.Component {
     super(props);
     this.state = initialState()
 
-  } 
-  
+  }
+
   render() {
     return(
       <div className="memory-body">
@@ -35,15 +35,15 @@ class MemoryGame extends React.Component {
         gameFinished={this.state.winner}
         resetGame={() => this.resetGame()}
         />
-        <Table 
+        <Table
         deck={this.state.deck}
         selectedCouple={this.state.selectedCouple}
         selectCard={(card) => this.selectCard(card)}
-         /> 
+         />
       </div>
     )
   }
-//method to select card 
+//method to select card
   selectCard(card){
     if (
       this.state.itsComparing ||
@@ -62,7 +62,7 @@ class MemoryGame extends React.Component {
     }
   }
 
-  //method to compare the couple selected 
+  //method to compare the couple selected
   compareCouple(selectedCouple) {
     this.setState({itsComparing: true});
     setTimeout(() =>{
@@ -83,12 +83,12 @@ class MemoryGame extends React.Component {
         selectedCouple :[],
         deck,
         itsComparing: false,
-        tryes: this.state.tryes + 1 
+        tryes: this.state.tryes + 1
       })
     }, 1000)
   }
 
-//method to verify if there is a winner 
+//method to verify if there is a winner
 verifyIfWinner(deck) {
   if (deck.filter((card) => !card.wasGuessed).length === 0) {
    this.setState({
@@ -99,7 +99,7 @@ verifyIfWinner(deck) {
 
 //method to reset the game
 resetGame() {
-  this.setState( 
+  this.setState(
     initialState()
   );
 }

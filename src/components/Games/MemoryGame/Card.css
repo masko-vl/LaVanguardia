@@ -25,20 +25,25 @@
 
  @media (max-width: 400px) {
     .content {
+        margin-top: 2px;
         width: 80px;
         height: 80px;
     }
 
     .content img {
+        margin-top: 5px;
         width: 80px;
         height: 80px;
     }
 
     .cover {
+        margin-top: 5px;
         width: 80px;
         height: 80px;
+        cursor: pointer;
     }
     .item-card {
+        margin-top: 5px;
         width: 80px;
         height: 80px;
      }

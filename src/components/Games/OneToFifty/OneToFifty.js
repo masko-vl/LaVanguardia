@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './OneToFifty.scss';
-import {
-    Button
-} from 'reactstrap';
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 import Chrono from './Chrono';
