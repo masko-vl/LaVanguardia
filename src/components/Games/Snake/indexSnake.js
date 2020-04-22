@@ -2,6 +2,11 @@ import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
+import InstructionGames from '../../SharedButtons/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton'
+
+
+
 const getRandomCoordinates = () => {
   let min = 2;
   let max = 98;
@@ -168,6 +173,8 @@ class IndexSnake extends Component {
   render() {
     return (
       <div id="snakePageContainer">
+      <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
+      <CloseButton/>
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
