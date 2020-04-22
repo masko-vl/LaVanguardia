@@ -109,7 +109,6 @@ export default class BigBoard extends React.Component {
       <Fragment>
       <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
       <CloseButton/>
-      <AllGamesAccessIframeButton />
        <div id="superFootballBackground" >
        <img className='gameTitle' src={gameTitle} alt='title'></img>
        <div id='generalContainer'>
