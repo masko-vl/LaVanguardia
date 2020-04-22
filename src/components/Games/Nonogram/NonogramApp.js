@@ -15,7 +15,6 @@ import {
 } from 'reactstrap';
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
-import AllGamesAccessIframeButton from '../../SharedButtons/AllGamesAccessIframeButton';
 import Nonograma_image from './Nonograma_image.png';
 import panda from './panda.png';
 
@@ -199,8 +198,6 @@ export default function NonogramApp() {
     <div style={{ backgroundColor:"#0C1348"}}>
       <InstructionGames style={{ color: "white !important" }} instructionText="El nonograma es un juego de ingenio que consiste en rellenar determinadas casillas de un tablero en función de los números que contiene.
       Cada juego tiene una serie de casillas con números en su parte superior y en su parte izquierda. Estos números indican grupos de cuadrados consecutivos que aparecen en la respectiva fila/columna. Cada grupo debe ir separado por una o más casillas libres" />
-
-       <CloseButton / >
        <CloseButton / >
 
 

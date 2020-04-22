@@ -2,6 +2,9 @@ import React, { Component, Fragment } from 'react';
 import Snake from './snake';
 import Food from './food';
 import './snake.css'
+import InstructionGames from '../../SharedButtons/InstructionGames';
+import CloseButton from '../../SharedButtons/CloseButton';
+
 const getRandomCoordinates = () => {
   let min = 1;
   let max = 98;
@@ -160,6 +163,8 @@ class IndexSnake extends Component {
   render() {
     return (
       <div id="snakePageContainer">
+        <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
+        <CloseButton />
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
