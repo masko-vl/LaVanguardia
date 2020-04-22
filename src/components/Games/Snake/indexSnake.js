@@ -89,6 +89,7 @@ class IndexSnake extends Component {
           head = [head[0] - 2, head[1]];
           break;
         case 'DOWN':
+
           head = [head[0], head[1] + 2];
           break;
         case 'UP':
@@ -161,17 +162,18 @@ class IndexSnake extends Component {
       <div id="snakePageContainer">
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
         <div className="snakeGameContainer">
-          {this.state.gameStarted != true
-            ?
-            <div id="buttonContainer">
-              <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
-            </div>
-            : null
-          }
-          <div className="game-area">
-            <Snake snakeDots={this.state.snakeDots} />
-            <Food dot={this.state.food} />
-          </div>
+        {this.state.gameStarted != true
+        ?
+        <div id="buttonContainer">
+          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+        </div>
+        : null
+        }
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots}/>
+          <Food dot={this.state.food}/>
+        </div>
+
           <div className="SnakeDirectionsMobilePad">
             <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
             <div id="sidesArrowsRow">
