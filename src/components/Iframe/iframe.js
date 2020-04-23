@@ -14,7 +14,8 @@ const displayRandomItem = () => {
 const Iframe = () => {
   return (
   <div>
-    <iframe src={"//localhost:3000/" + displayRandomItem()}
+    <iframe src="//localhost:3000/snake"
+
         width="330px"
         height="260px"
         id="test"
@@ -27,3 +28,6 @@ const Iframe = () => {
 }
 
 export default Iframe
+
+
+// <iframe src={"//localhost:3000/" + displayRandomItem()}

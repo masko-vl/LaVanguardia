@@ -115,3 +115,53 @@
     width: 80%;
   }
 }
+
+
+
+@media screen and (max-width: 360px) {
+
+  .snakeGameContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+  }
+
+  #snakePageContainer > h1 {
+    color: lightgrey;
+    padding-top: 2%;
+    margin-bottom: 5%;
+    font-size: 1em;
+  }
+
+  .game-area {
+    width: 50%;
+    height: 90%;
+
+  }
+
+  .padButton {
+    width: 35px;
+    height: 40px;
+    font-size: 0.8em;
+    border: 2px solid darkgrey;
+    padding: 0px;
+  }
+
+  #startSnakeButton {
+    height: 240px;
+    width: 325px;
+    margin: -80px auto 0 auto;
+    background-image: url('./images/planta.jpg');
+    background-size: cover;
+    font-size: 2em;
+
+  }
+
+  #sidesArrowsRow{
+    width: 120px;
+  }
+
+  #downButton{
+    margin-bottom: 70px;
+  }
+}
