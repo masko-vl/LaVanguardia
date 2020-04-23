@@ -1,5 +1,5 @@
 .gameTitle {
-  width: 300px;
+  width: 370px;
   position: relative;
   z-index: 1;
 }
@@ -11,7 +11,7 @@
 }
 
 .footballFooterBackground {
-  width: 98.6vw;
+  width: 100%;
   position: absolute;
   left: 0%;
   bottom: 0%;
@@ -21,8 +21,9 @@
   padding-top: 10px;
   background-color: #043A40 ;
   position: relative;
-  padding-bottom: 50px;
-  height: 85vh;
+  padding-bottom: 10px;
+  min-height: 85vh;
+  justify-content: space-between;
 }
 
 .teamLogo{
@@ -38,6 +39,10 @@
 /* .flagSquare :hover {
   background-color: lightgrey;
 } */
+
+.footballGameContainer {
+  justify-content: space-between;
+}
 
 .footballGameContainer > h1 {
   font-size: 20px;
