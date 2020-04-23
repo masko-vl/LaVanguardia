@@ -22,7 +22,9 @@ const SelectTeam = props => {
     const classes = useStyles();
     return (
     <div className="footballGameContainer">
-        <h1 className='title-teams'>A qué equipo quieres dar una Paliza?</h1>
+        <div className="footballGameHeader">
+            <p className='titleTeams'>A quien dar una Paliza?</p>
+        </div>
         <div id='teams' className="img-container">
             <div className={classes.root}>
                 <Grid container

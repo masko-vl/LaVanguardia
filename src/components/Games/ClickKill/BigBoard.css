@@ -1,11 +1,17 @@
 .gameTitle {
-  width: 50%;
+  width: 370px;
   position: relative;
   z-index: 1;
 }
 
+.footballGameHeader {
+  height: 50px;
+  color: white;
+  margin-top: 10px;
+}
+
 .footballFooterBackground {
-  width: 98.6vw;
+  width: 100%;
   position: absolute;
   left: 0%;
   bottom: 0%;
@@ -15,7 +21,9 @@
   padding-top: 10px;
   background-color: #043A40 ;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+  min-height: 85vh;
+  justify-content: space-between;
 }
 
 .teamLogo{
@@ -32,6 +40,10 @@
   background-color: lightgrey;
 } */
 
+.footballGameContainer {
+  justify-content: space-between;
+}
+
 .footballGameContainer > h1 {
   font-size: 20px;
   margin-bottom: 2%;
@@ -46,8 +58,7 @@
 
 #generalContainer {
   display: flex;
-  position: relative;
-
+  bottom: 0;
 }
 
 .footballGameContainer {
@@ -61,7 +72,7 @@
 }
 
 .SmallSquareGrid:hover{
-  background-color: lightgray;
+  background-color: #194d33;
   opacity: 1;
 }
 

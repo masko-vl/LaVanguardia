@@ -1,6 +1,7 @@
 import React from 'react';
 import "./SmallSquare.css";
-import './BigBoard.css'
+import './BigBoard.css';
+
 
 
 const SmallSquare = props =>(
@@ -20,14 +21,25 @@ const SmallSquare = props =>(
         
         : props.randomSquare && props.logoClicked
         ? 
-        <img 
-        className="logoHidden" 
-        onClick={props.itemClicked} 
-        className="teamLogo" 
-        src={props.logo} 
-        alt='team flag'
-        style={{opacity: '0'}}
-        />
+        <div class="flip-small-box" style={{width:'90px', height:'90px' }} onClick={props.itemClicked}>
+            <div class="flip-small-box-inner">
+                <div class="flip-small-box-front">
+                    <img 
+                        className="teamLogo" 
+                        src={props.logo} 
+                        alt='team flag'
+                        />                          
+                </div>
+                <div class="flip-small-box-back">
+                    <img 
+                        className="teamLogo" 
+                        src={props.logo} 
+                        alt='team flag'
+                        />                          
+                </div>
+            </div>
+        </div>
+        
        
         : null
 )
