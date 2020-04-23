@@ -6,6 +6,7 @@ import construirBaraja from './utils/construirBaraja';
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 
+//import useWindowDimensions from './windowHandler'
 
 // TESTING TO AVOID DOING ALL THE GAME UNTIL HAVING FINISHED :
 //- change state.winner to "true"
@@ -18,7 +19,8 @@ const initialState = () => {
     selectedCouple: [],
     itsComparing: false,
     tryes: 0,
-    winner: false
+    winner: false,
+
   };
 }
 
