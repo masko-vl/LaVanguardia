@@ -4,7 +4,7 @@ import '../HomePage/buttonGames.css'
 import './iframe.css';
 
 
-const items = ["carousel", "tacleclick","nonogram", "cityplay"]
+const items = ["carousel", "tacleclick","nonogram", "cityplay","snake"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]
@@ -14,8 +14,7 @@ const displayRandomItem = () => {
 const Iframe = () => {
   return (
   <div>
-    <iframe src="//localhost:3000/snake"
-
+    <iframe src={"//localhost:3000/" + displayRandomItem()}
         width="330px"
         height="260px"
         id="test"
@@ -28,6 +27,3 @@ const Iframe = () => {
 }
 
 export default Iframe
-
-
-// <iframe src={"//localhost:3000/" + displayRandomItem()}
