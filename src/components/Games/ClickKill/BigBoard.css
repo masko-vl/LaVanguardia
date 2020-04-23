@@ -1,7 +1,13 @@
 .gameTitle {
-  width: 50%;
+  width: 300px;
   position: relative;
   z-index: 1;
+}
+
+.footballGameHeader {
+  height: 50px;
+  color: white;
+  margin-top: 10px;
 }
 
 .footballFooterBackground {
@@ -16,6 +22,7 @@
   background-color: #043A40 ;
   position: relative;
   padding-bottom: 50px;
+  height: 85vh;
 }
 
 .teamLogo{
@@ -46,8 +53,7 @@
 
 #generalContainer {
   display: flex;
-  position: relative;
-
+  bottom: 0;
 }
 
 .footballGameContainer {

@@ -58,7 +58,9 @@
     cursor: pointer;
 }
 
-
+.titleTeams {
+    font-size: 20px;
+}
 
 #selectTeamContainer {
     margin : 2% 0 5% 0;
@@ -81,7 +83,7 @@
     #team-container{
         height: 100%;
     }
-    .title-teams{
+    .titleTeams{
         font-size: 2em;
     }
     #teams.img-container{

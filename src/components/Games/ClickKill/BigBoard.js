@@ -24,7 +24,7 @@ export default class BigBoard extends React.Component {
     clickedIndex: false,
     teamChosen: false,
     counter: 0,
-    smallSquaresArray: ["","","","","","","","","","","","","","","","","","","","","","","","",""],                     // COMMENT : array with all fixed position deleted
+    smallSquaresArray: ["","","","","","","","","","","","","","","","","","","",""],                     // COMMENT : array with all fixed position deleted
     smallSquaresArrayIframe: ["","","","","","","","","",""],
     logoSelected: '',
   }
@@ -107,72 +107,66 @@ export default class BigBoard extends React.Component {
   render() {
     return (
       <Fragment>
-      <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
-      <CloseButton/>
-       <div id="superFootballBackground" >
-       <img className='gameTitle' src={gameTitle} alt='title'></img>
-       <div id='generalContainer'>
-       {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
-         {this.state.teamChosen === false
-         ? <Fragment><SelectTeam printName={this.printName} footballFlags={footballFlags}/>
-         </Fragment>
-         /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
-         : <div className="footballGameContainer">
-            <h1>Dale una paliza!</h1>
-            <div id="footballCounterButton">{this.state.counter}</div>
-            <div className="img-container" flexGrow={1}>
-              <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-                className="flagSquare"
-              >
-                {this.state.smallSquaresArray.map((x, index) =>
-                  <Grid item xs={2} className="SmallSquareGrid" style={{height: 90, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} >
-                    <SmallSquare
-                    zIndex={index}
-                    logo={this.state.logoSelected}
-                    randomSquare={index === this.state.squareIndex}
-                    itemClicked={this.itemClicked}
-                    logoClicked={this.state.logoClicked}
-                    />
+        <InstructionGames instructionText = "Machaca al equipo que más rábia te dé! Selecciona un equipo y pega encima de su escudo para sumar puntos, cuidado, si te equivocas pierdes." / >
+        <CloseButton/>
+        <div id="superFootballBackground" >
+          <img className='gameTitle' src={gameTitle} alt='title'></img>
+          <div id='generalContainer'>
+            {/* 1ST PAGE IS DISPLAYED UNTIL A FLAG IS CHOSEN */}
+            {this.state.teamChosen === false
+            ? <Fragment>
+                <SelectTeam printName={this.printName} footballFlags={footballFlags}/>
+              </Fragment>
+              /* THE GAME PAGE IS DISPLAYED ONCE THE FLAG IS CHOSEN. The Gid needs to be made from here to pass the Zindex according to the array.map */
+            : <div className="footballGameContainer">
+                <div className="footballGameHeader">
+                  <p id="footballCounterButton">{this.state.counter}</p>
+                </div>
+                <div className="img-container" flexGrow={1}>
+                  <Grid container direction="row" justify="center" alignItems="center" className="flagSquare">
+                    {this.state.smallSquaresArray.map((x, index) =>
+                      <Grid item xs={2} className="SmallSquareGrid" style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px'}} >
+                        <SmallSquare
+                        zIndex={index}
+                        logo={this.state.logoSelected}
+                        randomSquare={index === this.state.squareIndex}
+                        itemClicked={this.itemClicked}
+                        logoClicked={this.state.logoClicked}
+                        />
+                      </Grid>
+                    )}
+
+                    {this.state.smallSquaresArrayIframe.map((x, index) =>
+                      <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px'}} >
+                        <SmallSquare
+                        zIndex={index}
+                        logo={this.state.logoSelected}
+                        randomSquare={index === this.state.squareIndexIframe}
+                        itemClicked={this.itemClicked}
+                        logoClicked={this.state.logoClicked}
+                        />
+                      </Grid>
+                    )}
                   </Grid>
-                )}
-
-                {this.state.smallSquaresArrayIframe.map((x, index) =>
-                  <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 70, margin: '2px', border: '1px solid grey', borderRadius: '5px'}} >
-                    <SmallSquare
-                    zIndex={index}
-                    logo={this.state.logoSelected}
-                    randomSquare={index === this.state.squareIndexIframe}
-                    itemClicked={this.itemClicked}
-                    logoClicked={this.state.logoClicked}
-                    />
-                  </Grid>
-                )}
-              </Grid>
-
-            </div>
-            <div id="buttonContainer">
-           {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, WHEN FINISHED, the button "playagain" IS DISPLAYED with the result. No button is displayed when playing */}
-            { !this.state.gameStarted && !this.state.gameEnded
-            ? <button className="startGameButton" onClick={this.onClickStart}>START</button>
-            : null
+                </div>
+                <div id="buttonContainer">
+                  {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, WHEN FINISHED, the button "playagain" IS DISPLAYED with the result. No button is displayed when playing */}
+                  { !this.state.gameStarted && !this.state.gameEnded
+                    ? <button className="startGameButton" onClick={this.onClickStart}>DALE UNA PALIZA</button>
+                    : null
+                  }
+                  {this.state.gameStarted && this.state.gameEnded
+                    ? <div>
+                        <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+                      </div>
+                    : null
+                  }
+                </div>
+              </div>
             }
-            {this.state.gameStarted && this.state.gameEnded
-            ? <div>
-              <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
-            </div>
-            : null
-            }
-            </div>
-           </div>
-         }
-
-       </div>
-        <img className="footballFooterBackground" src={backgroundFootball} alt='footballGameFooter'></img>
-       </div>
+          </div>
+          <img className="footballFooterBackground" src={backgroundFootball} alt='footballGameFooter'></img>
+        </div>
       </Fragment>
     )
   }
