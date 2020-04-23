@@ -170,7 +170,8 @@ class IndexSnake extends Component {
         {this.state.gameStarted != true
         ?
         <div id="buttonContainer">
-          <button id="startSnakeButton" onClick={this.onClickStart}>Entra en SNAKE WORLD</button>
+          <button id="startSnakeButtonIframe" onClick={this.onClickStart}>Entra en SNAKE WORLD</button>
+          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
         </div>
         : null
         }

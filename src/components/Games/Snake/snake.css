@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+#startSnakeButtonIframe {
+  display: none;
+}
+
 .snakeGameContainer {
   position: relative;
   top: 10%;
@@ -147,14 +151,20 @@
     padding: 0px;
   }
 
-  #startSnakeButton {
+  #startSnakeButtonIframe {
     height: 240px;
     width: 325px;
     margin: -80px auto 0 auto;
     background-image: url('./images/planta.jpg');
     background-size: cover;
     font-size: 2em;
+    display: block;
+    color: white;
 
+  }
+
+  #startSnakeButton {
+    display: none;
   }
 
   #sidesArrowsRow{
