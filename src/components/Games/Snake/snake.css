@@ -5,9 +5,11 @@
 }
 
 #snakePageContainer > h1 {
-  color: lightgrey;
   padding-top: 5%;
   margin-bottom: 5%;
+  font-size: 3em;
+  color: rgb(255, 235, 153) !important;
+
 }
 
 #buttonContainer {
@@ -32,6 +34,13 @@
   margin: 0 auto 10px auto;
   cursor: pointer;
 }
+
+#startSnakeButtonIframe {
+  display: none;
+}
+
+
+
 
 .snakeGameContainer {
   position: relative;
@@ -114,4 +123,75 @@
   .game-area {
     width: 80%;
   }
+}
+
+
+
+@media screen and (max-width: 360px) {
+
+  .snakeGameContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+  }
+
+  #snakePageContainer > h1 {
+    color: lightgrey;
+    padding-top: 2%;
+    margin-bottom: 5%;
+    font-size: 1em;
+  }
+
+  .game-area {
+    width: 50%;
+    height: 90%;
+
+  }
+
+  .padButton {
+    width: 35px;
+    height: 40px;
+    font-size: 0.8em;
+    border: 2px solid darkgrey;
+    padding: 0px;
+  }
+
+  #startSnakeButtonIframe {
+    height: 230px;
+    width: 325px;
+    margin: -80px auto 0 auto;
+    background-image: url('./images/planta.jpg');
+    background-size: cover;
+    font-size: 2em;
+    display: block;
+    color: rgb(255, 235, 153);
+
+  }
+
+  #snakeWorld {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5em;
+  }
+
+  .pointerIframe {
+    height: 20%;
+    width: 20%;
+    transform: rotate(45deg);
+    margin-left: 120px;
+  }
+
+
+  #startSnakeButton {
+    display: none;
+  }
+
+
+  #sidesArrowsRow{
+    width: 120px;
+  }
+
+  #downButton{
+    margin-bottom: 70px;
+  }
+
 }

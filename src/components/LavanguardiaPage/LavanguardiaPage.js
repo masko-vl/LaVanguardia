@@ -15,7 +15,8 @@ import terrowseccol from './images/terrowtercol.png';
 import terrowtercol from './images/terrowtercol.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-const items = ["tacleclick", "cityplay", "nonogram"]
+
+const items = ["tacleclick", "cityplay", "nonogram","snake"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]

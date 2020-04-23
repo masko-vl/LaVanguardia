@@ -4,7 +4,7 @@ import '../HomePage/buttonGames.css'
 import './iframe.css';
 
 
-const items = ["carousel", "tacleclick","nonogram", "cityplay"]
+const items = ["carousel", "tacleclick","nonogram", "cityplay","snake"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]
