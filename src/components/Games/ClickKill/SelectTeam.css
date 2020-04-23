@@ -6,7 +6,7 @@
     opacity: 0.9;
 }
 .squareBackground:hover {
-    background-color: lightgray;
+    background-color: #194d33;
     opacity: 1;
 }
 #team-container {
