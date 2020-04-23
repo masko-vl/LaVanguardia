@@ -10,8 +10,9 @@ import backgroundFootball from './images/FOOTBAL-03@2x.png'
 import gameTitle from './images/gameTitle.png'
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton'
-import AllGamesAccessIframeButton from '../../SharedButtons/AllGamesAccessIframeButton';
 import './../../SharedButtons/iframeButtons'
+import { shadows } from '@material-ui/system';
+
 
 export default class BigBoard extends React.Component {
   state = {
@@ -152,12 +153,28 @@ export default class BigBoard extends React.Component {
                 <div id="buttonContainer">
                   {/* BEFORE STARTING THE GAME THE "start" BUTTON IS DISPLAYED, WHEN FINISHED, the button "playagain" IS DISPLAYED with the result. No button is displayed when playing */}
                   { !this.state.gameStarted && !this.state.gameEnded
-                    ? <button className="startGameButton" onClick={this.onClickStart}>DALE UNA PALIZA</button>
+                    ? <div class="flip-box">
+                        <div class="flip-box-inner" onClick={this.onClickStart}>
+                          <div class="flip-box-front">
+                            <button className="startGameButton">DALE UNA PALIZA</button>
+                          </div>
+                          <div class="flip-box-back">
+                            <button className="startGameButton">DALE UNA PALIZA</button>
+                          </div>
+                        </div>
+                      </div>
                     : null
                   }
                   {this.state.gameStarted && this.state.gameEnded
-                    ? <div>
-                        <button className="playAgainButton" onClick={this.restartCounter}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+                    ? <div class="flip-box">
+                        <div class="flip-box-inner" onClick={this.onClickStart}>
+                          <div class="flip-box-front">
+                            <button className="playAgainButton" boxShadow={3}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+                          </div>
+                          <div class="flip-box-back">
+                            <button className="playAgainButton" boxShadow={3}>{this.state.counter} palizas<br/><b>GIVE MORE!!</b></button>
+                          </div>
+                        </div>
                       </div>
                     : null
                   }
