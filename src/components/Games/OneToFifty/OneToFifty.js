@@ -12,16 +12,20 @@ export default function OneToFifty() {
     let [secondHalf, setSecondHalf] = useState([]);
     let [currentNumber, setCurrentNumber] = useState(1);
     let [timeStart, setTimeStart] = useState(false);
+    let [style, setstyle] = useState([]);
     // ---END OF STATES---
 
     //Made an state with an array with all the numbers
     let numbers = [];
+    let styleNumbers = [];
     for (let i = 1; i <= 50; i++) {
         numbers.push(i);
+        styleNumbers.push(0);
     }
     //Fill all numbers
     useEffect(() => {
         setallNumbers(numbers);
+        setstyle(styleNumbers);
     }, [])
 
     //Fill the first half array and the second half array
@@ -38,6 +42,11 @@ export default function OneToFifty() {
         if (number === currentNumber) {
             firstHalf[i] = secondHalf[0];
             secondHalf.splice(0, 1);
+            if (firstHalf[i] !== undefined) {
+                style[i] = 1
+            } else {
+                style[i] = 2;
+            }
             setCurrentNumber(currentNumber + 1);
             if (number === 50) {
                 setCurrentNumber('DONE!')
@@ -64,12 +73,12 @@ export default function OneToFifty() {
             <div className="row numbersGrid">
                 {
                     firstHalf.map((number, i) =>
-                        <div className="cellNumber alignCenter justifyCenter" key={i} onClick={() => checkNumber(number, i)}>
+                        <div className={`cellNumber_${style[i]} alignCenter justifyCenter`} key={i} onClick={() => checkNumber(number, i)}>
                             {number}
                         </div>)
                 }
             </div>
-            <button className="restartButton" onClick={() => window.location.reload()}>Restart</button>
+            <button className="restartButton" onClick={() => window.location.reload()}>RESTART</button>
         </div >
     )
 }
