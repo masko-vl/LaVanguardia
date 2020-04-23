@@ -5,9 +5,12 @@
 }
 
 #snakePageContainer > h1 {
-  color: lightgrey;
   padding-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+  font-family: 'Bangers', cursive;
+  font-size: 3em;
+  color: rgb(255, 235, 153) !important;
+
 }
 
 #buttonContainer {
@@ -36,6 +39,9 @@
 #startSnakeButtonIframe {
   display: none;
 }
+
+
+
 
 .snakeGameContainer {
   position: relative;
@@ -159,13 +165,27 @@
     background-size: cover;
     font-size: 2em;
     display: block;
-    color: white;
+    color: rgb(255, 235, 153);
 
   }
+
+  #snakeWorld {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5em;
+  }
+
+  .pointerIframe {
+    height: 20%;
+    width: 20%;
+    transform: rotate(45deg);
+    margin-left: 120px;
+  }
+
 
   #startSnakeButton {
     display: none;
   }
+
 
   #sidesArrowsRow{
     width: 120px;
@@ -174,4 +194,5 @@
   #downButton{
     margin-bottom: 70px;
   }
+
 }
