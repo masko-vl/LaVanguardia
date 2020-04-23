@@ -4,6 +4,7 @@ import Food from './food';
 import './snake.css'
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
+import pointer from './images/pointer.png'
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -111,7 +112,7 @@ class IndexSnake extends Component {
   }
   checkIfOutOfBorders() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
-    if (head[0] >= 98 || head[1] >= 98 || head[0] < 0 || head[1] < 0) {
+    if (head[0] >= 95 || head[1] >= 95 || head[0] < 0 || head[1] < 0) {
       this.onGameOver();
     }
   }
@@ -170,6 +171,11 @@ class IndexSnake extends Component {
         {this.state.gameStarted != true
         ?
         <div id="buttonContainer">
+          <button id="startSnakeButtonIframe" onClick={this.onClickStart}>
+            <p>Juega en </p>
+            <p id="snakeWorld">SNAKE WORLD</p>
+            <img className="pointerIframe" src={pointer} />
+          </button>
           <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
         </div>
         : null
@@ -185,7 +191,7 @@ class IndexSnake extends Component {
               <button className="padButton" value='LEFT' onClick={this.checkButtonsDirections}>L</button>
               <button className="padButton" value='RIGHT' onClick={this.checkButtonsDirections}>R</button>
             </div>
-            <button className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
+            <button id="downButton" className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
           </div>
         </div>
       </div>

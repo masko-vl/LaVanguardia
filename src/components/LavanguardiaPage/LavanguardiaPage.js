@@ -2,6 +2,7 @@ import React from 'react';
 import './LavanguardiaPage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
+import {Link} from 'react-router-dom';
 import firstrow from './images/firstrow.png';
 import firstrowseccol from './images/firstrowseccol.png';
 import firstrowtercol from './images/firstrowtercol.png';
@@ -15,7 +16,7 @@ import terrowtercol from './images/terrowtercol.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-const items = ["tacleclick", "cityplay", "nonogram"]
+const items = ["tacleclick", "cityplay", "nonogram","snake"]
 
 const displayRandomItem = () => {
   const randomItem = items[Math.floor(Math.random()*items.length)]
@@ -66,7 +67,7 @@ function LavanguardiaPage() {
                         <img className="main-img"src={secrowtercol}/>
                         <img className="main-img"src={secrowseccolsec}/>
                     </Col>
-                    <Col md="4">
+                    <Col md="4" >
                       <iframe src={process.env.NODE_ENV === 'production' ? "https://zen-shaw-4b92a9.netlify.com/carousel" : "//localhost:3000/carousel" }
                           title="carousel"
                           width="330px"
@@ -85,6 +86,9 @@ function LavanguardiaPage() {
                           display="initial"
                           position="relative"
                           />
+                        <Link to='games-section' >
+                            <button className='center-button'> MÁS JUEGOS </button>
+                        </Link>
 
                     </Col>
                 </Row>
