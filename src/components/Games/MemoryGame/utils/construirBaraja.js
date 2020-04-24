@@ -30,22 +30,17 @@ const createCards=(numbCards, imageTable, cards)=>{
 export default function construirBaraja(){
     let NUMBER_OF_CARDS = 0;
     let cards = []
-    if (window.innerWidth<350){
-        
-         NUMBER_OF_CARDS = 8;
-         
-         createCards(NUMBER_OF_CARDS, imageTable, cards)
-    } else if(window.innerWidth<700){
-       
-         NUMBER_OF_CARDS = 16;
-         
-         createCards(NUMBER_OF_CARDS, imageTable, cards)
-    }else{
-         NUMBER_OF_CARDS = 20;
-        
-         createCards(NUMBER_OF_CARDS, imageTable, cards)
-
-    }
+        if (window.innerWidth<350){
+            NUMBER_OF_CARDS = 8;
+            createCards(NUMBER_OF_CARDS, imageTable, cards)
+        } else if(window.innerWidth<700){
+            NUMBER_OF_CARDS = 16;
+            createCards(NUMBER_OF_CARDS, imageTable, cards)
+        }else{
+            NUMBER_OF_CARDS = 20;
+            createCards(NUMBER_OF_CARDS, imageTable, cards)
+        }
+    
     
  
     
