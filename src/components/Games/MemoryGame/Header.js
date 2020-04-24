@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import './Header.css';
+
+
+
+const useWindowSize = () => {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  return size;
+}
+
+
+
 
 class Header extends React.Component {
     render() {
         return(
             <header className="memory-header">
-                <h1 className="title">
-                    Memory de presidentes
-                </h1>
-
                 <div>
+                <h1>helloooooooooo : {this.useWindowSize}</h1>
                 {this.props.gameFinished 
                     ? 
                         <div>
@@ -32,5 +47,11 @@ class Header extends React.Component {
         )
     }
 }
+
+function ShowWindowDimensions(props) {
+    const [width, height] = useWindowSize();
+    return <span>Window size: {width} x {height}</span>;
+  }
+  
 
 export default Header
