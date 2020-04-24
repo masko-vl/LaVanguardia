@@ -27,17 +27,6 @@ while (cards.length < NUMBER_OF_CARDS) {
         }
         return (cards)
     })
-  /*  const index = Math.floor(Math.random() * imageTable.length);
-    //props of every single card
-    const card = {
-        icon : imageTable.slice(index,1)[0],
-        //wasguessed is going to turn true when we find the couple of this card
-        wasGuessed: false
-    }
-    console.log(imageTable)
-    cards.push(card);
-    //we clone the card
-    cards.push({...card});
-}*/
+
 return shuffle(cards);
 }}
