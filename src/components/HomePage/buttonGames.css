@@ -192,6 +192,11 @@
   .mainCardGame{
     display: none;
   }
+
+  .gameSectionContainer{
+    margin-bottom: 30%;
+
+  }
 }
 
 @media (max-width: 360px) {
