@@ -6,6 +6,10 @@ import '../HomePage/buttonGames.css';
 import cityban from '../HomePage/imgmainPage/city@2x.png';
 import tackle from '../HomePage/imgmainPage/imagen_home_tt@2x.png'
 import nonogram from '../HomePage/imgmainPage/provisional_nonogram.png';
+import snake from '../HomePage/imgmainPage/snake.jpg';
+import OneToFifty from '../HomePage/imgmainPage/oneToFiftyProv2.jpg';
+import MemoryGame from '../HomePage/imgmainPage/memory.jpg';
+
 
 const IframeCarousel = (props) => {
   const responsive = {
@@ -64,7 +68,37 @@ const IframeCarousel = (props) => {
           alt="NONOGRAM"
         />
       </Link>
-      <p className="textCarouseliFrame">Nonogram text</p>
+      <p className="textCarouseliFrame">Rellena las casillas siguiendo las pistas en Nonogram</p>
+    </div>
+    <div>
+      <Link to='snake' className='jugartext'>
+        <img
+          className="imagecarousel"
+          src={snake}
+          alt="Snake"
+        />
+      </Link>
+      <p className="textCarouseliFrame">El mítico juego de Nokia vuelve para engancharte otra vez</p>
+    </div>
+    <div>
+      <Link to='OneToFifty' className='jugartext'>
+        <img
+          className="imagecarousel"
+          src={OneToFifty}
+          alt="One To fifty"
+        />
+      </Link>
+      <p className="textCarouseliFrame">Ordena los numeros del 1 al 50</p>
+    </div>
+    <div>
+      <Link to='MemoryGame' className='jugartext'>
+        <img
+          className="imagecarousel"
+          src={MemoryGame}
+          alt="MemoryGame"
+        />
+      </Link>
+      <p className="textCarouseliFrame">Practica tu memória en Memory Game</p>
     </div>
   </Carousel>
 
