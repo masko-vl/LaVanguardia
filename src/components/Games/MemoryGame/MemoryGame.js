@@ -19,7 +19,7 @@ const initialState = () => {
     selectedCouple: [],
     itsComparing: false,
     tryes: 0,
-    winner: true,
+    winner: false,
   };
 }
 

@@ -14,13 +14,11 @@ class Header extends React.Component {
                     ? 
                         <div>
                         {/* {` Resultado: ${ Math.round(10 / this.props.tryes * 10) }/ 10 puntos !`} */}
-                        <button className="winnerMemoryResult">` Resultado: 13/ 10 puntos`</button>
+                        <button className="winnerMemoryResult">{` Resultado: ${ Math.round(10 / this.props.tryes * 10) }/ 10 puntos !`} </button>
                         <button className="winner-reinit-button" onClick={this.props.resetGame}>
                             INTÉNTALO OTRA VEZ !
                         </button>
-                        <button className="winner-reinit-button-iframe" onClick={this.props.resetGame}>
-                        <i class="fas fa-undo-alt"></i>
-                        </button>
+                        <button className="winner-reinit-button-iframe" onClick={this.props.resetGame}>{`${ Math.round(10 / this.props.tryes * 10) }/ 10 pts`} <br/>RESTART</button>
                         </div>
                         
                     : <div>
