@@ -4,17 +4,20 @@
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width:335px) {
+    @media screen and (max-width:425px) {
         height: 100vh;
-    }  
+        display: flex;
+        justify-content: center;
+        padding: 0 !important;
+    }
 }
 
 .btn {
     padding: .175rem .45rem !important;
-    background-color: #FFFFFF!important;
+    background-color: #FFFFFF !important;
     border-color: #707070 !important;
     border-radius: 1rem !important;
-} 
+}
 
 .btn-primary {
     color: #012B5E !important;
@@ -31,9 +34,6 @@ table.center {
     display: flex;
     justify-content: center;
     margin-top: 5px;
-    @media screen and (max-width:335px) {
-        margin-right: 70px;
-    }  
 
     & .cell {
         width: 3rem;
@@ -46,28 +46,36 @@ table.center {
         border: 0.4px solid #707070;
         border-radius: 10px;
 
-        animation: bounceIn 3s ease-in-out ;
+        @media screen and (max-width:425px) {
+            margin-right: 1px;
+        }
+
+        animation: bounceIn 1.5s ease-in-out;
+
         @keyframes bounceIn {
             0% {
                 transform: scale(0);
                 opacity: 0;
             }
+
             60% {
                 transform: scale(1.1);
                 opacity: 1;
             }
+
             100% {
                 transform: scale(1);
             }
-            }
-
-        @media screen and (max-width:335px) {
-            width: 1.6rem;
-            height: 1.6rem; 
         }
+
+        @media screen and (max-width:425px) {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
         &:hover {
             cursor: pointer;
-        }    
+        }
     }
 
 
@@ -90,8 +98,8 @@ table.center {
     font-weight: 700;
     text-align: right;
     color: #383838;
-    
-    @media screen and (max-width:335px) {
+
+    @media screen and (max-width:425px) {
         font-size: 0.8rem;
     }
 }
@@ -101,6 +109,9 @@ table.center {
     padding-right: 4px;
     padding-bottom: 8px;
 
+    @media screen and (max-width:425px) {
+        letter-spacing: 3px;
+    }
 }
 
 .modal {
@@ -113,31 +124,22 @@ table.center {
     outline: 0;
 }
 
-.restart_button  {
+.restart_button {
     margin: 5px;
-    @media screen and (max-width:335px) {
-        position: absolute;
-        top: 50%;
-        left: 72%;
-    }
-}
+    padding: 5px 10px !important;
 
-.iframe_button  {
-    margin: 5px;
-    display: none !important;
     @media screen and (max-width:335px) {
-        display: block !important;
-        position: absolute;
-        top: 59%;
-        left: 72%;
-        color: #fff !important;
-        background-color: #002A5E !important;
-        border-color: #002A5E !important;
+        display: none !important;
     }
 }
 
 .selector_button {
-    margin: 5px
+    margin: 5px;
+    padding: 5px 10px !important;
+
+    @media screen and (max-width:335px) {
+        display: none!important;
+    }
 }
 
 .v_clue_p {
@@ -152,45 +154,9 @@ table.center {
     display: flex;
     margin: 0.9rem;
     justify-content: center;
-    
-    @media screen and (max-width:330px) {
+
+    @media screen and (max-width:425px) {
         margin: 0.3rem;
-    }
-}
-
-.img_rocket {
-    height: 30vh;
-}
-
-.rocket_start {
-    position: absolute;
-    top: 40%;
-    z-index: 9999;
-    left: -690px;
-
-    animation: start 3s ease-in ;
-        @keyframes start {
-            0% {
-                transform: translate(0); 
-            }
-            100% {
-                transform: translate(2500px);
-            }
-        }
-}
-
-@media screen and (max-width:335px) {
-    .drop8 {
-        display:none !important;
-    }
-    .drop10 {
-        display:none;
-    }
-    .selector_button {
-        display: none !important ;
-    }
-    .modal-body {
-        font-size: 11px !important;
     }
 }
 
@@ -208,18 +174,15 @@ table.center {
 
 .panda_image {
     height: 40px;
-    margin-bottom: -20px;
     margin-right: 4px;
 
     @media screen and (max-width:768px) {
-        height: 40px;
-        margin-bottom: -10px;
-        margin-right: 10px;
-        
+        height: 46px;
+        margin-bottom: -8px;
+
     }
 
-    @media screen and (max-width:330px) {
+    @media screen and (max-width:425px) {
         height: 30px;
     }
 }
-

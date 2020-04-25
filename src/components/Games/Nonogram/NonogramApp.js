@@ -15,7 +15,6 @@ import {
 } from 'reactstrap';
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
-import Nonograma_image from './Nonograma_image.png';
 import panda from './panda.png';
 
 export default function NonogramApp() {
@@ -246,7 +245,7 @@ export default function NonogramApp() {
                   <DropdownItem divider />
                   <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
+                  <DropdownItem onClick={() => changeLevel(8)}>Difícil 8x8</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -256,9 +255,6 @@ export default function NonogramApp() {
 
           <div>
 
-            <div>
-              <img className="nonograma_image" src={Nonograma_image} alt="nonograma"></img>
-            </div>
             <table className="center">
               <tbody>
                 <tr>
@@ -291,15 +287,11 @@ export default function NonogramApp() {
                   <DropdownItem divider />
                   <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => changeLevel(9)}>Difícil 9x9</DropdownItem>
+                  <DropdownItem onClick={() => changeLevel(8)}>Difícil 8x8</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
-
-            <div className="buttons">
-              <Link to="/nonogram"> <Button className="iframe_button" color="primary" onClick={() => window.location.reload()}>+ Levels</Button></Link>
-
-            </div>
+           
           </div>
         }
       </div>
