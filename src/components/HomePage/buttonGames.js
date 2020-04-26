@@ -5,10 +5,10 @@ import cityban from './imgmainPage/cover_cp@2x.png';
 import citybanmini from './imgmainPage/cityplaymini-100.png'
 import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
-import nonogram from './imgmainPage/provisional_nonogram.png';
+import nonogram from './imgmainPage/cardNonogram.jpg';
 import snake from './imgmainPage/snake.jpg';
 import Category from '../Categories/category';
-import OneToFifty from './imgmainPage/oneToFiftyProv2.jpg';
+import OneToFifty from './imgmainPage/iframeOneToFifty.png';
 import memory from './imgmainPage/memory.jpg';
 
 
