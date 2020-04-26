@@ -5,6 +5,7 @@
 }
 
 #snakePageContainer > h1 {
+  font-family: 'Bangers', cursive;
   padding-top: 5%;
   margin-bottom: 5%;
   font-size: 3em;
