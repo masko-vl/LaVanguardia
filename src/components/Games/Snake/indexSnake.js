@@ -112,7 +112,7 @@ class IndexSnake extends Component {
   }
   checkIfOutOfBorders() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
-    if (head[0] >= 95 || head[1] >= 95 || head[0] < 0 || head[1] < 0) {
+    if (head[0] >= 97 || head[1] >= 96 || head[0] < 0 || head[1] < 0) {
       this.onGameOver();
     }
   }
