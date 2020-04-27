@@ -1,3 +1,16 @@
+.changeTeamLink {
+    z-index: 5;
+    position: relative;
+    bottom: -50px;
+    font-size: 16px;
+    text-decoration: underline;
+    padding: 20px;
+}
+
+.changeTeamLink:hover {
+    text-decoration: none; 
+}
+
 .flip-box {
     background-color: transparent;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
@@ -16,7 +29,7 @@
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-box:hover .flip-box-inner {
+  .flip-box:active .flip-box-inner {
     transform: rotateY(360deg);
   }
   
@@ -37,7 +50,7 @@
   /* Style the back side */
   .flip-box-back {
     color: white;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
   }
 
 
@@ -51,7 +64,7 @@
     z-index: 2;
     background: transparent url('../../SharedButtons/closeButton.png') 0% 0% no-repeat padding-box;
     background-size:contain;
-    border: 3px solid lightblue;
+    /*border: 3px solid lightblue;*/
     margin: auto;
     border-radius: 25%;
     display: block;
@@ -144,6 +157,9 @@
        top:-105px; 
        right: 10px;
     }
+    .flip-box {
+        margin: 20vh auto 10px auto;
+    }
 }
 @media screen and (max-width: 350px) {
     #closeButton {
@@ -154,6 +170,25 @@
         position: absolute;
     }
     .flip-box {
-        margin: 20vh auto 10px auto;
+        margin: 15vh auto 10px auto;
     }
+
+    .playAgainButton {
+        height: 100px;
+        padding-top: 20px;
+    }
+
+    .startGameButton {
+        height: 100px;
+    }
+
+    .changeTeamLink {
+        bottom: -10px;
+        font-size: 10px;
+    }
+
+    .changeTeamLink:hover {
+        text-decoration: none;   
+    }
+
 }

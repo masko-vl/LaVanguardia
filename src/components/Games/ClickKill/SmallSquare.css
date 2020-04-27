@@ -21,6 +21,7 @@
     transform: rotateY(720deg);
   }
   
+  
   /* Position the front and back side */
   .flip-small-box-front, .flip-small-box-back {
     position: absolute;
