@@ -185,7 +185,7 @@ export default class BigBoard extends React.Component {
                             <div class="flip-box-inner" onClick={this.restartCounter}>
                               <div class="flip-box-front">
                                 <button className="playAgainButton" boxShadow={3}>
-                                  <b>GIVE MORE!!</b>
+                                  <b>GIVE<br/>MORE</b>
                                   <br/><p className="changeTeamLink" onClick={this.changeTeam}>change Team
                                        </p>
                                 </button>
