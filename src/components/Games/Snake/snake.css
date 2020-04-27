@@ -1,11 +1,37 @@
 #snakePageContainer {
-  background-image: url('./images/background.jpg');
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(73,164,25,1) 100%);
   object-fit: cover;
-  color : lightgrey
+  color : lightgrey;
+  position: relative;
+}
+
+.backgroundBigLeft {
+  float: left;
+  height: 80vh;
+}
+
+.backgroundBigRight {
+  float: right;
+  height: 80vh;
+  transform: rotate(180deg);
+}
+
+.backgroundSmallLeft {
+  float: left;
+  height: 30vh;
+  transform: rotate(180deg);
+
+}
+
+.backgroundSmallRight {
+  float: right;
+  height: 30vh;
+  transform: scaleY(-1);
 }
 
 #snakePageContainer > h1 {
-  font-family: 'Bangers', cursive;
+  font-family: 'Press Start 2P', cursive;
   padding-top: 5%;
   margin-bottom: 5%;
   font-size: 3em;
@@ -25,7 +51,7 @@
 #startSnakeButton {
   background-color: #4CAF50; /* Green */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 8px;
+  border-radius: 100%;
   color: white;
   padding: 50px;
   text-align: center;
@@ -57,7 +83,7 @@
   margin: 0 auto 10px auto;
   width: 40%;
   height: 60%;
-  border: 4px solid rgb(255, 235, 153);
+  border: 4px solid white;
 
 }
 
@@ -127,8 +153,39 @@
   .game-area {
     width: 80%;
   }
-}
 
+  .backgroundBigLeft {
+    height: 70vh;
+
+  }
+
+  .backgroundBigRight {
+    height: 70vh;
+  }
+
+}
+@media screen and (max-width: 450px) {
+  .backgroundBigLeft {
+    height: 30vh;
+
+  }
+
+  .backgroundBigRight {
+    height: 30vh;
+  }
+
+  .backgroundSmallLeft {
+    height: 20vh;
+
+  }
+
+  .backgroundSmallRight {
+    height: 20vh;
+  }
+
+
+
+}
 
 
 @media screen and (max-width: 330px) {
@@ -206,4 +263,9 @@
     margin-bottom: 70px;
   }
 
+}
+
+@font-face {
+  font-family: 'Gameplay';
+  src: local('Gameplay'), url(/Fonts/Gameplay.ttf) format('truetype');
 }

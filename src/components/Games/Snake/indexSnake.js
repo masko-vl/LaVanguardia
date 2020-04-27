@@ -4,7 +4,10 @@ import Food from './food';
 import './snake.css'
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
-import pointer from './images/pointer.png'
+import pointer from './images/pointer.png';
+import backgroundBig from './images/backgroundBig.png';
+import backgroundSmall from './images/backgroundSmall.png';
+
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -167,9 +170,13 @@ class IndexSnake extends Component {
   render() {
     return (
       <div id="snakePageContainer">
+        <img className="backgroundBigLeft" src={backgroundBig} />
+        <img className="backgroundBigRight" src={backgroundBig} />
+
         <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
         <CloseButton />
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
+
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
         ?
@@ -179,7 +186,7 @@ class IndexSnake extends Component {
             <p id="snakeWorld">SNAKE WORLD</p>
             <img className="pointerIframe" src={pointer} />
           </button>
-          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+          <button id="startSnakeButton" onClick={this.onClickStart}>PLAY!</button>
         </div>
         : null
         }
@@ -196,6 +203,8 @@ class IndexSnake extends Component {
             </div>
             <button id="downButton" className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
           </div>
+          <img className="backgroundSmallLeft" src={backgroundSmall} />
+          <img className="backgroundSmallRight" src={backgroundSmall} />
         </div>
       </div>
     );
