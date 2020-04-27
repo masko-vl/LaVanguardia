@@ -78,7 +78,7 @@ const IframeCarousel = (props) => {
           alt="Snake"
         />
       </Link>
-      <p className="textCarouseliFrame">El mítico juego de Nokia vuelve para engancharte otra vez</p>
+      <p className="textCarouseliFrame">El mítico juego de Nokia vuelve para engancharte de nuevo</p>
     </div>
     <div>
       <Link to='OneToFifty' className='jugartext'>

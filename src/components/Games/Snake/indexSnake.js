@@ -30,7 +30,7 @@ const intervalFunction = (move, speed) => {
 }
 class IndexSnake extends Component {
   state = initialState;
-  onClickStart = () => {
+  onClickStart = (e) => {
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
     this.setState({
       ...initialState,
@@ -39,6 +39,7 @@ class IndexSnake extends Component {
       gameEnded: false,
       interval: intervalFunction(this.moveSnake, this.state.speed),
     })
+
   }
   checkIfGameOver = () => {
     // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
@@ -63,6 +64,7 @@ class IndexSnake extends Component {
           break;
       }
     }
+
   }
   onKeyDown = (e) => {
     e = e || window.event;
@@ -108,6 +110,7 @@ class IndexSnake extends Component {
       })
       this.checkIfGameOver()
       document.onkeydown = this.onKeyDown
+
     }
   }
   checkIfOutOfBorders() {
