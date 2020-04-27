@@ -6,7 +6,7 @@ import citybanmini from './imgmainPage/cityplaymini-100.png'
 import tackle from './imgmainPage/imagen_home_tt@2x.png'
 import titleGeo from './imgmainPage/imagen_home_gc@2x.png';
 import nonogram from './imgmainPage/cardNonogram.jpg';
-import snake from './imgmainPage/snake.jpg';
+import snake from './imgmainPage/snake.png';
 import Category from '../Categories/category';
 import OneToFifty from './imgmainPage/iframeOneToFifty.png';
 import memory from './imgmainPage/memory.jpg';
