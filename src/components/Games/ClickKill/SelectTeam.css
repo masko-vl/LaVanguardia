@@ -97,4 +97,7 @@
         height: 178px;
         cursor: pointer
     }
+    .titleTeams {
+        font-size: 20px;
+    }
 }
