@@ -3,6 +3,7 @@ import './OneToFifty.scss';
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 import Chrono from './Chrono';
+import confetti from '../../../confetti';
 
 export default function OneToFifty() {
 
@@ -50,6 +51,10 @@ export default function OneToFifty() {
             setCurrentNumber(currentNumber + 1);
             if (number === 50) {
                 setCurrentNumber('DONE!')
+                   confetti.start()
+                   setTimeout(() => {
+                       confetti.stop()
+                   }, 2000)
             }
         }
     }
