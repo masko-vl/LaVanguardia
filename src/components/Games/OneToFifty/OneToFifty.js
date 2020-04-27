@@ -63,7 +63,7 @@ export default function OneToFifty() {
             {/* MENU */}
             <div className="row timeAndActualNumber alignCenter">
                 <div className="col-12 col-md-6 justifyCenter">
-                    <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber}/>}</p>
+                    <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber} />}</p>
                 </div>
                 <div className="col-12 col-md-6 justifyCenter">
                     <p>Siguiente numero: &nbsp;&nbsp;&nbsp; <span style={{ fontWeight: "bold", fontSize: "x-large" }}>{currentNumber}</span></p>
@@ -79,6 +79,19 @@ export default function OneToFifty() {
                 }
             </div>
             <button className="restartButton" onClick={() => window.location.reload()}>RESTART</button>
+            <div>
+                {/* JUST TO IFRAME */}
+                <div className="iframeOneToFifty">
+                    <div className="row timeAndActualNumberIframe alignCenter">
+                        <div className="col-6 justifyCenter">
+                            <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber} />}</p>
+                        </div>
+                        <div className="col-6 justifyCenter">
+                            <button className="restartButtonIframe" onClick={() => window.location.reload()}>RESTART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div >
     )
 }

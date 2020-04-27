@@ -20,7 +20,6 @@ const initialState = () => {
     itsComparing: false,
     tryes: 0,
     winner: false,
-
   };
 }
 
@@ -28,7 +27,7 @@ class MemoryGame extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialState()
-
+    console.log(construirBaraja)
   }
 
   render() {
@@ -45,7 +44,7 @@ class MemoryGame extends React.Component {
         deck={this.state.deck}
         selectedCouple={this.state.selectedCouple}
         selectCard={(card) => this.selectCard(card)}
-         />
+        />
       </div>
     )
   }
@@ -95,21 +94,20 @@ class MemoryGame extends React.Component {
   }
 
 //method to verify if there is a winner
-verifyIfWinner(deck) {
-  if (deck.filter((card) => !card.wasGuessed).length === 0) {
-   this.setState({
-      winner: true
-    });
-    }
-}
+  verifyIfWinner(deck) {
+    if (deck.filter((card) => !card.wasGuessed).length === 0) {
+    this.setState({
+        winner: true
+      });
+      }
+  }
 
-//method to reset the game
-resetGame() {
-  this.setState(
-    initialState()
-  );
-}
-
+  //method to reset the game
+  resetGame() {
+    this.setState(
+      initialState()
+    );
+  }
 }
 
 export default MemoryGame;
