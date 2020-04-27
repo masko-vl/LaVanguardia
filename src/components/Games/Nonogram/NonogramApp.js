@@ -16,7 +16,7 @@ import {
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
 import panda from './panda.png';
-import backgroundBambu from './backgroundBambu.png';
+import confetti from '../../../confetti'
 
 export default function NonogramApp() {
   // ---STATES---
@@ -79,6 +79,10 @@ export default function NonogramApp() {
     if (JSON.stringify(solutionGame.grid) === JSON.stringify(solutionUserWithout2)) {
       // changeWinGame(true);
       setModal(!modal)
+       confetti.start()
+       setTimeout(() => {
+         confetti.stop()
+       }, 2000)
     }
   }
 
@@ -204,8 +208,8 @@ export default function NonogramApp() {
       <div className="Nonogram container-fluid">
           {modal ?
             <div>
-              <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Enhorabuena!!</ModalHeader>
+              <Modal isOpen={modal} >
+                <ModalHeader>Enhorabuena!!</ModalHeader>
                 <ModalBody>
                   Has ganado el juego! ¿Quieres intentar otra partida?
         </ModalBody>

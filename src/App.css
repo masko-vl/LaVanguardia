@@ -44,3 +44,8 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Gameplay';
+  src: local('Gamplay'), url(/sharedFunctions/Fonts/Gameplay.ttf) format('truetype');
+}
