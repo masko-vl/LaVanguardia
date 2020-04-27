@@ -34,7 +34,7 @@ class MemoryGame extends React.Component {
   render() {
     return(
       <div className="memory-body">
-        <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
+        <InstructionGames  instructionText="Encuentra las parejas de cartas iguales.En cuanto menos intentos lo logres, más puntos acumularás" />
         <CloseButton />
         <Header
         tryes={this.state.tryes}
