@@ -5,7 +5,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../SharedButtons/CloseButton.scss';
 
 class CloseButton extends React.Component {
-   
+
   render(){
        //Button Icon
        const closeButton = < FontAwesomeIcon icon = {

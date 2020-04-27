@@ -4,7 +4,10 @@ import Food from './food';
 import './snake.css'
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
-import pointer from './images/pointer.png'
+import pointer from './images/pointer.png';
+import backgroundBig from './images/backgroundBig.png';
+import backgroundSmall from './images/backgroundSmall.png';
+
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -30,7 +33,7 @@ const intervalFunction = (move, speed) => {
 }
 class IndexSnake extends Component {
   state = initialState;
-  onClickStart = () => {
+  onClickStart = (e) => {
     //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
     this.setState({
       ...initialState,
@@ -39,6 +42,7 @@ class IndexSnake extends Component {
       gameEnded: false,
       interval: intervalFunction(this.moveSnake, this.state.speed),
     })
+
   }
   checkIfGameOver = () => {
     // WHEN WE CLICK ON THE FLAG, COUNTER IS INCREASED, THE FLAG DISAPPEARS FROM THAT SQUARE, A NEW RANDOM SQUARE IS CHOSEN
@@ -63,6 +67,7 @@ class IndexSnake extends Component {
           break;
       }
     }
+
   }
   onKeyDown = (e) => {
     e = e || window.event;
@@ -108,11 +113,12 @@ class IndexSnake extends Component {
       })
       this.checkIfGameOver()
       document.onkeydown = this.onKeyDown
+
     }
   }
   checkIfOutOfBorders() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
-    if (head[0] >= 95 || head[1] >= 95 || head[0] < 0 || head[1] < 0) {
+    if (head[0] >= 97 || head[1] >= 96 || head[0] < 0 || head[1] < 0) {
       this.onGameOver();
     }
   }
@@ -164,9 +170,13 @@ class IndexSnake extends Component {
   render() {
     return (
       <div id="snakePageContainer">
+        <img className="backgroundBigLeft" src={backgroundBig} />
+        <img className="backgroundBigRight" src={backgroundBig} />
+
         <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
         <CloseButton />
         <h1 style={{ color: 'lightgrey' }}>LET'S SNAKE</h1>
+
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
         ?
@@ -176,7 +186,7 @@ class IndexSnake extends Component {
             <p id="snakeWorld">SNAKE WORLD</p>
             <img className="pointerIframe" src={pointer} />
           </button>
-          <button id="startSnakeButton" onClick={this.onClickStart}>START</button>
+          <button id="startSnakeButton" onClick={this.onClickStart}>PLAY!</button>
         </div>
         : null
         }
@@ -194,6 +204,8 @@ class IndexSnake extends Component {
             <button id="downButton" className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
           </div>
         </div>
+        <img className="backgroundSmallLeft" src={backgroundSmall} />
+        <img className="backgroundSmallRight" src={backgroundSmall} />
       </div>
     );
   }
