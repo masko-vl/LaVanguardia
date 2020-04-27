@@ -203,9 +203,9 @@ class IndexSnake extends Component {
             </div>
             <button id="downButton" className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
           </div>
-          <img className="backgroundSmallLeft" src={backgroundSmall} />
-          <img className="backgroundSmallRight" src={backgroundSmall} />
         </div>
+        <img className="backgroundSmallLeft" src={backgroundSmall} />
+        <img className="backgroundSmallRight" src={backgroundSmall} />
       </div>
     );
   }
