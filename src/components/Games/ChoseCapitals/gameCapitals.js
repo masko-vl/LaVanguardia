@@ -9,6 +9,8 @@ import Exit from './Exit/exit'
 import { Link } from 'react-router-dom';
 import InstructionGames from '../../SharedButtons/InstructionGames';
 import CloseButton from '../../SharedButtons/CloseButton';
+import titleCity from './img/logo-02.png'
+import backgroundCity from './img/fondo_capitales.png'
 
 
 export default class GameCapitals extends Component {
@@ -106,13 +108,15 @@ export default class GameCapitals extends Component {
         const gameStatus = {
 
             startGame: () => (<div className='startGame-page'>
-
-                <div className='logo'>
-                    <Info style='instrucciones' text='Instrucciones: Seleciona la capital correcta! Si aciertas ganas 10 puntos y 4 segundos y si fallas te resta 3s' />
-                    <SelectRegion style={'region-select'} action={this.props.fiterContinent} />
+                    <img className='titleCity' src={titleCity}/>
+                    {/* <Info style='instrucciones' text='Instrucciones: Seleciona la capital correcta! Si aciertas ganas 10 puntos y 4 segundos y si fallas te resta 3s' /> */}
+                    <div className='region-select'>
+                    <h6>¿Con qué continente te atreves?</h6>
+                    <SelectRegion  action={this.props.fiterContinent} /></div>
                     <Button style='startGame-button' action={this.getCountry} />
-                    <Exit style='back-menu' text='Exit Game' />
-                </div></div>),
+                    {/* <Exit style='back-menu' text='Exit Game' /> */}
+                    <img className='backgroundCity'  src={backgroundCity}/>
+                </div>),
 
             playingGame: () => (<div className='playingGame'>
                 <Info style='counterGame-button' text={this.state.seconds} />
@@ -124,15 +128,17 @@ export default class GameCapitals extends Component {
                     })}
                 </div>
                 <Info style='score' text={'SCORE : ' + this.state.points} />
-                <Exit style='back-menu' text='X' />
+                {/* <Exit style='back-menu' text='X' /> */}
+                <img className='backgroundCity'  src={backgroundCity}/>
             </div>),
 
             gameOver: () => (<div className='playingGame'>
                 <Info style='gameover' text='GAME OVER' />
-                <Info style='score' text={'Score : ' + this.state.points} />
-                <Links style='shered-link' />
+                <Info style='score' text={'SCORE : ' + this.state.points} />
+                {/* <Links style='shered-link' /> */}
                 <Button style='play-again' action={this.tryAgain} text='Play Again' />
-                <Exit style='back-menu' text='Exit Game' />
+                {/* <Exit style='back-menu' text='Exit Game' /> */}
+                <img className='backgroundCity'  src={backgroundCity}/>
             </div>)
         }
 
@@ -140,7 +146,7 @@ export default class GameCapitals extends Component {
             <Fragment>
                 <InstructionGames instructionText="City Game pone a prueba tus conocimientos de Geografia, relaciona el País con su capital, Si aciertas ganas 10 puntos y 4 segundos y si fallas restas 3s." />
                 <CloseButton />
-                <div className='container-game'>
+                    <div className='container-game'>
                     {gameStatus[this.state.gameStatus]()}</div>
             </Fragment>
         )
