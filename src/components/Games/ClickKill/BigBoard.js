@@ -100,7 +100,7 @@ export default class BigBoard extends React.Component {
     );
 
     console.log('TEAM CHANGES CLICKED')
-    
+
   }
 
   printName = (e) => {
@@ -185,11 +185,11 @@ export default class BigBoard extends React.Component {
                             <div class="flip-box-inner" onClick={this.restartCounter}>
                               <div class="flip-box-front">
                                 <button className="playAgainButton" boxShadow={3}>
-                                  <b>GIVE<br/>MORE</b>
-                                  <br/><p className="changeTeamLink" onClick={this.changeTeam}>change Team
+                                  <b>MACHACAR<br/>MÁS</b>
+                                  <br/><p className="changeTeamLink" onClick={this.changeTeam}>cambiar de equipo
                                        </p>
                                 </button>
-  
+
                               </div>
 
                               <div class="flip-box-back">
@@ -199,7 +199,7 @@ export default class BigBoard extends React.Component {
                               </div>
                             </div>
                           </div>
-                     
+
                     : null
                   }
                 </div>
