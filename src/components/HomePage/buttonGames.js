@@ -9,7 +9,7 @@ import nonogram from './imgmainPage/cardNonogram.jpg';
 import snake from './imgmainPage/snake.png';
 import Category from '../Categories/category';
 import OneToFifty from './imgmainPage/iframeOneToFifty.png';
-import memory from './imgmainPage/memory.jpg';
+import memory from './imgmainPage/cardMemoryGame.png';
 
 
 // const ButtonGames =(props)=>{
