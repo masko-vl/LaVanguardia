@@ -36,9 +36,6 @@
   border-radius: 8px;
 }
 
-/* .flagSquare :hover {
-  background-color: lightgrey;
-} */
 
 .footballGameContainer {
   justify-content: space-between;
@@ -72,7 +69,8 @@
 }
 
 .SmallSquareGrid:hover{
-  background-color: #194d33;
+  background-color: #176B25;
+  border-color: white;
   opacity: 1;
 }
 

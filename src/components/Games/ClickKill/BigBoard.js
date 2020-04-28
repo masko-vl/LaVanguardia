@@ -158,7 +158,7 @@ export default class BigBoard extends React.Component {
                     )}
 
                     {this.state.smallSquaresArrayIframe.map((x, index) =>
-                      <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px'}} >
+                      <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 70, margin: '0 2px 3px 0', border: '1px solid grey', borderRadius: '5px'}} >
                         <SmallSquare
                         zIndex={index}
                         logo={this.state.logoSelected}

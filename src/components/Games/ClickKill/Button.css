@@ -2,9 +2,9 @@
     z-index: 5;
     position: relative;
     bottom: -10px;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: underline;
-    padding: 20px;
+    padding: 18px;
 }
 
 .changeTeamLink:hover {
@@ -77,12 +77,14 @@
 }
 
 #footballCounterButton {
+    font-family: 'Black Ops One', cursive;
     background-color: #176B25;
     color: white;
     font-weight: bold;
     padding: 5px;
     width: 90px;
     margin: 0 auto 0 auto;
+    border: solid 2px white;
     text-align: center;
     border-radius: 8px;
 }
@@ -101,10 +103,11 @@
     border-radius: 8px;
     color: white;
     padding: 50px 10px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -132,6 +135,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-family: 'Black Ops One', cursive;
     font-size: 30px;
     cursor: pointer;
 }
