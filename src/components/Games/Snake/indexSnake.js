@@ -169,7 +169,7 @@ class IndexSnake extends Component {
   }
   render() {
     return (
-      <div id="snakePageContainer">
+      <div id="snakePageContainer" >
         <img className="backgroundBigLeft" src={backgroundBig} />
         <img className="backgroundBigRight" src={backgroundBig} />
 
