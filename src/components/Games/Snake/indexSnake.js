@@ -175,7 +175,7 @@ class IndexSnake extends Component {
 
         <InstructionGames  instructionText="Selecciona el pin correspondiente con la bandera que aparece, si encadenas aciertos, tus puntuaciones se van acumulando (50,100,150…) , si fallas restas 25 y empiezas desde 50 puntos otra vez." />
         <CloseButton />
-        <h1 style={{ color: 'lightgrey' }}>Juega al SNAKE</h1>
+        <h1 style={{ color: 'lightgrey', paddingTop: '15px', marginBottom: '15px' }}>Juega al SNAKE</h1>
 
         <div className="snakeGameContainer">
         {this.state.gameStarted != true
