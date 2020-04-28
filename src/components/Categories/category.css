@@ -29,6 +29,18 @@
 
 }
 
+.buttonCategories p {
+    color: black;
+    text-decoration: none;
+
+}
+.buttonCategories:hover {
+     color: black;
+     text-decoration:none;
+     cursor:pointer;
+}
+
+
 
 
 .imageUserLogin{

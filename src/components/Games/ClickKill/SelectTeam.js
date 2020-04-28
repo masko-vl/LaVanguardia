@@ -23,7 +23,7 @@ const SelectTeam = props => {
     return (
     <div className="footballGameContainer">
         <div className="footballGameHeader">
-            <p className='titleTeams'>A quien dar una Paliza?</p>
+            <p className='titleTeams'>A quien quieres dar una Paliza?</p>
         </div>
         <div id='teams' className="img-container">
             <div className={classes.root}>
@@ -45,7 +45,7 @@ const SelectTeam = props => {
                     )}
                 </Grid>
             </div>
-            
+
         </div>
         <Carousel id='carouselTeams'>
         {props.footballFlags.map((equipo)=>

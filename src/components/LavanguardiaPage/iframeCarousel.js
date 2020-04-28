@@ -6,7 +6,7 @@ import '../HomePage/buttonGames.css';
 import cityban from '../HomePage/imgmainPage/city@2x.png';
 import tackle from '../HomePage/imgmainPage/imagen_home_tt@2x.png'
 import nonogram from '../HomePage/imgmainPage/cardNonogram.jpg';
-import snake from '../HomePage/imgmainPage/snake.jpg';
+import snake from '../HomePage/imgmainPage/snake.png';
 import OneToFifty from '../HomePage/imgmainPage/iframeOneToFifty.png';
 import MemoryGame from '../HomePage/imgmainPage/memory.jpg';
 

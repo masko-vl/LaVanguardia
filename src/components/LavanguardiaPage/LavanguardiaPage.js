@@ -28,7 +28,7 @@ function LavanguardiaPage() {
         <div>
           <div>
           <Navbar className="header-menu" expand="lg">
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav.Link className="nav-list-item" href={process.env.NODE_ENV === 'production' ? "https://zen-shaw-4b92a9.netlify.com/games-section" : "//localhost:3000/games-section"}>Juegos</Nav.Link>
                     <Nav.Link className="nav-list-item" href="">Internacional</Nav.Link>
