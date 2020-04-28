@@ -62,7 +62,7 @@ export default function OneToFifty() {
     return (
         <div className="OneToFifty container-fluid">
             <div style={{ height: "100%" }}>
-                <InstructionGames instructionText="Aqui van las instrucciones del juego" />
+                <InstructionGames instructionText="¡Intenta contar de uno a cincuenta lo más rapido posible! ¿Eres más rápido que tus amigos?" />
                 <CloseButton />
             </div>
             {/* MENU */}
