@@ -2,7 +2,6 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-content: center;
 }
 
@@ -85,9 +84,25 @@
 }
 
 @media (max-width: 350px) {
-    .memoryResult {
-        margin: 0 auto ;
+    .memory-header {
+        position: fixed;
+        top: 10px;
+        left: 30%;
     }
+
+    .title {
+        display: none
+    }
+    .memory-body {
+        justify-content: space-between;
+    }
+
+    .memoryResult {
+        font-size: 25px;
+        margin: 0 auto ;
+        position: relative;
+    }
+
     .reinit-button {
         font-size: 10px !important;
         margin-bottom: 2px;
