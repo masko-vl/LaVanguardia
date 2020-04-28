@@ -217,6 +217,11 @@ opacity: 1;
     .startGame-button{
         margin-left: 105px;
     }
+
+    .choose-capital{
+      height: 35px;
+    }
+
     .incorrecto{
         font-size: 1em;
     }
@@ -231,12 +236,13 @@ opacity: 1;
     }
     .score{
         padding: 10px;
-        height: 70px;
+        height: 50px;
         font-size: 1.5em;
     }
     .flex-butons-capitals{
         font-size: 1.2em;
         grid-template-columns: auto auto;
+
     }
     .back-menu{
         display: none;

@@ -223,7 +223,7 @@
 
 
 @media screen and (max-width: 330px) {
- 
+
   .snakeGameContainer {
     height: 83vh !important;
     display: flex;
@@ -232,8 +232,8 @@
     box-sizing: content-box;
     width: 97%
 
-    
-    
+
+
   }
 
   .backgroundBigLeft {
@@ -274,7 +274,7 @@
     padding: 0px;
   }
 
-  
+
   #buttonContainer {
     top:10%
   }
@@ -291,7 +291,7 @@
     display: inline-block;
     font-size: 16px;
     font-family: 'Press Start 2P', cursive;
-    
+
 
   }
 
