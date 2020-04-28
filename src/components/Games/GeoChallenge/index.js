@@ -215,8 +215,14 @@ class GeoChallenge extends Component {
                   </div>
 
                   <div className="counterText">
-                    <div className='counterBorder'><p>Intentos:<br/> {this.state.totalAnswers}/ 30</p></div>
+                    <div className='counterBorder'><p>Intentos:<br/> {this.state.totalAnswers}/ 20</p></div>
                     <div className='counterBorder'><p>Puntuación: <br/>{this.state.correctAnswers}</p></div>
+                      <button
+                         type="button"
+                         className="tryAgainButtonPlaying"
+                         onClick = {this.tryAgain}>
+                         Reiniciar
+                      </button>
                   </div>
 
               </div>
