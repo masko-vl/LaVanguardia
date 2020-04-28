@@ -3,16 +3,13 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../SharedButtons/CloseButton.scss';
-
 class CloseButton extends React.Component {
-
   render(){
        //Button Icon
        const closeButton = < FontAwesomeIcon icon = {
            faTimesCircle
        }
        />
-
       return (
         < div  >
             {/* CLOSE BUTTON */}
@@ -21,5 +18,4 @@ class CloseButton extends React.Component {
         </div>
     )}
 }
-
 export default CloseButton;
