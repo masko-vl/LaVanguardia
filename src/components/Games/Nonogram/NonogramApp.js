@@ -13,8 +13,8 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import InstructionGames from '../../SharedButtons/InstructionGames';
-import CloseButton from '../../SharedButtons/CloseButton';
+import InstructionNonogram from './InstructionNonogram';
+import CloseButtonNonogram from './CloseButtonNonogram';
 import panda from './panda.png';
 import confetti from '../../../confetti'
 
@@ -79,10 +79,10 @@ export default function NonogramApp() {
     if (JSON.stringify(solutionGame.grid) === JSON.stringify(solutionUserWithout2)) {
       // changeWinGame(true);
       setModal(!modal)
-       confetti.start()
-       setTimeout(() => {
-         confetti.stop()
-       }, 2000)
+      confetti.start()
+      setTimeout(() => {
+        confetti.stop()
+      }, 2000)
     }
   }
 
@@ -200,106 +200,108 @@ export default function NonogramApp() {
 
   return (
     <div style={{ backgroundColor: "rgb(248, 248, 245)" }}>
-      <InstructionGames style={{ color: "white !important" }} instructionText="El nonograma es un juego de ingenio que consiste en rellenar determinadas casillas de un tablero en función de los números que contiene.
-      Cada juego tiene una serie de casillas con números en su parte superior y en su parte izquierda. Estos números indican grupos de cuadrados consecutivos que aparecen en la respectiva fila/columna. Cada grupo debe ir separado por una o más casillas libres" />
-      <CloseButton />
-
-
       <div className="Nonogram container-fluid">
-          {modal ?
-            <div>
-              <Modal isOpen={modal} >
-                <ModalHeader>Enhorabuena!!</ModalHeader>
-                <ModalBody>
-                  Has ganado el juego! ¿Quieres intentar otra partida?
-        </ModalBody>
-                <ModalFooter>
-                  <Button color="primary" onClick={() => window.location.reload()}>Vamos allá</Button>{' '}
-                </ModalFooter>
-              </Modal>
-
-              <table className="center">
-                <tbody>
-                  <tr>
-                    {/*The first one goes empty*/}
-                    <td></td>
-                    {verticalClues.map((clue, clueIndex) => {
-                      return <td key={clueIndex} valign="bottom"><div className='clue v_clue'><p className="v_clue_p v-text">{clue}</p></div></td>
-                    })}
-                  </tr>
-                  {
-                    solutionUser.grid.map((row, rowIndex) => (
-                      <tr key={rowIndex}>
-                        <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
-                        {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
-                      </tr>
-                    ))
-                  }
-                </tbody>
-              </table>
-              <div className="buttons">
-                <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
-                <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-                  <DropdownToggle caret className="selector_button" >
-                    Selecciona nivel
-              </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem onClick={() => changeLevel(8)}>Difícil 8x8</DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </div>
-            </div>
-
-            :
-
-            <div>
-
-              <table className="center">
-                <tbody>
-                  <tr>
-                    {/*The first one goes empty*/}
-                    <td><img className="panda_image" src={panda} alt="panda"></img></td>
-                    {verticalClues.map((clue, clueIndex) => {
-                      return <td key={clueIndex} valign="bottom"><div className='clue v_clue'><p className="v_clue_p v-text">{clue}</p></div></td>
-                    })}
-                  </tr>
-                  {
-                    solutionUser.grid.map((row, rowIndex) => (
-                      <tr key={rowIndex}>
-                        <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
-                        {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
-                      </tr>
-                    ))
-                  }
-                </tbody>
-              </table>
-              <div className="buttons">
-                <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
-                <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-                  <DropdownToggle caret className="selector_button" >
-                    Selecciona nivel
-              </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem onClick={() => changeLevel(8)}>Difícil 8x8</DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </div>
-            </div>
-          }
+        <div className="row rowIcons">
+          <div><InstructionNonogram /></div>
+          <div><CloseButtonNonogram /></div>
         </div>
+        <div className="nonogramContent">
+           {modal ?
+          <div>
+            <Modal isOpen={modal} >
+              <ModalHeader>Enhorabuena!!</ModalHeader>
+              <ModalBody>
+                Has ganado el juego! ¿Quieres intentar otra partida?
+                </ModalBody>
+              <ModalFooter>
+                <Button color="primary" onClick={() => window.location.reload()}>Vamos allá</Button>{' '}
+              </ModalFooter>
+            </Modal>
+
+            <table className="center">
+              <tbody>
+                <tr>
+                  {/*The first one goes empty*/}
+                  <td></td>
+                  {verticalClues.map((clue, clueIndex) => {
+                    return <td key={clueIndex} valign="bottom"><div className='clue v_clue'><p className="v_clue_p v-text">{clue}</p></div></td>
+                  })}
+                </tr>
+                {
+                  solutionUser.grid.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
+                      {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+            <div className="buttons">
+              <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                <DropdownToggle caret className="selector_button" >
+                  Selecciona nivel
+              </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(8)}>Difícil 8x8</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          </div>
+
+          :
+
+          <div>
+            
+            <table className="center">
+              <tbody>
+                <tr>
+                  {/*The first one goes empty*/}
+                  <td><img className="panda_image" src={panda} alt="panda"></img></td>
+                  {verticalClues.map((clue, clueIndex) => {
+                    return <td key={clueIndex} valign="bottom"><div className='clue v_clue'><p className="v_clue_p v-text">{clue}</p></div></td>
+                  })}
+                </tr>
+                {
+                  solutionUser.grid.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <td ><div className='clue h_clue'>{horizontalClues[rowIndex]}</div></td>
+                      {row.map((cell, cellIndex) => <td key={cellIndex} onClick={() => changeCellValue(rowIndex, cellIndex)} ><div className={`cell_${cell} cell`}></div></td>)}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+            <div className="buttons">
+              <Button className="restart_button" color="primary" onClick={() => window.location.reload()}>Restart!</Button>
+              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                <DropdownToggle caret className="selector_button" >
+                  Selecciona nivel
+              </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem onClick={() => changeLevel(3)}>Aprende 3x3</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(5)}>Fácil 5x5</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(7)}>Medio 7x7</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => changeLevel(8)}>Difícil 8x8</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          </div>
+        }
+        </div>
+       
       </div>
-    
+    </div>
+
   )
 }
