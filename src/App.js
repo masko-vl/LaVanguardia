@@ -52,39 +52,39 @@ class App extends Component {
       <div className='App'>
         <Navbar />
         <Switch>
-        <Route exact path ='/'>
-        <LavanguardiaPage />
-        </Route>
-        <Route path='/cityplay'>
-        <AppCapitals/>
-        </Route>
-        <Route path='/geochallenge'>
-        <GeoChallenge />
-        </Route>
-        <Route path='/tacleclick'>
-        <BigBoard/>
-        </Route>
-        <Route path='/nonogram'>
-        <NonogramApp/>
-        </Route>
-        <Route path='/iframe'>
-        <Iframe/>
-        </Route>
-        <Route path='/carousel'>
-        <IframeCarousel/>
-        </Route>
-        <Route path='/games-section'>
-        <ButtonGames/>
-        </Route>
-        <Route path='/snake'>
-        <IndexSnake/>
-        </Route>
-        <Route path='/OneToFifty'>
-          <OneToFifty />
-        </Route>
-        <Route path='/MemoryGame'>
-          <MemoryGame/>
-        </Route>
+          <Route exact path ='/'>
+            <LavanguardiaPage />
+          </Route>
+          <Route path='/cityplay'>
+            <AppCapitals/>
+          </Route>
+          <Route path='/geochallenge'>
+            <GeoChallenge />
+          </Route>
+          <Route path='/tacleclick'>
+            <BigBoard/>
+          </Route>
+          <Route path='/nonogram'>
+            <NonogramApp/>
+          </Route>
+          <Route path='/iframe'>
+            <Iframe/>
+          </Route>
+          <Route path='/carousel'>
+            <IframeCarousel/>
+          </Route>
+          <Route path='/games-section'>
+            <ButtonGames/>
+          </Route>
+          <Route path='/snake'>
+            <IndexSnake/>
+          </Route>
+          <Route path='/OneToFifty'>
+            <OneToFifty />
+          </Route>
+          <Route path='/MemoryGame'>
+            <MemoryGame/>
+          </Route>
         </Switch>
         <Footer />
       </div>
