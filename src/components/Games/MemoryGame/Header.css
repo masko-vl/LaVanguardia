@@ -7,24 +7,37 @@
 }
 
 .title {
-    font-size: 25px;
+    font-size: 30px;
     padding: 10px;
     color: #fff;
 }
 
+.tryesAndReinit{
+    display: flex;
+    justify-content: center;
+}
+
+
 .memoryResult {
     color: white;
-    font-weight: bold;
+    border: 2px solid #57b9b7;
+    background-color: #003f3f;
+    border-radius: 8px;
+    width: 100px;
+    padding: 5px 0 5px 0;
+    margin-right: 5px;
+    font-weight: bolder;
 }
 
 .reinit-button {
-    color: rgb(40, 40, 40);
-    background-color: lightgray;
+    color: white;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 0 5px 0 ;
     max-width: 100px;
-    margin: 0 auto;
-    border-radius: 5px;
+    border: 2px solid #57b9b7;
+    border-radius: 8px;
+    width: 100px;
+    margin-left: 5px;
 }
 
 .reinit-button:active {

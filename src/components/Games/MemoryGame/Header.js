@@ -6,7 +6,7 @@ class Header extends React.Component {
         return(
             <header className="memory-header">
                 <div className="title">
-                    Memory de presidentes
+                    MEMORY EDICIÓN PRESIDENTES
                 </div>
 
                 <div>
@@ -21,7 +21,7 @@ class Header extends React.Component {
                         <button className="winner-reinit-button-iframe" onClick={this.props.resetGame}>{`${ Math.round(10 / this.props.tryes * 10) }/ 10 pts`} <br/>RESTART</button>
                         </div>
                         
-                    : <div>
+                    : <div className="tryesAndReinit">
                         <p className="memoryResult">Intentos: {this.props.tryes}</p>
                         <p className="reinit-button" onClick={this.props.resetGame}>
                             Reiniciar

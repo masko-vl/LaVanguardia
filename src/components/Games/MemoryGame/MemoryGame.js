@@ -32,19 +32,21 @@ class MemoryGame extends React.Component {
 
   render() {
     return(
-      <div className="memory-body">
-        <InstructionGames  instructionText="Encuentra las parejas de cartas iguales.En cuanto menos intentos lo logres, más puntos acumularás" />
-        <CloseButton />
-        <Header
-        tryes={this.state.tryes}
-        gameFinished={this.state.winner}
-        resetGame={() => this.resetGame()}
-        />
-        <Table
-        deck={this.state.deck}
-        selectedCouple={this.state.selectedCouple}
-        selectCard={(card) => this.selectCard(card)}
-        />
+      <div className="outside-memory">
+        <div className="memory-body">
+            <InstructionGames  instructionText="Encuentra las parejas de cartas iguales.En cuanto menos intentos lo logres, más puntos acumularás" />
+            <CloseButton />
+            <Header
+            tryes={this.state.tryes}
+            gameFinished={this.state.winner}
+            resetGame={() => this.resetGame()}
+            />
+            <Table
+            deck={this.state.deck}
+            selectedCouple={this.state.selectedCouple}
+            selectCard={(card) => this.selectCard(card)}
+            />
+        </div>
       </div>
     )
   }

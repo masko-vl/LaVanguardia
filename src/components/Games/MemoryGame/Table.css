@@ -1,11 +1,12 @@
 .table {
     display: flex;
     flex-wrap: wrap;
-    width: 700px;
-    height: 600px;
+    width: 575px;
+    height: 432px;
     margin: 0 auto;
     justify-content: space-around;
 }
+
 
 @media (max-width: 715px) {
   .table {
@@ -34,3 +35,4 @@
   }
 
 }
+
