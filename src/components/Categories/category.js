@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './category.css';
 import logoProfile from './user_info.svg';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,7 +17,9 @@ const Category = (props) => {
         <button className="buttonCategories">Puzzles</button>
         <button className="buttonCategories">Cartas</button>
         <button className="buttonCategories">Casino</button>
-        <button className="buttonCategories">Todos</button>
+        <Link to='iframe' className="buttonCategories">
+          <p>Todos</p>
+        </Link>
         <input className="buttonCategories" type="text" placeholder="Search.."/>
         <div className="userProfileLogo">
           <img src={logoProfile} className="imageUserLogin"/>

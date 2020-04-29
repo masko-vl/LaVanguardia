@@ -80,7 +80,7 @@ function LavanguardiaPage() {
                       <iframe src={process.env.NODE_ENV === 'production' ? "https://zen-shaw-4b92a9.netlify.com/"+ displayRandomItem() : "//localhost:3000/"+ displayRandomItem()}
                           title="carousel"
                           width="330px"
-                          height="240px"
+                          height="260px"
                           id="test"
                           className="myClassname"
                           display="initial"

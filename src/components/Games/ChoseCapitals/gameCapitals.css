@@ -1,244 +1,275 @@
+
 .container-game{
     height: 95vh;
-    background: #254159 url('./img/fondo_capitales.png')  no-repeat bottom ;
-    background-size:contain;
+    background: rgb(10,14,28);
+    background: linear-gradient(0deg, rgba(10,14,28,1) 40%, rgba(45,46,80,1) 100%);
     font-family: Arial,Helvetica,sans-serif;
+    position: relative;
 }
-.logo{
-    top: 70px;
-    left: 56px;
-    width: 450px;
-    height: 200px;
-    margin-top: 100px;
-    background: transparent url('img/logo-02.png') 0% 0% no-repeat padding-box;
-    background-size:contain;
-    opacity: 1;
+
+.backgroundCity{
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width:50%;
+    z-index: 0;
 }
 .startGame-page {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    height: 5%;
+    justify-content: space-evenly;
 }
-.instrucciones{
+.titleCity{
+    z-index: 1;
+    width: 25%;
+}
+/* .instrucciones{
     color:white;
     background-color: #c53e3b;
     border-radius: 15%;
     opacity: 0.8;
     margin-top: 60%;
 
-}
+} */
 .region-select{
-    width: 100px;
-    height: 30px;
-    border-radius: 20%;
+    width: 20%;
+    background-color: white;
+    z-index: 1;
+    border: 3px solid #040F29;
+    border-radius: 15%;
+    opacity: 0.8; 
+    
+}
+.region-select h6, select{
+    color: #040F29;
+    font-weight: bold;
+    padding: 10px;
+    border:0;
 }
 .startGame-button{
-    width: 109px;
-    height: 109px;
-    background: transparent url('./img/Componente.svg') 0% 0% no-repeat padding-box;
+    width: 180px;
+    height: 180px;
+    background:url('./img/Componente.svg') no-repeat padding-box;
     background-size:contain;
     border: none;
-    display: block;
-    margin:auto;
-    margin-top: 20%;
+    z-index: 1;
 }
 .playingGame{
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .incorrecto{
     color: #c53e3b;
     font-size: 2em;
     font-weight: bold;
+    z-index: 1;
+    background-color: white;
+    opacity: 0.6;
+    border-radius: 15px;
 }
 
 .counterGame-button{
-
     width: 150px;
     height: 150px;
     border-radius: 50%;
     color: #c53e3b;
-    font-size: 5em;
+    font-size: 5.5em;
     font-weight: bold;
-
     border:3px solid white;
     background-color: white;
-
-
+    z-index: 1;
+    margin: 20px;
 }
 .country{
-    top: 176px;
-    left: 32px;
     width: 312px;
-    height: 40px;
-    line-height: 40px;
-    vertical-align: middle;
-    background: #9AC1D9 0% 0% no-repeat padding-box;
-    border-radius: 5px;
-    opacity: 1;
-
+    padding: 20px;
+    background: #9AC1D9 ;
+    border-radius: 25px;
+    z-index: 2;
+    border: 1px solid #040F29;
+    color:#040F29;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 20px;
 }
 .score{
-    padding: 15px;
-    height: 90px;
-    background: #9AC1D9 0% 0% no-repeat padding-box;
-    border-radius: 5px;
-    opacity: 1;
+    padding: 25px;
+    background: white;
+    border-radius: 25px;
     font-weight: bold;
-    font-size: 2.5em;
-    color:white
+    font-size: 1.5em;
+    border: 2px solid #040F29;
+    color:#040F29;
+    z-index: 1;
 }
 .flex-butons-capitals{
     display: grid;
     grid-template-columns: auto auto auto auto;
+    z-index: 1;
 }
 .choose-capital{
-    top: 232px;
-left: 32px;
-width: 152px;
-height: 56px;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-box-shadow: 0px 4px 0px #00000029;
-border-radius: 5px;
-opacity: 1;
+    width: 152px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px #00000029;
+    border-radius: 25px;
+    border: 1px solid #2b3b6f;
+    color:#2b3b6f;
+    font-weight: bold;
+    margin:10px;
+    z-index: 1;
 }
 
 .gameover{
-    font-size: 3em;
+    font-size: 4em;
     font-weight: bold;
     color:white
 }
 .play-again{
-    top: 319px;
-    left: 132px;
     color: #c53e3b;
     font-weight: bold;
     font-size: 2em;
     width: 300px;
     height: 100px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 0px #00000029;
-    border-radius: 5px;
-    opacity: 1;
+    background: #FFFFFF;
+    border-radius: 25px;
+    z-index: 1;
 }
-.back-menu{
-    top: 426px;
-    left: 150px;
-    width: 126px;
-    height: 29px;
-    text-align: center;
-    background-color: #c53e3b;
-    color: #FFFFFF;
-    border:#c53e3b ;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1em;
-    opacity: 1;
-}
-.shered-link{
+
+/* .shered-link{
     width: 250px;
     display: flex;
     justify-content: space-around;
+} */
+.containerInstruction {
+    width: 100vw;
 }
-.back-menu a {
-    color: white;
-    text-decoration: none;
-
-}
-
-@media (max-width: 700px) {
-    .startGame-page{
-        margin-left: 15%;
+@media (max-width: 1200px) {
+    .titleCity{
+        width: 50%;
     }
-    .startGame-button{
-        margin-left: 28%;
+    .backgroundCity{
+        width: 70%;
+        left: 16%;
     }
     .region-select{
-        margin-left: -15%;
+        width: 60%;
+        padding: 15px;
+    }
+    .region-select h6{
+        font-size: 1.7em;
+    }
+    .region-select select{
+        font-size: 1.5em;
+    }
+    .country{
+        width: 60%;
+        font-size: 2em;
     }
     .flex-butons-capitals{
         grid-template-columns: auto auto;
     }
-    .logo{
-        width: 400px;
-        height: 150px;
-    }
-    .instrucciones{
-        width:300px;
-        margin-top: 50%;
-    }
-    .startGame-page .back-menu{
-        margin-left: -15%;
-      }
-  }
-
-  .containerInstruction {
-      width: 100vw;
-  }
-
-  @media (max-width: 330px){
-    .container-game{
-        font-size: 0.8em;
-        height: 100vh;
-    }
-    .logo{
-        top: 0px;
-        left: 0px;
-        width: 0;
-        height: 0;
-        margin-top: 0px;
-        background: transparent;
-    }
-    .startGame-page {
-        display: block;
-        width: 100%;
-        margin:auto;
-        align-items: left;
-
-
-    }
-    .instrucciones{
-        margin-top: 0px;
-        padding-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 40px;
+    .choose-capital{
         width: 250px;
+        font-size: 1.5em;
+    }
+}
 
+@media (max-width: 600px) {
+    .titleCity{
+        width: 80%;
+    }
+    .backgroundCity{
+        width: 100%;
+        left: 0;
     }
     .region-select{
-        margin-left: 110px;
-        margin-bottom: 10px;
+        width: 80%;
+        padding: 5px;
     }
-    .startGame-button{
-        margin-left: 105px;
-    }
-    .incorrecto{
-        font-size: 1em;
-    }
-
-    .counterGame-button{
-        width: 50px;
-        height: 50px;
-        font-size: 2em;
+    .region-select h6, select{
+        font-size: 1.5em;
     }
     .country{
-        font-size: 1.3em;
-    }
-    .score{
-        padding: 10px;
-        height: 70px;
+        width: 60%;
         font-size: 1.5em;
     }
     .flex-butons-capitals{
-        font-size: 1.2em;
         grid-template-columns: auto auto;
     }
-    .back-menu{
-        display: none;
+    .choose-capital{
+        width: 150px;
+        padding: 20px;
+        margin:10px;
+      
     }
+    .incorrecto{
+        font-size: 1.5em;
+    }
+  }
+
+
+  @media (max-width: 330px){
+    .titleCity{
+        width: 40%;
+    }
+    .region-select{
+        width: 70%;
+        padding: 5px;
+    }
+    .region-select h6{
+        font-size: 0.8em;
+        padding: 3px;
+    }
+    .region-select select{
+        font-size: 0.7em;
+        padding: 3px;
+    }
+    .startGame-button{
+        width: 100px;
+        height: 100px;
+    }
+    .counterGame-button{
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin: 5px;
+        font-size: 1em;
+    }
+    .score{
+        padding: 5px;
+        font-size: 1em;
+    }
+    .country{
+        width: 60%;
+        padding: 5px;
+        font-size: 0.8em;
+        margin: 5px;
+    }
+    .choose-capital{
+        width: 100px;
+        padding: 5px;
+        margin:5px;
+        font-size: 0.7em;
+      
+    }
+    .incorrecto{
+        font-size: 0.5em;
+    }
+    .gameover{
+        z-index: 1;
+        font-size: 2em ;
+    }
+    .play-again{
+        width: 100px;
+        height: 50px;
+        font-size: 1em;
+    }
+    
   }

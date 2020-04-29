@@ -32,8 +32,22 @@ const initialState = () => {
 
 export default class BigBoard extends React.Component {
   state = initialState()
-
   delay = 2000;
+  timer = () => {setTimeout(this.onEndTimer, this.delay)}
+
+
+  onClickStart = () => {
+    this.chooseSmallSquare()
+    //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
+      console.log('here we are')
+      this.timer()
+      this.setState({
+        gameStarted: true,
+        gameEnded: false
+      })
+  }
+
+
 
   // CHOOSING A RANDOM SQUARE TO DISPLAY THE LOGO IN THE GAME
   chooseSmallSquare = () => {
@@ -42,6 +56,14 @@ export default class BigBoard extends React.Component {
     this.setState ({
       squareIndex: randomIndex,
       squareIndexIframe: randomIndexIframe,
+    })
+  }
+
+
+  itemClicked = () => {
+    this.setState({
+      logoClicked: true,
+      clickedIndex: true
     })
   }
 
@@ -63,25 +85,9 @@ export default class BigBoard extends React.Component {
         gameEnded: true
       })
     }
+    clearTimeout(this.timer);
   }
 
-  itemClicked = () => {
-    this.setState({
-      logoClicked: true,
-      clickedIndex: true
-    })
-  }
-
-  onClickStart = () => {
-    this.chooseSmallSquare()
-    //If everything is false do the set Interval + count + 1. Else stop the game + alert with counter
-    setTimeout(this.onEndTimer,
-      this.delay)
-      this.setState({
-        gameStarted: true,
-        gameEnded: false
-      })
-  }
 
 // STATE IS UPDATED WHEN RESTARTING THE GAME
   restartCounter = () => {
@@ -152,7 +158,7 @@ export default class BigBoard extends React.Component {
                     )}
 
                     {this.state.smallSquaresArrayIframe.map((x, index) =>
-                      <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 90, margin: '0 1px 2px 0', border: '1px solid grey', borderRadius: '5px'}} >
+                      <Grid item xs={2} className="SmallSquareGridIframe" style={{height: 70, margin: '0 2px 3px 0', border: '1px solid grey', borderRadius: '5px'}} >
                         <SmallSquare
                         zIndex={index}
                         logo={this.state.logoSelected}
