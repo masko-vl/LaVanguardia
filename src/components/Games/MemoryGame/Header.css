@@ -1,5 +1,4 @@
 .memory-header {
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -92,9 +91,6 @@
 }
 
 @media (max-width: 400px) {
-    .memoryResult {
-        margin:9% auto 5% auto;
-    }
     .winner-reinit-button {
         margin: 25% auto;
     }
