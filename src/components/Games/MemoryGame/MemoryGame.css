@@ -2,8 +2,8 @@
 
 .memory-body {
     background-color: #0c0e0e ;
-    /*background-size: cover;
-    display : flex;*/
+    /*background-size: cover;*/
+    display : flex;
     flex-direction: column;
   }
 
@@ -32,10 +32,8 @@
   }
   }
 
-@media (max-width: 360px) {
-  .memory-body {
-    height: 100vh;
-    background-image: none;
-    background-color: rgb(2, 14, 63);
+  @media (max-width: 360px) {
+    .memory-body {
+      height: 100vh;
+    }
   }
-}
