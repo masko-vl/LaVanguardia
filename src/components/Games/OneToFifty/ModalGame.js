@@ -17,11 +17,13 @@ const ModalGame = (props) => {
     if (timeInSeconds >= 100) {
       return 'Vete a por un cafe y vuelve'
     } else if (timeInSeconds >= 60) {
-      return 'Normalillo!!'
+      return '¡¡Normalillo!!'
+    } else if (timeInSeconds >= 50) {
+      return '¡Por encima de la media!'
     } else if (timeInSeconds >= 40) {
       return 'Nivel Experto'
     } else {
-      return 'Nivel Dios'
+      return 'Nivel DIOS'
     }
   }
 

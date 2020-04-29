@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './OneToFifty.scss';
-import InstructionGames from '../../SharedButtons/InstructionGames';
-import CloseButton from '../../SharedButtons/CloseButton';
+import InstructionOneToFifty from './InstructionOneToFifty';
+import CloseButtonOneToFifty from './CloseButtonOneToFifty';
 import Chrono from './Chrono';
 import confetti from '../../../confetti';
 
@@ -51,48 +51,50 @@ export default function OneToFifty() {
             setCurrentNumber(currentNumber + 1);
             if (number === 50) {
                 setCurrentNumber('DONE!')
-                   confetti.start()
-                   setTimeout(() => {
-                       confetti.stop()
-                   }, 2000)
+                confetti.start()
+                setTimeout(() => {
+                    confetti.stop()
+                }, 2000)
             }
         }
     }
 
     return (
         <div className="OneToFifty container-fluid">
-            <div style={{ height: "100%" }}>
-                <InstructionGames instructionText="¡Intenta contar de uno a cincuenta lo más rapido posible! ¿Eres más rápido que tus amigos?" />
-                <CloseButton />
+            <div className="row rowIcons">
+                <div><InstructionOneToFifty/></div>
+                <div><CloseButtonOneToFifty/></div>
             </div>
-            {/* MENU */}
-            <div className="row timeAndActualNumber alignCenter">
-                <div className="col-12 col-md-6 justifyCenter">
-                    <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber} />}</p>
+            <div className="OneToFiftyContent">
+                {/* MENU */}
+                <div className="row timeAndActualNumber alignCenter">
+                    <div className="col-12 col-md-6 justifyCenter">
+                        <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber} />}</p>
+                    </div>
+                    <div className="col-12 col-md-6 justifyCenter">
+                        <p>Siguiente numero: &nbsp;&nbsp;&nbsp; <span style={{ fontWeight: "bold", fontSize: "x-large" }}>{currentNumber}</span></p>
+                    </div>
                 </div>
-                <div className="col-12 col-md-6 justifyCenter">
-                    <p>Siguiente numero: &nbsp;&nbsp;&nbsp; <span style={{ fontWeight: "bold", fontSize: "x-large" }}>{currentNumber}</span></p>
+                {/* GAME */}
+                <div className="row numbersGrid">
+                    {
+                        firstHalf.map((number, i) =>
+                            <div className={`cellNumber_${style[i]} alignCenter justifyCenter`} key={i} onClick={() => checkNumber(number, i)}>
+                                {number}
+                            </div>)
+                    }
                 </div>
-            </div>
-            {/* GAME */}
-            <div className="row numbersGrid">
-                {
-                    firstHalf.map((number, i) =>
-                        <div className={`cellNumber_${style[i]} alignCenter justifyCenter`} key={i} onClick={() => checkNumber(number, i)}>
-                            {number}
-                        </div>)
-                }
-            </div>
-            <button className="restartButton" onClick={() => window.location.reload()}>RESTART</button>
-            <div>
-                {/* JUST TO IFRAME */}
-                <div className="iframeOneToFifty">
-                    <div className="row timeAndActualNumberIframe alignCenter">
-                        <div className="col-6 justifyCenter">
-                            <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber} />}</p>
-                        </div>
-                        <div className="col-6 justifyCenter">
-                            <button className="restartButtonIframe" onClick={() => window.location.reload()}>RESTART</button>
+                <button className="restartButton" onClick={() => window.location.reload()}>RESTART</button>
+                <div>
+                    {/* JUST TO IFRAME */}
+                    <div className="iframeOneToFifty">
+                        <div className="row timeAndActualNumberIframe alignCenter">
+                            <div className="col-6 justifyCenter">
+                                <p className="chronoText">{timeStart === false ? '00:00:00' : <Chrono currentNumber={currentNumber} />}</p>
+                            </div>
+                            <div className="col-6 justifyCenter">
+                                <button className="restartButtonIframe" onClick={() => window.location.reload()}>RESTART</button>
+                            </div>
                         </div>
                     </div>
                 </div>
