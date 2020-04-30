@@ -4,7 +4,7 @@
   object-fit: cover;
   color : lightgrey;
   position: relative;
-  height: calc(100vh - (50px + 136.83px));
+  flex-shrink: 3;
 }
 
 .backgroundBigLeft {
@@ -175,7 +175,7 @@
   }
 
   #snakePageContainer {
-    height: 130vh;
+    flex-shrink: 3;
   }
 
   .backgroundBigLeft {
@@ -228,7 +228,7 @@
 @media screen and (max-width: 330px) {
 
   .snakeGameContainer {
-    height: 83vh !important;
+    height: 75vh !important;
     display: flex;
     flex-direction: row;
     padding: 5px;
