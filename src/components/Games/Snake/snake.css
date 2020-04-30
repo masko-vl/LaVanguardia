@@ -4,6 +4,7 @@
   object-fit: cover;
   color : lightgrey;
   position: relative;
+  height: calc(100vh - (50px + 136.83px));
 }
 
 .backgroundBigLeft {
@@ -54,7 +55,6 @@
   width: 100%;
   top: 20%;
   z-index: 3;
-
 }
 
 #startSnakeButton {
@@ -171,8 +171,11 @@
 @media screen and (max-width: 800px) {
   .game-area {
     width: 80%;
-    margin-bottom: 8%;
+    margin-bottom: 8%;    
+  }
 
+  #snakePageContainer {
+    height: 130vh;
   }
 
   .backgroundBigLeft {
@@ -188,6 +191,7 @@
 
 }
 @media screen and (max-width: 450px) {
+
   .backgroundBigLeft {
     height: 30vh;
     width: 15vw;
@@ -206,12 +210,10 @@
     height: 15vh;
   }
 
+ 
+
   #snakePageContainer > h1 {
     margin-bottom: 3%;
-  }
-
-  #snakePageContainer > h1 {
-
     font-size: 2em;
   }
 
@@ -255,6 +257,10 @@
   .backgroundSmallRight {
     display: none;
   }
+#snakePageContainer {
+  height: 100%;
+}
+
   #snakePageContainer > h1 {
     color: lightgrey;
     padding-top: 2%;

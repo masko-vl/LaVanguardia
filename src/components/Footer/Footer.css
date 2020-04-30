@@ -1,8 +1,7 @@
  .footer-wrapper {
     background-color: #001c4c;
-    left: 0;
     width: 100%;
-    z-index: 4;
+    z-index: 2;
 }
 
 .footer-container {
