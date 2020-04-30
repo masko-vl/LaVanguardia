@@ -194,12 +194,12 @@ class IndexSnake extends Component {
         </div>
 
           <div className="SnakeDirectionsMobilePad">
-            <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>U</button>
+            <button className="padButton" value='UP' onClick={this.checkButtonsDirections}>&uarr;</button>
             <div id="sidesArrowsRow">
-              <button className="padButton" value='LEFT' onClick={this.checkButtonsDirections}>L</button>
-              <button className="padButton" value='RIGHT' onClick={this.checkButtonsDirections}>R</button>
+              <button className="padButton" value='LEFT' onClick={this.checkButtonsDirections}>&larr;</button>
+              <button className="padButton" value='RIGHT' onClick={this.checkButtonsDirections}>&rarr;</button>
             </div>
-            <button id="downButton" className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>D</button>
+            <button id="downButton" className="padButton" value='DOWN' onClick={this.checkButtonsDirections}>&darr;</button>
           </div>
         </div>
         <img className="backgroundSmallLeft" src={backgroundSmall} />

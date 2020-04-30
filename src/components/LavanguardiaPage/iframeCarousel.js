@@ -39,6 +39,56 @@ const IframeCarousel = (props) => {
   <Carousel showDots autoPlay dotListClass infinite
     autoPlaySpeed={10000}
     responsive={responsive}>
+      <div>
+        <Link to='snake' className='jugartext'>
+          <img
+            className="imagecarousel"
+            src={snake}
+            alt="Snake"
+          />
+        </Link>
+        <p className="textCarouseliFrame">El mítico juego de Nokia vuelve para engancharte de nuevo</p>
+      </div>
+      <div>
+        <Link to='nonogram' className='jugartext'>
+          <img
+            className="imagecarousel"
+            src={nonogram}
+            alt="NONOGRAM"
+          />
+        </Link>
+        <p className="textCarouseliFrame">Rellena las casillas siguiendo las pistas en Nonogram</p>
+      </div>
+      <div>
+        <Link to='OneToFifty' className='jugartext'>
+          <img
+            className="imagecarousel"
+            src={OneToFifty}
+            alt="One To fifty"
+          />
+        </Link>
+        <p className="textCarouseliFrame">Ordena los numeros del 1 al 50</p>
+      </div>
+      <div>
+        <Link to='tacleclick' className='jugartext'>
+          <img
+            className="imagecarousel"
+            src={tackle}
+            alt="Third slide"
+          />
+        </Link>
+      <p className="textCarouseliFrame">Dale una paliza a tu rival!</p>
+      </div>
+      <div>
+      <Link to='MemoryGame' className='jugartext'>
+        <img
+          className="imagecarousel"
+          src={MemoryGame}
+          alt="MemoryGame"
+        />
+      </Link>
+      <p className="textCarouseliFrame">Practica tu memória en Memory Game</p>
+    </div>
     <div>
       <Link to='cityplay' className='jugartext'>
         <img
@@ -50,60 +100,11 @@ const IframeCarousel = (props) => {
 
       <p className="textCarouseliFrame">Juega a citiplay y pon a prueba tus conocimientos sobre capitales de todo el mundo</p>
     </div>
-    <div>
-      <Link to='tacleclick' className='jugartext'>
-        <img
-          className="imagecarousel"
-          src={tackle}
-          alt="Third slide"
-        />
-      </Link>
-    <p className="textCarouseliFrame">Dale una paliza a tu rival!</p>
-    </div>
-    <div>
-      <Link to='nonogram' className='jugartext'>
-        <img
-          className="imagecarousel"
-          src={nonogram}
-          alt="NONOGRAM"
-        />
-      </Link>
-      <p className="textCarouseliFrame">Rellena las casillas siguiendo las pistas en Nonogram</p>
-    </div>
-    <div>
-      <Link to='snake' className='jugartext'>
-        <img
-          className="imagecarousel"
-          src={snake}
-          alt="Snake"
-        />
-      </Link>
-      <p className="textCarouseliFrame">El mítico juego de Nokia vuelve para engancharte de nuevo</p>
-    </div>
-    <div>
-      <Link to='OneToFifty' className='jugartext'>
-        <img
-          className="imagecarousel"
-          src={OneToFifty}
-          alt="One To fifty"
-        />
-      </Link>
-      <p className="textCarouseliFrame">Ordena los numeros del 1 al 50</p>
-    </div>
-    <div>
-      <Link to='MemoryGame' className='jugartext'>
-        <img
-          className="imagecarousel"
-          src={MemoryGame}
-          alt="MemoryGame"
-        />
-      </Link>
-      <p className="textCarouseliFrame">Practica tu memória en Memory Game</p>
-    </div>
+
   </Carousel>
 
+</div>
 
-  </div>
 )
 
   }

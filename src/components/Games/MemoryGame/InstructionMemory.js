@@ -4,9 +4,9 @@ import {
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-import './InstructionOneToFifty.scss';
+import './InstructionMemory.scss';
 
-export class InstructionOneToFifty extends React.Component {
+export class InstructionMemory extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,17 +29,13 @@ export class InstructionOneToFifty extends React.Component {
       return (
         <div>
             {/* INSTRUCTIONS */}
-                <span className="bigInstructions" style={{ color: "rgb(245, 123, 75)", fontSize: "2em"}} onClick={this.toggle}>{instructions}</span>
+                <span className="bigInstructions" style={{ color: "#00ECFD", fontSize: "2em"}} onClick={this.toggle}>{instructions}</span>
+                <span className="smallInstructions" style={{ color: "#A2A2A2", fontSize: "1.5em"}} onClick={this.toggle}>{instructions}</span>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} style={{ marginTop:"10%"}}>
                     <ModalBody>
-                        <div><p>¡Intenta contar de uno a cincuenta lo más rapido posible! ¿Eres más rápido que tus amigos?<br/><br/>
-                        Más de 100 segundos: ve a por un café y ya si eso ....<br/>
-                        60-100 segundos: estás en la media<br/>
-                        50-60 segundos: por encima de la media<br/>
-                        40-50 segundos: nivel EXPERTO<br/>
-                        30-40 segundos: nivel DIOS<br/>
-                        Menos de 30 segundos: ... mentiroso?<br/>
-                        </p></div>
+                        <div><p>
+                        Encuentra las parejas de cartas iguales.En cuanto menos intentos lo logres, más puntos acumularás </p></div>
+
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Cerrar</Button>
@@ -49,4 +45,4 @@ export class InstructionOneToFifty extends React.Component {
     )}
 }
 
-export default InstructionOneToFifty;
+export default InstructionMemory;

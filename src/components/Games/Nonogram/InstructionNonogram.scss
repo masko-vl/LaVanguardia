@@ -22,6 +22,10 @@
     }
     .modal-content{
         margin-top: -27px!important;
+
+        & p {
+            margin-bottom: 0px!important;
+        }
     }
     .modal-footer{
         padding: 0.5px!important;

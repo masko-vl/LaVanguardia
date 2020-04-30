@@ -3,8 +3,8 @@ import './MemoryGame.css';
 import Table from './Table';
 import Header from './Header';
 import construirBaraja from './utils/construirBaraja';
-import InstructionGames from '../../SharedButtons/InstructionGames';
-import CloseButton from '../../SharedButtons/CloseButton';
+import InstructionMemory from './InstructionMemory';
+import CloseButtonMemory from './CloseButtonMemory';
 
 //import useWindowDimensions from './windowHandler'
 
@@ -32,19 +32,23 @@ class MemoryGame extends React.Component {
 
   render() {
     return(
-      <div className="memory-body">
-        <InstructionGames  instructionText="Encuentra las parejas de cartas iguales.En cuanto menos intentos lo logres, más puntos acumularás" />
-        <CloseButton />
-        <Header
-        tryes={this.state.tryes}
-        gameFinished={this.state.winner}
-        resetGame={() => this.resetGame()}
-        />
-        <Table
-        deck={this.state.deck}
-        selectedCouple={this.state.selectedCouple}
-        selectCard={(card) => this.selectCard(card)}
-        />
+      <div className="outside-memory">
+        <div className="memory-body">
+            <div className="memoryIcons">
+              <div><InstructionMemory /></div>
+              <div><CloseButtonMemory /></div>
+            </div>
+            <Header
+            tryes={this.state.tryes}
+            gameFinished={this.state.winner}
+            resetGame={() => this.resetGame()}
+            />
+            <Table
+            deck={this.state.deck}
+            selectedCouple={this.state.selectedCouple}
+            selectCard={(card) => this.selectCard(card)}
+            />
+        </div>
       </div>
     )
   }
