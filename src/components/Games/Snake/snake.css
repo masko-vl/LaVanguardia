@@ -4,7 +4,8 @@
   object-fit: cover;
   color : lightgrey;
   position: relative;
-  flex-shrink: 3;
+  flex-grow: 6;   /*  !!!!!!!!!!!!   */
+  /* height: calc(100vh - (50px + 136.83px)); */
 }
 
 .backgroundBigLeft {
@@ -174,9 +175,9 @@
     margin-bottom: 8%;    
   }
 
-  #snakePageContainer {
-    flex-shrink: 3;
-  }
+  /* #snakePageContainer {
+    height: 130vh;
+  } */
 
   .backgroundBigLeft {
     height: 50vh;
