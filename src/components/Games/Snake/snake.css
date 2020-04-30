@@ -4,6 +4,7 @@
   object-fit: cover;
   color : lightgrey;
   position: relative;
+  height: 75vh;
 }
 
 .backgroundBigLeft {
@@ -148,6 +149,7 @@
   border-radius: 15px;
   font-style: bolder;
   font-family: sans-serif;
+  position: relative;
 }
 
 .padButton:active {
@@ -227,7 +229,7 @@
 @media screen and (max-width: 330px) {
 
   .snakeGameContainer {
-    height: 83vh !important;
+    height: 75vh !important;
     display: flex;
     flex-direction: row;
     padding: 5px;
