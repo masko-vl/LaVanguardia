@@ -9,6 +9,12 @@
         padding: 0 !important;
     }
 
+    @media screen and (max-width:335px) {
+        .modal-content {
+            margin-top: 40px!important;
+        }
+    }
+
     & .rowIcons{
         justify-content: flex-end;
     }
