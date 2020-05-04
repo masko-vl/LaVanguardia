@@ -5,8 +5,22 @@
     background-size: cover;
     height: 100vh;
 
+    & -modal_win  {
+        @media screen and (max-width:335px) {
+            .modal-content {
+                margin-top: 0px!important;
+            }
+        }
+    }
+
     @media screen and (max-width:425px) {
         padding: 0 !important;
+    }
+
+    @media screen and (max-width:335px) {
+        .modal-content {
+            margin-top: 40px!important;
+        }
     }
 
     & .rowIcons{
@@ -19,6 +33,7 @@
         align-items: center;
         flex-direction: column;
     }
+    
 }
 
 .btn {
@@ -78,8 +93,13 @@ table.center {
         }
 
         @media screen and (max-width:425px) {
-            width: 1.6rem;
-            height: 1.6rem;
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
+        @media screen and (max-width:335px) {
+            width: 2rem;
+            height: 2rem;
         }
 
         &:hover {

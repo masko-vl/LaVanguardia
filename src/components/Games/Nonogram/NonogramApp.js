@@ -208,8 +208,8 @@ export default function NonogramApp() {
         <div className="nonogramContent">
            {modal ?
           <div>
-            <Modal isOpen={modal} >
-              <ModalHeader>Enhorabuena!!</ModalHeader>
+            <Modal className="modal_win" isOpen={modal} >
+              <ModalHeader >Enhorabuena!!</ModalHeader>
               <ModalBody>
                 Has ganado el juego! ¿Quieres intentar otra partida?
                 </ModalBody>

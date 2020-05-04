@@ -18,7 +18,7 @@ const Iframe = () => {
     <CloseButton />
     <div>
       <h3 className="titleIframeAll">Snake</h3>
-      <iframe src={"//localhost:3000/snake"}
+      <iframe src={"/snake"}
           width="330px"
           height="260px"
           id="test"
@@ -29,7 +29,7 @@ const Iframe = () => {
     </div>
     <div>
       <h3 className="titleIframeAll">Tacle Click</h3>
-      <iframe src={"//localhost:3000/tacleclick"}
+      <iframe src={"/tacleclick"}
           width="330px"
           height="260px"
           id="test"
@@ -41,7 +41,7 @@ const Iframe = () => {
 
     <div>
       <h3 className="titleIframeAll">Memory de Presidentes</h3>
-      <iframe src={"//localhost:3000/MemoryGame"}
+      <iframe src={"/MemoryGame"}
           width="330px"
           height="260px"
           id="test"
@@ -53,7 +53,7 @@ const Iframe = () => {
 
     <div>
       <h3 className="titleIframeAll">Nonogram</h3>
-      <iframe src={"//localhost:3000/nonogram"}
+      <iframe src={"/nonogram"}
           width="330px"
           height="260px"
           id="test"
@@ -65,7 +65,7 @@ const Iframe = () => {
 
     <div>
       <h3 className="titleIframeAll">City Play</h3>
-      <iframe src={"//localhost:3000/cityplay"}
+      <iframe src={"/cityplay"}
           width="330px"
           height="260px"
           id="test"
@@ -77,7 +77,7 @@ const Iframe = () => {
 
     <div>
       <h3 className="titleIframeAll">1 to 50</h3>
-      <iframe src={"//localhost:3000/OneToFifty"}
+      <iframe src={"/OneToFifty"}
           width="330px"
           height="260px"
           id="test"
